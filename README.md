@@ -1,2 +1,0 @@
-# Deashataan
-A travel Website.
