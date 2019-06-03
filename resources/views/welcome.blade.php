@@ -7,13 +7,14 @@
                     <div class="tourz-search-1">
                         <h1>Plan Your Travel Now!</h1>
                         <p>Experience the various exciting tour and travel packages and Make hotel reservations, find vacation packages, search cheap hotels and events</p>
-                        <form class="tourz-search-form">
+                    <form class="tourz-search-form" method="POST" action="{{url('/search-result')}}" enctype="multipart/form-data">
+                        {{ csrf_field() }}
                             <div class="input-field">
-                                <input type="text" id="select-city" class="autocomplete">
+                                <input type="text" id="select-city" class="autocomplete" name="search-city">
                                 <label for="select-city">Enter city</label>
                             </div>
                             <div class="input-field">
-                                <input type="text" id="select-search" class="autocomplete">
+                                <input type="text" id="select-search" class="autocomplete" name="search-package-type">
                                 <label for="select-search" class="search-hotel-type">Search over a million tour and travels, sight seeings, hotels and more</label>
                             </div>
                             <div class="input-field">

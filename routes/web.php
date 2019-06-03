@@ -149,4 +149,10 @@ Route::get('/tour-details',function(){
 // store the booking information
 Route::post('/booking','BookingByEmailController@store');
 
+// search result 
+Route::post('/search-result','SearchController@index');
+
+// packages handler
+
+
 

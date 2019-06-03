@@ -1,37 +1,7 @@
 @include('layouts.app')
-
-<!-- TOP SEARCH BOX -->
-<div class="search-top">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="search-form">
-                <form class="tourz-search-form" method="POST" action="{{url('/search-result')}}" enctype="multipart/form-data">
-                    {{ csrf_field() }}
-                    <div class="input-field">
-                        <input type="text" id="select-city" class="autocomplete" name="city">
-                        <label for="select-city">Enter city</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="text" id="select-search" class="autocomplete">
-                        <label for="select-search" class="search-hotel-type">Search over a million tour and travels, sight seeings, hotels and more</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="submit" value="search" class="waves-effect waves-light tourz-sear-btn"> </div>
-                </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END TOP SEARCH BOX -->
-
-</section>
-<!--END HEADER SECTION-->
-
 	
     <!--====== BANNER ==========-->
-    <section>
+    <section style="margin-top:-30px">
         <div class="rows inner_banner inner_banner_5">
             <div class="container">
                 <h2><span>Family Package -</span> Top Family Packages In The World</h2><ul><li><a href="#inner-page-title">Home</a></li><li><i class="fa fa-angle-right" aria-hidden="true"></i> </li><li><a href="#inner-page-title" class="bread-acti">Family Package</a></li></ul>
