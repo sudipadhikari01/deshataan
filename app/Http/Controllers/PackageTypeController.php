@@ -68,9 +68,9 @@ class PackageTypeController extends Controller
      */
     public function edit($id)
     {
-    //   
+    //
         $singlePackage = \App\PackageType::find($id);
-    //   
+    //
 
         return view("admin.editPackage")->with("singlePackage",$singlePackage);
     }
