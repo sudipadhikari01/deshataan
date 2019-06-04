@@ -47,6 +47,7 @@
                                 <li>8 Breakfast, 3 Dinners</li>
                                 <li>First class Sightseeing</li>
                                 <li>Lorem ipsum</li>
+                                
                             </ul>
                         </div>
                         <div class="p2_book">
