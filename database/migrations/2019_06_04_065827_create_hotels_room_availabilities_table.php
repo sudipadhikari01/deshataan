@@ -15,7 +15,7 @@ class CreateHotelsRoomAvailabilitiesTable extends Migration
     {
         Schema::create('hotels_room_availabilities', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table_>string('title');
+            $table->string('title');
             $table->string('amenities');
             $table->string('includes');
             $table->string('maximum_person');

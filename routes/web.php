@@ -133,6 +133,22 @@ Route::get('adminn/booking-by-email','BookingByEmailController@create')->name('a
 // delete booking by email field
 Route::get("/adminn/deleteBookingByEmail/{id}",'BookingByEmailController@destroy');
 
+
+// hotels admin section
+
+Route::get('/adminn/hotels-list','HotelsController@index')->name('hotels-list');
+// add hotels
+Route::get('/adminn/addHotels','HotelsController@create');
+Route::post('/adminn/addHotels','HotelsController@store');
+
+// edit hotels
+Route::get('/adminn/editHotels/{id}','HotelsController@edit');
+Route::post('/adminn/editHotels/{id}','HotelsController@update');
+
+// delete hotel
+Route::get('/adminn/deleteHotels/{id}','HotelsController@destroy');
+
+
 // front end part(homepage part)
 Route::get('/family-package',function(){
     return view('family-package');
