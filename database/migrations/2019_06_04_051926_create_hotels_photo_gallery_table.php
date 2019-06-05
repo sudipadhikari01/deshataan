@@ -16,7 +16,8 @@ class CreateHotelsPhotoGalleryTable extends Migration
         Schema::create('hotels_photo_gallery', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->string('image');
+            $table->string('description');
+            $table->string('name');
             $table->integer('hotel_title_id');
             $table->timestamps();
         });

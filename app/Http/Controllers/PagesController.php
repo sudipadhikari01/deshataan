@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\PackageType;
 use App\IndividualPackage;
 use App\AboutTour;
+use App\Hotel;
 
 
 class PagesController extends Controller
@@ -20,5 +21,9 @@ class PagesController extends Controller
     public static function showPackageType($id){
         return PackageType::findorFail($id)->p_name;
        
+    }
+
+    public static function showHotelName($id){
+        return Hotel::findorFail($id)->title;
     }
 }

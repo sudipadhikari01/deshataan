@@ -149,6 +149,33 @@ Route::post('/adminn/editHotels/{id}','HotelsController@update');
 Route::get('/adminn/deleteHotels/{id}','HotelsController@destroy');
 
 
+// hotel photo  gallery section
+Route::get('/adminn/hotels-photo-gallery','HotelsPhotoGalleryController@index')->name('hoetels-photo');
+// add hotel image
+Route::get('/adminn/addHotelsPhoto','HotelsPhotoGalleryController@create');
+Route::post('/adminn/addHotelsPhoto','HotelsPhotoGalleryController@store');
+
+// edit hotels photo
+Route::get('/adminn/editHotelsPhoto/{id}','HotelsPhotoGalleryController@edit');
+Route::post('/adminn/editHotelsPhoto/{id}','HotelsPhotoGalleryController@update');
+
+// delete hotels photo
+Route::get('/adminn/deleteHotelsPhoto/{id}','HotelsPhotoGalleryController@destroy');
+
+// hotel special features section started
+Route::get('/adminn/hotel-special-features','HotelSpecialFeaturesController@index')->name('hotel-special-features');
+// add hotels special features
+Route::get('/adminn/addHotelsFeatures','HotelSpecialFeaturesController@create');
+Route::post('/adminn/addHotelsFeatures','HotelSpecialFeaturesController@store');
+
+// edit hotels features
+Route::get("/adminn/editHotelsFeatures/{id}",'HotelSpecialFeaturesController@edit');
+Route::post("/adminn/editHotelsFeatures/{id}",'HotelSpecialFeaturesController@update');
+
+// delete hotels special features
+Route::get("/adminn/deleteHotelsFeatures/{id}",'HotelSpecialFeaturesController@destroy');
+
+
 // front end part(homepage part)
 Route::get('/family-package',function(){
     return view('family-package');

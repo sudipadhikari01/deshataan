@@ -22,7 +22,7 @@
                     <li><a href="{{url("adminn/trip-information")}}">Add Trip Information</a></li>
                     <li><a href="{{url("adminn/itinerary")}}">Add Itinerary</a></li>
                     <li><a href="{{url("adminn/booking-by-email")}}">Booking By Email List</a></li>
-                    <li><a href="index-restaurent.html">Restaurant</a></li>
+                    
                 </ul>
             </li>
             <li class="mega-menu mega-menu-sm"><a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -30,13 +30,10 @@
                     class="badge badge-success nav-badge">11</span></a>
             <ul aria-expanded="false">
                 <li><a href="{{url("/adminn/hotels-list")}}">Add Hotels</a></li>
-                <li><a href="{{url("adminn/individualPackage")}}">Add Individual Package</a></li>
-                <li><a href="{{url("adminn/aboutTour")}}">Add About Tour</a></li>
-                <li><a href="{{url("adminn/photo-gallery")}}">Add Photo Gallery</a></li>
-                <li><a href="{{url("adminn/trip-information")}}">Add Trip Information</a></li>
-                <li><a href="{{url("adminn/itinerary")}}">Add Itinerary</a></li>
-                <li><a href="{{url("adminn/booking-by-email")}}">Booking By Email List</a></li>
-                <li><a href="index-restaurent.html">Restaurant</a></li>
+                <li><a href="{{url("adminn/hotels-photo-gallery")}}">Add Hotels Photo Gallery</a></li>
+                <li><a href="{{url("/adminn/hotel-special-features")}}">Add Special Features</a></li>
+                <li><a href="{{url("adminn/photo-gallery")}}">Add Room & Availabilities</a></li>
+               
             </ul>
         </li>
             <li class="nav-label">Apps</li>
