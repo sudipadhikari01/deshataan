@@ -175,6 +175,9 @@ Route::post("/adminn/editHotelsFeatures/{id}",'HotelSpecialFeaturesController@up
 // delete hotels special features
 Route::get("/adminn/deleteHotelsFeatures/{id}",'HotelSpecialFeaturesController@destroy');
 
+// hotel room availabilities
+Route::get('/adminn/hotel-room-availabilities','HotelRoomAvailabilitiesController@index');
+
 
 // front end part(homepage part)
 Route::get('/family-package',function(){
