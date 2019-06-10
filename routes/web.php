@@ -31,9 +31,26 @@ Route::get('/adminn',function(){
 })->name("admin");
 
 
+//admin group routes
+Route::prefix('/admin')
+    ->name('admin.')
+    ->namespace('Admin')
+    ->group(
+        function () {
+
+            //using admin auth
+            Route::namespace('Auth')
+                ->group(
+                    function () {
+
+                    }
+                );
+        }
+    );
+
 Route::get("adminn/packagetype",'PackageTypeController@index')->name('packages');
 
-Route::get('/adminn/addpackage','PackageTypeController@create'); 
+Route::get('/adminn/addpackage','PackageTypeController@create');
 
 Route::post('/adminn/addpackage','PackageTypeController@store');
 Route::get("/adminn/editPackageType/{id}","PackageTypeController@edit");
@@ -96,14 +113,18 @@ Route::get("/individualPkg/{id}",'PagesController@showIndividualPackage');
 
 Route::get('/packageType/{id}','PagesController@showPackageType');
 
-// trip information filed 
+
+
+
+
+// trip information filed
 Route::get('/adminn/trip-information','AboutTheTripInformationController@index')->name('trip-information');
 // add trip information
 Route::get('adminn/addTripInformation','AboutTheTripInformationController@create');
 Route::post('adminn/addTripInformation','AboutTheTripInformationController@store');
 
 
-// edit trip information 
+// edit trip information
 Route::get("adminn/editTripInformation/{id}",'AboutTheTripInformationController@edit');
 Route::post("adminn/editTripInformation/{id}",'AboutTheTripInformationController@update');
 
@@ -133,6 +154,12 @@ Route::get('adminn/booking-by-email','BookingByEmailController@create')->name('a
 // delete booking by email field
 Route::get("/adminn/deleteBookingByEmail/{id}",'BookingByEmailController@destroy');
 
+
+
+
+
+
+
 // front end part(homepage part)
 Route::get('/family-package',function(){
     return view('family-package');
@@ -149,7 +176,7 @@ Route::get('/tour-details',function(){
 // store the booking information
 Route::post('/booking','BookingByEmailController@store');
 
-// search result 
+// search result
 Route::post('/search-result','SearchController@index');
 
 // packages handler
