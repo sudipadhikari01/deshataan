@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Hotel;
+use Illuminate\Http\Request;
 
 class HotelsController extends Controller
 {
@@ -15,7 +15,7 @@ class HotelsController extends Controller
     public function index()
     {
         $hotels = Hotel::all();
-        return view('admin.hotels.hotels-list')->with('hotels',$hotels);
+        return view('admin.hotels.hotels-list')->with('hotels', $hotels);
     }
 
     /**
@@ -47,7 +47,7 @@ class HotelsController extends Controller
 
         $hotels->save();
 
-        return redirect()->route('hotels-list')->with('status',"Hotels Added Successfully");
+        return redirect()->route('adminn.hotels.index')->with('status', "Hotels Added Successfully");
 
     }
 
@@ -70,8 +70,8 @@ class HotelsController extends Controller
      */
     public function edit($id)
     {
-        $hotel  = Hotel::find($id);
-        return view('admin.hotels.editHotels')->with('hotel',$hotel);
+        $hotel = Hotel::find($id);
+        return view('admin.hotels.editHotels')->with('hotel', $hotel);
     }
 
     /**
@@ -83,7 +83,7 @@ class HotelsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $hotels  = Hotel::find($id);
+        $hotels = Hotel::find($id);
 
         $hotels->title = $request->input('hotelTitle');
         $hotels->location = $request->input('hotelLocation');
@@ -95,7 +95,7 @@ class HotelsController extends Controller
 
         $hotels->save();
 
-        return redirect()->route('hotels-list')->with('status',"Hotels Updated Successfully");
+        return redirect()->route('adminn.hotels.index')->with('status', "Hotels Updated Successfully");
     }
 
     /**
@@ -106,9 +106,9 @@ class HotelsController extends Controller
      */
     public function destroy($id)
     {
-        $hotels  = Hotel::find($id);
+        $hotels = Hotel::find($id);
 
         $hotels->delete();
-        return redirect()->route('hotels-list')->with('status',"Hotels Deleted Successfully");
+        return redirect()->route('adminn.hotels.index')->with('status', "Hotels Deleted Successfully");
     }
 }
