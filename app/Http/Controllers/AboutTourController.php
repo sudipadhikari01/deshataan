@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\PackageType;
-use App\IndividualPackage;
 use App\AboutTour;
-
+use App\IndividualPackage;
+use App\PackageType;
+use Illuminate\Http\Request;
 
 class AboutTourController extends Controller
 {
@@ -18,9 +17,9 @@ class AboutTourController extends Controller
     public function index()
     {
         $packages = PackageType::all();
-        $individualPkgs =IndividualPackage::all();
+        $individualPkgs = IndividualPackage::all();
         $aboutTours = AboutTour::all();
-        return view('admin.about-tour')->with(['packages'=>$packages,'individualPkgs'=>$individualPkgs,'aboutTours'=>$aboutTours]);
+        return view('admin.about-tour')->with(['packages' => $packages, 'individualPkgs' => $individualPkgs, 'aboutTours' => $aboutTours]);
     }
 
     /**
@@ -29,15 +28,11 @@ class AboutTourController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function add(){
-        $packages = PackageType::all();
-        $individualPkgs =IndividualPackage::all();
-        return view('admin.addAboutTour')->with(['packages'=>$packages,'individualPkgs'=>$individualPkgs]);
-
-     }
     public function create()
     {
-        //
+        $packages = PackageType::all();
+        $individualPkgs = IndividualPackage::all();
+        return view('admin.addAboutTour')->with(['packages' => $packages, 'individualPkgs' => $individualPkgs]);
     }
 
     /**
@@ -58,8 +53,7 @@ class AboutTourController extends Controller
 
         $aboutTour->save();
 
-        return redirect()->route('about-tour');
-
+        return redirect()->route('adminn.aboutTour.index');
 
     }
 
@@ -83,9 +77,9 @@ class AboutTourController extends Controller
     public function edit($id)
     {
         $packages = PackageType::all();
-        $individualPkgs =IndividualPackage::all();
+        $individualPkgs = IndividualPackage::all();
         $iaboutTour = AboutTour::find($id);
-        return view('admin.editAboutTour')->with(['packages'=>$packages,'individualPkgs'=>$individualPkgs,'iaboutTour'=>$iaboutTour]);
+        return view('admin.editAboutTour')->with(['packages' => $packages, 'individualPkgs' => $individualPkgs, 'iaboutTour' => $iaboutTour]);
 
     }
 
@@ -106,10 +100,9 @@ class AboutTourController extends Controller
         $aboutTour->p_id = $request->input('packageType');
         $aboutTour->ip_id = $request->input('individualPackage');
 
-
         $aboutTour->save();
 
-        return redirect()->route('about-tour');
+        return redirect()->route('adminn.aboutTour.index');
     }
 
     /**
@@ -123,7 +116,7 @@ class AboutTourController extends Controller
         $iaboutTour = AboutTour::find($id);
         $iaboutTour->delete();
 
-        return redirect()->route('about-tour');
+        return redirect()->route('adminn.aboutTour.index');
 
     }
 }

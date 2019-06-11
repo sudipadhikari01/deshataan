@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\PackageType;
-use Illuminate\Routing\Redirector;
-
+use Illuminate\Http\Request;
 
 class PackageTypeController extends Controller
 {
@@ -17,7 +15,7 @@ class PackageTypeController extends Controller
     public function index()
     {
         $packages = PackageType::paginate(10);
-        return view('admin.packageType')->with('packages',$packages);
+        return view('admin.packageType')->with('packages', $packages);
     }
 
     /**
@@ -27,7 +25,7 @@ class PackageTypeController extends Controller
      */
     public function create()
     {
-         return view('admin.addPackage');
+        return view('admin.addPackage');
     }
 
     /**
@@ -46,7 +44,7 @@ class PackageTypeController extends Controller
         $packageType->save();
 
         // return redirect()->route('adminn/packagetype');
-        return redirect()->route('packages');
+        return redirect()->route('adminn.packagetype.index');
     }
 
     /**
@@ -68,11 +66,11 @@ class PackageTypeController extends Controller
      */
     public function edit($id)
     {
-    //
+        //
         $singlePackage = \App\PackageType::find($id);
-    //
+        //
 
-        return view("admin.editPackage")->with("singlePackage",$singlePackage);
+        return view("admin.editPackage")->with("singlePackage", $singlePackage);
     }
 
     /**
@@ -86,10 +84,10 @@ class PackageTypeController extends Controller
     {
         $singlePackage = \App\PackageType::find($id);
         $singlePackage->p_name = $request->input("packageType");
-        $singlePackage->p_desc =  $request->input("packageDesc");
+        $singlePackage->p_desc = $request->input("packageDesc");
 
         $singlePackage->save();
-        return redirect()->route('packages');
+        return redirect()->route('adminn.packagetype.index');
 
     }
 
@@ -104,7 +102,7 @@ class PackageTypeController extends Controller
         $singlePackage = \App\PackageType::find($id);
         $singlePackage->delete();
 
-        return redirect()->route('packages');
+        return redirect()->route('adminn.packagetype.index');
 
     }
 }

@@ -7,18 +7,19 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Deshataan Admin Pannel</title>
-        <!-- Favicon icon -->
+    <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin/assets/images/favicon.png')}}">
     <link href="{{asset('admin/css/style.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
 <body>
-    
+
     <!--*******************
         Preloader start
     ********************-->
@@ -33,7 +34,7 @@
         Preloader end
     ********************-->
 
-    
+
     <!--**********************************
         Main wrapper start
     ***********************************-->
@@ -43,10 +44,11 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <div class="brand-logo"><a href="index.html"><b><img src="../../assets/images/logo.png" alt=""> </b><span class="brand-title"><img src="../../assets/images/logo-text.png" alt=""></span></a>
+            <div class="brand-logo"><a href="index.html"><b><img src="../../assets/images/logo.png" alt=""> </b><span
+                        class="brand-title"><img src="../../assets/images/logo-text.png" alt=""></span></a>
             </div>
             <div class="nav-control">
-                <div class="hamburger"><span class="line"></span>  <span class="line"></span>  <span class="line"></span>
+                <div class="hamburger"><span class="line"></span> <span class="line"></span> <span class="line"></span>
                 </div>
             </div>
         </div>
@@ -57,18 +59,20 @@
         <!--**********************************
             Header start
         ***********************************-->
-        <div class="header">    
+        <div class="header">
             <div class="header-content">
                 <div class="header-left">
                     <ul>
-                        <li class="icons position-relative"><a href="javascript:void(0)"><i class="icon-magnifier f-s-16"></i></a>
+                        <li class="icons position-relative"><a href="javascript:void(0)"><i
+                                    class="icon-magnifier f-s-16"></i></a>
                             <div class="drop-down animated bounceInDown">
                                 <div class="dropdown-content-body">
                                     <div class="header-search" id="header-search">
                                         <form action="#">
                                             <div class="input-group">
                                                 <input type="text" class="form-control" placeholder="Search">
-                                                <div class="input-group-append"><span class="input-group-text"><i class="icon-magnifier"></i></span>
+                                                <div class="input-group-append"><span class="input-group-text"><i
+                                                            class="icon-magnifier"></i></span>
                                                 </div>
                                             </div>
                                         </form>
@@ -87,7 +91,7 @@
                             </a>
                             <div class="drop-down animated bounceInDown">
                                 <div class="dropdown-content-heading">
-                                    <span class="pull-left">Messages</span>  
+                                    <span class="pull-left">Messages</span>
                                     <a href="javascript:void()" class="pull-right text-white">View All</a>
                                     <div class="clearfix"></div>
                                 </div>
@@ -95,37 +99,49 @@
                                     <ul>
                                         <li class="notification-unread">
                                             <a href="javascript:void()">
-                                                <img class="pull-left mr-3 avatar-img" src="../../assets/images/avatar/1.jpg" alt="">
+                                                <img class="pull-left mr-3 avatar-img"
+                                                    src="../../assets/images/avatar/1.jpg" alt="">
                                                 <div class="notification-content">
                                                     <div class="notification-heading">Druid Wensleydale</div>
-                                                    <div class="notification-text">A wonderful serenit has take possession</div><small class="notification-timestamp">08 Hours ago</small>
+                                                    <div class="notification-text">A wonderful serenit has take
+                                                        possession</div><small class="notification-timestamp">08 Hours
+                                                        ago</small>
                                                 </div>
                                             </a><span class="notify-close"><i class="ti-close"></i></span>
                                         </li>
                                         <li class="notification-unread">
                                             <a href="javascript:void()">
-                                                <img class="pull-left mr-3 avatar-img" src="../../assets/images/avatar/2.jpg" alt="">
+                                                <img class="pull-left mr-3 avatar-img"
+                                                    src="../../assets/images/avatar/2.jpg" alt="">
                                                 <div class="notification-content">
                                                     <div class="notification-heading">Fig Nelson</div>
-                                                    <div class="notification-text">A wonderful serenit has take possession</div><small class="notification-timestamp">08 Hours ago</small>
+                                                    <div class="notification-text">A wonderful serenit has take
+                                                        possession</div><small class="notification-timestamp">08 Hours
+                                                        ago</small>
                                                 </div>
                                             </a><span class="notify-close"><i class="ti-close"></i></span>
                                         </li>
                                         <li>
                                             <a href="javascript:void()">
-                                                <img class="pull-left mr-3 avatar-img" src="../../assets/images/avatar/3.jpg" alt="">
+                                                <img class="pull-left mr-3 avatar-img"
+                                                    src="../../assets/images/avatar/3.jpg" alt="">
                                                 <div class="notification-content">
                                                     <div class="notification-heading">Bailey Wonger</div>
-                                                    <div class="notification-text">A wonderful serenit has take possession</div><small class="notification-timestamp">08 Hours ago</small>
+                                                    <div class="notification-text">A wonderful serenit has take
+                                                        possession</div><small class="notification-timestamp">08 Hours
+                                                        ago</small>
                                                 </div>
                                             </a><span class="notify-close"><i class="ti-close"></i></span>
                                         </li>
                                         <li>
                                             <a href="javascript:void()">
-                                                <img class="pull-left mr-3 avatar-img" src="../../assets/images/avatar/4.jpg" alt="">
+                                                <img class="pull-left mr-3 avatar-img"
+                                                    src="../../assets/images/avatar/4.jpg" alt="">
                                                 <div class="notification-content">
                                                     <div class="notification-heading">Bodrum Salvador</div>
-                                                    <div class="notification-text">A wonderful serenit has take possession</div><small class="notification-timestamp">08 Hours ago</small>
+                                                    <div class="notification-text">A wonderful serenit has take
+                                                        possession</div><small class="notification-timestamp">08 Hours
+                                                        ago</small>
                                                 </div>
                                             </a><span class="notify-close"><i class="ti-close"></i></span>
                                         </li>
@@ -143,29 +159,60 @@
                                     <ul>
                                         <li>
                                             <a href="javascript:void()">
-                                                <span class="mr-3 avatar-icon bg-success-lighten-2"><i class="fa fa-check"></i></span>
+                                                <span class="mr-3 avatar-icon bg-success-lighten-2"><i
+                                                        class="fa fa-check"></i></span>
                                                 <div class="notification-content">
                                                     <div class="notification-heading">Druid Wensleydale</div>
-                                                    <span class="notification-text">A wonderful serenit of my entire soul.</span> 
+                                                    <span class="notification-text">A wonderful serenit of my entire
+                                                        soul.</span>
                                                     <small class="notification-timestamp">20 May 2018, 15:32</small>
                                                 </div>
                                             </a>
                                             <span class="notify-close"><i class="ti-close"></i>
-                                                </span>
+                                            </span>
                                         </li>
-                                        <li><a href="javascript:void()"><span class="mr-3 avatar-icon bg-danger-lighten-2"><i class="fa fa-close"></i></span><div class="notification-content"><div class="notification-heading">Inverness McKenzie</div><span class="notification-text">A wonderful serenit of my entire soul.</span> <small class="notification-timestamp">20 May 2018, 15:32</small></div></a>
+                                        <li><a href="javascript:void()"><span
+                                                    class="mr-3 avatar-icon bg-danger-lighten-2"><i
+                                                        class="fa fa-close"></i></span>
+                                                <div class="notification-content">
+                                                    <div class="notification-heading">Inverness McKenzie</div><span
+                                                        class="notification-text">A wonderful serenit of my entire
+                                                        soul.</span> <small class="notification-timestamp">20 May 2018,
+                                                        15:32</small>
+                                                </div>
+                                            </a>
                                             <span class="notify-close"><i class="ti-close"></i>
-                                                </span>
+                                            </span>
                                         </li>
-                                        <li><a href="javascript:void()"><span class="mr-3 avatar-icon bg-success-lighten-2"><i class="fa fa-check"></i></span><div class="notification-content"><div class="notification-heading">McKenzie Inverness</div><span class="notification-text">A wonderful serenit of my entire soul.</span> <small class="notification-timestamp">20 May 2018, 15:32</small></div></a>
+                                        <li><a href="javascript:void()"><span
+                                                    class="mr-3 avatar-icon bg-success-lighten-2"><i
+                                                        class="fa fa-check"></i></span>
+                                                <div class="notification-content">
+                                                    <div class="notification-heading">McKenzie Inverness</div><span
+                                                        class="notification-text">A wonderful serenit of my entire
+                                                        soul.</span> <small class="notification-timestamp">20 May 2018,
+                                                        15:32</small>
+                                                </div>
+                                            </a>
                                             <span class="notify-close"><i class="ti-close"></i>
-                                                </span>
+                                            </span>
                                         </li>
-                                        <li><a href="javascript:void()"><span class="mr-3 avatar-icon bg-danger-lighten-2"><i class="fa fa-close"></i></span><div class="notification-content"><div class="notification-heading">Inverness McKenzie</div><span class="notification-text">A wonderful serenit of my entire soul.</span> <small class="notification-timestamp">20 May 2018, 15:32</small></div></a>
+                                        <li><a href="javascript:void()"><span
+                                                    class="mr-3 avatar-icon bg-danger-lighten-2"><i
+                                                        class="fa fa-close"></i></span>
+                                                <div class="notification-content">
+                                                    <div class="notification-heading">Inverness McKenzie</div><span
+                                                        class="notification-text">A wonderful serenit of my entire
+                                                        soul.</span> <small class="notification-timestamp">20 May 2018,
+                                                        15:32</small>
+                                                </div>
+                                            </a>
                                             <span class="notify-close"><i class="ti-close"></i>
-                                                </span>
+                                            </span>
                                         </li>
-                                        <li class="text-left"><a href="javascript:void()" class="more-link">Show All Notifications</a>  <span class="pull-right"><i class="fa fa-angle-right"></i></span>
+                                        <li class="text-left"><a href="javascript:void()" class="more-link">Show All
+                                                Notifications</a> <span class="pull-right"><i
+                                                    class="fa fa-angle-right"></i></span>
                                         </li>
                                     </ul>
                                 </div>
@@ -173,22 +220,29 @@
                         </li>
                         <li class="icons">
                             <a href="javascript:void(0)" class="log-user">
-                                <img src="../../assets/images/avatar/1.jpg" alt=""> <span>George Martin</span>  <i class="fa fa-caret-down f-s-14" aria-hidden="true"></i>
+                                <img src="../../assets/images/avatar/1.jpg" alt=""> <span>George Martin</span> <i
+                                    class="fa fa-caret-down f-s-14" aria-hidden="true"></i>
                             </a>
                             <div class="drop-down dropdown-profile animated bounceInDown">
                                 <div class="dropdown-content-body">
                                     <ul>
-                                        <li><a href="javascript:void()"><i class="icon-user"></i> <span>My Profile</span></a>
+                                        <li><a href="javascript:void()"><i class="icon-user"></i> <span>My
+                                                    Profile</span></a>
                                         </li>
-                                        <li><a href="javascript:void()"><i class="icon-wallet"></i> <span>My Wallet</span></a>
+                                        <li><a href="javascript:void()"><i class="icon-wallet"></i> <span>My
+                                                    Wallet</span></a>
                                         </li>
-                                        <li><a href="javascript:void()"><i class="icon-envelope"></i> <span>Inbox</span></a>
+                                        <li><a href="javascript:void()"><i class="icon-envelope"></i>
+                                                <span>Inbox</span></a>
                                         </li>
-                                        <li><a href="javascript:void()"><i class="fa fa-cog"></i> <span>Setting</span></a>
+                                        <li><a href="javascript:void()"><i class="fa fa-cog"></i>
+                                                <span>Setting</span></a>
                                         </li>
-                                        <li><a href="javascript:void()"><i class="icon-lock"></i> <span>Lock Screen</span></a>
+                                        <li><a href="javascript:void()"><i class="icon-lock"></i> <span>Lock
+                                                    Screen</span></a>
                                         </li>
-                                        <li><a href="javascript:void()"><i class="icon-power"></i> <span>Logout</span></a>
+                                        <li><a href="javascript:void()"><i class="icon-power"></i>
+                                                <span>Logout</span></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -205,8 +259,8 @@
         @include('admin.templates.sidebar')
 
         @yield('content')
-        
-        
+
+
         <!--**********************************
             Footer start
         {{-- ***********************************-->
@@ -219,7 +273,7 @@
             Footer end
         ***********************************-->
 
-        
+
         <!--**********************************
             Right sidebar start
         ***********************************-->
@@ -229,15 +283,18 @@
             </a>
             <div class="sidebar-right-inner">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-item"><a class="nav-link active show" data-toggle="tab" href="#home8"><span><i class="mdi mdi-wrench" aria-hidden="true"></i>
-                    </span></a>
+                    <li class="nav-item"><a class="nav-link active show" data-toggle="tab" href="#home8"><span><i
+                                    class="mdi mdi-wrench" aria-hidden="true"></i>
+                            </span></a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#profile8"><span><i class="mdi mdi-reload" aria-hidden="true"></i>
-                    </span></a>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#profile8"><span><i
+                                    class="mdi mdi-reload" aria-hidden="true"></i>
+                            </span></a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#messages8"><span><i class="mdi mdi-message-reply-text" aria-hidden="true"></i>
-                    </span></a>
-                    <!-- </li><li class="nav-item"><a class="nav-link" data-toggle="tab" href="#messages9"><span><i class="fa fa-cog"></i></span></a>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#messages8"><span><i
+                                    class="mdi mdi-message-reply-text" aria-hidden="true"></i>
+                            </span></a>
+                        <!-- </li><li class="nav-item"><a class="nav-link" data-toggle="tab" href="#messages9"><span><i class="fa fa-cog"></i></span></a>
                     </li> -->
                 </ul>
 
@@ -301,43 +358,53 @@
                                 <p>Navigation Header</p>
                                 <div>
                                     <span>
-                                        <input type="radio" name="navigation_header" value="color_1" class="filled-in chk-col-primary" id="nav_header_bg_1">
+                                        <input type="radio" name="navigation_header" value="color_1"
+                                            class="filled-in chk-col-primary" id="nav_header_bg_1">
                                         <label for="nav_header_bg_1"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="navigation_header" value="color_2" class="filled-in chk-col-primary" id="nav_header_bg_2">
+                                        <input type="radio" name="navigation_header" value="color_2"
+                                            class="filled-in chk-col-primary" id="nav_header_bg_2">
                                         <label for="nav_header_bg_2"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="navigation_header" value="color_3" class="filled-in chk-col-primary" id="nav_header_bg_3">
+                                        <input type="radio" name="navigation_header" value="color_3"
+                                            class="filled-in chk-col-primary" id="nav_header_bg_3">
                                         <label for="nav_header_bg_3"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="navigation_header" value="color_4" class="filled-in chk-col-primary" id="nav_header_bg_4">
+                                        <input type="radio" name="navigation_header" value="color_4"
+                                            class="filled-in chk-col-primary" id="nav_header_bg_4">
                                         <label for="nav_header_bg_4"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="navigation_header" value="color_5" class="filled-in chk-col-primary" id="nav_header_bg_5">
+                                        <input type="radio" name="navigation_header" value="color_5"
+                                            class="filled-in chk-col-primary" id="nav_header_bg_5">
                                         <label for="nav_header_bg_5"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="navigation_header" value="color_6" class="filled-in chk-col-primary" id="nav_header_bg_6">
+                                        <input type="radio" name="navigation_header" value="color_6"
+                                            class="filled-in chk-col-primary" id="nav_header_bg_6">
                                         <label for="nav_header_bg_6"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="navigation_header" value="color_7" class="filled-in chk-col-primary" id="nav_header_bg_7">
+                                        <input type="radio" name="navigation_header" value="color_7"
+                                            class="filled-in chk-col-primary" id="nav_header_bg_7">
                                         <label for="nav_header_bg_7"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="navigation_header" value="color_8" class="filled-in chk-col-primary" id="nav_header_bg_8">
+                                        <input type="radio" name="navigation_header" value="color_8"
+                                            class="filled-in chk-col-primary" id="nav_header_bg_8">
                                         <label for="nav_header_bg_8"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="navigation_header" value="color_9" class="filled-in chk-col-primary" id="nav_header_bg_9">
+                                        <input type="radio" name="navigation_header" value="color_9"
+                                            class="filled-in chk-col-primary" id="nav_header_bg_9">
                                         <label for="nav_header_bg_9"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="navigation_header" value="color_10" class="filled-in chk-col-primary" id="nav_header_bg_10">
+                                        <input type="radio" name="navigation_header" value="color_10"
+                                            class="filled-in chk-col-primary" id="nav_header_bg_10">
                                         <label for="nav_header_bg_10"></label>
                                     </span>
                                 </div>
@@ -346,43 +413,53 @@
                                 <p>Header</p>
                                 <div>
                                     <span>
-                                        <input type="radio" name="header_bg" value="color_1" class="filled-in chk-col-primary" id="header_bg_1">
+                                        <input type="radio" name="header_bg" value="color_1"
+                                            class="filled-in chk-col-primary" id="header_bg_1">
                                         <label for="header_bg_1"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="header_bg" value="color_2" class="filled-in chk-col-primary" id="header_bg_2">
+                                        <input type="radio" name="header_bg" value="color_2"
+                                            class="filled-in chk-col-primary" id="header_bg_2">
                                         <label for="header_bg_2"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="header_bg" value="color_3" class="filled-in chk-col-primary" id="header_bg_3">
+                                        <input type="radio" name="header_bg" value="color_3"
+                                            class="filled-in chk-col-primary" id="header_bg_3">
                                         <label for="header_bg_3"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="header_bg" value="color_4" class="filled-in chk-col-primary" id="header_bg_4">
+                                        <input type="radio" name="header_bg" value="color_4"
+                                            class="filled-in chk-col-primary" id="header_bg_4">
                                         <label for="header_bg_4"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="header_bg" value="color_5" class="filled-in chk-col-primary" id="header_bg_5">
+                                        <input type="radio" name="header_bg" value="color_5"
+                                            class="filled-in chk-col-primary" id="header_bg_5">
                                         <label for="header_bg_5"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="header_bg" value="color_6" class="filled-in chk-col-primary" id="header_bg_6">
+                                        <input type="radio" name="header_bg" value="color_6"
+                                            class="filled-in chk-col-primary" id="header_bg_6">
                                         <label for="header_bg_6"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="header_bg" value="color_7" class="filled-in chk-col-primary" id="header_bg_7">
+                                        <input type="radio" name="header_bg" value="color_7"
+                                            class="filled-in chk-col-primary" id="header_bg_7">
                                         <label for="header_bg_7"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="header_bg" value="color_8" class="filled-in chk-col-primary" id="header_bg_8">
+                                        <input type="radio" name="header_bg" value="color_8"
+                                            class="filled-in chk-col-primary" id="header_bg_8">
                                         <label for="header_bg_8"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="header_bg" value="color_9" class="filled-in chk-col-primary" id="header_bg_9">
+                                        <input type="radio" name="header_bg" value="color_9"
+                                            class="filled-in chk-col-primary" id="header_bg_9">
                                         <label for="header_bg_9"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="header_bg" value="color_10" class="filled-in chk-col-primary" id="header_bg_10">
+                                        <input type="radio" name="header_bg" value="color_10"
+                                            class="filled-in chk-col-primary" id="header_bg_10">
                                         <label for="header_bg_10"></label>
                                     </span>
                                 </div>
@@ -391,43 +468,53 @@
                                 <p>Sidebar</p>
                                 <div>
                                     <span>
-                                        <input type="radio" name="sidebar_bg" value="color_1" class="filled-in chk-col-primary" id="sidebar_bg_1">
+                                        <input type="radio" name="sidebar_bg" value="color_1"
+                                            class="filled-in chk-col-primary" id="sidebar_bg_1">
                                         <label for="sidebar_bg_1"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="sidebar_bg" value="color_2" class="filled-in chk-col-primary" id="sidebar_bg_2">
+                                        <input type="radio" name="sidebar_bg" value="color_2"
+                                            class="filled-in chk-col-primary" id="sidebar_bg_2">
                                         <label for="sidebar_bg_2"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="sidebar_bg" value="color_3" class="filled-in chk-col-primary" id="sidebar_bg_3">
+                                        <input type="radio" name="sidebar_bg" value="color_3"
+                                            class="filled-in chk-col-primary" id="sidebar_bg_3">
                                         <label for="sidebar_bg_3"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="sidebar_bg" value="color_4" class="filled-in chk-col-primary" id="sidebar_bg_4">
+                                        <input type="radio" name="sidebar_bg" value="color_4"
+                                            class="filled-in chk-col-primary" id="sidebar_bg_4">
                                         <label for="sidebar_bg_4"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="sidebar_bg" value="color_5" class="filled-in chk-col-primary" id="sidebar_bg_5">
+                                        <input type="radio" name="sidebar_bg" value="color_5"
+                                            class="filled-in chk-col-primary" id="sidebar_bg_5">
                                         <label for="sidebar_bg_5"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="sidebar_bg" value="color_6" class="filled-in chk-col-primary" id="sidebar_bg_6">
+                                        <input type="radio" name="sidebar_bg" value="color_6"
+                                            class="filled-in chk-col-primary" id="sidebar_bg_6">
                                         <label for="sidebar_bg_6"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="sidebar_bg" value="color_7" class="filled-in chk-col-primary" id="sidebar_bg_7">
+                                        <input type="radio" name="sidebar_bg" value="color_7"
+                                            class="filled-in chk-col-primary" id="sidebar_bg_7">
                                         <label for="sidebar_bg_7"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="sidebar_bg" value="color_8" class="filled-in chk-col-primary" id="sidebar_bg_8">
+                                        <input type="radio" name="sidebar_bg" value="color_8"
+                                            class="filled-in chk-col-primary" id="sidebar_bg_8">
                                         <label for="sidebar_bg_8"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="sidebar_bg" value="color_9" class="filled-in chk-col-primary" id="sidebar_bg_9">
+                                        <input type="radio" name="sidebar_bg" value="color_9"
+                                            class="filled-in chk-col-primary" id="sidebar_bg_9">
                                         <label for="sidebar_bg_9"></label>
                                     </span>
                                     <span>
-                                        <input type="radio" name="sidebar_bg" value="color_10" class="filled-in chk-col-primary" id="sidebar_bg_10">
+                                        <input type="radio" name="sidebar_bg" value="color_10"
+                                            class="filled-in chk-col-primary" id="sidebar_bg_10">
                                         <label for="sidebar_bg_10"></label>
                                     </span>
                                 </div>
@@ -445,7 +532,9 @@
                                             <div class="media">
                                                 <div class="media-body">
                                                     <p>After 3 hours</p>
-                                                    <h6 class="mt-0 mb-0"><a href="javascript:void()" class="text-primary">Space X</a> is going to launch a Rocket</h6>
+                                                    <h6 class="mt-0 mb-0"><a href="javascript:void()"
+                                                            class="text-primary">Space X</a> is going to launch a Rocket
+                                                    </h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -456,7 +545,8 @@
                                             <div class="media">
                                                 <div class="media-body">
                                                     <p>5 minites ago</p>
-                                                    <h6 class="mt-0 mb-0"><a href="javascript:void()" class="text-primary">Niloy</a> commented on your photo</h6>
+                                                    <h6 class="mt-0 mb-0"><a href="javascript:void()"
+                                                            class="text-primary">Niloy</a> commented on your photo</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -467,7 +557,8 @@
                                             <div class="media">
                                                 <div class="media-body">
                                                     <p>1 hour ago</p>
-                                                    <h6 class="mt-0 mb-0"><a href="javascript:void()" class="text-primary">Bill Gates</a> likes your photo</h6>
+                                                    <h6 class="mt-0 mb-0"><a href="javascript:void()"
+                                                            class="text-primary">Bill Gates</a> likes your photo</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -478,7 +569,10 @@
                                             <div class="media">
                                                 <div class="media-body">
                                                     <p>2 hours ago</p>
-                                                    <h6 class="mt-0 mb-0"><a href="javascript:void()" class="text-primary">You</a> reacted on <a href="javascript:void()" class="text-primary">Shelly</a>'s photo</h6>
+                                                    <h6 class="mt-0 mb-0"><a href="javascript:void()"
+                                                            class="text-primary">You</a> reacted on <a
+                                                            href="javascript:void()" class="text-primary">Shelly</a>'s
+                                                        photo</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -489,7 +583,9 @@
                                             <div class="media">
                                                 <div class="media-body">
                                                     <p>2 days ago</p>
-                                                    <h6 class="mt-0 mb-0"><a href="" class="text-primary">Elon Mask</a> invited you on an <a href="javascript:void()" class="text-primary">Event</a></h6>
+                                                    <h6 class="mt-0 mb-0"><a href="" class="text-primary">Elon Mask</a>
+                                                        invited you on an <a href="javascript:void()"
+                                                            class="text-primary">Event</a></h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -500,7 +596,9 @@
                                             <div class="media">
                                                 <div class="media-body">
                                                     <p>3 days ago</p>
-                                                    <h6 class="mt-0 mb-0"><a href="" class="text-primary">Mark Jukarbarg</a> invited you on <a href="javascript:void()" class="text-primary">Facebook</a></h6>
+                                                    <h6 class="mt-0 mb-0"><a href="" class="text-primary">Mark
+                                                            Jukarbarg</a> invited you on <a href="javascript:void()"
+                                                            class="text-primary">Facebook</a></h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -514,28 +612,32 @@
                             <div class="progress-wrapper">
                                 <h6 class="mb-3">Light Weight Lifting</h6>
                                 <div class="progress mb-5">
-                                    <div class="progress-bar bg-warning" style="width: 80%; height:6px;" role="progressbar"><span class="sr-only">60% Complete</span>
+                                    <div class="progress-bar bg-warning" style="width: 80%; height:6px;"
+                                        role="progressbar"><span class="sr-only">60% Complete</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="progress-wrapper">
                                 <h6 class="mb-3">Push Ups</h6>
                                 <div class="progress mb-5">
-                                    <div class="progress-bar bg-danger" style="width: 60%; height:6px;" role="progressbar"><span class="sr-only">60% Complete</span>
+                                    <div class="progress-bar bg-danger" style="width: 60%; height:6px;"
+                                        role="progressbar"><span class="sr-only">60% Complete</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="progress-wrapper">
                                 <h6 class="mb-3">Step Aerobics</h6>
                                 <div class="progress mb-5">
-                                    <div class="progress-bar bg-dpink" style="width: 70%; height:6px;" role="progressbar"><span class="sr-only">60% Complete</span>
+                                    <div class="progress-bar bg-dpink" style="width: 70%; height:6px;"
+                                        role="progressbar"><span class="sr-only">60% Complete</span>
                                     </div>
                                 </div>
-                            </div>  
+                            </div>
                             <div class="progress-wrapper">
                                 <h6 class="mb-3">Down Aerobics</h6>
                                 <div class="progress mb-5">
-                                    <div class="progress-bar bg-lgreen" style="width: 90%; height:6px;" role="progressbar"><span class="sr-only">60% Complete</span>
+                                    <div class="progress-bar bg-lgreen" style="width: 90%; height:6px;"
+                                        role="progressbar"><span class="sr-only">60% Complete</span>
                                     </div>
                                 </div>
                             </div>
@@ -791,7 +893,7 @@
     <script src="{{asset('admin/js/settings.js')}}"></script>
     <script src="{{asset('admin/js/gleek.js')}}"></script>
     <script src="{{asset('admin/js/styleSwitcher.js')}}"></script>
-    
+
     <!-- Chartjs chart -->
     {{-- <script src="{{asset('admin/assets/plugins/chart.js/Chart.bundle.min.js')}}"></script>
     <script src="{{asset('admin/assets/plugins/d3v3/index.js')}}"></script>
@@ -809,7 +911,7 @@
 
     <script>
         function del(){
-            
+
             alert("Are you sure want to delete?");
             // return true;
         }
@@ -822,14 +924,15 @@
 
 
 
-<script>
+    <script>
         //close the alert after 3 seconds.
             $(document).ready(function(){
                  setTimeout(function() {
                      $(".alert").alert('close');
                  }, 3000);
             });
-</script>`
+    </script>`
 
 </body>
+
 </html>
