@@ -29,7 +29,7 @@
                     <i class="mdi mdi-page-layout-body"></i><span class="nav-text">Hotels</span><span
                         class="badge badge-success nav-badge">11</span></a>
                 <ul aria-expanded="false">
-                    <li><a href="{{url("/adminn/hotels-list")}}">Add Hotels</a></li>
+                    <li><a href="{{url("/adminn/hotels")}}">Add Hotels</a></li>
                     <li><a href="{{url("adminn/hotels-photo-gallery")}}">Add Hotels Photo Gallery</a></li>
                     <li><a href="{{url("/adminn/hotel-special-features")}}">Add Special Features</a></li>
                     <li><a href="{{url("/adminn/hotel-room-availabilities")}}">Add Room & Availabilities</a></li>
