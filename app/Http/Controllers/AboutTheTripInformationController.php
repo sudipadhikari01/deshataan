@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\PackageType;
 use App\IndividualPackage;
+use App\PackageType;
 use App\TripInformation;
+use Illuminate\Http\Request;
 
 class AboutTheTripInformationController extends Controller
 {
@@ -18,7 +18,7 @@ class AboutTheTripInformationController extends Controller
     {
         $packages = PackageType::all();
         $tripInformations = TripInformation::all();
-        return view('admin.trip-information')->with(['tripInformations'=>$tripInformations,'packages'=>$packages]);
+        return view('admin.trip-information')->with(['tripInformations' => $tripInformations, 'packages' => $packages]);
     }
 
     /**
@@ -29,8 +29,8 @@ class AboutTheTripInformationController extends Controller
     public function create()
     {
         $packages = PackageType::all();
-        $individualPkgs =IndividualPackage::all();
-        return view('admin.addTripInformation')->with(['packages'=>$packages,'individualPkgs'=>$individualPkgs]);
+        $individualPkgs = IndividualPackage::all();
+        return view('admin.addTripInformation')->with(['packages' => $packages, 'individualPkgs' => $individualPkgs]);
     }
 
     /**
@@ -49,7 +49,7 @@ class AboutTheTripInformationController extends Controller
         $tripInformation->ip_id = $request->input('individualPackage');
 
         $tripInformation->save();
-        return redirect()->route('trip-information');
+        return redirect()->route('adminn.trip-info.index');
 
     }
 
@@ -74,8 +74,8 @@ class AboutTheTripInformationController extends Controller
     {
         $itripInformation = TripInformation::find($id);
         $packages = PackageType::all();
-        $individualPkgs =IndividualPackage::all();
-        return view('admin.editTripInformation')->with(['itripInformation'=>$itripInformation,'packages'=>$packages,'individualPkgs'=>$individualPkgs]);
+        $individualPkgs = IndividualPackage::all();
+        return view('admin.editTripInformation')->with(['itripInformation' => $itripInformation, 'packages' => $packages, 'individualPkgs' => $individualPkgs]);
 
     }
 
@@ -88,7 +88,7 @@ class AboutTheTripInformationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $tripInformation =  TripInformation::find($id);
+        $tripInformation = TripInformation::find($id);
         $tripInformation->arrival_date = $request->input('arrivalDate');
         $tripInformation->departure_date = $request->input('departureDate');
         $tripInformation->inclusions = $request->input('inclusions');
@@ -96,7 +96,7 @@ class AboutTheTripInformationController extends Controller
         $tripInformation->ip_id = $request->input('individualPackage');
 
         $tripInformation->save();
-        return redirect()->route('trip-information');
+        return redirect()->route('adminn.trip-info.index');
     }
 
     /**
@@ -110,7 +110,7 @@ class AboutTheTripInformationController extends Controller
         $itripInformation = TripInformation::find($id);
         $itripInformation->delete();
 
-        return redirect()->route('trip-information');
+        return redirect()->route('adminn.trip-info.index');
 
     }
 }
