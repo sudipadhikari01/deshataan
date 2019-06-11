@@ -155,69 +155,6 @@ Route::get('adminn/booking-by-email','BookingByEmailController@create')->name('a
 Route::get("/adminn/deleteBookingByEmail/{id}",'BookingByEmailController@destroy');
 
 
-<<<<<<< HEAD
-
-
-
-
-
-=======
-// hotels admin section
-
-Route::get('/adminn/hotels-list','HotelsController@index')->name('hotels-list');
-// add hotels
-Route::get('/adminn/addHotels','HotelsController@create');
-Route::post('/adminn/addHotels','HotelsController@store');
-
-// edit hotels
-Route::get('/adminn/editHotels/{id}','HotelsController@edit');
-Route::post('/adminn/editHotels/{id}','HotelsController@update');
-
-// delete hotel
-Route::get('/adminn/deleteHotels/{id}','HotelsController@destroy');
-
-
-// hotel photo  gallery section
-Route::get('/adminn/hotels-photo-gallery','HotelsPhotoGalleryController@index')->name('hoetels-photo');
-// add hotel image
-Route::get('/adminn/addHotelsPhoto','HotelsPhotoGalleryController@create');
-Route::post('/adminn/addHotelsPhoto','HotelsPhotoGalleryController@store');
-
-// edit hotels photo
-Route::get('/adminn/editHotelsPhoto/{id}','HotelsPhotoGalleryController@edit');
-Route::post('/adminn/editHotelsPhoto/{id}','HotelsPhotoGalleryController@update');
-
-// delete hotels photo
-Route::get('/adminn/deleteHotelsPhoto/{id}','HotelsPhotoGalleryController@destroy');
-
-// hotel special features section started
-Route::get('/adminn/hotel-special-features','HotelSpecialFeaturesController@index')->name('hotel-special-features');
-// add hotels special features
-Route::get('/adminn/addHotelsFeatures','HotelSpecialFeaturesController@create');
-Route::post('/adminn/addHotelsFeatures','HotelSpecialFeaturesController@store');
-
-// edit hotels features
-Route::get("/adminn/editHotelsFeatures/{id}",'HotelSpecialFeaturesController@edit');
-Route::post("/adminn/editHotelsFeatures/{id}",'HotelSpecialFeaturesController@update');
-
-// delete hotels special features
-Route::get("/adminn/deleteHotelsFeatures/{id}",'HotelSpecialFeaturesController@destroy');
-
-// hotel room availabilities
-Route::get('/adminn/hotel-room-availabilities','HotelRoomAvailabilitiesController@index')->name('hotel-room-availabilities');
-
-// add hotel room availabilities
-Route::get('/adminn/addHotelRoomAvai','HotelRoomAvailabilitiesController@create');
-Route::post('/adminn/addHotelRoomAvai','HotelRoomAvailabilitiesController@store');
-
-// edit hotel room availabilities
-Route::get("/adminn/editHotelRoomAvai/{id}",'HotelRoomAvailabilitiesController@edit');
-Route::post("/adminn/editHotelRoomAvai/{id}",'HotelRoomAvailabilitiesController@update');
-
-// delete hotel room availabilities
-Route::get("/adminn/deleteHotelRoomAvai/{id}",'HotelRoomAvailabilitiesController@destroy');
-
->>>>>>> 3fcdd9d59e86119bc7ef330207a1ae3623d0a3e8
 // front end part(homepage part)
 Route::get('/family-package',function(){
     return view('family-package');
