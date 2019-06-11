@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\PackageType;
 use App\IndividualPackage;
-use App\TripInformation;
 use App\Itinerary;
+use App\PackageType;
+use Illuminate\Http\Request;
 
 class ItineraryController extends Controller
 {
@@ -17,10 +16,9 @@ class ItineraryController extends Controller
      */
     public function index()
     {
-        
-     
+
         $itinerarys = Itinerary::all();
-        return view('admin.itinerary')->with(['itinerarys'=>$itinerarys]);
+        return view('admin.itinerary')->with(['itinerarys' => $itinerarys]);
     }
 
     /**
@@ -31,8 +29,8 @@ class ItineraryController extends Controller
     public function create()
     {
         $packages = PackageType::all();
-        $individualPkgs =IndividualPackage::all();
-        return view('admin.addItinerary')->with(['packages'=>$packages,'individualPkgs'=>$individualPkgs]);
+        $individualPkgs = IndividualPackage::all();
+        return view('admin.addItinerary')->with(['packages' => $packages, 'individualPkgs' => $individualPkgs]);
     }
 
     /**
@@ -51,7 +49,7 @@ class ItineraryController extends Controller
         $itinerarys->ip_id = $request->input('individualPackage');
 
         $itinerarys->save();
-        return redirect()->route('itinerary');
+        return redirect()->route('adminn.itinerary.index');
     }
 
     /**
@@ -62,8 +60,6 @@ class ItineraryController extends Controller
      */
     public function show($id)
     {
-       
-        
 
     }
 
@@ -77,8 +73,8 @@ class ItineraryController extends Controller
     {
         $itinerary = Itinerary::find($id);
         $packages = PackageType::all();
-        $individualPkgs =IndividualPackage::all();
-         return view('admin.editItinerary')->with(['packages'=>$packages,'individualPkgs'=>$individualPkgs,'itinerary'=>$itinerary]);
+        $individualPkgs = IndividualPackage::all();
+        return view('admin.editItinerary')->with(['packages' => $packages, 'individualPkgs' => $individualPkgs, 'itinerary' => $itinerary]);
     }
 
     /**
@@ -98,7 +94,7 @@ class ItineraryController extends Controller
         $itinerarys->ip_id = $request->input('individualPackage');
 
         $itinerarys->save();
-        return redirect()->route('itinerary');
+        return redirect()->route('adminn.itinerary.index');
     }
 
     /**
@@ -111,6 +107,6 @@ class ItineraryController extends Controller
     {
         $itinerarys = Itinerary::find($id);
         $itinerarys->delete();
-        return redirect()->route('itinerary');
+        return redirect()->route('adminn.itinerary.index');
     }
 }
