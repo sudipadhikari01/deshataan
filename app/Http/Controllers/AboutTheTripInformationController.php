@@ -76,7 +76,7 @@ class AboutTheTripInformationController extends Controller
         $packages = PackageType::all();
         $individualPkgs =IndividualPackage::all();
         return view('admin.editTripInformation')->with(['itripInformation'=>$itripInformation,'packages'=>$packages,'individualPkgs'=>$individualPkgs]);
-        
+
     }
 
     /**

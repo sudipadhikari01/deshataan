@@ -31,9 +31,26 @@ Route::get('/adminn',function(){
 })->name("admin");
 
 
+//admin group routes
+Route::prefix('/admin')
+    ->name('admin.')
+    ->namespace('Admin')
+    ->group(
+        function () {
+
+            //using admin auth
+            Route::namespace('Auth')
+                ->group(
+                    function () {
+
+                    }
+                );
+        }
+    );
+
 Route::get("adminn/packagetype",'PackageTypeController@index')->name('packages');
 
-Route::get('/adminn/addpackage','PackageTypeController@create'); 
+Route::get('/adminn/addpackage','PackageTypeController@create');
 
 Route::post('/adminn/addpackage','PackageTypeController@store');
 Route::get("/adminn/editPackageType/{id}","PackageTypeController@edit");
@@ -96,14 +113,18 @@ Route::get("/individualPkg/{id}",'PagesController@showIndividualPackage');
 
 Route::get('/packageType/{id}','PagesController@showPackageType');
 
-// trip information filed 
+
+
+
+
+// trip information filed
 Route::get('/adminn/trip-information','AboutTheTripInformationController@index')->name('trip-information');
 // add trip information
 Route::get('adminn/addTripInformation','AboutTheTripInformationController@create');
 Route::post('adminn/addTripInformation','AboutTheTripInformationController@store');
 
 
-// edit trip information 
+// edit trip information
 Route::get("adminn/editTripInformation/{id}",'AboutTheTripInformationController@edit');
 Route::post("adminn/editTripInformation/{id}",'AboutTheTripInformationController@update');
 
@@ -134,6 +155,13 @@ Route::get('adminn/booking-by-email','BookingByEmailController@create')->name('a
 Route::get("/adminn/deleteBookingByEmail/{id}",'BookingByEmailController@destroy');
 
 
+<<<<<<< HEAD
+
+
+
+
+
+=======
 // hotels admin section
 
 Route::get('/adminn/hotels-list','HotelsController@index')->name('hotels-list');
@@ -189,6 +217,7 @@ Route::post("/adminn/editHotelRoomAvai/{id}",'HotelRoomAvailabilitiesController@
 // delete hotel room availabilities
 Route::get("/adminn/deleteHotelRoomAvai/{id}",'HotelRoomAvailabilitiesController@destroy');
 
+>>>>>>> 3fcdd9d59e86119bc7ef330207a1ae3623d0a3e8
 // front end part(homepage part)
 Route::get('/family-package',function(){
     return view('family-package');
@@ -205,7 +234,7 @@ Route::get('/tour-details',function(){
 // store the booking information
 Route::post('/booking','BookingByEmailController@store');
 
-// search result 
+// search result
 Route::post('/search-result','SearchController@index');
 
 // packages handler
