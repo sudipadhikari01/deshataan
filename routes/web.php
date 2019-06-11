@@ -37,64 +37,16 @@ Route::prefix('/adminn')
             Route::resource('packagetype', 'PackageTypeController');
             Route::resource('indipackage', 'IndividualPackageController');
             Route::resource('aboutTour', 'AboutTourController');
-            Route::resource('photo', 'PhotoGalleryController');
-
-            //using admin auth
-            // Route::namespace ('Auth')
-            //     ->group(
-            //         function () {
-
-            //         }
-            //     );
+            Route::resource('photo-gallery', 'PhotoGalleryController');
+            Route::resource('trip-info', 'AboutTheTripInformationController');
+            Route::resource('itinerary', 'ItineraryController');
         }
     );
-
-// admin photo gallery
-// Route::get('adminn/photo-gallery', 'PhotoGalleryController@index')->name('photo-gallery');
-
-// // add photo to the gallery
-// Route::get('adminn/addPhoto', 'PhotoGalleryController@create');
-// Route::post('adminn/addPhoto', 'PhotoGalleryController@store');
-
-// // edit photo
-// Route::get("/adminn/editPhoto/{id}", 'PhotoGalleryController@edit');
-// Route::post("/adminn/editPhoto/{id}", 'PhotoGalleryController@update');
-
-// // delete photo
-// Route::get("/adminn/deletePhoto/{id}", 'PhotoGalleryController@destroy');
 
 // test
 Route::get("/individualPkg/{id}", 'PagesController@showIndividualPackage');
 
 Route::get('/packageType/{id}', 'PagesController@showPackageType');
-
-// trip information filed
-Route::get('/adminn/trip-information', 'AboutTheTripInformationController@index')->name('trip-information');
-// add trip information
-Route::get('adminn/addTripInformation', 'AboutTheTripInformationController@create');
-Route::post('adminn/addTripInformation', 'AboutTheTripInformationController@store');
-
-// edit trip information
-Route::get("adminn/editTripInformation/{id}", 'AboutTheTripInformationController@edit');
-Route::post("adminn/editTripInformation/{id}", 'AboutTheTripInformationController@update');
-
-// delete trip information
-Route::get("adminn/deleteTripInformation/{id}", 'AboutTheTripInformationController@destroy');
-
-// itinerary  field
-Route::get('/adminn/itinerary', 'ItineraryController@index')->name('itinerary');
-
-// add itinerary
-Route::get('/adminn/addItinerary', 'ItineraryController@create');
-Route::post('/adminn/addItinerary', 'ItineraryController@store');
-
-// edit itinerary
-Route::get('/adminn/editItinerary/{id}', 'ItineraryController@edit');
-Route::post('/adminn/editItinerary/{id}', 'ItineraryController@update');
-
-// delete itinerary
-
-Route::get('/adminn/deleteItinerary/{id}', 'ItineraryController@destroy');
 
 // booking by email for admin section
 Route::get('adminn/booking-by-email', 'BookingByEmailController@create')->name('adminBookingByEmail');

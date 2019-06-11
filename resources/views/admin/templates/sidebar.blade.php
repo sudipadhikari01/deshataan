@@ -19,7 +19,7 @@
                     <li><a href="{{url("adminn/indipackage")}}">Add Individual Package</a></li>
                     <li><a href="{{url("adminn/aboutTour")}}">Add About Tour</a></li>
                     <li><a href="{{url("adminn/photo-gallery")}}">Add Photo Gallery</a></li>
-                    <li><a href="{{url("adminn/trip-information")}}">Add Trip Information</a></li>
+                    <li><a href="{{url("adminn/trip-info")}}">Add Trip Information</a></li>
                     <li><a href="{{url("adminn/itinerary")}}">Add Itinerary</a></li>
                     <li><a href="{{url("adminn/booking-by-email")}}">Booking By Email List</a></li>
 
