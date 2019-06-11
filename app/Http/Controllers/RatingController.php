@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\IndividualPackage;
 
 class RatingController extends Controller
 {
@@ -13,7 +14,8 @@ class RatingController extends Controller
      */
     public function index()
     {
-        //
+        $indiPackages = IndividualPackage::all();
+        return view('ratings.individual-package')->with('indiPackages',$indiPackages);
     }
 
     /**

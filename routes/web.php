@@ -124,6 +124,4 @@ Route::post('/search-result', 'SearchController@index');
 // packages handler
 
 // rating test
-Route::get('/rating', function () {
-    return view('rating');
-});
+Route::get('/rating', 'RatingController@index');
