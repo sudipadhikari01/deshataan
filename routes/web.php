@@ -40,6 +40,7 @@ Route::prefix('/adminn')
             Route::resource('photo-gallery', 'PhotoGalleryController');
             Route::resource('trip-info', 'AboutTheTripInformationController');
             Route::resource('itinerary', 'ItineraryController');
+            Route::resource('hotels', 'HotelsController');
         }
     );
 
