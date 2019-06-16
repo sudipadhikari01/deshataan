@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\HotelSpecialFeatures;
 use App\Hotel;
+use App\HotelSpecialFeatures;
+use Illuminate\Http\Request;
 
 class HotelSpecialFeaturesController extends Controller
 {
@@ -16,7 +16,7 @@ class HotelSpecialFeaturesController extends Controller
     public function index()
     {
         $hotelSpecialFeatures = HotelSpecialFeatures::all();
-        return view('admin.hotels.hotel-special-features.hotel-special-features')->with('hotelSpecialFeatures',$hotelSpecialFeatures);
+        return view('admin.hotels.hotel-special-features.hotel-special-features')->with('hotelSpecialFeatures', $hotelSpecialFeatures);
     }
 
     /**
@@ -27,7 +27,7 @@ class HotelSpecialFeaturesController extends Controller
     public function create()
     {
         $hotels = Hotel::all();
-        return view('admin.hotels.hotel-special-features.addHotelsFeatures')->with('hotels',$hotels);
+        return view('admin.hotels.hotel-special-features.addHotelsFeatures')->with('hotels', $hotels);
     }
 
     /**
@@ -48,7 +48,7 @@ class HotelSpecialFeaturesController extends Controller
 
         $hotelSpecialFeatures->save();
 
-        return redirect()->route('hotel-special-features')->with('status','Hotel special featurs added successfully');
+        return redirect()->route('adminn.hotel-features.index')->with('status', 'Hotel special featurs added successfully');
     }
 
     /**
@@ -73,7 +73,7 @@ class HotelSpecialFeaturesController extends Controller
         $hotelSpecialFeatures = HotelSpecialFeatures::find($id);
         $hotels = Hotel::all();
 
-        return view('admin.hotels.hotel-special-features.editHotelsFeatures')->with(['hotelSpecialFeatures'=>$hotelSpecialFeatures,'hotels'=>$hotels]);
+        return view('admin.hotels.hotel-special-features.editHotelsFeatures')->with(['hotelSpecialFeatures' => $hotelSpecialFeatures, 'hotels' => $hotels]);
     }
 
     /**
@@ -85,7 +85,7 @@ class HotelSpecialFeaturesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $hotelSpecialFeatures =  HotelSpecialFeatures::find($id);
+        $hotelSpecialFeatures = HotelSpecialFeatures::find($id);
 
         $hotelSpecialFeatures->places_covered = $request->input('placesCovered');
         $hotelSpecialFeatures->inclusions = $request->input('inclusions');
@@ -95,7 +95,7 @@ class HotelSpecialFeaturesController extends Controller
 
         $hotelSpecialFeatures->save();
 
-        return redirect()->route('hotel-special-features')->with('status','Hotel special featurs Edited successfully');
+        return redirect()->route('adminn.hotel-features.index')->with('status', 'Hotel special featurs Edited successfully');
     }
 
     /**
@@ -106,9 +106,9 @@ class HotelSpecialFeaturesController extends Controller
      */
     public function destroy($id)
     {
-        $hotelSpecialFeatures =  HotelSpecialFeatures::find($id);
+        $hotelSpecialFeatures = HotelSpecialFeatures::find($id);
         $hotelSpecialFeatures->delete();
 
-        return redirect()->route('hotel-special-features')->with('status','Hotel special featurs Deleted successfully');
+        return redirect()->route('adminn.hotel-features.index')->with('status', 'Hotel special featurs Deleted successfully');
     }
 }

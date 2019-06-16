@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\HotelRoomAvailabilities;
 use App\Hotel;
+use App\HotelRoomAvailabilities;
+use Illuminate\Http\Request;
 
 class HotelRoomAvailabilitiesController extends Controller
 {
@@ -15,8 +15,8 @@ class HotelRoomAvailabilitiesController extends Controller
      */
     public function index()
     {
-        $hotel_room_availabilities  = HotelRoomAvailabilities::all();
-        return view('admin.hotels.hotel-room-availabilities.hotel-room-avalabilities')->with('hotel_room_availabilities',$hotel_room_availabilities);
+        $hotel_room_availabilities = HotelRoomAvailabilities::all();
+        return view('admin.hotels.hotel-room-availabilities.hotel-room-avalabilities')->with('hotel_room_availabilities', $hotel_room_availabilities);
     }
 
     /**
@@ -27,7 +27,7 @@ class HotelRoomAvailabilitiesController extends Controller
     public function create()
     {
         $hotels = Hotel::all();
-        return view('admin.hotels.hotel-room-availabilities.addHotelRoomAvai')->with('hotels',$hotels);
+        return view('admin.hotels.hotel-room-availabilities.addHotelRoomAvai')->with('hotels', $hotels);
     }
 
     /**
@@ -49,8 +49,8 @@ class HotelRoomAvailabilitiesController extends Controller
 
         $hotelRoomAvai->save();
 
-        return redirect()->route('hotel-room-availabilities')->with('status',"Hotel room availabilities added successfully");
- 
+        return redirect()->route('hotel-room-availabilities')->with('status', "Hotel room availabilities added successfully");
+
     }
 
     /**
@@ -74,7 +74,7 @@ class HotelRoomAvailabilitiesController extends Controller
     {
         $hotelRoomAvai = HotelRoomAvailabilities::find($id);
         $hotels = Hotel::all();
-        return view('admin.hotels.hotel-room-availabilities.editHotelRoomAvai')->with(['hotels'=>$hotels,'hotelRoomAvai'=>$hotelRoomAvai]);
+        return view('admin.hotels.hotel-room-availabilities.editHotelRoomAvai')->with(['hotels' => $hotels, 'hotelRoomAvai' => $hotelRoomAvai]);
     }
 
     /**
@@ -86,7 +86,7 @@ class HotelRoomAvailabilitiesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $hotelRoomAvai =  HotelRoomAvailabilities::find($id);
+        $hotelRoomAvai = HotelRoomAvailabilities::find($id);
 
         $hotelRoomAvai->title = $request->input('title');
         $hotelRoomAvai->amenities = $request->input('amenities');
@@ -97,7 +97,7 @@ class HotelRoomAvailabilitiesController extends Controller
 
         $hotelRoomAvai->save();
 
-        return redirect()->route('hotel-room-availabilities')->with('status',"Hotel room availabilities Edited successfully");
+        return redirect()->route('hotel-room-availabilities')->with('status', "Hotel room availabilities Edited successfully");
     }
 
     /**
@@ -108,9 +108,9 @@ class HotelRoomAvailabilitiesController extends Controller
      */
     public function destroy($id)
     {
-        $hotelRoomAvai =  HotelRoomAvailabilities::find($id);
+        $hotelRoomAvai = HotelRoomAvailabilities::find($id);
 
         $hotelRoomAvai->delete();
-        return redirect()->route('hotel-room-availabilities')->with('status',"Hotel room availabilities Deleted successfully");
+        return redirect()->route('hotel-room-availabilities')->with('status', "Hotel room availabilities Deleted successfully");
     }
 }

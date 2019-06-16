@@ -41,6 +41,7 @@ Route::prefix('/adminn')
             Route::resource('trip-info', 'AboutTheTripInformationController');
             Route::resource('itinerary', 'ItineraryController');
             Route::resource('hotels', 'HotelsController');
+            Route::resource('hotel-features', 'HotelSpecialFeaturesController');
         }
     );
 
