@@ -1,83 +1,95 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rating</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+     <!-- Scripts -->
+     <script src="{{ asset('js/app.js') }}" defer></script>
+
+     <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/mob.css">
+    <link rel="stylesheet" href="css/animate.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+
+    
+
+</head>
+<body>
+
+        <div class="content">
+         @php
+              if(Auth::check()){
+                $user_id = Auth::user()->id ;
+                foreach ($posts as $post) {
+
+                $postid = $post->id;
+                $title = $post->title;
+                $content = $post->content;
+                $link = $post->link;
 
 
+                // User rating
+                // $query = "SELECT * FROM post_rating WHERE postid=".$postid." and userid=".$userid;
 
-@section('content')
+                $query = App\PostRating::where('individual_package_id',$postid)
+                                            ->where('user_id',$user_id)->get();
 
-<div class="container">
+                $rating = $query->rating;
 
-    <div class="row">
+                 // get average
+                 $query = App\PostRating::where('individual_package_id',$postid);
 
-        <div class="col-md-12">
+                 $avgresult = $query->avg('rating');
+                 $avgresult = round( $avgresult ,1);
 
-            <div class="panel panel-default">
+                
 
-                <div class="panel-heading">Posts</div>
-
-
-
-                <div class="panel-body">
-
-
-
-                    <table class="table table-bordered">
-
-                        <tr>
-
-                            <th>Id</th>
-
-                            <th>Name</th>
-
-                            <th width="400px">Star</th>
-
-                            <th width="100px">View</th>
-
-                        </tr>
-
-                        @if($indiPackages->count())
-
-                            @foreach($indiPackages as $indiPackage)
-
-                            <tr>
-
-                                <td>{{ $indiPackage->p_id }}</td>
-
-                                <td>{{ $indiPackage->title }}</td>
-
-                                <td>
-
-                                    <input id="input-1" name="input-1" class="rating rating-loading" data-min="0" data-max="5" data-step="0.1" value="{{ $indiPackage->averageRating }}" data-size="xs" disabled="">
-
-                                </td>
-
-                                <td>
-
-                                    <a href="" class="btn btn-primary btn-sm">View</a>
-
-                                </td>
-
-                            </tr>
-
-                            @endforeach
-
-                        @endif
-
-                    </table>
+                 if($avgresult <= 0){
+                    $avgresult = "No rating yet.";
+                 }
+ 
+                 
+               
+   
+            }
 
 
+            
 
-                </div>
+            }
 
-            </div>
 
+            else{
+                var_dump("not logged in");
+            }
+
+         @endphp
         </div>
 
-    </div>
-
-</div>
 
 
 
+    <!--========= Scripts ===========-->
+    <script src="js/jquery-latest.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/custom.js"></script>
 
-
-@endsection
+    
+    
+</body>
+</html>
