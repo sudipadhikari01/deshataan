@@ -84,7 +84,9 @@
                 </div>
                 <div class="header-right">
                     <ul>
-                        <li class="icons">
+                        {{-- message li --}}
+
+                        {{-- <li class="icons">
                             <a href="javascript:void(0)">
                                 <i class="mdi mdi-comment"></i>
                                 <div class="pulse-css"></div>
@@ -148,8 +150,12 @@
                                     </ul>
                                 </div>
                             </div>
-                        </li>
-                        <li class="icons">
+                        </li> --}}
+
+
+                        {{-- notification li --}}
+
+                        {{-- <li class="icons">
                             <a href="javascript:void(0)">
                                 <i class="mdi mdi-bell"></i>
                                 <div class="pulse-css"></div>
@@ -217,7 +223,8 @@
                                     </ul>
                                 </div>
                             </div>
-                        </li>
+                        </li> --}}
+
                         <li class="icons">
                             <a href="javascript:void(0)" class="log-user">
                                 <img src="../../assets/images/avatar/1.jpg" alt=""> <span>George Martin</span> <i
@@ -226,7 +233,7 @@
                             <div class="drop-down dropdown-profile animated bounceInDown">
                                 <div class="dropdown-content-body">
                                     <ul>
-                                        <li><a href="javascript:void()"><i class="icon-user"></i> <span>My
+                                        {{-- <li><a href="javascript:void()"><i class="icon-user"></i> <span>My
                                                     Profile</span></a>
                                         </li>
                                         <li><a href="javascript:void()"><i class="icon-wallet"></i> <span>My
@@ -240,7 +247,9 @@
                                         </li>
                                         <li><a href="javascript:void()"><i class="icon-lock"></i> <span>Lock
                                                     Screen</span></a>
-                                        </li>
+                                        </li> --}}
+                                        <li><a href="{{ url('/') }}"><i class="icon-home"></i><span>Go to
+                                                    Home</span></a></li>
                                         <li><a href="javascript:void()"><i class="icon-power"></i>
                                                 <span>Logout</span></a>
                                         </li>

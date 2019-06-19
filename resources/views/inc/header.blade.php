@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>The Travel - Tour Travel</title>
     <!--== META TAGS ==-->
@@ -38,8 +38,8 @@
             <div class="ed-mob-menu-con">
                 <div class="ed-mm-left">
                     <div class="wed-logo">
-                    <a href="{{url('/')}}"><img src="images/logo.png" alt="" />
-						</a>
+                        <a href="{{url('/')}}"><img src="images/logo.png" alt="" />
+                        </a>
                     </div>
                 </div>
                 <div class="ed-mm-right">
@@ -59,7 +59,8 @@
                             </ul>
                             <h4>Tour Packages</h4>
                             <ul>
-                                <li><a href="all-package.html">All Package</a></li><li><a href="family-package.html">Family Package</a></li>
+                                <li><a href="all-package.html">All Package</a></li>
+                                <li><a href="family-package.html">Family Package</a></li>
                                 <li><a href="honeymoon-package.html">Honeymoon Package</a></li>
                                 <li><a href="group-package.html">Group Package</a></li>
                                 <li><a href="weekend-package.html">WeekEnd Package</a></li>
@@ -91,13 +92,14 @@
                             <ul>
                                 <li><a href="tour-details.html">Travel details</a></li>
                                 <li><a href="hotel-details.html">Hotel details</a></li>
-                                <li><a href="all-package.html">All package</a></li><li><a href="hotels-list.html">All hotels</a></li>
+                                <li><a href="all-package.html">All package</a></li>
+                                <li><a href="hotels-list.html">All hotels</a></li>
                                 <li><a href="booking.html">Booking page</a></li>
                             </ul>
                             <h4 class="ed-dr-men-mar-top">User login pages</h4>
                             <ul>
-                            <li><a href="{{url('/register')}}">Register</a></li>
-                            <li><a href="{{url('/login')}}">Login and Sign in</a></li>
+                                <li><a href="{{url('/register')}}">Register</a></li>
+                                <li><a href="{{url('/login')}}">Login and Sign in</a></li>
                                 <li><a href="forgot-pass.html">Forgot pass</a></li>
                             </ul>
                             <h4>Other pages:2</h4>
@@ -137,7 +139,7 @@
                         </div>
                         <div class="ed-com-t1-right">
                             <ul>
-                            <li><a href="{{url('/login')}}">Sign In</a>
+                                <li><a href="{{url('/login')}}">Sign In</a>
                                 </li>
                                 <li><a href="{{url('/register')}}">Sign Up</a>
                                 </li>
@@ -186,22 +188,28 @@
                                                     </div>
                                                 </div>
                                                 <div class="mm1-com mm1-s2">
-                                                    <p>Want to change the world? At Berkeley we’re doing just that. When you join the Golden Bear community, you’re part of an institution that shifts the global conversation every single day.</p>
+                                                    <p>Want to change the world? At Berkeley we’re doing just that. When
+                                                        you join the Golden Bear community, you’re part of an
+                                                        institution that shifts the global conversation every single
+                                                        day.</p>
                                                     <a href="all-package.html" class="mm-r-m-btn">Read more</a>
                                                 </div>
                                                 <div class="mm1-com mm1-s3">
                                                     <ul>
                                                         <li><a href="booking-all.html">All Booking</a></li>
-                                                        <li><a href="booking-tour-package.html">Tour Package Booking</a></li>
+                                                        <li><a href="booking-tour-package.html">Tour Package Booking</a>
+                                                        </li>
                                                         <li><a href="booking-hotel.html">Hotel Booking</a></li>
-                                                        <li><a href="booking-car-rentals.html">Car Rentals Booking</a></li>
+                                                        <li><a href="booking-car-rentals.html">Car Rentals Booking</a>
+                                                        </li>
                                                         <li><a href="booking-flight.html">Flight Booking</a></li>
                                                         <li><a href="booking-slider.html">Slider Booking</a></li>
                                                     </ul>
                                                 </div>
                                                 <div class="mm1-com mm1-s4">
                                                     <ul>
-                                                        <li><a href="all-package.html">All Package</a></li><li><a href="family-package.html">Family Package</a></li>
+                                                        <li><a href="all-package.html">All Package</a></li>
+                                                        <li><a href="family-package.html">Family Package</a></li>
                                                         <li><a href="honeymoon-package.html">Honeymoon Package</a></li>
                                                         <li><a href="group-package.html">Group Package</a></li>
                                                         <li><a href="weekend-package.html">WeekEnd Package</a></li>
@@ -226,7 +234,9 @@
                                                             <span>Seight Seeing - 1</span>
                                                         </a>
                                                     </div>
-                                                    <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
+                                                    <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros.
+                                                        Vestibulum congue nec eros quis lacinia. Mauris non tincidunt
+                                                        lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
                                                     <a href="places.html" class="mm-r-m-btn">Read more</a>
                                                 </div>
                                                 <div class="mm2-com mm1-com mm1-s1">
@@ -236,7 +246,9 @@
                                                             <span>Seight Seeing - 2</span>
                                                         </a>
                                                     </div>
-                                                    <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
+                                                    <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros.
+                                                        Vestibulum congue nec eros quis lacinia. Mauris non tincidunt
+                                                        lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
                                                     <a href="places-1.html" class="mm-r-m-btn">Read more</a>
                                                 </div>
                                                 <div class="mm2-com mm1-com mm1-s1">
@@ -246,7 +258,9 @@
                                                             <span>Seight Seeing - 3</span>
                                                         </a>
                                                     </div>
-                                                    <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
+                                                    <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros.
+                                                        Vestibulum congue nec eros quis lacinia. Mauris non tincidunt
+                                                        lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
                                                     <a href="places-2.html" class="mm-r-m-btn">Read more</a>
                                                 </div>
                                                 <div class="mm2-com mm1-com mm1-s4">
@@ -256,7 +270,9 @@
                                                             <span>Seight Seeing - 4</span>
                                                         </a>
                                                     </div>
-                                                    <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
+                                                    <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros.
+                                                        Vestibulum congue nec eros quis lacinia. Mauris non tincidunt
+                                                        lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
                                                     <a href="places-3.html" class="mm-r-m-btn">Read more</a>
                                                 </div>
 
@@ -287,7 +303,8 @@
                                                 <div class="mm1-com mm1-cour-com mm1-s3">
                                                     <h4>Tour Packages</h4>
                                                     <ul>
-                                                        <li><a href="all-package.html">All Package</a></li><li><a href="family-package.html">Family Package</a></li>
+                                                        <li><a href="all-package.html">All Package</a></li>
+                                                        <li><a href="family-package.html">Family Package</a></li>
                                                         <li><a href="honeymoon-package.html">Honeymoon Package</a></li>
                                                         <li><a href="group-package.html">Group Package</a></li>
                                                         <li><a href="weekend-package.html">WeekEnd Package</a></li>
@@ -313,9 +330,12 @@
                                                         <li><a href="db-payment.html">Make Payment</a></li>
                                                         <li><a href="db-refund.html">Cancel Bookings</a></li>
                                                         <li><a href="db-all-payment.html">Prient E-Tickets</a></li>
-                                                        <li><a href="db-event-details.html">Event booking details</a></li>
-                                                        <li><a href="db-hotel-details.html">Hotel booking details</a></li>
-                                                        <li><a href="db-travel-details.html">Travel booking details</a></li>
+                                                        <li><a href="db-event-details.html">Event booking details</a>
+                                                        </li>
+                                                        <li><a href="db-hotel-details.html">Hotel booking details</a>
+                                                        </li>
+                                                        <li><a href="db-travel-details.html">Travel booking details</a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <div class="mm1-com mm1-cour-com mm1-s3">
@@ -323,7 +343,8 @@
                                                     <ul>
                                                         <li><a href="tour-details.html">Travel details</a></li>
                                                         <li><a href="hotel-details.html">Hotel details</a></li>
-                                                        <li><a href="all-package.html">All package</a></li><li><a href="hotels-list.html">All hotels</a></li>
+                                                        <li><a href="all-package.html">All package</a></li>
+                                                        <li><a href="hotels-list.html">All hotels</a></li>
                                                         <li><a href="booking.html">Booking page</a></li>
                                                     </ul>
                                                     <h4 class="ed-dr-men-mar-top">User login pages</h4>
@@ -408,12 +429,13 @@
     </section>
     <!--END HEADER SECTION-->
 
-      <!--========= Scripts ===========-->
-      <script src="js/jquery-latest.min.js"></script>
-      <script src="js/bootstrap.js"></script>
-      <script src="js/wow.min.js"></script>
-      <script src="js/materialize.min.js"></script>
-      <script src="js/custom.js"></script>
+    <!--========= Scripts ===========-->
+    <script src="js/jquery-latest.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/custom.js"></script>
 
 </body>
+
 </html>
