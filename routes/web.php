@@ -11,9 +11,9 @@
 |
  */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//  frontend routes
+Route::get('/', 'frontend\PageController@home')->name('home');
+Route::get('/packages', 'frontend\PageController@packages')->name('packages');
 
 Auth::routes();
 
@@ -59,9 +59,6 @@ Route::get('adminn/booking-by-email', 'BookingByEmailController@create')->name('
 Route::get("/adminn/deleteBookingByEmail/{id}", 'BookingByEmailController@destroy');
 
 // front end part(homepage part)
-Route::get('/family-package', function () {
-    return view('family-package');
-})->name('home');
 
 // booking
 Route::get('/booking', 'BookingByEmailController@index')->name('booking');

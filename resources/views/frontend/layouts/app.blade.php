@@ -48,18 +48,10 @@
                             <a href="#!" class="ed-micon"><i class="fa fa-bars"></i></a>
                             <div class="ed-mm-inn">
                                 <a href="#!" class="ed-mi-close"><i class="fa fa-times"></i></a>
-                                <h4>Home pages</h4>
-                                <ul>
-                                    <li><a href="booking-all.html">Home page 1</a></li>
-                                    <li><a href="booking-all.html">Home page 2</a></li>
-                                    <li><a href="booking-tour-package.html">Home page 3</a></li>
-                                    <li><a href="booking-hotel.html">Home page 4</a></li>
-                                    <li><a href="booking-car-rentals.html">Home page 5</a></li>
-                                    <li><a href="booking-flight.html">Home page 6</a></li>
-                                    <li><a href="booking-slider.html">Home page 7</a></li>
-                                </ul>
+                                <h4>Home</h4>
                                 <h4>Tour Packages</h4>
                                 <ul>
+                                    {{-- loop here --}}
                                     <li><a href="all-package.html">All Package</a></li>
                                     <li><a href="family-package.html">Family Package</a></li>
                                     <li><a href="honeymoon-package.html">Honeymoon Package</a></li>
@@ -68,27 +60,27 @@
                                     <li><a href="regular-package.html">Regular Package</a></li>
                                     <li><a href="custom-package.html">Custom Package</a></li>
                                 </ul>
-                                <h4>Sighe Seeings Pages</h4>
+                                {{-- <h4>Sighe Seeings Pages</h4>
                                 <ul>
                                     <li><a href="places.html">Seight Seeing 1</a></li>
                                     <li><a href="places-1.html">Seight Seeing 2</a></li>
                                     <li><a href="places-2.html">Seight Seeing 3</a></li>
-                                </ul>
-                                <h4>User Dashboard</h4>
-                                <ul>
+                                </ul> --}}
+                                {{-- <h4>User Dashboard</h4> --}}
+                                {{-- <ul>
                                     <li><a href="dashboard.html">My Bookings</a></li>
                                     <li><a href="db-my-profile.html">My Profile</a></li>
                                     <li><a href="db-my-profile-edit.html">My Profile edit</a></li>
                                     <li><a href="db-travel-booking.html">Tour Packages</a></li>
-                                    <li><a href="db-hotel-booking.html">Hotel Bookings</a></li>
-                                    {{-- <li><a href="db-event-booking.html">Event bookings</a></li> --}}
-                                    <li><a href="db-payment.html">Make Payment</a></li>
-                                    <li><a href="db-refund.html">Cancel Bookings</a></li>
-                                    <li><a href="db-all-payment.html">Prient E-Tickets</a></li>
-                                    <li><a href="db-event-details.html">Event booking details</a></li>
-                                    <li><a href="db-hotel-details.html">Hotel booking details</a></li>
-                                    <li><a href="db-travel-details.html">Travel booking details</a></li>
-                                </ul>
+                                    <li><a href="db-hotel-booking.html">Hotel Bookings</a></li> --}}
+                                {{-- <li><a href="db-event-booking.html">Event bookings</a></li> --}}
+                                {{-- <li><a href="db-payment.html">Make Payment</a></li>
+                                <li><a href="db-refund.html">Cancel Bookings</a></li>
+                                <li><a href="db-all-payment.html">Prient E-Tickets</a></li>
+                                <li><a href="db-event-details.html">Event booking details</a></li>
+                                <li><a href="db-hotel-details.html">Hotel booking details</a></li>
+                                <li><a href="db-travel-details.html">Travel booking details</a></li>
+                                </ul> --}}
                                 <h4>Other pages:1</h4>
                                 <ul>
                                     <li><a href="tour-details.html">Travel details</a></li>
@@ -188,6 +180,7 @@
             </div>
 
             <!-- LOGO AND MENU SECTION -->
+            {{-- navbar menu div starts --}}
             <div class="top-logo" data-spy="affix" data-offset-top="250">
                 <div class="container">
                     <div class="row">
@@ -201,7 +194,7 @@
                                     <li><a href="{{url('/')}}">Home</a>
                                     </li>
                                     <li class="about-menu">
-                                        <a href="{{url('/family-package')}}" class="mm-arr">Packages</a>
+                                        <a href="{{url('/packages')}}" class="mm-arr">Packages</a>
                                         <!-- MEGA MENU 1 -->
                                         <div class="mm-pos">
                                             <div class="about-mm m-menu">
@@ -224,17 +217,12 @@
                                                     </div>
                                                     <div class="mm1-com mm1-s3">
                                                         <ul>
-                                                            <li><a href="booking-all.html">All Booking</a></li>
-                                                            <li><a href="booking-tour-package.html">Tour Package
-                                                                    Booking</a></li>
-                                                            <li><a href="booking-hotel.html">Hotel Booking</a></li>
-                                                            <li><a href="booking-car-rentals.html">Car Rentals
-                                                                    Booking</a></li>
-                                                            <li><a href="booking-flight.html">Flight Booking</a></li>
-                                                            <li><a href="booking-slider.html">Slider Booking</a></li>
+                                                            @foreach($pkgs as $pkg)
+                                                            <li><a href="#">{{ $pkg->p_name }}</a></li>
+                                                            @endforeach
                                                         </ul>
                                                     </div>
-                                                    <div class="mm1-com mm1-s4">
+                                                    {{-- <div class="mm1-com mm1-s4">
                                                         <ul>
                                                             <li><a href="all-package.html">All Package</a></li>
                                                             <li><a href="family-package.html">Family Package</a></li>
@@ -245,12 +233,12 @@
                                                             <li><a href="regular-package.html">Regular Package</a></li>
                                                             <li><a href="custom-package.html">Custom Package</a></li>
                                                         </ul>
-                                                    </div>
+                                                    </div> --}}
                                                 </div>
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="admi-menu">
+                                    {{-- <li class="admi-menu">
                                         <a href="#" class="mm-arr">Seight Seeing</a>
                                         <!-- MEGA MENU 1 -->
                                         <div class="mm-pos">
@@ -312,10 +300,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </li>
+                                    </li> --}}
                                     <li><a href="hotels-list.html">Hotels</a></li>
                                     <!--<li><a class='dropdown-button ed-sub-menu' href='#' data-activates='dropdown1'>Courses</a></li>-->
-                                    <li class="cour-menu">
+                                    {{-- <li class="cour-menu">
                                         <a href="#!" class="mm-arr">All Pages</a>
                                         <!-- MEGA MENU 1 -->
                                         <div class="mm-pos">
@@ -395,7 +383,7 @@
                                                             <li><a href="about.html">About Us</a></li>
                                                             <li><a href="testimonials.html">Testimonials</a></li>
                                                             {{-- <li><a href="events.html">Events</a></li> --}}
-                                                            <li><a href="blog.html">Blog</a></li>
+                                    {{-- <li><a href="blog.html">Blog</a></li>
                                                             <li><a href="tips.html">Tips Before Travel</a></li>
                                                             <li><a href="price-list.html">Price List</a></li>
                                                             <li><a href="discount.html">Discount</a></li>
@@ -408,11 +396,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </li>
-                                    <li><a href="events.html">Events</a>
-                                    </li>
-                                    <li><a href="dashboard.html">Profile</a>
-                                    </li>
+                                    </li>  --}}
+                                    {{-- <li><a href="events.html">Events</a>
+                                    </li> --}}
+                                    {{-- <li><a href="dashboard.html">Profile</a>
+                                    </li> --}}
                                     <li><a href="contact.html">Contact us</a>
                                     </li>
                                 </ul>

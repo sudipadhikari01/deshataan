@@ -1,4 +1,4 @@
-@include('layouts.app')
+@include('frontend.layouts.app')
     <!--HEADER SECTION-->
     <section>
         <div class="tourz-search" style="margin-top:-32px">
