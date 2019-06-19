@@ -30,7 +30,7 @@
                         class="badge badge-success nav-badge">11</span></a>
                 <ul aria-expanded="false">
                     <li><a href="{{url("/adminn/hotels")}}">Add Hotels</a></li>
-                    <li><a href="{{url("adminn/hotels-photo-gallery")}}">Add Hotels Photo Gallery</a></li>
+                    <li><a href="{{url("adminn/hotel-gallery")}}">Add Hotels Photo Gallery</a></li>
                     <li><a href="{{url("/adminn/hotel-features")}}">Add Features</a></li>
                     <li><a href="{{url("/adminn/hotel-room-availabilities")}}">Add Room & Availabilities</a></li>
 
