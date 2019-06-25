@@ -903,6 +903,8 @@
     <script src="{{asset('admin/js/gleek.js')}}"></script>
     <script src="{{asset('admin/js/styleSwitcher.js')}}"></script>
 
+    <script src="{{asset('admin/js/package.js')}}"></script>
+
     <!-- Chartjs chart -->
     {{-- <script src="{{asset('admin/assets/plugins/chart.js/Chart.bundle.min.js')}}"></script>
     <script src="{{asset('admin/assets/plugins/d3v3/index.js')}}"></script>

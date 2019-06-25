@@ -80,12 +80,7 @@
 
                             <input type="submit" class="btn btn-success " value="Add" name="add"
                                 style="margin:0 auto; width:112px;">
-
-
-
-
-
-                        </div>
+                       </div>
                     </div>
                 </div>
 

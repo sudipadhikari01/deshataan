@@ -44,7 +44,7 @@ class PackageTypeController extends Controller
         $packageType->save();
 
         // return redirect()->route('adminn/packagetype');
-        return redirect()->route('adminn.packagetype.index');
+        return redirect()->route('adminn.packagetype.index')->with("status","Package Added Successfully");
     }
 
     /**
@@ -87,7 +87,7 @@ class PackageTypeController extends Controller
         $singlePackage->p_desc = $request->input("packageDesc");
 
         $singlePackage->save();
-        return redirect()->route('adminn.packagetype.index');
+        return redirect()->route('adminn.packagetype.index')->with("status","Package Edited Successfully");
 
     }
 
@@ -102,7 +102,7 @@ class PackageTypeController extends Controller
         $singlePackage = \App\PackageType::find($id);
         $singlePackage->delete();
 
-        return redirect()->route('adminn.packagetype.index');
+        return redirect()->route('adminn.packagetype.index')->with("status","Package Deleted Successfully");
 
     }
 }

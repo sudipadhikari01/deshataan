@@ -15,7 +15,7 @@ class CreatePackagesTypeTable extends Migration
     {
         Schema::create('packages_type', function (Blueprint $table) {
             $table->bigIncrements('p_id');
-            $table->string('p_name');
+            $table->string('p_name')->nullable();
             $table->text('p_desc');
             $table->timestamps();
         });

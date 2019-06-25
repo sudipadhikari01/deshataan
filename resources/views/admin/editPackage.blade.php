@@ -18,22 +18,22 @@
                                 <label class="col-sm-3 col-form-label text-label">Package Type *</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" placeholder="Package Type"
-                                        name="packageType" value="{{ $singlePackage->p_name}}">
-                                    <p class="form-text">Edit Package Type</p>
+                                        name="packageType" id="packageType" value="{{ $singlePackage->p_name}}" max="100" required>
+                                        <p class="form-text" id="demo"></p>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label text-label">Package Description *</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" placeholder="package description"
-                                        name="packageDesc" value="{{ $singlePackage->p_desc}}">
-
+                                        name="packageDesc"  id="packageDesc" value="{{ $singlePackage->p_desc}}" max="300" required>
+                                        <p class="form-text" id="demo1"></p>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <div class="col-sm-12 text-right">
-                                    <input type="submit" class="btn btn-primary btn-form" value="Update">
+                                    <button type="submit" class="btn btn-primary btn-form" value="Update"  id="add" onclick="validateForm()">Update</button>
                                 </div>
                             </div>
                         </form>
