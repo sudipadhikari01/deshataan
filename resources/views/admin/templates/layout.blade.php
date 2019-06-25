@@ -904,6 +904,7 @@
     <script src="{{asset('admin/js/styleSwitcher.js')}}"></script>
 
     <script src="{{asset('admin/js/package.js')}}"></script>
+    <script src="{{asset('admin/js/indipackage.js')}}"></script>
 
     <!-- Chartjs chart -->
     {{-- <script src="{{asset('admin/assets/plugins/chart.js/Chart.bundle.min.js')}}"></script>
