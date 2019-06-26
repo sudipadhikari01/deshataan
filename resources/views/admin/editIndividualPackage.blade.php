@@ -108,8 +108,9 @@
                                 <label class="col-sm-3 col-form-label text-label">Package Type</label>
                                 <div class="col-sm-9">
                                     <select name="packageType" class="form-control">
-                                        
+                                        {{-- <option >Choose Package Type</option> --}}
                                         @foreach ($packages as $package)
+                                        
                                             <option value="{{$package->p_id}}" @if($package->p_id == $individualPkg->package_type) {{ 'selected' }} @endif>
                                                 {{$package->p_name}}
                                             </option>

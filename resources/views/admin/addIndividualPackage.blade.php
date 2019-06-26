@@ -24,7 +24,7 @@
                                         id="title" required>
                                            
                                     </div>
-                                    <p class="form-text" id="demo"></p>
+                                    <p class="form-text text-danger" id="demo"></p>
                                 </div>
                             </div>
                             <div class="form-group row align-items-center">
@@ -35,7 +35,7 @@
                                             name="description" required>
                                             
                                     </div>
-                                    <p class="form-text" id="demo1"></p>
+                                    <p class="form-text text-danger" id="demo1"></p>
                                 </div>
                             </div>
                             <div class="form-group row align-items-center">
@@ -46,7 +46,7 @@
                                             placeholder="Enter location" name="location" required>
                                             
                                     </div>
-                                    <p class="form-text" id="demo2"></p>
+                                    <p class="form-text text-danger" id="demo2"></p>
                                 </div>
                             </div>
                             <div class="form-group row align-items-center">
@@ -57,7 +57,7 @@
                                             placeholder="Enter duration of package" name="duration" required>
                                             
                                     </div>
-                                    <p class="form-text" id="demo3"></p>
+                                    <p class="form-text text-danger" id="demo3"></p>
                                 </div>
                             </div>
 
@@ -69,7 +69,7 @@
                                         name="startDate" required>
                                        
                                     </div>
-                                    <p class="form-text" id="demo4"></p>
+                                    <p class="form-text text-danger" id="demo4"></p>
                                 </div>
                             </div>
 
@@ -81,7 +81,7 @@
                                             placeholder="Enter end date" name="endDate" required>
                                             
                                     </div>
-                                    <p class="form-text" id="demo5"></p>
+                                    <p class="form-text text-danger" id="demo5"></p>
                                 </div>
                             </div>
 
@@ -93,7 +93,7 @@
                                             placeholder="Enter ticket quantity" name="ticketQuantity" required>
                                             
                                     </div>
-                                    <p class="form-text" id="demo6"></p>
+                                    <p class="form-text text-danger" id="demo6"></p>
                                 </div>
                             </div>
 
@@ -106,7 +106,7 @@
                                             aria-describedby="validationDefaultUsername2" name="price" required>
                                             
                                     </div>
-                                    <p class="form-text" id="demo7"></p>
+                                    <p class="form-text text-danger" id="demo7"></p>
                                 </div>
                             </div>
 
@@ -115,7 +115,7 @@
                                 <label class="col-sm-3 col-form-label text-label">Package Type</label>
                                 <div class="col-sm-9">
                                     <select name="packageType" class="form-control" id="packageType" required>
-                                        <option selected>Choose Package Type</option>
+                                        <option >Choose Package Type</option>
                                         @foreach ($packages as $package)
                                         
                                         <option value="{{$package->p_id}}">{{$package->p_name}}</option>
@@ -123,7 +123,7 @@
 
                                        
                                     </select>
-                                    <p class="form-text" id="demo8"></p>
+                                    <p class="form-text text-danger" id="demo8"></p>
                                     
 
                                 </div>
@@ -132,7 +132,7 @@
 
 
                             <button type="submit" class="btn btn-success " value="Add" name="add" id="add"
-                                style="margin:0 auto; width:112px;" onclick="validateForm()">Add</button>
+                                style="margin:0 auto; width:112px;" onclick="validateForm1()">Add</button>
 
 
 
