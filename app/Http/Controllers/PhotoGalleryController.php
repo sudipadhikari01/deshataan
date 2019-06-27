@@ -61,7 +61,7 @@ class PhotoGalleryController extends Controller
 
         } else {
 
-            $fileNameToStore1 = "noimage.jpg";
+            $fileNameToStore = "noimage.jpg";
         }
 
         $photoGallery = new PhotoGallery();
@@ -129,15 +129,19 @@ class PhotoGalleryController extends Controller
             //upload image
 
             $path = $request->file('image')->storeAs('public/photogallery', $fileNameToStore);
-
-        } else {
-
-            $fileNameToStore1 = "noimage.jpg";
         }
+        //  } else {
+
+        // //     $fileNameToStore = "noimage.jpg";
+        // // }
 
         $photoGallery = PhotoGallery::find($id);
         $photoGallery->image_title = $request->input('imageTitle');
-        $photoGallery->image_name = $fileNameToStore;
+
+        if(!empty($fileNameToStore)){
+            $photoGallery->image_name = $fileNameToStore;
+        }
+       
         $photoGallery->p_id = $request->input('packageType');
         $photoGallery->ip_id = $request->input('individualPackage');
 

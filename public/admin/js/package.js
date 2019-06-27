@@ -168,3 +168,66 @@ function aboutTourValidateForm() {
     }
 
 }
+
+
+// individual package photo gallery form validation
+
+function photoGalleryValidateForm() {
+
+    var imageTitle = document.getElementById("imageTitle");
+    var image = document.getElementById("image");
+    var packageType = document.getElementById("packageType");
+    var individualPackage = document.getElementById("individualPackage");
+    // var = document.getElementById("");
+    // var = document.getElementById("");
+
+    var allowedExtension = ['jpeg', 'jpg', 'png', 'gif'];
+    var fileExtension = image.value.split('.').pop().toLowerCase();
+
+    if (!imageTitle.checkValidity()) {
+        document.getElementById("demo1").innerHTML = imageTitle.validationMessage;
+
+    } else {
+        document.getElementById("demo1").innerHTML = "";
+    }
+
+    if (image.value == "") {
+        document.getElementById("demo2").innerHTML = "Please select an image";
+
+    } else {
+        for (var index in allowedExtension) {
+            if (fileExtension != allowedExtension[index]) {
+                document.getElementById("demo2").innerHTML = "Invalid image format";
+                return false;
+
+            } else {
+                document.getElementById("demo2").innerHTML = "";
+            }
+        }
+        // document.getElementById("demo1").innerHTML = "";
+    }
+
+    if (packageType.value == "") {
+        document.getElementById("demo3").innerHTML = packageType.validationMessage;
+    } else {
+        document.getElementById("demo3").innerHTML = "";
+    }
+
+
+    if (individualPackage.value == "") {
+        document.getElementById("demo4").innerHTML = individualPackage.validationMessage;
+    } else {
+        document.getElementById("demo4").innerHTML = "";
+    }
+
+
+
+
+
+}
+
+// trip information form validation
+
+function tripInformationValidateForm() {
+
+}
