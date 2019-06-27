@@ -19,9 +19,10 @@
                                 <label class="col-sm-3 col-form-label text-label">Itinerary Title</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            placeholder="Enter itinerary title" name="itineraryTitle">
+                                        <input type="text" class="form-control" id="itineraryTitle"
+                                            placeholder="Enter itinerary title" name="itineraryTitle" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo1"></p>
                                 </div>
                             </div>
 
@@ -29,9 +30,10 @@
                                 <label class="col-sm-3 col-form-label text-label">Itinerary Description</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            placeholder="Enter itinerary description" name="itineraryDesc">
+                                        <input type="text" class="form-control" id="itineraryDesc"
+                                            placeholder="Enter itinerary description" name="itineraryDesc" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo2"></p>
                                 </div>
                             </div>
 
@@ -41,7 +43,7 @@
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Package Type</label>
                                 <div class="col-sm-9">
-                                    <select name="packageType" class="form-control">
+                                    <select name="packageType" class="form-control" id="packageType" required>
                                         <option value="">Choose Package Type</option>
                                         @foreach ($packages as $package)
                                         <option value="{{$package->p_id}}">{{$package->p_name}}</option>
@@ -49,6 +51,7 @@
 
 
                                     </select>
+                                    <p class="form-text text-danger" id="demo3"></p>
                                 </div>
                             </div>
 
@@ -56,7 +59,7 @@
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Individual Package</label>
                                 <div class="col-sm-9">
-                                    <select name="individualPackage" class="form-control">
+                                    <select name="individualPackage" class="form-control" id="individualPackage" required>
                                         <option value="">Choose Individual Package Type</option>
                                         @foreach ($individualPkgs as $individualPkg)
                                         <option value="{{$individualPkg->p_id}}">{{$individualPkg->title}}</option>
@@ -64,13 +67,14 @@
 
 
                                     </select>
+                                    <p class="form-text text-danger" id="demo4"></p>
                                 </div>
                             </div>
 
 
 
                             <input type="submit" class="btn btn-success " value="Add" name="add"
-                                style="margin:0 auto; width:112px;">
+                                style="margin:0 auto; width:112px;" onclick="itineraryValidateForm()">
 
 
 

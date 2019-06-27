@@ -267,3 +267,39 @@ function tripInformationValidateForm() {
     }
 
 }
+
+
+// itinerary form validation
+
+function itineraryValidateForm() {
+    var itineraryTitle = document.getElementById("itineraryTitle");
+    var itineraryDesc = document.getElementById("itineraryDesc");
+    var packageType = document.getElementById("packageType");
+    var individualPackage = document.getElementById("individualPackage");
+
+    if (!itineraryTitle.checkValidity()) {
+        document.getElementById("demo1").innerHTML = itineraryTitle.validationMessage;
+    } else {
+        document.getElementById("demo1").innerHTML = "";
+    }
+
+    if (!itineraryDesc.checkValidity()) {
+        document.getElementById("demo2").innerHTML = itineraryDesc.validationMessage;
+    } else {
+        document.getElementById("demo2").innerHTML = "";
+    }
+
+
+    if (packageType.value == "") {
+        document.getElementById("demo3").innerHTML = packageType.validationMessage;
+    } else {
+        document.getElementById("demo3").innerHTML = "";
+    }
+
+
+    if (individualPackage.value == "") {
+        document.getElementById("demo4").innerHTML = individualPackage.validationMessage;
+    } else {
+        document.getElementById("demo4").innerHTML = "";
+    }
+}

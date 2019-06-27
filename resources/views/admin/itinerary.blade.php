@@ -37,6 +37,12 @@ use App\Http\Controllers\PagesController;
     <div class="container-fluid">
 
         <div class="row">
+
+             @if(session()->has('status'))
+                <div class="alert alert-success">
+                    {!! session()->get('status') !!}
+                </div>
+            @endif
             <!-- /# column -->
 
             <!-- /# column -->

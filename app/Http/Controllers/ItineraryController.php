@@ -49,7 +49,7 @@ class ItineraryController extends Controller
         $itinerarys->ip_id = $request->input('individualPackage');
 
         $itinerarys->save();
-        return redirect()->route('adminn.itinerary.index');
+        return redirect()->route('adminn.itinerary.index')->with("status","Itinerary added successfully");
     }
 
     /**
@@ -94,7 +94,7 @@ class ItineraryController extends Controller
         $itinerarys->ip_id = $request->input('individualPackage');
 
         $itinerarys->save();
-        return redirect()->route('adminn.itinerary.index');
+        return redirect()->route('adminn.itinerary.index')->with("status","Itinerary Information updated successfully");
     }
 
     /**
@@ -107,6 +107,6 @@ class ItineraryController extends Controller
     {
         $itinerarys = Itinerary::find($id);
         $itinerarys->delete();
-        return redirect()->route('adminn.itinerary.index');
+        return redirect()->route('adminn.itinerary.index')->with("status","Itinerary Information deleted successfully");
     }
 }
