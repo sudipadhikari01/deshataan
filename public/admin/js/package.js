@@ -229,5 +229,41 @@ function photoGalleryValidateForm() {
 // trip information form validation
 
 function tripInformationValidateForm() {
+    var arrivalDate = document.getElementById("arrivalDate");
+    var departureDate = document.getElementById("departureDate");
+    var inclusions = document.getElementById("inclusions");
+    var packageType = document.getElementById("packageType");
+    var individualPackage = document.getElementById("individualPackage");
+
+    if (!arrivalDate.checkValidity()) {
+        document.getElementById("demo1").innerHTML = arrivalDate.validationMessage;
+    } else {
+        document.getElementById("demo1").innerHTML = "";
+    }
+
+    if (!departureDate.checkValidity()) {
+        document.getElementById("demo2").innerHTML = departureDate.validationMessage;
+    } else {
+        document.getElementById("demo2").innerHTML = "";
+    }
+
+    if (!inclusions.checkValidity()) {
+        document.getElementById("demo3").innerHTML = inclusions.validationMessage;
+    } else {
+        document.getElementById("demo3").innerHTML = "";
+    }
+
+    if (packageType.value == "") {
+        document.getElementById("demo4").innerHTML = packageType.validationMessage;
+    } else {
+        document.getElementById("demo4").innerHTML = "";
+    }
+
+
+    if (individualPackage.value == "") {
+        document.getElementById("demo5").innerHTML = individualPackage.validationMessage;
+    } else {
+        document.getElementById("demo5").innerHTML = "";
+    }
 
 }

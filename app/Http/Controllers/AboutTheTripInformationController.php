@@ -49,7 +49,7 @@ class AboutTheTripInformationController extends Controller
         $tripInformation->ip_id = $request->input('individualPackage');
 
         $tripInformation->save();
-        return redirect()->route('adminn.trip-info.index');
+        return redirect()->route('adminn.trip-info.index')->with("status", "Trip Information Added Successfully");
 
     }
 
@@ -96,7 +96,7 @@ class AboutTheTripInformationController extends Controller
         $tripInformation->ip_id = $request->input('individualPackage');
 
         $tripInformation->save();
-        return redirect()->route('adminn.trip-info.index');
+        return redirect()->route('adminn.trip-info.index')->with("status", "Trip Information Updated Successfully");
     }
 
     /**
@@ -110,7 +110,7 @@ class AboutTheTripInformationController extends Controller
         $itripInformation = TripInformation::find($id);
         $itripInformation->delete();
 
-        return redirect()->route('adminn.trip-info.index');
+        return redirect()->route('adminn.trip-info.index')->with("status", "Trip Information Deleted Successfully");
 
     }
 }
