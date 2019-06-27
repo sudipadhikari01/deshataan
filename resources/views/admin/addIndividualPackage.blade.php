@@ -115,7 +115,7 @@
                                 <label class="col-sm-3 col-form-label text-label">Package Type</label>
                                 <div class="col-sm-9">
                                     <select name="packageType" class="form-control" id="packageType" required>
-                                        <option >Choose Package Type</option>
+                                        <option value="" >Choose Package Type</option>
                                         @foreach ($packages as $package)
                                         
                                         <option value="{{$package->p_id}}">{{$package->p_name}}</option>
@@ -132,7 +132,7 @@
 
 
                             <button type="submit" class="btn btn-success " value="Add" name="add" id="add"
-                                style="margin:0 auto; width:112px;" onclick="validateForm1()">Add</button>
+                                style="margin:0 auto; width:112px;" onclick="indiPkgValidateForm()">Add</button>
 
 
 

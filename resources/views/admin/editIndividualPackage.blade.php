@@ -22,40 +22,40 @@
                                 <label class="col-sm-3 col-form-label text-label">Package Title</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername1"
-                                            placeholder="Enter package title" name="title"
-                                            value="{{$individualPkg->title}}">
+                                        <input type="text" class="form-control" id="title" name="title"
+                                            value="{{$individualPkg->title}}" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo"></p>
                                 </div>
                             </div>
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Package Description</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            placeholder="Enter package description"
-                                            value="{{$individualPkg->description}}" name="description">
+                                        <input type="text" class="form-control" id="description"
+                                            value="{{$individualPkg->description}}" name="description" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo1"></p>
                                 </div>
                             </div>
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Location</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            placeholder="Enter location" value="{{$individualPkg->location}}"
-                                            name="location">
+                                        <input type="text" class="form-control" id="location"
+                                             value="{{$individualPkg->location}}" name="location" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo2"></p>
                                 </div>
                             </div>
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Duration of Package</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            placeholder="Enter duration of package" value="{{$individualPkg->duration}}"
-                                            name="duration">
+                                        <input type="text" class="form-control" id="duration" value="{{$individualPkg->duration}}"
+                                            name="duration" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo3"></p>
                                 </div>
                             </div>
 
@@ -63,10 +63,10 @@
                                 <label class="col-sm-3 col-form-label text-label">Start Date</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="date" class="form-control" id="datePicker"
-                                            placeholder="Enter start date" name="startDate"
-                                            value="{{$individualPkg->start_date}}">
+                                        <input type="date" class="form-control" id="datePicker" name="startDate"
+                                            value="{{$individualPkg->start_date}}" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo4"></p>
                                 </div>
                             </div>
 
@@ -74,10 +74,10 @@
                                 <label class="col-sm-3 col-form-label text-label">End Date</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="date" class="form-control" id="datePicker1"
-                                            placeholder="Enter end date" name="endDate"
-                                            value="{{$individualPkg->end_date}}">
+                                        <input type="date" class="form-control" id="datePicker1" name="endDate"
+                                            value="{{$individualPkg->end_date}}" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo5"></p>
                                 </div>
                             </div>
 
@@ -85,10 +85,10 @@
                                 <label class="col-sm-3 col-form-label text-label">Ticket Quantity</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            placeholder="Enter ticket quantity" name="ticketQuantity"
-                                            value="{{$individualPkg->ticket_quantity}}">
+                                        <input type="text" class="form-control" id="ticketQuantity" name="ticketQuantity"
+                                            value="{{$individualPkg->ticket_quantity}}" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo6"></p>
                                 </div>
                             </div>
 
@@ -96,10 +96,11 @@
                                 <label class="col-sm-3 col-form-label text-label">Price</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            placeholder="Enter price of package" value="{{$individualPkg->price}}"
-                                            name="price">
+                                        <input type="text" class="form-control" id="price"
+                                             value="{{$individualPkg->price}}"
+                                            name="price" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo7"></p>
                                 </div>
                             </div>
 
@@ -107,27 +108,25 @@
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Package Type</label>
                                 <div class="col-sm-9">
-                                    <select name="packageType" class="form-control">
-                                        {{-- <option >Choose Package Type</option> --}}
+                                    <select name="packageType" class="form-control" id="packageType" required >
+                                        <option value="" >Choose Package Type</option>
                                         @foreach ($packages as $package)
-                                        
                                             <option value="{{$package->p_id}}" @if($package->p_id == $individualPkg->package_type) {{ 'selected' }} @endif>
                                                 {{$package->p_name}}
                                             </option>
                                         @endforeach
+                                        
 
                                        
                                     </select>
+                                    <p class="form-text text-danger" id="demo8"></p>
                                 </div>
                             </div>
 
 
 
                             <input type="submit" class="btn btn-success " value="Update" name="add"
-                                style="margin:0 auto; width:112px;">
-
-
-
+                                style="margin:0 auto; width:112px;" onclick="indiPkgValidateForm()"  id="add">
 
 
                         </div>

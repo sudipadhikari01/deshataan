@@ -58,7 +58,7 @@ class IndividualPackageController extends Controller
 
         $individualPkg->save();
 
-        return redirect()->route('adminn.indipackage.index');
+        return redirect()->route('adminn.indipackage.index')->with("status","Individual Package added successfully");
 
     }
 
@@ -110,7 +110,7 @@ class IndividualPackageController extends Controller
 
         $individualPkg->save();
 
-        return redirect()->route('adminn.indipackage.index');
+        return redirect()->route('adminn.indipackage.index')->with("status","Individual Package Updated successfully");
 
     }
 
@@ -124,7 +124,7 @@ class IndividualPackageController extends Controller
     {
         $individualPkg = IndividualPackage::find($p_id);
         $individualPkg->delete();
-        return redirect()->route('adminn.indipackage.index');
+        return redirect()->route('adminn.indipackage.index')->with("status","Individual Package Deleted successfully");
 
     }
 }

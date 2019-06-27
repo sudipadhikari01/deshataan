@@ -53,7 +53,7 @@ class AboutTourController extends Controller
 
         $aboutTour->save();
 
-        return redirect()->route('adminn.aboutTour.index');
+        return redirect()->route('adminn.aboutTour.index')->with("status","About Tour added successfully");
 
     }
 
@@ -102,7 +102,7 @@ class AboutTourController extends Controller
 
         $aboutTour->save();
 
-        return redirect()->route('adminn.aboutTour.index');
+        return redirect()->route('adminn.aboutTour.index')->with("status","About Tour updated successfully");
     }
 
     /**
@@ -116,7 +116,7 @@ class AboutTourController extends Controller
         $iaboutTour = AboutTour::find($id);
         $iaboutTour->delete();
 
-        return redirect()->route('adminn.aboutTour.index');
+        return redirect()->route('adminn.aboutTour.index')->with("status","About Tour deleted successfully");
 
     }
 }

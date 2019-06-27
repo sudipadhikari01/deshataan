@@ -34,7 +34,7 @@
 
                             <div class="form-group row">
                                 <div class="col-sm-12 text-right">
-                                    <button type="submit" class="btn btn-primary btn-form" value="Add" id="add" onclick="validateForm()">Add</button> 
+                                    <button type="submit" class="btn btn-primary btn-form" value="Add" id="add" onclick="pkgValidateForm()">Add</button> 
                                 </div>
                             </div>
                         </form>

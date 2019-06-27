@@ -1,4 +1,6 @@
-function validateForm() {
+// package validation form
+
+function pkgValidateForm() {
     var packageType = document.getElementById("packageType");
     var packageDesc = document.getElementById("packageDesc");
 
@@ -24,9 +26,9 @@ function validateForm() {
 }
 
 
-// another 
+// package validation form
 
-function validateForm1() {
+function indiPkgValidateForm() {
 
 
 
@@ -42,7 +44,7 @@ function validateForm1() {
     var price = document.getElementById("price");
     var packageType = document.getElementById("packageType");
 
-    // var = document.getElementById("");
+
 
     if (!title.checkValidity()) {
         document.getElementById("demo").innerHTML = title.validationMessage;
@@ -98,20 +100,71 @@ function validateForm1() {
 
     }
 
-    if (packageType.value == "Choose Package Type" || packageType.value == "") {
-        document.getElementById("demo8").innerHTML = "Please fill out this field";
+    if (packageType.value == "") {
+
+        document.getElementById("demo8").innerHTML = packageType.validationMessage;
+        return false;
+
+
     } else {
         document.getElementById("demo8").innerHTML = "";
 
     }
 
 
+}
 
 
 
+// about tour form validation
+function aboutTourValidateForm() {
+
+    var placesCovered = document.getElementById("placesCovered");
+    var inclusions = document.getElementById("inclusions");
+    var exclusions = document.getElementById("exclusions");
+    var datePicker1 = document.getElementById("datePicker1");
+    var packageType = document.getElementById("packageType");
+    var individualPackage = document.getElementById("individualPackage");
 
 
+    if (!placesCovered.checkValidity()) {
+        document.getElementById("demo1").innerHTML = placesCovered.validationMessage;
+    } else {
+        document.getElementById("demo1").innerHTML = "";
+    }
 
 
+    if (!inclusions.checkValidity()) {
+        document.getElementById("demo2").innerHTML = inclusions.validationMessage;
+    } else {
+        document.getElementById("demo2").innerHTML = "";
+    }
+
+    if (!exclusions.checkValidity()) {
+        document.getElementById("demo3").innerHTML = exclusions.validationMessage;
+    } else {
+        document.getElementById("demo3").innerHTML = "";
+    }
+
+
+    if (!datePicker1.checkValidity()) {
+        document.getElementById("demo4").innerHTML = datePicker1.validationMessage;
+    } else {
+        document.getElementById("demo4").innerHTML = "";
+    }
+
+
+    if (packageType.value == "") {
+        document.getElementById("demo5").innerHTML = packageType.validationMessage;
+    } else {
+        document.getElementById("demo5").innerHTML = "";
+    }
+
+
+    if (individualPackage.value == "") {
+        document.getElementById("demo6").innerHTML = individualPackage.validationMessage;
+    } else {
+        document.getElementById("demo6").innerHTML = "";
+    }
 
 }

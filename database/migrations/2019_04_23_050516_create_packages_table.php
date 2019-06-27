@@ -22,7 +22,7 @@ class CreatePackagesTable extends Migration
             $table->string('duration');
             $table->date('start_date');
             $table->date('end_date');
-            $table->double('price');
+            $table->string('price');
             $table->string('location');
             $table->integer('package_type');
 

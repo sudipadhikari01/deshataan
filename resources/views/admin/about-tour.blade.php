@@ -15,7 +15,7 @@ use App\Http\Controllers\PagesController;
             </div>
             <div class="col p-md-0">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a>
+                <li class="breadcrumb-item"><a href="{{url("/adminn")}}">Home</a>
                     </li>
                     <li class="breadcrumb-item active">
                         <a href="{{url('adminn/aboutTour/create')}}">Add About Tour</a>
@@ -37,6 +37,12 @@ use App\Http\Controllers\PagesController;
     <div class="container-fluid">
 
         <div class="row">
+
+            @if(session()->has('status'))
+                <div class="alert alert-success">
+                    {!! session()->get('status') !!}
+                </div>
+            @endif
             <!-- /# column -->
 
             <!-- /# column -->

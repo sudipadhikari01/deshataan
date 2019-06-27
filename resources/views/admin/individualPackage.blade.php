@@ -34,6 +34,12 @@
     <div class="container-fluid">
 
         <div class="row">
+    
+        @if(session()->has('status'))
+            <div class="alert alert-success">
+                {!! session()->get('status') !!}
+            </div>
+        @endif
             <!-- /# column -->
 
             <!-- /# column -->
@@ -57,6 +63,7 @@
                                         <th>location</th>
                                         <th>duration</th>
                                         <th>ticket quantity</th>
+                                        <th>Package Type</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -73,6 +80,7 @@
                                         <td>{{$individualPkg->location}} </td>
                                         <td>{{$individualPkg->duration}}</td>
                                         <td>{{$individualPkg->ticket_quantity}} </td>
+                                        <td>{{App\Http\Controllers\PagesController::showPackageType($individualPkg->package_type)}} </td>
                                         <td><span><a href="{{url("adminn/indipackage/$individualPkg->p_id/edit")}}"
                                                     class="mr-4" data-toggle="tooltip" data-placement="top"
                                                     title="Edit"><i class="fas fa-edit"></i></a>
