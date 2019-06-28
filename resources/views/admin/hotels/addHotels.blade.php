@@ -19,9 +19,10 @@
                                 <label class="col-sm-3 col-form-label text-label">Hotel Title</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            placeholder="Enter hotel title" name="hotelTitle">
+                                        <input type="text" class="form-control" id="hotelTitle"
+                                            placeholder="Enter hotel title" name="hotelTitle" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo1"></p>
                                 </div>
                             </div>
 
@@ -29,9 +30,10 @@
                                 <label class="col-sm-3 col-form-label text-label">Hotel Location</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            placeholder="Enter hotel location" name="hotelLocation">
+                                        <input type="text" class="form-control" id="hotelLocation"
+                                            placeholder="Enter hotel location" name="hotelLocation" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo2"></p>
                                 </div>
                             </div>
 
@@ -39,9 +41,10 @@
                                 <label class="col-sm-3 col-form-label text-label">Hotel Contact</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            placeholder="Enter hotel contact" name="hotelContact">
+                                        <input type="text" class="form-control" id="hotelContact"
+                                            placeholder="Enter hotel contact" name="hotelContact" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo3"></p>
                                 </div>
                             </div>
 
@@ -49,9 +52,10 @@
                                 <label class="col-sm-3 col-form-label text-label">Hotel Price</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            placeholder="Enter hotel price" name="hotelPrice">
+                                        <input type="text" class="form-control" id="hotelPrice"
+                                            placeholder="Enter hotel price" name="hotelPrice" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo4"></p>
                                 </div>
                             </div>
 
@@ -60,9 +64,10 @@
                                 <label class="col-sm-3 col-form-label text-label">Available Room</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            placeholder="Enter available rooms" name="availableRoom">
+                                        <input type="text" class="form-control" id="availableRoom"
+                                            placeholder="Enter available rooms" name="availableRoom" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo5"></p>
                                 </div>
                             </div>
 
@@ -70,9 +75,10 @@
                                 <label class="col-sm-3 col-form-label text-label">Hotel Description</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            placeholder="Enter hotel description" name="hotelDesc">
+                                        <input type="text" class="form-control" id="hotelDesc"
+                                            placeholder="Enter hotel description" name="hotelDesc" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo6"></p>
                                 </div>
                             </div>
 
@@ -81,22 +87,17 @@
                                 <label class="col-sm-3 col-form-label text-label">Hotel Amenities</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            placeholder="Enter hotel amenities" name="hotelAmenities">
+                                        <input type="text" class="form-control" id="hotelAmenities"
+                                            placeholder="Enter hotel amenities" name="hotelAmenities" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo7"></p>
                                 </div>
                             </div>
 
 
 
-
-
-
-
-
-
                             <input type="submit" class="btn btn-success " value="Add" name="add"
-                                style="margin:0 auto; width:112px;">
+                                style="margin:0 auto; width:112px;" onclick="addHoteValidateForm()">
 
 
 

@@ -20,9 +20,10 @@
                                 <label class="col-sm-3 col-form-label text-label">Hotel Title</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            name="hotelTitle" value="{{$hotel->title}}">
+                                        <input type="text" class="form-control" id="hotelTitle"
+                                            name="hotelTitle" value="{{$hotel->title}}" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo1"></p>
                                 </div>
                             </div>
 
@@ -30,9 +31,10 @@
                                 <label class="col-sm-3 col-form-label text-label">Hotel Location</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            name="hotelLocation" value="{{$hotel->location}}">
+                                        <input type="text" class="form-control" id="hotelLocation"
+                                            name="hotelLocation" value="{{$hotel->location}}" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo2"></p>
                                 </div>
                             </div>
 
@@ -40,9 +42,11 @@
                                 <label class="col-sm-3 col-form-label text-label">Hotel Contact</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            name="hotelContact" value="{{$hotel->contact}}">
+                                        <input type="text" class="form-control" id="hotelContact"
+                                            name="hotelContact" value="{{$hotel->contact}}" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo3"></p>
+                                    
                                 </div>
                             </div>
 
@@ -50,9 +54,10 @@
                                 <label class="col-sm-3 col-form-label text-label">Hotel Price</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            name="hotelPrice" value="{{$hotel->price}}">
+                                        <input type="text" class="form-control" id="hotelPrice"
+                                            name="hotelPrice" value="{{$hotel->price}}" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo4"></p>
                                 </div>
                             </div>
 
@@ -61,9 +66,10 @@
                                 <label class="col-sm-3 col-form-label text-label">Available Room</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            name="availableRoom" value="{{$hotel->available_room}}">
+                                        <input type="text" class="form-control" id="availableRoom"
+                                            name="availableRoom" value="{{$hotel->available_room}}" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo5"></p>
                                 </div>
                             </div>
 
@@ -71,9 +77,10 @@
                                 <label class="col-sm-3 col-form-label text-label">Hotel Description</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            name="hotelDesc" value="{{$hotel->description}}">
+                                        <input type="text" class="form-control" id="hotelDesc"
+                                            name="hotelDesc" value="{{$hotel->description}}" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo6"></p>
                                 </div>
                             </div>
 
@@ -82,22 +89,18 @@
                                 <label class="col-sm-3 col-form-label text-label">Hotel Amenities</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername2"
-                                            name="hotelAmenities" value="{{$hotel->amenities}}">
+                                        <input type="text" class="form-control" id="hotelAmenities"
+                                            name="hotelAmenities" value="{{$hotel->amenities}}" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo7"></p>
                                 </div>
                             </div>
 
 
 
 
-
-
-
-
-
                             <input type="submit" class="btn btn-success " value="Update" name="update"
-                                style="margin:0 auto; width:112px;">
+                                style="margin:0 auto; width:112px;" onclick="addHoteValidateForm()">
 
 
 

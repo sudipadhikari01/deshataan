@@ -22,9 +22,10 @@
                                 <label class="col-sm-3 col-form-label text-label">Places Covered</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername1"
-                                            name="placesCovered" value="{{$hotelSpecialFeatures->places_covered}}">
+                                        <input type="text" class="form-control" id="placesCovered"
+                                            name="placesCovered" value="{{$hotelSpecialFeatures->places_covered}}" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo1"></p>
                                 </div>
                             </div>
 
@@ -32,9 +33,10 @@
                                 <label class="col-sm-3 col-form-label text-label">Inclusions</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername1"
-                                            name="inclusions" value="{{$hotelSpecialFeatures->inclusions}}">
+                                        <input type="text" class="form-control" id="inclusions"
+                                            name="inclusions" value="{{$hotelSpecialFeatures->inclusions}}" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo2"></p>
                                 </div>
                             </div>
 
@@ -42,10 +44,12 @@
                                 <label class="col-sm-3 col-form-label text-label">Exclusions</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername1"
-                                            name="exclusions" value="{{$hotelSpecialFeatures->exclusions}}">
+                                        <input type="text" class="form-control" id="exclusions"
+                                            name="exclusions" value="{{$hotelSpecialFeatures->exclusions}}" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo3"></p>
                                 </div>
+
                             </div>
 
                             <div class="form-group row align-items-center">
@@ -54,8 +58,9 @@
                                     <div class="input-group">
                                         <input type="date" class="form-control" id="datePicker"
                                             placeholder="Enter start date" name="date"
-                                            value="{{$hotelSpecialFeatures->event_date}}">
+                                            value="{{$hotelSpecialFeatures->event_date}}" required>
                                     </div>
+                                    <p class="form-text text-danger" id="demo4"></p>
                                 </div>
                             </div>
 
@@ -64,16 +69,18 @@
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Choose Hotel Name</label>
                                 <div class="col-sm-9">
-                                    <select name="hotelName" class="form-control">
+                                    <select name="hotelName" class="form-control" id="hotelName" required>
+                                        <option value="">Choose hotel</option>
                                         @foreach ($hotels as $hotel)
                                         <option value="{{$hotel->h_id}}" @if($hotel->
-                                            id==$hotelSpecialFeatures->hotel_title_id) {{ 'selected' }}
+                                            h_id==$hotelSpecialFeatures->hotel_title_id) {{ 'selected' }}
                                             @endif>{{$hotel->title}}
                                         </option>
                                         @endforeach
 
 
                                     </select>
+                                    <p class="form-text text-danger" id="demo5"></p>
                                 </div>
                             </div>
 
@@ -82,7 +89,7 @@
 
 
                             <input type="submit" class="btn btn-success " value="Edit" name="Edit"
-                                style="margin:0 auto; width:112px;">
+                                style="margin:0 auto; width:112px;" onclick="hotelSpecialFeatureValidateForm()">
 
 
 

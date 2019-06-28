@@ -303,3 +303,110 @@ function itineraryValidateForm() {
         document.getElementById("demo4").innerHTML = "";
     }
 }
+
+// hotels form validation started
+
+
+// add hotel form validation
+function addHoteValidateForm() {
+    var hotelTitle = document.getElementById("hotelTitle");
+    var hotelLocation = document.getElementById("hotelLocation");
+    var hotelContact = document.getElementById("hotelContact");
+    var hotelPrice = document.getElementById("hotelPrice");
+    var availableRoom = document.getElementById("availableRoom");
+    var hotelDesc = document.getElementById("hotelDesc");
+    var hotelAmenities = document.getElementById("hotelAmenities");
+
+    if (!hotelTitle.checkValidity()) {
+        document.getElementById("demo1").innerHTML = hotelTitle.validationMessage;
+    } else {
+        document.getElementById("demo1").innerHTML = "";
+    }
+
+
+    if (!hotelLocation.checkValidity()) {
+        document.getElementById("demo2").innerHTML = hotelLocation.validationMessage;
+    } else {
+        document.getElementById("demo2").innerHTML = "";
+    }
+
+    if (!hotelContact.checkValidity()) {
+        document.getElementById("demo3").innerHTML = hotelContact.validationMessage;
+    } else {
+        document.getElementById("demo3").innerHTML = "";
+    }
+
+
+    if (!hotelPrice.checkValidity()) {
+        document.getElementById("demo4").innerHTML = hotelPrice.validationMessage;
+    } else {
+        document.getElementById("demo4").innerHTML = "";
+    }
+
+    if (!availableRoom.checkValidity()) {
+        document.getElementById("demo5").innerHTML = availableRoom.validationMessage;
+    } else {
+        document.getElementById("demo5").innerHTML = "";
+    }
+
+    if (!hotelDesc.checkValidity()) {
+        document.getElementById("demo6").innerHTML = hotelDesc.validationMessage;
+    } else {
+        document.getElementById("demo6").innerHTML = "";
+    }
+
+    if (!hotelAmenities.checkValidity()) {
+        document.getElementById("demo7").innerHTML = hotelAmenities.validationMessage;
+    } else {
+        document.getElementById("demo7").innerHTML = "";
+    }
+}
+
+
+
+
+// hotel special features form validation
+
+function hotelSpecialFeatureValidateForm() {
+    //  var = document.getElementById("")
+
+    var placesCovered = document.getElementById("placesCovered");
+    var inclusions = document.getElementById("inclusions");
+    var exclusions = document.getElementById("exclusions");
+    var datePicker = document.getElementById("datePicker");
+    var hotelName = document.getElementById("hotelName");
+
+
+
+
+    if (!placesCovered.checkValidity()) {
+        document.getElementById("demo1").innerHTML = placesCovered.validationMessage;
+    } else {
+        document.getElementById("demo1").innerHTML = "";
+    }
+
+    if (!inclusions.checkValidity()) {
+        document.getElementById("demo2").innerHTML = inclusions.validationMessage;
+    } else {
+        document.getElementById("demo2").innerHTML = "";
+    }
+
+    if (!exclusions.checkValidity()) {
+        document.getElementById("demo3").innerHTML = exclusions.validationMessage;
+    } else {
+        document.getElementById("demo3").innerHTML = "";
+    }
+
+    if (!datePicker.checkValidity()) {
+        document.getElementById("demo4").innerHTML = datePicker.validationMessage;
+    } else {
+        document.getElementById("demo4").innerHTML = "";
+    }
+
+    if (hotelName.value == "") {
+        document.getElementById("demo5").innerHTML = hotelName.validationMessage;
+    } else {
+        document.getElementById("demo5").innerHTML = "";
+    }
+
+}
