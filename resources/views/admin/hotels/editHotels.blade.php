@@ -96,15 +96,8 @@
                                 </div>
                             </div>
 
-
-
-
                             <input type="submit" class="btn btn-success " value="Update" name="update"
                                 style="margin:0 auto; width:112px;" onclick="addHoteValidateForm()">
-
-
-
-
 
                         </div>
                     </div>
