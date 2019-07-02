@@ -410,3 +410,55 @@ function hotelSpecialFeatureValidateForm() {
     }
 
 }
+
+// form validation for hotel room availabilities
+function hotelRoomAvaiValidateForm() {
+
+    var title = document.getElementById("title");
+    var amenities = document.getElementById("amenities");
+    var includes = document.getElementById("includes");
+    var maximumPerson = document.getElementById("maximumPerson");
+    var price = document.getElementById("price");
+    var hotelName = document.getElementById("hotelName");
+
+    if (!title.checkValidity()) {
+        document.getElementById("demo1").innerHTML = title.validationMessage;
+    } else {
+        document.getElementById("demo1").innerHTML = "";
+    }
+
+    if (!amenities.checkValidity()) {
+        document.getElementById("demo2").innerHTML = amenities.validationMessage;
+    } else {
+        document.getElementById("demo2").innerHTML = "";
+    }
+
+
+    if (!includes.checkValidity()) {
+        document.getElementById("demo3").innerHTML = includes.validationMessage;
+    } else {
+        document.getElementById("demo3").innerHTML = "";
+    }
+
+    if (!maximumPerson.checkValidity()) {
+        document.getElementById("demo4").innerHTML = maximumPerson.validationMessage;
+    } else {
+        document.getElementById("demo4").innerHTML = "";
+    }
+
+    if (!price.checkValidity()) {
+        document.getElementById("demo5").innerHTML = price.validationMessage;
+    } else {
+        document.getElementById("demo5").innerHTML = "";
+    }
+
+    if (hotelName.value == "") {
+        document.getElementById("demo6").innerHTML = hotelName.validationMessage;
+    } else {
+        document.getElementById("demo6").innerHTML = "";
+    }
+
+
+
+
+}

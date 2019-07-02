@@ -20,10 +20,11 @@
                                 <label class="col-sm-3 col-form-label text-label">Title</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername1"
+                                        <input type="text" class="form-control" id="title"
                                             placeholder="Enter title" aria-describedby="validationDefaultUsername1"
-                                            name="title">
+                                            name="title" required>
                                     </div>
+                                 <div class="form-text text-danger" id="demo1"></div>
                                 </div>
                             </div>
 
@@ -31,10 +32,11 @@
                                 <label class="col-sm-3 col-form-label text-label">Amenities</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername1"
+                                        <input type="text" class="form-control" id="amenities"
                                             placeholder="Enter amenities" aria-describedby="validationDefaultUsername1"
-                                            name="amenities">
+                                            name="amenities" required>
                                     </div>
+                                    <div class="form-text text-danger" id="demo2"></div>
                                 </div>
                             </div>
 
@@ -42,10 +44,11 @@
                                 <label class="col-sm-3 col-form-label text-label">Includes</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername1"
+                                        <input type="text" class="form-control" id="includes"
                                             placeholder="Enter what are includes"
-                                            aria-describedby="validationDefaultUsername1" name="includes">
+                                            aria-describedby="validationDefaultUsername1" name="includes" required>
                                     </div>
+                                    <div class="form-text text-danger" id="demo3"></div>
                                 </div>
                             </div>
 
@@ -53,10 +56,11 @@
                                 <label class="col-sm-3 col-form-label text-label">Maximum Person</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername1"
+                                        <input type="text" class="form-control" id="maximumPerson"
                                             placeholder="Enter the maximum number of person"
-                                            aria-describedby="validationDefaultUsername1" name="maximumPerson">
+                                            aria-describedby="validationDefaultUsername1" name="maximumPerson" required> 
                                     </div>
+                                    <div class="form-text text-danger" id="demo4"></div>
                                 </div>
                             </div>
 
@@ -64,10 +68,11 @@
                                 <label class="col-sm-3 col-form-label text-label">Price</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername1"
+                                        <input type="text" class="form-control" id="price"
                                             placeholder="Enter the price" aria-describedby="validationDefaultUsername1"
-                                            name="price">
+                                            name="price" required>
                                     </div>
+                                    <div class="form-text text-danger" id="demo5"></div>
                                 </div>
                             </div>
 
@@ -77,14 +82,15 @@
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Choose Hotel Name</label>
                                 <div class="col-sm-9">
-                                    <select name="hotelName" class="form-control">
-                                        <option>Choose Hotels Type</option>
+                                    <select name="hotelName" class="form-control"  id="hotelName" required> 
+                                        <option value="">Choose Hotels Type</option>
                                         @foreach ($hotels as $hotel)
                                         <option value="{{$hotel->h_id}}">{{$hotel->title}}</option>
                                         @endforeach
 
 
                                     </select>
+                                    <div class="form-text text-danger" id="demo6"></div>
                                 </div>
                             </div>
 
@@ -93,7 +99,7 @@
 
 
                             <input type="submit" class="btn btn-success " value="Add" name="add"
-                                style="margin:0 auto; width:112px;">
+                                style="margin:0 auto; width:112px;" onclick="hotelRoomAvaiValidateForm()">
 
 
 
