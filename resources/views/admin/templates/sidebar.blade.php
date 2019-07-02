@@ -32,7 +32,7 @@
                     <li><a href="{{url("/adminn/hotels")}}">Add Hotels</a></li>
                     <li><a href="{{url("adminn/hotel-gallery")}}">Add Hotels Photo Gallery</a></li>
                     <li><a href="{{url("/adminn/hotel-features")}}">Add Features</a></li>
-                    <li><a href="{{url("/adminn/hotel-room-availabilities")}}">Add Room & Availabilities</a></li>
+                    <li><a href="{{url("adminn/roomavailabilities")}}">Add Room & Availabilities</a></li>
 
                 </ul>
             </li>

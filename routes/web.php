@@ -43,6 +43,7 @@ Route::prefix('/adminn')
             Route::resource('hotels', 'HotelsController');
             Route::resource('hotel-features', 'HotelSpecialFeaturesController');
             Route::resource('hotel-gallery', 'HotelsPhotoGalleryController');
+            Route::resource('roomavailabilities', 'HotelRoomAvailabilitiesController');
 
         }
     );

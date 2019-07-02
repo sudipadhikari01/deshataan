@@ -18,7 +18,7 @@ use App\Http\Controllers\PagesController;
                     <li class="breadcrumb-item"><a href="{{url('/adminn')}}">Home</a>
                     </li>
                     <li class="breadcrumb-item active">
-                        <a href="{{url('/adminn/hotels-list')}}">Add Hotels</a>
+                        <a href="{{url('adminn/roomavailabilities/create')}}">Add Hotels</a>
                     </li>
                 </ol>
             </div>
@@ -56,7 +56,7 @@ use App\Http\Controllers\PagesController;
                         </div>
 
                         <div class="card-upload" style="float:right">
-                            <a href="{{url('/adminn/addHotelRoomAvai')}}" class="mr-4" data-toggle="tooltip"
+                            <a href="{{url('adminn/roomavailabilities/create')}}" class="mr-4" data-toggle="tooltip"
                                 data-placement="top" title="Add hotel room availabilities"><i
                                     class="fas fa-upload"></i></a>
                         </div>
@@ -79,7 +79,7 @@ use App\Http\Controllers\PagesController;
 
                                 <tbody>
                                     <tr>
-                                        <th>{{ $i->iteration }}</th>
+                                        <th>{{ $loop->iteration }}</th>
                                         <td>{{$hotel_room_availabilitie->title}}</td>
                                         <td>{{$hotel_room_availabilitie->amenities}}</td>
                                         <td>{{$hotel_room_availabilitie->includes}}</td>
@@ -87,13 +87,22 @@ use App\Http\Controllers\PagesController;
                                         <td>{{$hotel_room_availabilitie->price}}</td>
                                         <td>{{PagesController::showHotelName($hotel_room_availabilitie->hotel_type_id)}}
                                         </td>
-                                        <td><span><a href="{{url("/adminn/hotel-features/$hotel_room_availabilitie->id")}}"
+                                        <td><span><a href="{{url("adminn/roomavailabilities/$hotel_room_availabilitie->id/edit")}}"
                                                     class="mr-4" data-toggle="tooltip" data-placement="top"
                                                     title="Edit"><i class="fas fa-edit"></i></a>
-                                                <a href="{{url("/adminn/deleteHotelRoomAvai/$hotel_room_availabilitie->id")}}"
-                                                    class="mr-4" data-toggle="tooltip" data-placement="top"
-                                                    title="Delete" onclick="del()"><i class="fa fa-trash color-danger"
-                                                        aria-hidden="true" id="deletePackage"></i></a>
+                                                <a href="javascript:void();" class="mr-4" data-toggle="tooltip"
+                                                    data-placement="top" title="Delete"
+                                                    onclick="event.preventDefault();document.querySelector('#item-delete').submit();">
+                                                    <i class="fa fa-trash color-danger" aria-hidden="true"
+                                                        id="deleteHotelFeatures">
+                                                    </i>
+                                                </a>
+
+                                                <form method='POST' id="item-delete"
+                                                    action='{{url("adminn/roomavailabilities/$hotel_room_availabilitie->id")}}'>
+                                                    @csrf
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                </form>
                                             </span>
                                         </td>
                                     </tr>
