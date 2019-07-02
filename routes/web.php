@@ -12,8 +12,8 @@
  */
 
 //  frontend routes
-Route::get('/', 'frontend\PageController@home')->name('home');
-Route::get('/packages', 'frontend\PageController@packages')->name('packages');
+Route::get('/', 'FrontEnd\PageController@home')->name('home');
+Route::get('/packages', 'FrontEnd\PageController@packages')->name('packages');
 
 Auth::routes();
 
