@@ -16,6 +16,7 @@ class HotelRoomAvailabilitiesController extends Controller
     public function index()
     {
         $hotel_room_availabilities = HotelRoomAvailabilities::all();
+        // return $hotel_room_availabilities;
         return view('admin.hotels.hotel-room-availabilities.hotel-room-avalabilities')->with('hotel_room_availabilities', $hotel_room_availabilities);
     }
 
@@ -49,7 +50,7 @@ class HotelRoomAvailabilitiesController extends Controller
 
         $hotelRoomAvai->save();
 
-        return redirect()->route('hotel-room-availabilities')->with('status', "Hotel room availabilities added successfully");
+        return redirect()->route('adminn.roomavailabilities.index')->with('status', "Hotel room availabilities added successfully");
 
     }
 
@@ -97,7 +98,7 @@ class HotelRoomAvailabilitiesController extends Controller
 
         $hotelRoomAvai->save();
 
-        return redirect()->route('hotel-room-availabilities')->with('status', "Hotel room availabilities Edited successfully");
+        return redirect()->route('adminn.roomavailabilities.index')->with('status', "Hotel room availabilities Edited successfully");
     }
 
     /**
@@ -111,6 +112,6 @@ class HotelRoomAvailabilitiesController extends Controller
         $hotelRoomAvai = HotelRoomAvailabilities::find($id);
 
         $hotelRoomAvai->delete();
-        return redirect()->route('hotel-room-availabilities')->with('status', "Hotel room availabilities Deleted successfully");
+        return redirect()->route('adminn.roomavailabilities.indexclear')->with('status', "Hotel room availabilities Deleted successfully");
     }
 }
