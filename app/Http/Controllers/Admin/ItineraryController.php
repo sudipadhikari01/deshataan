@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\IndividualPackage;
 use App\Itinerary;
 use App\PackageType;
@@ -49,7 +50,7 @@ class ItineraryController extends Controller
         $itinerarys->ip_id = $request->input('individualPackage');
 
         $itinerarys->save();
-        return redirect()->route('adminn.itinerary.index')->with("status","Itinerary added successfully");
+        return redirect()->route('adminn.itinerary.index')->with("status", "Itinerary added successfully");
     }
 
     /**
@@ -94,7 +95,7 @@ class ItineraryController extends Controller
         $itinerarys->ip_id = $request->input('individualPackage');
 
         $itinerarys->save();
-        return redirect()->route('adminn.itinerary.index')->with("status","Itinerary Information updated successfully");
+        return redirect()->route('adminn.itinerary.index')->with("status", "Itinerary Information updated successfully");
     }
 
     /**
@@ -107,6 +108,6 @@ class ItineraryController extends Controller
     {
         $itinerarys = Itinerary::find($id);
         $itinerarys->delete();
-        return redirect()->route('adminn.itinerary.index')->with("status","Itinerary Information deleted successfully");
+        return redirect()->route('adminn.itinerary.index')->with("status", "Itinerary Information deleted successfully");
     }
 }

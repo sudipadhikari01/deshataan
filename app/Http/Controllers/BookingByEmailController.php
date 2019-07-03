@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\PackageType;
 use App\BookingByEmail;
+use App\PackageType;
+use Illuminate\Http\Request;
 
 class BookingByEmailController extends Controller
 {
@@ -16,7 +16,7 @@ class BookingByEmailController extends Controller
     public function index()
     {
         $packageTypes = PackageType::all();
-        return view('booking')->with('packageTypes',$packageTypes);
+        return view('booking')->with('packageTypes', $packageTypes);
     }
 
     /**
@@ -27,7 +27,7 @@ class BookingByEmailController extends Controller
     public function create()
     {
         $bookingByEmails = BookingByEmail::paginate(15);
-        return view('admin.booking-by-email')->with('bookingByEmails',$bookingByEmails);
+        return view('admin.booking-by-email')->with('bookingByEmails', $bookingByEmails);
     }
 
     /**
@@ -54,10 +54,6 @@ class BookingByEmailController extends Controller
 
         $bookingByEmail->save();
         return redirect()->route('booking')->with('status', 'Response has been sent!');
-       
-
-
-
 
     }
 
@@ -106,7 +102,7 @@ class BookingByEmailController extends Controller
         $bookingByEmail = BookingByEmail::find($id);
         $bookingByEmail->delete();
 
-        return redirect()->route('adminBookingByEmail')->with('status','Information deleted successfully');
+        return redirect()->route('adminBookingByEmail')->with('status', 'Information deleted successfully');
 
     }
 }
