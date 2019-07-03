@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\IndividualPackage;
 use App\PackageType;
 use Illuminate\Http\Request;
@@ -58,7 +59,7 @@ class IndividualPackageController extends Controller
 
         $individualPkg->save();
 
-        return redirect()->route('adminn.indipackage.index')->with("status","Individual Package added successfully");
+        return redirect()->route('adminn.indipackage.index')->with("status", "Individual Package added successfully");
 
     }
 
@@ -110,7 +111,7 @@ class IndividualPackageController extends Controller
 
         $individualPkg->save();
 
-        return redirect()->route('adminn.indipackage.index')->with("status","Individual Package Updated successfully");
+        return redirect()->route('adminn.indipackage.index')->with("status", "Individual Package Updated successfully");
 
     }
 
@@ -124,7 +125,7 @@ class IndividualPackageController extends Controller
     {
         $individualPkg = IndividualPackage::find($p_id);
         $individualPkg->delete();
-        return redirect()->route('adminn.indipackage.index')->with("status","Individual Package Deleted successfully");
+        return redirect()->route('adminn.indipackage.index')->with("status", "Individual Package Deleted successfully");
 
     }
 }

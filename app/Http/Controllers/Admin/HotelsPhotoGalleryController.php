@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Hotel;
 use App\HotelPhotoGallery;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class HotelsPhotoGalleryController extends Controller

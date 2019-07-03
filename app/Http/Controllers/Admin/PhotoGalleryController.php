@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\IndividualPackage;
 use App\PackageType;
 use App\PhotoGallery;
@@ -138,10 +139,10 @@ class PhotoGalleryController extends Controller
         $photoGallery = PhotoGallery::find($id);
         $photoGallery->image_title = $request->input('imageTitle');
 
-        if(!empty($fileNameToStore)){
+        if (!empty($fileNameToStore)) {
             $photoGallery->image_name = $fileNameToStore;
         }
-       
+
         $photoGallery->p_id = $request->input('packageType');
         $photoGallery->ip_id = $request->input('individualPackage');
 

@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\AboutTour;
+use App\Http\Controllers\Controller;
 use App\IndividualPackage;
 use App\PackageType;
 use Illuminate\Http\Request;
@@ -53,7 +54,7 @@ class AboutTourController extends Controller
 
         $aboutTour->save();
 
-        return redirect()->route('adminn.aboutTour.index')->with("status","About Tour added successfully");
+        return redirect()->route('adminn.aboutTour.index')->with("status", "About Tour added successfully");
 
     }
 
@@ -102,7 +103,7 @@ class AboutTourController extends Controller
 
         $aboutTour->save();
 
-        return redirect()->route('adminn.aboutTour.index')->with("status","About Tour updated successfully");
+        return redirect()->route('adminn.aboutTour.index')->with("status", "About Tour updated successfully");
     }
 
     /**
@@ -116,7 +117,7 @@ class AboutTourController extends Controller
         $iaboutTour = AboutTour::find($id);
         $iaboutTour->delete();
 
-        return redirect()->route('adminn.aboutTour.index')->with("status","About Tour deleted successfully");
+        return redirect()->route('adminn.aboutTour.index')->with("status", "About Tour deleted successfully");
 
     }
 }
