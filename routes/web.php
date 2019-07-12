@@ -18,8 +18,12 @@ Route::prefix('/')
     ->name('frontend.')
     ->group(
         function () {
-            Route::get('/', 'PageController@home')->name('home');
-            Route::get('/packages/{id}', 'PageController@packages')->name('packages');
+            Route::get('/', 'PageController@home')
+                ->name('home');
+            Route::get('/packages', 'PageController@packages')
+                ->name('packages');
+            Route::get('/package/{id}', 'PageController@ipackages')
+                ->name('single-pkg');
         }
     );
 

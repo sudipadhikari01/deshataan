@@ -173,7 +173,7 @@
                                     <li><a href="{{url('/')}}">Home</a>
                                     </li>
                                     <li class="about-menu">
-                                        <a href="javascript:void()" class="mm-arr">Packages</a>
+                                        <a href="{{url('/packages')}}" class="mm-arr">Packages</a>
                                         <!-- MEGA MENU 1 -->
                                         <div class="mm-pos">
                                             <div class="about-mm m-menu">
@@ -201,7 +201,7 @@
                                                             @else
                                                             @foreach($pkgs as $pkg)
                                                             <li><a
-                                                                    href="{{url('/packages\/')}}{{ $pkg->p_id }}">{{ $pkg->p_name }}</a>
+                                                                    href="{{url('/package\/')}}{{ $pkg->p_id }}">{{ $pkg->p_name }}</a>
                                                             </li>
                                                             @endforeach
                                                             @endif
