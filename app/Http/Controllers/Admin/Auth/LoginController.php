@@ -25,7 +25,6 @@ class LoginController extends Controller
                 'forgotPasswordRoute' => 'admin.password.request',
             ]);
         }
-
     }
     /**
      * Login the admin.
