@@ -11,19 +11,21 @@ use App\Hotel;
 
 class PagesController extends Controller
 {
-    public static function showIndividualPackage($id){
+    public static function showIndividualPackage($id)
+    {
         return IndividualPackage::findorFail($id)->title;
         // return $package
-        
+
 
     }
 
-    public static function showPackageType($id){
+    public static function showPackageType($id)
+    {
         return PackageType::findorFail($id)->p_name;
-       
     }
 
-    public static function showHotelName($id){
+    public static function showHotelName($id)
+    {
         return Hotel::findorFail($id)->title;
     }
 }

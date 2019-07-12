@@ -1,6 +1,7 @@
-@include('frontend.layouts.app')
+@include('frontend.layouts.fronthead')
     <!--HEADER SECTION-->
     <section>
+
         <div class="tourz-search" style="margin-top:-32px">
             <div class="container">
                 <div class="row">

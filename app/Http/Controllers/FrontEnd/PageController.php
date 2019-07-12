@@ -4,14 +4,17 @@ namespace App\Http\Controllers\FrontEnd;
 
 use App\Http\Controllers\Controller;
 use App\PackageType as Pkg;
+use App\IndividualPackage as Ipkgs;
 
 class PageController extends Controller
 {
     private $pkgs;
+    private $ipkgs;
 
     public function __construct()
     {
-        $this->pkgs = Pkg::all();
+        $this->pkgs = Pkg::paginate();
+        $this->ipkgs = Ipkgs::paginate();
     }
     public function home()
     {
@@ -20,24 +23,19 @@ class PageController extends Controller
 
     public function packages()
     {
-        $pkgs = $this->pkgs->paginate();
-        // return view('frontend.family-package')->with('pkgs', $pkgs);
-        return "pkg list";
+        $ipkgs = $this->ipkgs;
+        // return $ipkgs;
+        return view('frontend.family-package')->with('ipkgs', $ipkgs);
     }
 
     public function hotels()
-    {
-
-    }
+    { }
 
     public function contact()
-    {
-
-    }
+    { }
 
     public function singlePkg($id)
     {
         return "pkg id is $id";
     }
-
 }
