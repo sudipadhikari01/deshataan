@@ -8,8 +8,8 @@ use App\IndividualPackage as Ipkgs;
 
 class PageController extends Controller
 {
-    private $pkgs;
-    private $ipkgs;
+    private $pkgs; // pkg type {categories}
+    private $ipkgs; // individual pkg { individual pkgs }
 
     public function __construct()
     {
