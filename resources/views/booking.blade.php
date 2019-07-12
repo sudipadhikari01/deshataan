@@ -454,7 +454,7 @@
 									<select name="packageType">
 										<option value="" disabled selected>Select your package</option>
 										@foreach ($packageTypes as $packageType)
-                                         <option value="{{$packageType->p_id}}">{{$packageType->p_name}}</option>
+                                         <option value="{{$packageType->p_id}}">{{$packageType->title}}</option>
                                         @endforeach
 									</select>
 								</div>

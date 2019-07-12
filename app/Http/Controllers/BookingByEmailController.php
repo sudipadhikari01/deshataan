@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\BookingByEmail;
-use App\PackageType;
+use App\IndividualPackage as Ipkgs;
 use Illuminate\Http\Request;
 
 class BookingByEmailController extends Controller
@@ -15,7 +15,7 @@ class BookingByEmailController extends Controller
      */
     public function index()
     {
-        $packageTypes = PackageType::all();
+        $packageTypes = Ipkgs::all();
         return view('booking')->with('packageTypes', $packageTypes);
     }
 
@@ -54,7 +54,6 @@ class BookingByEmailController extends Controller
 
         $bookingByEmail->save();
         return redirect()->route('booking')->with('status', 'Response has been sent!');
-
     }
 
     /**
@@ -103,6 +102,5 @@ class BookingByEmailController extends Controller
         $bookingByEmail->delete();
 
         return redirect()->route('adminBookingByEmail')->with('status', 'Information deleted successfully');
-
     }
 }

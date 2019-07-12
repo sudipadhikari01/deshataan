@@ -35,11 +35,11 @@
 <section>
     <div class="rows inner_banner inner_banner_5">
         <div class="container">
-            <h2><span>Family Package -</span> Top Family Packages In The World</h2>
+            <h2><span>Our Packages -</span> Top Packages In The World</h2>
             <ul>
                 <li><a href="#inner-page-title">Home</a></li>
                 <li><i class="fa fa-angle-right" aria-hidden="true"></i> </li>
-                <li><a href="#inner-page-title" class="bread-acti">Family Package</a></li>
+                <li><a href="#inner-page-title" class="bread-acti">Our Packages</a></li>
             </ul>
             <p>Book travel packages and enjoy your holidays with distinctive experience</p>
         </div>
@@ -51,7 +51,7 @@
         <div class="container inn-page-con-bg tb-space pad-bot-redu-5" id="inner-page-title">
             <!-- TITLE & DESCRIPTION -->
             <div class="spe-title col-md-12">
-                <h2>Family <span> packages</span></h2>
+                <h2>Our <span> packages</span></h2>
                 <div class="title-line">
                     <div class="tl-1"></div>
                     <div class="tl-2"></div>
@@ -60,7 +60,8 @@
                 <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide. Book travel packages
                     and enjoy your holidays with distinctive experience</p>
             </div>
-            @foreach($ipkgs as $p)
+
+            @foreach($pkgs as $p) {{-- loog indi pkgs --}}
             <!--===== PLACES ======-->
             <div class="rows p2_2">
                 <div class="col-md-6 col-sm-6 col-xs-12 p2_1">

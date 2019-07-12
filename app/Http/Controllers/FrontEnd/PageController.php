@@ -23,9 +23,22 @@ class PageController extends Controller
 
     public function packages()
     {
-        $ipkgs = $this->ipkgs;
+        $pkgs = $this->pkgs;
+        // return $pkgs;
+        return view('frontend.packages.all-pkgs')->with('pkgs', $pkgs);
+    }
+    public function ipackages($id)
+    {
+        $pkgs = $this->pkgs;
+        $pkg = Pkg::findOrFail($id);
+        // return $pkg;
+        $ipkgs = $this->ipkgs->where('package_type', $id);
         // return $ipkgs;
-        return view('frontend.family-package')->with('ipkgs', $ipkgs);
+        if ($ipkgs->count() > 0) {
+            return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs'));
+        } else {
+            return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs'));
+        }
     }
 
     public function hotels()
