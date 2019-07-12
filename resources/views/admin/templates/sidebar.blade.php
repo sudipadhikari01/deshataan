@@ -6,7 +6,7 @@
         <ul class="metismenu" id="menu">
             <li class="nav-label">Dashboard</li>
             <li class="mega-menu mega-menu-lg">
-                <a href="{{ route('admin') }}" aria-expanded="false">
+                <a href="{{ route('adminn.index') }}" aria-expanded="false">
                     <i class="mdi mdi-view-dashboard"></i><span class="nav-text">Dashboard</span>
                 </a>
 

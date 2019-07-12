@@ -11,22 +11,31 @@
 |
  */
 
-//  frontend routes
-Route::get('/', 'FrontEnd\PageController@home')->name('home');
-Route::get('/packages', 'FrontEnd\PageController@packages')->name('packages');
+// frontend routes
+
+Route::prefix('/')
+    ->namespace('FrontEnd')
+    ->name('frontend.')
+    ->group(
+        function () {
+            Route::get('/', 'PageController@home')->name('home');
+            Route::get('/packages/{id}', 'PageController@packages')->name('packages');
+        }
+    );
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/test', function () {
-    return view('inc.header');
-});
+// Route::get('/test', function () {
+//     return view('inc.header');
+// });
 
 // admin dashboard
-Route::get('/adminn', function () {
-    return view('admin.index');
-})->name("admin");
+// Route::get('/adminn', function () {
+//     return view('admin.index');
+// })->name("admin");
 
 //admin group routes
 Route::prefix('/adminn')
@@ -34,7 +43,6 @@ Route::prefix('/adminn')
     ->namespace('Admin')
     ->group(
         function () {
-            Route::get('/', 'HomeController@index')->name('home');
             Route::resource('packagetype', 'PackageTypeController');
             Route::resource('indipackage', 'IndividualPackageController');
             Route::resource('aboutTour', 'AboutTourController');
@@ -45,15 +53,16 @@ Route::prefix('/adminn')
             Route::resource('hotel-features', 'HotelSpecialFeaturesController');
             Route::resource('hotel-gallery', 'HotelsPhotoGalleryController');
             Route::resource('roomavailabilities', 'HotelRoomAvailabilitiesController');
+            Route::get('/home', 'HomeController@index')->name('index');
 
             //using admin auth
-            Route::namespace ('Auth')
+            Route::namespace('Auth')
                 ->group(
                     function () {
                         //Login Routes
                         Route::get('/', 'LoginController@showLoginForm')->name('login');
                         Route::get('/login', 'LoginController@showLoginForm')->name('login');
-                        Route::post('/login', 'LoginController@login');
+                        Route::post('/login', 'LoginController@login')->name('login');
                         Route::post('/logout', 'LoginController@logout')->name('logout');
                         //Forgot Password Routes
                         Route::get('/password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.request');
@@ -63,7 +72,6 @@ Route::prefix('/adminn')
                         Route::post('/password/reset', 'ResetPasswordController@reset')->name('password.update');
                     }
                 );
-
         }
     );
 

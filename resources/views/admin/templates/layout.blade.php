@@ -227,8 +227,9 @@
 
                         <li class="icons">
                             <a href="javascript:void(0)" class="log-user">
-                                <img src="../../assets/images/avatar/1.jpg" alt=""> <span>George Martin</span> <i
-                                    class="fa fa-caret-down f-s-14" aria-hidden="true"></i>
+                                <img src="../../assets/images/avatar/1.jpg" alt="">
+                                <span>{{ Auth::check() ? Auth::user()->name : 'Susant' }}</span>
+                                <i class="fa fa-caret-down f-s-14" aria-hidden="true"></i>
                             </a>
                             <div class="drop-down dropdown-profile animated bounceInDown">
                                 <div class="dropdown-content-body">
@@ -250,8 +251,15 @@
                                         </li> --}}
                                         <li><a href="{{ url('/') }}"><i class="icon-home"></i><span>Go to
                                                     Home</span></a></li>
-                                        <li><a href="javascript:void()"><i class="icon-power"></i>
+                                        <li>
+                                            <a href="javascript:void()"
+                                                onclick="event.preventDefault();document.querySelector('#admin-logout-form').submit();"><i
+                                                    class="icon-power"></i>
                                                 <span>Logout</span></a>
+                                            <form id="admin-logout-form" action="{{ route('adminn.logout') }}"
+                                                method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
                                         </li>
                                     </ul>
                                 </div>
