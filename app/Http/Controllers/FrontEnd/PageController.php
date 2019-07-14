@@ -5,6 +5,7 @@ namespace App\Http\Controllers\FrontEnd;
 use App\Http\Controllers\Controller;
 use App\PackageType as Pkg;
 use App\IndividualPackage as Ipkgs;
+use App\PhotoGallery as Pg;
 
 class PageController extends Controller
 {
@@ -18,7 +19,9 @@ class PageController extends Controller
     }
     public function home()
     {
-        return view('frontend.welcome')->with('pkgs', $this->pkgs);
+        $page = "home";
+        $pkgs = $this->pkgs;
+        return view('frontend.welcome', compact('pkgs', 'page'));
     }
 
     public function packages()
@@ -31,14 +34,19 @@ class PageController extends Controller
     {
         $pkgs = $this->pkgs;
         $pkg = Pkg::findOrFail($id);
-        // return $pkg;
         $ipkgs = $this->ipkgs->where('package_type', $id);
         // return $ipkgs;
         if ($ipkgs->count() > 0) {
-            return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs'));
+            return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs', 'pg'));
         } else {
-            return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs'));
+            return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs', 'pg'));
         }
+    }
+
+    public static function getImage($ipid)
+    {
+        $pg = Pg::where('ip_id', $ipid)->get();
+        return $pg;
     }
 
     public function hotels()

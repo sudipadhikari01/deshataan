@@ -173,7 +173,7 @@
                                     <li><a href="{{url('/')}}">Home</a>
                                     </li>
                                     <li class="about-menu">
-                                        <a href="{{url('/packages')}}" class="mm-arr">Packages</a>
+                                        <a href="javascript:void()" class="mm-arr">Packages</a>
                                         <!-- MEGA MENU 1 -->
                                         <div class="mm-pos">
                                             <div class="about-mm m-menu">
@@ -228,6 +228,39 @@
             </main>
     </div>
 
+    @if (empty($page))
+    <!-- TOP SEARCH BOX -->
+    <div class="search-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="search-form">
+                        <form class="tourz-search-form" method="POST" action="{{url('/search-result')}}"
+                            enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <div class="input-field">
+                                <input type="text" id="select-city" class="autocomplete" name="city">
+                                <label for="select-city">Enter city</label>
+                            </div>
+                            {{-- <div class="input-field">
+                        <input type="text" id="select-search" class="autocomplete">
+                        <label for="select-search" class="search-hotel-type">Search over a million tour and travels, sight seeings, hotels and more</label>
+                    </div> --}}
+                            <div class="input-field">
+                                <input type="submit" value="search" class="waves-effect waves-light tourz-sear-btn">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END TOP SEARCH BOX -->
+
+    @endif
+
+    </section>
+    <!--END HEADER SECTION-->
 
     <!--========= Scripts ===========-->
     <script src="{{ asset('js/jquery-latest.min.js') }}"></script>

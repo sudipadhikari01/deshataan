@@ -58,8 +58,7 @@ class PhotoGalleryController extends Controller
 
             //upload image
 
-            $path = $request->file('image')->storeAs('public/photogallery', $fileNameToStore);
-
+            $path = $request->file('image')->storeAs('public/pkgGall', $fileNameToStore);
         } else {
 
             $fileNameToStore = "noimage.jpg";
@@ -74,7 +73,6 @@ class PhotoGalleryController extends Controller
         $photoGallery->save();
 
         return redirect()->route('adminn.photo-gallery.index');
-
     }
 
     /**
@@ -163,6 +161,5 @@ class PhotoGalleryController extends Controller
         $photoGallery->delete();
 
         return redirect()->route('adminn.photo-gallery.index');
-
     }
 }
