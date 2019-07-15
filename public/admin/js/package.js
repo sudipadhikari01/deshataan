@@ -172,8 +172,18 @@ function aboutTourValidateForm() {
 
 // individual package photo gallery form validation
 
+// image file validator
+function isFileImage(file) {
+    // const acceptedImageTypes = ['image/gif', 'image/jpeg', 'image/png', 'image/jpg'];
+
+    // return file && acceptedImageTypes.includes(file['type'])
+    var allowedExtension = ['jpeg', 'jpg', 'png', 'gif'];
+    return allowedExtension.includes(file);
+}
+
 function photoGalleryValidateForm() {
 
+    var formm = document.getElementById('pgform');
     var imageTitle = document.getElementById("imageTitle");
     var image = document.getElementById("image");
     var packageType = document.getElementById("packageType");
@@ -193,18 +203,22 @@ function photoGalleryValidateForm() {
 
     if (image.value == "") {
         document.getElementById("demo2").innerHTML = "Please select an image";
-
+        formm.addEventListener('submit', function(e) {
+            e.preventDefault();
+        });
     } else {
-        for (var index in allowedExtension) {
-            if (fileExtension != allowedExtension[index]) {
-                document.getElementById("demo2").innerHTML = "Invalid image format";
-                return false;
+        if (isFileImage(fileExtension)) {
+            document.getElementById("demo2").innerHTML = "";
+        } else {
+            formm.addEventListener('submit', function(e) {
+                e.preventDefault();
+            });
+            document.getElementById("demo2").innerHTML = "Invalid image format";
+            setTimeout(function() {
+                document.getElementById("demo2").style.visibility = "hidden";
+            }, 3000);
 
-            } else {
-                document.getElementById("demo2").innerHTML = "";
-            }
         }
-        // document.getElementById("demo1").innerHTML = "";
     }
 
     if (packageType.value == "") {

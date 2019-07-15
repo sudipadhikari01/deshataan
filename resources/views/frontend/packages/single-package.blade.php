@@ -1,34 +1,6 @@
 @include('frontend.layouts.fronthead')
 
-<!-- TOP SEARCH BOX -->
-<div class="search-top">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="search-form">
-                    <form class="tourz-search-form" method="POST" action="{{url('/search-result')}}"
-                        enctype="multipart/form-data">
-                        {{ csrf_field() }}
-                        <div class="input-field">
-                            <input type="text" id="select-city" class="autocomplete" name="city">
-                            <label for="select-city">Enter city</label>
-                        </div>
-                        {{-- <div class="input-field">
-                        <input type="text" id="select-search" class="autocomplete">
-                        <label for="select-search" class="search-hotel-type">Search over a million tour and travels, sight seeings, hotels and more</label>
-                    </div> --}}
-                        <div class="input-field">
-                            <input type="submit" value="search" class="waves-effect waves-light tourz-sear-btn"> </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END TOP SEARCH BOX -->
 
-</section>
-<!--END HEADER SECTION-->
 
 
 <!--====== BANNER ==========-->
@@ -62,13 +34,14 @@
                     and enjoy your holidays with distinctive experience</p>
             </div>
             @if ($ipkgs->count() > 0)
-            @foreach($ipkgs as $p) {{-- loog indi pkgs --}}
+            @foreach($ipkgs as $p) {{-- loop indi pkgs --}}
             <!--===== PLACES ======-->
             <div class="rows p2_2">
                 <div class="col-md-6 col-sm-6 col-xs-12 p2_1">
                     <div class="band"><img src="images/band.png" alt="" />
                     </div>
-                    <img src="images/iplace-2.jpg" alt="" />
+                    <img src="@if(count($pg)>0) {{ $pg->title }} @else {{ asset('storage/pkgGall/pkgplaceholder.png') }} @endif"
+                        alt="" />
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 p2">
                     <h3>{{$p->title}} <span><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"

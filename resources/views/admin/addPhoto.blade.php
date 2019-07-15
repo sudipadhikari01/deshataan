@@ -8,7 +8,7 @@
 
 
         <div class="col-xl-12">
-            <form method="POST" action="{{url('adminn/photo-gallery')}}" enctype="multipart/form-data">
+            <form method="POST" action="{{url('adminn/photo-gallery')}}" enctype="multipart/form-data" id="pgform">
                 {{ csrf_field() }}
                 <div class="card forms-card">
                     <div class="card-body">
@@ -32,7 +32,7 @@
                                 <div class="col-sm-9">
                                     <div class="input-group">
                                         <input type="file" class="form-control" id="image"
-                                            aria-describedby="inputGroupPrepend2" name="image" >
+                                            aria-describedby="inputGroupPrepend2" name="image">
                                     </div>
                                     <p class="form-text text-danger" id="demo2"></p>
                                 </div>
@@ -46,9 +46,9 @@
                                 <div class="col-sm-9">
                                     <select name="packageType" class="form-control" id="packageType" required>
                                         <option value="">Choose Package Type</option>
-                                            @foreach ($packages as $package)
-                                                <option value="{{$package->p_id}}">{{$package->p_name}}</option>
-                                            @endforeach
+                                        @foreach ($packages as $package)
+                                        <option value="{{$package->p_id}}">{{$package->p_name}}</option>
+                                        @endforeach
 
 
                                     </select>
@@ -59,11 +59,12 @@
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Individual Package</label>
                                 <div class="col-sm-9">
-                                    <select name="individualPackage" class="form-control" id="individualPackage" required>
+                                    <select name="individualPackage" class="form-control" id="individualPackage"
+                                        required>
                                         <option value="">Choose Individual Package Type</option>
-                                            @foreach ($individualPkgs as $individualPkg)
-                                                <option value="{{$individualPkg->p_id}}">{{$individualPkg->title}}</option>
-                                            @endforeach
+                                        @foreach ($individualPkgs as $individualPkg)
+                                        <option value="{{$individualPkg->p_id}}">{{$individualPkg->title}}</option>
+                                        @endforeach
 
 
                                     </select>

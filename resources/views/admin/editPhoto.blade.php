@@ -22,9 +22,8 @@
                                 <label class="col-sm-3 col-form-label text-label">Image Title</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="imageTitle"
-                                            name="imageTitle" required
-                                            value="{{$individualPhoto->image_title}}">
+                                        <input type="text" class="form-control" id="imageTitle" name="imageTitle"
+                                            required value="{{$individualPhoto->image_title}}">
                                     </div>
                                     <p class="form-text text-danger" id="demo1"></p>
                                 </div>
@@ -33,15 +32,14 @@
                                 <label class="col-sm-3 col-form-label text-label">Upload Image</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="file" class="form-control" id="image"
-                                             name="image" 
+                                        <input type="file" class="form-control" id="image" name="image"
                                             value="{{$individualPhoto->image_name}}">
                                     </div>
                                     <p class="form-text text-danger" id="demo2"></p>
                                     <img src="{{ asset("/storage/photogallery/$individualPhoto->image_name") }}" alt=""
                                         style="width:150px; height:100px">
                                 </div>
-                               
+
                             </div>
 
 
@@ -68,14 +66,15 @@
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Individual Package</label>
                                 <div class="col-sm-9">
-                                    <select name="individualPackage" class="form-control" id="individualPackage" required>
+                                    <select name="individualPackage" class="form-control" id="individualPackage"
+                                        required>
 
                                         <option value="">Choose Individual Package Type</option>
-                                            @foreach ($individualPkgs as $individualPkg)
-                                                <option value="{{$individualPkg->p_id}}" @if($individualPhoto->ip_id ==
-                                                     $individualPkg->p_id ) {{ "selected" }} @endif >{{$individualPkg->title}}
-                                                </option>
-                                            @endforeach
+                                        @foreach ($individualPkgs as $individualPkg)
+                                        <option value="{{$individualPkg->p_id}}" @if($individualPhoto->ip_id ==
+                                            $individualPkg->p_id ) {{ "selected" }} @endif >{{$individualPkg->title}}
+                                        </option>
+                                        @endforeach
 
 
                                     </select>
