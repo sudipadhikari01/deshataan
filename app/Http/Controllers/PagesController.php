@@ -21,12 +21,17 @@ class PagesController extends Controller
 
     public static function showPackageType($id)
     {
+<<<<<<< HEAD
     	$res = PackageType::find($id);
     	if($res!=null){
         	return PackageType::find($id)->p_name;
     	}else{
     		return "No package included";
     	}
+=======
+        
+        return PackageType::find($id)->p_name;
+>>>>>>> bca6bfe2c41d7b9648a3b18b9cdb2858c2b4e53c
     }
 
     public static function showHotelName($id)
