@@ -40,23 +40,22 @@
                 <div class="col-md-6 col-sm-6 col-xs-12 p2_1">
                     <div class="band"><img src="images/band.png" alt="" />
                     </div>
-                    <img src="@if(count($pg)>0) {{ $pg->title }} @else {{ asset('storage/pkgGall/pkgplaceholder.png') }} @endif"
-                        alt="" />
+                    <img src="{{ asset('storage/pkgGall/pkgplaceholder.png') }}" alt="" />
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 p2">
-                    <h3>{{$p->title}} <span><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
+                    <h3>{{$p->title}}<span><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
                                 aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
                                 class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half-o"
                                 aria-hidden="true"></i></span></h3>
                     <p>{{$p->description}}</p>
                     <div class="ticket">
                         <ul>
-                            <li>Available Tickets : 48</li>
-                            <li>Start Date : 12.01.2015</li>
-                            <li>End Date : 12.01.2015</li>
+                            <li>Available Tickets : {{$p->ticket_quantity}}</li>
+                            <li>Start Date : {{$p->start_date}}</li>
+                            <li>End Date : {{$p->end_date}}</li>
                         </ul>
                     </div>
-                    <div class="featur">
+                    {{-- <div class="featur">
                         <h4>Package Locations</h4>
                         <ul>
                             <li>Rio, Brazil(3 days)</li>
@@ -64,12 +63,12 @@
                             <li>First class Sightseeing</li>
                             <li>Lorem ipsum</li>
                         </ul>
-                    </div>
+                    </div> --}}
                     <div class="p2_book">
                         <ul>
                             <li><a href="{{url('/booking')}}" class="link-btn">Book Now</a>
                             </li>
-                            <li><a href="{{url('/tour-details')}}" class="link-btn">View Package</a>
+                            <li><a href="{{url('/tour-details')}}/{{$p->p_id}}" class="link-btn">View Package</a>
                             </li>
                         </ul>
                     </div>

@@ -127,7 +127,7 @@ class PhotoGalleryController extends Controller
 
             //upload image
 
-            $path = $request->file('image')->storeAs('public/photogallery', $fileNameToStore);
+            $path = $request->file('image')->storeAs('public/pkgGall', $fileNameToStore);
         }
         //  } else {
 

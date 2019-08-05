@@ -40,11 +40,19 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('auth.login', [
-            'title' => 'Login',
-            'loginRoute' => 'login',
-            'forgotPasswordRoute' => 'password.request',
-        ]);
+        if (Auth::check()) {
+            return "Logged in";
+            return redirect()->route('user.home');
+        } else {
+            return view(
+                'auth.login',
+                [
+                    'title' => 'Login',
+                    'loginRoute' => 'login',
+                    'forgotPasswordRoute' => 'password.request',
+                ]
+            );
+        }
     }
     public function logout()
     {

@@ -18,28 +18,31 @@ Route::prefix('/')
     ->name('frontend.')
     ->group(
         function () {
-            Route::get('/', 'PageController@home')
-                ->name('home');
-            Route::get('/packages', 'PageController@packages')
-                ->name('packages');
-            Route::get('/package/{id}', 'PageController@ipackages')
-                ->name('single-pkg');
+            Route::get(
+                '/',
+                'PageController@home'
+            )->name('home');
+
+            Route::get(
+                '/packages',
+                'PageController@packages'
+            )->name('packages');
+
+            Route::get(
+                '/package/{id}',
+                'PageController@ipackages'
+            )->name('single-pkg');
+
+            // tour details
+            Route::get(
+                '/tour-details/{id}',
+                'PageController@tour_details'
+            );
         }
     );
 
 
 Auth::routes();
-
-// Route::get('/home', 'HomeController@index')->name('home');
-
-// Route::get('/test', function () {
-//     return view('inc.header');
-// });
-
-// admin dashboard
-// Route::get('/adminn', function () {
-//     return view('admin.index');
-// })->name("admin");
 
 //admin group routes
 Route::prefix('/adminn')
@@ -79,10 +82,6 @@ Route::prefix('/adminn')
         }
     );
 
-// test
-Route::get("/individualPkg/{id}", 'PagesController@showIndividualPackage');
-
-Route::get('/packageType/{id}', 'PagesController@showPackageType');
 
 // booking by email for admin section
 Route::get('adminn/booking-by-email', 'BookingByEmailController@create')->name('adminBookingByEmail');
