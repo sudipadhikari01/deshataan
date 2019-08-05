@@ -27,7 +27,6 @@ class PagesController extends Controller
         } else {
             return "No package included";
         }
-
         return PackageType::find($id)->p_name;
     }
 

@@ -15,7 +15,7 @@ use App\Http\Controllers\PagesController;
             </div>
             <div class="col p-md-0">
                 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{url("/adminn")}}">Home</a>
+                    <li class="breadcrumb-item"><a href="{{url("/adminn")}}">Home</a>
                     </li>
                     <li class="breadcrumb-item active">
                         <a href="{{url('/adminn/photo-gallery/create')}}">Add About Tour</a>
@@ -40,9 +40,9 @@ use App\Http\Controllers\PagesController;
 
 
             @if(session()->has('status'))
-                <div class="alert alert-success">
-                    {!! session()->get('status') !!}
-                </div>
+            <div class="alert alert-success">
+                {!! session()->get('status') !!}
+            </div>
             @endif
             <!-- /# column -->
 
@@ -80,7 +80,7 @@ use App\Http\Controllers\PagesController;
                                     <tr>
                                         <th>{{ $i }}</th>
                                         <td>{{$photo->image_title}}</td>
-                                        <td><img src="{{ asset("/storage/photogallery/$photo->image_name")}}"
+                                        <td><img src="{{ asset("/storage/pkgGall/$photo->image_name")}}"
                                                 style="width:200; height:150px" alt="">
                                         </td>
                                         <td>{{PagesController::showPackageType($photo->p_id)}}</td>
@@ -90,13 +90,13 @@ use App\Http\Controllers\PagesController;
                                                         class="fas fa-edit"></i></a>
                                                 <a href="javascript:void();" class="mr-4" data-toggle="tooltip"
                                                     data-placement="top" title="Delete"
-                                                    onclick="event.preventDefault();document.querySelector('#item-delete').submit();">
+                                                    onclick="event.preventDefault();document.querySelector('#item-delete{{$photo->id}}').submit();">
                                                     <i class="fa fa-trash color-danger" aria-hidden="true"
                                                         id="deletePhotoGallery">
                                                     </i>
                                                 </a>
 
-                                                <form method='POST' id="item-delete"
+                                                <form method='POST' id="item-delete{{$photo->id}}"
                                                     action='{{url("adminn/photo-gallery/$photo->id")}}'>
                                                     @csrf
                                                     <input type="hidden" name="_method" value="DELETE">

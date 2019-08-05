@@ -32,11 +32,10 @@
                                 <label class="col-sm-3 col-form-label text-label">Upload Image</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="file" class="form-control" id="image" name="image"
-                                            value="{{$individualPhoto->image_name}}">
+                                        <input type="file" class="form-control" id="image" name="image" value="">
                                     </div>
                                     <p class="form-text text-danger" id="demo2"></p>
-                                    <img src="{{ asset("/storage/photogallery/$individualPhoto->image_name") }}" alt=""
+                                    <img src="{{ asset("/storage/pkgGall/$individualPhoto->image_name") }}" alt=""
                                         style="width:150px; height:100px">
                                 </div>
 
