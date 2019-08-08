@@ -20,6 +20,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/materialize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('css/mob.css') }}">
@@ -197,11 +198,12 @@
                                                     <div class="mm1-com mm1-s3">
                                                         <ul>
                                                             @if(empty($pkgs))
-
+                                                            No pkgs
                                                             @else
                                                             @foreach($pkgs as $pkg)
-                                                            <li><a
-                                                                    href="{{url('/package\/')}}{{ $pkg->p_id }}">{{ $pkg->p_name }}</a>
+                                                            <li>
+                                                                <a href="{{url('/package\/')}}{{ $pkg->p_id }}">{{ $pkg->p_name }}
+                                                                </a>
                                                             </li>
                                                             @endforeach
                                                             @endif
