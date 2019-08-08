@@ -3,16 +3,15 @@
 namespace App\Http\Controllers\FrontEnd;
 
 use App\Http\Controllers\Controller;
-use App\PackageType as Pkg;
 use App\IndividualPackage as Ipkgs;
+use App\Itinerary as Itin;
+use App\PackageType as Pkg;
 use App\PhotoGallery as Pg;
 
 class PageController extends Controller
 {
     private $pkgs; // pkg type {categories}
     private $ipkgs; // individual pkg { individual pkgs }
-
-
 
     public function __construct()
     {
@@ -23,6 +22,7 @@ class PageController extends Controller
     {
         $page = "home";
         $pkgs = $this->pkgs;
+
         return view('frontend.welcome', compact('pkgs', 'page'));
     }
 
@@ -32,7 +32,7 @@ class PageController extends Controller
         // return $pkgs;
         return view('frontend.packages.all-pkgs')->with('pkgs', $pkgs);
     }
-    public function ipackages($id)
+    public function ipackages($id) /// list all individual pkgs of given category
     {
         $pkgs = $this->pkgs;
         $pkg = Pkg::findOrFail($id);
@@ -47,13 +47,18 @@ class PageController extends Controller
         }
     }
 
-    public function tour_details($id)
+    public function tour_details($id) // single pkg detail
     {
+        $pkgs = $this->pkgs;
+        // return $pkgs;
+        $visit = Ipkgs::find($id)->value('visit');
+        // return $visit;
+        Ipkgs::where('p_id', $id)->update(array('visit' => $visit + 1));
         $sipkg = Ipkgs::find($id);
         $spkg = Pkg::find($sipkg->package_type);
         $pg = Pg::where('ip_id', $id)->get();
-
-        return view('frontend.tour-details', compact('sipkg', 'spkg', 'pg'));
+        $it = Itin::where('ip_id', $id)->get();
+        return view('frontend.tour-details', compact('pkgs', 'sipkg', 'spkg', 'pg', 'it'));
     }
 
     public static function showHotelName($id)
