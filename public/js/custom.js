@@ -1,20 +1,20 @@
 $(document).ready(function() {
-	"use strict";	
-	//MEGA MENU	
+    "use strict";
+    //MEGA MENU
     $(".about-menu").hover(function() {
         $(".about-mm").fadeIn();
     });
     $(".about-menu").mouseleave(function() {
         $(".about-mm").fadeOut();
     });
-    //MEGA MENU	
+    //MEGA MENU
     $(".admi-menu").hover(function() {
         $(".admi-mm").fadeIn();
     });
     $(".admi-menu").mouseleave(function() {
         $(".admi-mm").fadeOut();
     });
-    //MEGA MENU	
+    //MEGA MENU
     $(".cour-menu").hover(function() {
         $(".cour-mm").fadeIn();
     });
@@ -47,7 +47,7 @@ $(document).ready(function() {
     });
     $('.sdb-btn-edit').mouseleave(function() {
         $(this).text("edit my profile");
-    }); 
+    });
     //MOBILE MENU OPEN
     $(".ed-micon").on('click', function() {
         $(".ed-mm-inn").addClass("ed-mm-act");
@@ -72,7 +72,7 @@ $(document).ready(function() {
 
     //MATERIALIZE SELECT DROPDOWN
     $('select').material_select();
-	//MATERIALIZE SLIDER
+    //MATERIALIZE SLIDER
     $('.slider').slider();
 
     //AUTO COMPLETE CITY SELECT
@@ -139,7 +139,7 @@ $(document).ready(function() {
             "Holiday Hotel Inn": 'images/icon/13.png',
             "Tour and Travel Packages": 'images/icon/14.png',
             "City Seight Seeings": 'images/icon/15.png',
-"Mandarin Oriental, Hong Kong, China": 'images/icon/25.png',
+            "Mandarin Oriental, Hong Kong, China": 'images/icon/25.png',
             "Trump International Hotel & Tower, New York, United States": 'images/icon/26.png',
             "First World Hotel": 'images/icon/27.png',
             "MGM Grand Las Vegas Hotel": 'images/icon/28.png',
@@ -175,35 +175,37 @@ function myFunction() {
     }
 }
 
-//DATE PICKER	
+//DATE PICKER
 $(function() {
-    var dateFormat = "mm/dd/yy",
-        from = $("#from,#from-1,#from-2,#from-3,#from-4,#from-5")
-        .datepicker({
-            defaultDate: "+1w",
-            changeMonth: false,
-            numberOfMonths: 1
-        })
-        .on("change", function() {
-            to.datepicker("option", "minDate", getDate(this));
-        }),
-        to = $("#to,#to-1,#to-2,#to-3,#to-4,#to-5").datepicker({
-            defaultDate: "+1w",
-            changeMonth: false,
-            numberOfMonths: 1
-        })
-        .on("change", function() {
-            from.datepicker("option", "maxDate", getDate(this));
-        });
+    if ($("#from,#from-1,#from-2,#from-3,#from-4,#from-5").length > 0) {
+        var dateFormat = "mm/dd/yy",
+            from = $("#from,#from-1,#from-2,#from-3,#from-4,#from-5")
+            .datepicker({
+                defaultDate: "+1w",
+                changeMonth: false,
+                numberOfMonths: 1
+            })
+            .on("change", function() {
+                to.datepicker("option", "minDate", getDate(this));
+            }),
+            to = $("#to,#to-1,#to-2,#to-3,#to-4,#to-5").datepicker({
+                defaultDate: "+1w",
+                changeMonth: false,
+                numberOfMonths: 1
+            })
+            .on("change", function() {
+                from.datepicker("option", "maxDate", getDate(this));
+            });
 
-    function getDate(element) {
-        var date;
-        try {
-            date = $.datepicker.parseDate(dateFormat, element.value);
-        } catch (error) {
-            date = null;
+        function getDate(element) {
+            var date;
+            try {
+                date = $.datepicker.parseDate(dateFormat, element.value);
+            } catch (error) {
+                date = null;
+            }
+
+            return date;
         }
-
-        return date;
     }
 });

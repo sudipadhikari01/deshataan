@@ -1,4 +1,4 @@
-@include('frontend.layouts.fronthead')
+@include('frontend.layouts.pageTemplate')
 
 <!--====== BANNER ==========-->
 <section>

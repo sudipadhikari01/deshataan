@@ -38,6 +38,16 @@ Route::prefix('/')
                 '/tour-details/{id}',
                 'PageController@tour_details'
             );
+
+            Route::get(
+                'hotels',
+                'PageController@hotels'
+            )->name('hotels');
+
+            Route::get(
+                'contact',
+                'PageController@contact'
+            )->name('contact');
         }
     );
 
