@@ -41,7 +41,11 @@
                 <div class="col-md-6 col-sm-6 col-xs-12 p2_1">
                     <div class="band"><img src="{{ asset('images/band.png') }}" alt="" />
                     </div>
+                    @if($pg == true)
                     <img src="{{ asset('storage/pkgGall').'/'.$pg->image_name }}" alt="" />
+                    @else
+                    <img src="{{ asset('storage/pkgGall/placeholder.png') }}" alt="" />
+                    @endif
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 p2">
                     <h3>{{$p->title}}<span><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"

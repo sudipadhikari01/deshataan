@@ -196,7 +196,3 @@
     </div>
 </section>
 @endsection
-
-@section('fb-comments')
-
-@endsection

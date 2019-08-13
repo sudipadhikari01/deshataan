@@ -40,8 +40,12 @@ class PageController extends Controller
         $pkg = Pkg::findOrFail($id);
         $ipkgs = $this->ipkgs->where('package_type', $id);
         // return $ipkgs;
-        $pg = Pg::where(['p_id' => $id, 'ip_id' => $ipkgs[0]->p_id])->first();
-        // return $pg;
+        // return Pg::count();
+        if (Pg::count() > 0) {
+            $pg = Pg::where(['p_id' => $id, 'ip_id' => $ipkgs[0]->p_id])->first();
+        } else {
+            $pg = false;
+        }
         if ($ipkgs->count() > 0 && $pkgs->count() > 0) {
             // return $ipkgs->count();
             return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs', 'pg'));
