@@ -22,8 +22,8 @@ class PageController extends Controller
     {
         $page = "home";
         $pkgs = $this->pkgs;
-
-        return view('frontend.welcome', compact('pkgs', 'page'));
+        return view('frontend.layouts.home', compact('pkgs', 'page'));
+        // return view('frontend.welcome', compact('pkgs', 'page'));
     }
 
     public function packages()
@@ -32,18 +32,22 @@ class PageController extends Controller
         // return $pkgs;
         return view('frontend.packages.all-pkgs')->with('pkgs', $pkgs);
     }
-    public function ipackages($id) /// list all individual pkgs of given category
+
+    /// list all individual pkgs of given category
+    public function ipackages($id)
     {
         $pkgs = $this->pkgs;
         $pkg = Pkg::findOrFail($id);
         $ipkgs = $this->ipkgs->where('package_type', $id);
         // return $ipkgs;
+        $pg = Pg::where(['p_id' => $id, 'ip_id' => $ipkgs[0]->p_id])->first();
+        // return $pg;
         if ($ipkgs->count() > 0 && $pkgs->count() > 0) {
             // return $ipkgs->count();
-            return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs'));
+            return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs', 'pg'));
         } else {
             // return "No iPkgs";
-            return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs'));
+            return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs', 'pg'));
         }
     }
 
@@ -77,11 +81,16 @@ class PageController extends Controller
         return $pg;
     }
 
+    //list hotel
     public function hotels()
-    { }
+    {
+        return view('frontend.hotels.hotels-list');
+    }
 
     public function contact()
-    { }
+    {
+        return "Contact";
+    }
 
     public function singlePkg($id)
     {
