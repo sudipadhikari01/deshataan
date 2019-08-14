@@ -11,5 +11,8 @@ class IndividualPackage extends Model
     protected $table = 'packages';
     protected $primaryKey = 'p_id';
 
-    use Rateable;
+    public function photos()
+    {
+        return $this->hasMany('App\PhotoGallery', 'ip_id');
+    }
 }

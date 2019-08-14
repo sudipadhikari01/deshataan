@@ -2,7 +2,7 @@
 
 
 @section('content')
-
+@php use App\Http\Controllers\FrontEnd\PageController; @endphp
 <!--====== BANNER ==========-->
 <section>
     <div class="rows inner_banner inner_banner_5">
@@ -41,8 +41,10 @@
                 <div class="col-md-6 col-sm-6 col-xs-12 p2_1">
                     <div class="band"><img src="{{ asset('images/band.png') }}" alt="" />
                     </div>
-                    @if($pg == true)
-                    <img src="{{ asset('storage/pkgGall').'/'.$pg->image_name }}" alt="" />
+
+                    @if(!empty(PageController::getImage($p->p_id)))
+                    <img src="{{ asset('storage/pkgGall').'/'.PageController::getImage($p->p_id)->image_name }}"
+                        alt="" />
                     @else
                     <img src="{{ asset('storage/pkgGall/placeholder.png') }}" alt="" />
                     @endif
@@ -60,15 +62,6 @@
                             <li>End Date : {{$p->end_date}}</li>
                         </ul>
                     </div>
-                    {{-- <div class="featur">
-                        <h4>Package Locations</h4>
-                        <ul>
-                            <li>Rio, Brazil(3 days)</li>
-                            <li>8 Breakfast, 3 Dinners</li>
-                            <li>First class Sightseeing</li>
-                            <li>Lorem ipsum</li>
-                        </ul>
-                    </div> --}}
                     <div class="p2_book">
                         <ul>
                             <li><a href="{{url('/booking')}}" class="link-btn">Book Now</a>
