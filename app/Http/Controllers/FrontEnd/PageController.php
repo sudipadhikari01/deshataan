@@ -36,22 +36,15 @@ class PageController extends Controller
     /// list all individual pkgs of given category
     public function ipackages($id)
     {
-        $pkgs = $this->pkgs;
         $pkg = Pkg::findOrFail($id);
-        $ipkgs = $this->ipkgs->where('package_type', $id);
-        // return $ipkgs;
-        // return Pg::count();
-        if (Pg::count() > 0) {
-            $pg = Pg::where(['p_id' => $id, 'ip_id' => $ipkgs[0]->p_id])->first();
-        } else {
-            $pg = false;
-        }
-        if ($ipkgs->count() > 0 && $pkgs->count() > 0) {
+        $ipkgs = $this->pkgs->find($id)->ipackages;
+
+        if ($ipkgs->count() > 0 && $pkg->count() > 0) {
             // return $ipkgs->count();
-            return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs', 'pg'));
+            return view('frontend.packages.single-package', compact('ipkgs', 'pkg'));
         } else {
             // return "No iPkgs";
-            return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs', 'pg'));
+            return view('frontend.packages.single-package', compact('ipkgs', 'pkg'));
         }
     }
 
@@ -81,7 +74,7 @@ class PageController extends Controller
 
     public static function getImage($ipid)
     {
-        $pg = Pg::find('ip_id', $ipid)->get();
+        $pg = Pg::select('image_name')->where('ip_id', $ipid)->first();
         return $pg;
     }
 
