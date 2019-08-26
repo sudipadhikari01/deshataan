@@ -32,7 +32,7 @@
                                 <div class="col-sm-9">
                                     <div class="input-group">
                                         <input type="file" class="form-control" id="image"
-                                            aria-describedby="inputGroupPrepend2" name="image">
+                                            aria-describedby="inputGroupPrepend2" name="image[]" multiple>
                                     </div>
                                     <p class="form-text text-danger" id="demo2"></p>
                                 </div>

@@ -18,11 +18,13 @@ class PageController extends Controller
         $this->pkgs = Pkg::paginate(); // all package category list with paginate
         $this->ipkgs = Ipkgs::paginate(); //all indi pkgs list with paginate
     }
+
     public function home()
     {
         $page = "home";
         $pkgs = $this->pkgs;
-        return view('frontend.layouts.home', compact('pkgs', 'page'));
+        $ipkgs = $this->ipkgs;
+        return view('frontend.layouts.home', compact('pkgs', 'page', 'ipkgs'));
         // return view('frontend.welcome', compact('pkgs', 'page'));
     }
 
@@ -36,19 +38,21 @@ class PageController extends Controller
     /// list all individual pkgs of given category
     public function ipackages($id)
     {
+        $pkgs = $this->pkgs;
         $pkg = Pkg::findOrFail($id);
         $ipkgs = $this->pkgs->find($id)->ipackages;
-
+        // return $ipkgs;
         if ($ipkgs->count() > 0 && $pkg->count() > 0) {
             // return $ipkgs->count();
-            return view('frontend.packages.single-package', compact('ipkgs', 'pkg'));
+            return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs'));
         } else {
             // return "No iPkgs";
-            return view('frontend.packages.single-package', compact('ipkgs', 'pkg'));
+            return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs'));
         }
     }
 
     public function tour_details($id) // single pkg detail
+
     {
         $pkgs = $this->pkgs;
         // return $pkgs;
@@ -58,7 +62,8 @@ class PageController extends Controller
         $sipkg = Ipkgs::find($id);
         $spkg = Pkg::find($sipkg->package_type);
         $pg = Pg::where('ip_id', $id)->get();
-        $it = Itin::where('ip_id', $id)->get();
+        $it = Itin::where('ip_id', $id)->first();
+        // return $it->itinerary;
         return view('frontend.tour-details', compact('pkgs', 'sipkg', 'spkg', 'pg', 'it'));
     }
 

@@ -17,22 +17,13 @@
                         <div class="basic-form">
 
                             <div class="form-group row align-items-center">
-                                <label class="col-sm-3 col-form-label text-label">Itinerary Title</label>
-                                <div class="col-sm-9">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="itineraryTitle"
-                                            name="itineraryTitle" value="{{$itinerary->itinerary_title}}" required>
-                                    </div>
-                                    <p class="form-text text-danger" id="demo1"></p>
-                                </div>
-                            </div>
-
-                            <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Itinerary Description</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="itineraryDesc"
-                                            name="itineraryDesc" value="{{$itinerary->itinerary_description}}" required>
+                                        <textarea type="text" class="form-control" id="itineraryDesc"
+                                            name="itineraryDesc">
+                                            {{$itinerary->itinerary}}
+                                        </textarea>
                                     </div>
                                     <p class="form-text text-danger" id="demo2"></p>
                                 </div>
@@ -61,8 +52,9 @@
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Individual Package</label>
                                 <div class="col-sm-9">
-                                    <select name="individualPackage" class="form-control" id="individualPackage" required>
-                                            <option value="">Choose Individual Package Type</option>
+                                    <select name="individualPackage" class="form-control" id="individualPackage"
+                                        required>
+                                        <option value="">Choose Individual Package Type</option>
                                         @foreach ($individualPkgs as $individualPkg)
                                         <option value="{{$individualPkg->p_id}}" @if($individualPkg->p_id ==
                                             $itinerary->ip_id) {{ 'selected' }} @endif>{{$individualPkg->title}}
@@ -94,6 +86,11 @@
 
     </div>
 </div>
-
+<script src="{{ asset('assets/plugins/ckeditor/ckeditor.js') }}"></script>
+<script>
+    CKEDITOR.replace( 'itineraryDesc',{
+        width:"100%"
+    } );
+</script>
 
 @endsection

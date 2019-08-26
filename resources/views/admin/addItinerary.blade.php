@@ -16,24 +16,16 @@
                         <div class="basic-form">
 
                             <div class="form-group row align-items-center">
-                                <label class="col-sm-3 col-form-label text-label">Itinerary Title</label>
-                                <div class="col-sm-9">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="itineraryTitle"
-                                            placeholder="Enter itinerary title" name="itineraryTitle" required>
-                                    </div>
-                                    <p class="form-text text-danger" id="demo1"></p>
-                                </div>
-                            </div>
+                                <label class="col-sm-3 col-form-label text-label">Itinerary</label>
+                                <div class="col-sm-9" id="itinerary">
 
-                            <div class="form-group row align-items-center">
-                                <label class="col-sm-3 col-form-label text-label">Itinerary Description</label>
-                                <div class="col-sm-9">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="itineraryDesc"
-                                            placeholder="Enter itinerary description" name="itineraryDesc" required>
+                                    <div class="input-group mb-2">
+                                        <textarea class="form-control" id="itineraryDesc"
+                                            placeholder="Enter itinerary description" name="itineraryDesc"
+                                            required></textarea>
                                     </div>
                                     <p class="form-text text-danger" id="demo2"></p>
+
                                 </div>
                             </div>
 
@@ -59,7 +51,8 @@
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Individual Package</label>
                                 <div class="col-sm-9">
-                                    <select name="individualPackage" class="form-control" id="individualPackage" required>
+                                    <select name="individualPackage" class="form-control" id="individualPackage"
+                                        required>
                                         <option value="">Choose Individual Package Type</option>
                                         @foreach ($individualPkgs as $individualPkg)
                                         <option value="{{$individualPkg->p_id}}">{{$individualPkg->title}}</option>
@@ -75,11 +68,6 @@
 
                             <input type="submit" class="btn btn-success " value="Add" name="add"
                                 style="margin:0 auto; width:112px;" onclick="itineraryValidateForm()">
-
-
-
-
-
                         </div>
                     </div>
                 </div>
@@ -90,6 +78,27 @@
 
     </div>
 </div>
+<script src="{{ asset('assets/plugins/ckeditor/ckeditor.js') }}"></script>
+<script>
+    CKEDITOR.replace( 'itineraryDesc',{
+        width:"100%"
+    } );
+    // CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
+    // $('#itineraryDesc').ckeditor({
+    // toolbar: 'Full',
+    // enterMode : CKEDITOR.ENTER_BR,
+    // shiftEnterMode: CKEDITOR.ENTER_P
 
+    // });
+</script>
+<script>
+    // var count = 0;
+    // $(".more").click(function(e){
+    //     e.preventDefault();
+    //     count++;
+    //     var html = `<div class="input-group mt-2"><input type="text" class="form-control itineraryDesc" id="itineraryDesc" placeholder="Enter itinerary description" name="itineraryDesc${count}" required></div>`;
+    //     $("#itinerary").prepend(html);
 
+    // });
+</script>
 @endsection

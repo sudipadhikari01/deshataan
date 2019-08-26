@@ -13,7 +13,7 @@ class PagesController extends Controller
 {
     public static function showIndividualPackage($id)
     {
-        return IndividualPackage::findorFail($id)->title;
+        return IndividualPackage::find($id)->title;
         // return $package
 
 

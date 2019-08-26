@@ -38,10 +38,10 @@ use App\Http\Controllers\PagesController;
 
         <div class="row">
 
-             @if(session()->has('status'))
-                <div class="alert alert-success">
-                    {!! session()->get('status') !!}
-                </div>
+            @if(session()->has('status'))
+            <div class="alert alert-success">
+                {!! session()->get('status') !!}
+            </div>
             @endif
             <!-- /# column -->
 
@@ -62,11 +62,10 @@ use App\Http\Controllers\PagesController;
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Itinerary Title</th>
-                                        <th>Description</th>
-                                        <th>Package Type</th>
-                                        <th>Individual Package</th>
-                                        <th>Actions</th>
+                                        <th>Itinerary</th>
+                                        <th style="width:10%">Package Type</th>
+                                        <th style="width:15%">Individual Package</th>
+                                        <th style="width:10%">Actions</th>
                                     </tr>
                                 </thead>
                                 @foreach ($itinerarys as $itinerary)
@@ -75,8 +74,7 @@ use App\Http\Controllers\PagesController;
                                 <tbody>
                                     <tr>
                                         <th>{{ $loop->iteration }}</th>
-                                        <td>{{$itinerary->itinerary_title}}</td>
-                                        <td>{{$itinerary->itinerary_description}}</td>
+                                        <td>{{Str::limit($itinerary->itinerary, 400)}}</td>
                                         <td>{{PagesController::showPackageType($itinerary->p_id)}}</td>
                                         <td>{{PagesController::showIndividualPackage($itinerary->ip_id)}}</td>
                                         <td><span><a href="{{url("adminn/itinerary/$itinerary->id/edit")}}" class="mr-4"

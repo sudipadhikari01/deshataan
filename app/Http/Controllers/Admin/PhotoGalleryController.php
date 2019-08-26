@@ -44,33 +44,44 @@ class PhotoGalleryController extends Controller
 
         if ($request->hasFile('image')) {
 
-            //get the file name with the extension
-            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            $files = $request->file('image');
+            foreach ($files as $file) {
+                //get the file name with the extension
+                $filenameWithExt = $file->getClientOriginalName();
 
-            //get just file name
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                //get just file name
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
 
-            //get just extension
-            $extension = $request->file('image')->getClientOriginalExtension();
+                //get just extension
+                $extension = $file->getClientOriginalExtension();
 
-            //file name to store
-            $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+                //file name to store
+                $fileNameToStore = $filename . '_' . time() . '.' . $extension;
 
-            //upload image
+                //upload image
 
-            $path = $request->file('image')->storeAs('public/pkgGall', $fileNameToStore);
+                $path = $file->storeAs('public/pkgGall', $fileNameToStore);
+                $photoGallery = new PhotoGallery();
+                $photoGallery->image_title = $request->input('imageTitle');
+                $photoGallery->image_name = $fileNameToStore;
+                $photoGallery->p_id = $request->input('packageType');
+                $photoGallery->ip_id = $request->input('individualPackage');
+
+                $photoGallery->save();
+            }
         } else {
 
             $fileNameToStore = "noimage.jpg";
+            $photoGallery = new PhotoGallery();
+            $photoGallery->image_title = $request->input('imageTitle');
+            $photoGallery->image_name = $fileNameToStore;
+            $photoGallery->p_id = $request->input('packageType');
+            $photoGallery->ip_id = $request->input('individualPackage');
+
+            $photoGallery->save();
         }
 
-        $photoGallery = new PhotoGallery();
-        $photoGallery->image_title = $request->input('imageTitle');
-        $photoGallery->image_name = $fileNameToStore;
-        $photoGallery->p_id = $request->input('packageType');
-        $photoGallery->ip_id = $request->input('individualPackage');
 
-        $photoGallery->save();
 
         return redirect()->route('adminn.photo-gallery.index');
     }

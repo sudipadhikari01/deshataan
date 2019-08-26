@@ -17,7 +17,6 @@ class ItineraryController extends Controller
      */
     public function index()
     {
-
         $itinerarys = Itinerary::all();
         return view('admin.itinerary')->with(['itinerarys' => $itinerarys]);
     }
@@ -42,10 +41,9 @@ class ItineraryController extends Controller
      */
     public function store(Request $request)
     {
-
+        // return $request;
         $itinerarys = new Itinerary();
-        $itinerarys->itinerary_title = $request->input('itineraryTitle');
-        $itinerarys->itinerary_description = $request->input('itineraryDesc');
+        $itinerarys->itinerary = $request->input('itineraryDesc');
         $itinerarys->p_id = $request->input('packageType');
         $itinerarys->ip_id = $request->input('individualPackage');
 
@@ -60,9 +58,7 @@ class ItineraryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-
-    }
+    {}
 
     /**
      * Show the form for editing the specified resource.
@@ -73,6 +69,7 @@ class ItineraryController extends Controller
     public function edit($id)
     {
         $itinerary = Itinerary::find($id);
+        // return $itinerary;
         $packages = PackageType::all();
         $individualPkgs = IndividualPackage::all();
         return view('admin.editItinerary')->with(['packages' => $packages, 'individualPkgs' => $individualPkgs, 'itinerary' => $itinerary]);
@@ -89,8 +86,7 @@ class ItineraryController extends Controller
     {
         $itinerarys = Itinerary::find($id);
 
-        $itinerarys->itinerary_title = $request->input('itineraryTitle');
-        $itinerarys->itinerary_description = $request->input('itineraryDesc');
+        $itinerarys->itinerary = $request->input('itineraryDesc');
         $itinerarys->p_id = $request->input('packageType');
         $itinerarys->ip_id = $request->input('individualPackage');
 
