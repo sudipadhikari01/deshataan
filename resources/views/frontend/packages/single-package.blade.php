@@ -24,7 +24,13 @@
         <div class="container inn-page-con-bg tb-space pad-bot-redu-5" id="inner-page-title">
             <!-- TITLE & DESCRIPTION -->
             <div class="spe-title col-md-12">
-                <h2>{{ ucfirst($pkg->p_name )}} <span> packages</span></h2>
+                <h2>
+                    {!!
+                    ucfirst( Str::contains($pkg->p_name, 'Package') == true ?
+                    Str::replaceLast('Package','<span>Packages</span>',$pkg->p_name) :
+                    "$pkg->p_name<span>package</span>" )
+                    !!}
+                </h2>
                 <div class="title-line">
                     <div class="tl-1"></div>
                     <div class="tl-2"></div>

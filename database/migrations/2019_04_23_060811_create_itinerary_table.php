@@ -13,14 +13,16 @@ class CreateItineraryTable extends Migration
      */
     public function up()
     {
-        Schema::create('itinerary', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('itinerary_title');
-            $table->text('itinerary_description');
-            $table->integer('p_id');
-            $table->integer('ip_id');
-            $table->timestamps();
-        });
+        Schema::create(
+            'itinerary',
+            function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->longText('itinerary');
+                $table->integer('p_id');
+                $table->integer('ip_id');
+                $table->timestamps();
+            }
+        );
     }
 
     /**

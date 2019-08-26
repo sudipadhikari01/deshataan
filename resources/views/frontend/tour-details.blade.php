@@ -112,14 +112,8 @@
 
                 @if(isset($it) && $it->count()>0)
 
-                <ul>
-                    @foreach($it as $i)
-                    <li class="l-info-pack-plac"> <i class="fa fa-clock-o" aria-hidden="true"></i>
-                        <h4><span>Day : {{$loop->iteration}}</span> {{$i->itinerary_title}}</h4>
-                        <p>{{$i->itinerary_description}}</p>
-                    </li>
-                    @endforeach
-                </ul>
+
+                {!! $it->itinerary !!}
 
                 @else
 

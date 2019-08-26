@@ -20,8 +20,9 @@
                                 <div class="col-sm-9" id="itinerary">
 
                                     <div class="input-group mb-2">
-                                        <input type="text" class="form-control" id="itineraryDesc"
-                                            placeholder="Enter itinerary description" name="itineraryDesc" required>
+                                        <textarea class="form-control" id="itineraryDesc"
+                                            placeholder="Enter itinerary description" name="itineraryDesc"
+                                            required></textarea>
                                     </div>
                                     <p class="form-text text-danger" id="demo2"></p>
 
@@ -82,6 +83,13 @@
     CKEDITOR.replace( 'itineraryDesc',{
         width:"100%"
     } );
+    // CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
+    // $('#itineraryDesc').ckeditor({
+    // toolbar: 'Full',
+    // enterMode : CKEDITOR.ENTER_BR,
+    // shiftEnterMode: CKEDITOR.ENTER_P
+
+    // });
 </script>
 <script>
     // var count = 0;
