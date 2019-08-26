@@ -116,6 +116,7 @@
                     <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide.</p>
                 </div>
                 <div>
+
                     <!-- TOUR PLACE 1 -->
                     <div class="col-md-4 col-sm-6 col-xs-12 b_packages wow slideInUp" data-wow-duration="0.5s">
                         <!-- OFFER BRAND -->

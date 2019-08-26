@@ -17,7 +17,6 @@ class ItineraryController extends Controller
      */
     public function index()
     {
-
         $itinerarys = Itinerary::all();
         return view('admin.itinerary')->with(['itinerarys' => $itinerarys]);
     }
@@ -42,7 +41,7 @@ class ItineraryController extends Controller
      */
     public function store(Request $request)
     {
-
+        return $request;
         $itinerarys = new Itinerary();
         $itinerarys->itinerary_title = $request->input('itineraryTitle');
         $itinerarys->itinerary_description = $request->input('itineraryDesc');
@@ -60,9 +59,7 @@ class ItineraryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-
-    }
+    {}
 
     /**
      * Show the form for editing the specified resource.

@@ -44,8 +44,8 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <div class="brand-logo"><a href="index.html"><b><img src="../../assets/images/logo.png" alt=""> </b><span
-                        class="brand-title"><img src="../../assets/images/logo-text.png" alt=""></span></a>
+            <div class="brand-logo"><a href="index.html"><b><img src="{{ asset('assets/images/logo.png') }}" alt="">
+                    </b><span class="brand-title"><img src="{{asset('assets/images/logo-text.png')}}" alt=""></span></a>
             </div>
             <div class="nav-control">
                 <div class="hamburger"><span class="line"></span> <span class="line"></span> <span class="line"></span>
@@ -227,7 +227,7 @@
 
                         <li class="icons">
                             <a href="javascript:void(0)" class="log-user">
-                                <img src="../../assets/images/avatar/1.jpg" alt="">
+                                <img src="{{ asset('assets/images/avatar/1.jpg')}}" alt="">
                                 <span>{{ Auth::check() ? Auth::user()->name : 'Susant' }}</span>
                                 <i class="fa fa-caret-down f-s-14" aria-hidden="true"></i>
                             </a>
