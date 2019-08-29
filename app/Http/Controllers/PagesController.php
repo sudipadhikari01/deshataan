@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\PackageType;
-use App\IndividualPackage;
-use App\AboutTour;
 use App\Hotel;
-
+use App\IndividualPackage;
+use App\PackageType;
 
 class PagesController extends Controller
 {
@@ -15,7 +12,6 @@ class PagesController extends Controller
     {
         return IndividualPackage::find($id)->title;
         // return $package
-
 
     }
 

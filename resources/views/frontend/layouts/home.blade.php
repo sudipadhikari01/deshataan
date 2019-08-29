@@ -708,11 +708,10 @@
                                 </div>
                                 <div class="col-sm-3 foot-spec foot-com">
                                     <h4><span>Address</span> & Contact Info</h4>
-                                    <p>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A. Landmark : Next To
-                                        Airport
+                                    <p>Lazimpat, Kathmandu, Nepal
                                     </p>
                                     <p> <span class="strong">Phone: </span> <span
-                                            class="highlighted">+101-1231-1231</span> </p>
+                                            class="highlighted">+977-01-4444865</span> </p>
                                 </div>
                                 <div class="col-sm-3 col-md-3 foot-spec foot-com">
                                     <h4><span>SUPPORT</span> & HELP</h4>
@@ -753,7 +752,7 @@
     <section>
         <div class="rows copy">
             <div class="container">
-                <p>Copyrights © 2018 Company Name. All Rights Reserved</p>
+                <p>Copyrights © {{date('Y')}} {{config('app.name')}}. All Rights Reserved</p>
             </div>
         </div>
     </section>

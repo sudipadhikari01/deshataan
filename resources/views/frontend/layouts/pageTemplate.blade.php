@@ -258,7 +258,7 @@
     <section>
         <div class="rows copy">
             <div class="container">
-                <p>Copyrights © 2017 {{ config('app.name') }}. All Rights Reserved</p>
+                <p>Copyrights © {{date('Y')}} {{ config('app.name') }}. All Rights Reserved</p>
             </div>
         </div>
     </section>
