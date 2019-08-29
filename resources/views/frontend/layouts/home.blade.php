@@ -27,6 +27,7 @@
 </head>
 
 <body>
+    @php use App\Http\Controllers\FrontEnd\PageController; @endphp
     <!-- Preloader -->
     <div id="preloader">
         <div id="status">&nbsp;</div>
@@ -117,20 +118,28 @@
                 </div>
                 <div>
 
-                    <!-- TOUR PLACE 1 -->
-                    @echo($ipkgs)
+                    @foreach($ipkgs as $ip)
+                    <!-- TOUR PLACE {{$loop->iteration}} -->
                     <div class="col-md-4 col-sm-6 col-xs-12 b_packages wow slideInUp" data-wow-duration="0.5s">
                         <!-- OFFER BRAND -->
                         <div class="band"> <img src="images/band.png" alt="" /> </div>
                         <!-- IMAGE -->
-                        <div class="v_place_img"> <img src="images/t5.png" alt="Tour Booking" title="Tour Booking" />
+                        <div class="v_place_img">
+                            @if( !empty(PageController::getImage($ip->p_id)) )
+                            <img style="width:700px; height:200px"
+                                src="{{ asset('storage/pkgGall').'/'.PageController::getImage($ip->p_id)->image_name }}"
+                                alt="Tour Booking" title="Tour Booking" />
+                            @else
+                            <img src="images/t5.png" alt="Tour Booking" title="Tour Booking" />
+                            @endif
                         </div>
                         <!-- TOUR TITLE & ICONS -->
                         <div class="b_pack rows">
                             <!-- TOUR TITLE -->
                             <div class="col-md-8 col-sm-8">
-                                <h4><a href="tour-details.html">Rio de Janeiro<span
-                                            class="v_pl_name">(Brazil)</span></a></h4>
+                                <h4><a href="tour-details.html">{{$ip->title.', '.$ip->location}}
+                                        {{-- <span class="v_pl_name">(Brazil)</span> --}}
+                                    </a></h4>
                             </div>
                             <!-- TOUR ICONS -->
                             <div class="col-md-4 col-sm-4 pack_icon">
@@ -152,86 +161,11 @@
                             </div>
                         </div>
                     </div>
-
+                    @endforeach
                 </div>
             </div>
         </div>
     </section>
-    <!--====== HOME HOTELS ==========-->
-    <section>
-        <div class="rows tb-space pad-top-o pad-bot-redu">
-            <div class="container">
-                <!-- TITLE & DESCRIPTION -->
-                <div class="spe-title">
-                    <h2>Popular <span>Cities</span> </h2>
-                    <div class="title-line">
-                        <div class="tl-1"></div>
-                        <div class="tl-2"></div>
-                        <div class="tl-3"></div>
-                    </div>
-                    <p>World's leading Hotel Booking website,Over 30,000 Hotel rooms worldwide. Book Hotel rooms and
-                        enjoy your holidays with distinctive experience</p>
-                </div>
-                <!-- CITY -->
-                <div class="col-md-6">
-                    <a href="tour-details.html">
-                        <div class="tour-mig-like-com">
-                            <div class="tour-mig-lc-img"> <img src="images/listing/home.jpg" alt=""> </div>
-                            <div class="tour-mig-lc-con">
-                                <h5>Europe</h5>
-                                <p><span>12 Packages</span> Starting from $2400</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="tour-details.html">
-                        <div class="tour-mig-like-com">
-                            <div class="tour-mig-lc-img"> <img src="images/listing/home3.jpg" alt=""> </div>
-                            <div class="tour-mig-lc-con tour-mig-lc-con2">
-                                <h5>Dubai</h5>
-                                <p>Starting from $2400</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="tour-details.html">
-                        <div class="tour-mig-like-com">
-                            <div class="tour-mig-lc-img"> <img src="images/listing/home2.jpg" alt=""> </div>
-                            <div class="tour-mig-lc-con tour-mig-lc-con2">
-                                <h5>India</h5>
-                                <p>Starting from $2400</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="tour-details.html">
-                        <div class="tour-mig-like-com">
-                            <div class="tour-mig-lc-img"> <img src="images/listing/home1.jpg" alt=""> </div>
-                            <div class="tour-mig-lc-con tour-mig-lc-con2">
-                                <h5>Usa</h5>
-                                <p>Starting from $2400</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="tour-details.html">
-                        <div class="tour-mig-like-com">
-                            <div class="tour-mig-lc-img"> <img src="images/listing/home4.jpg" alt=""> </div>
-                            <div class="tour-mig-lc-con tour-mig-lc-con2">
-                                <h5>London</h5>
-                                <p>Starting from $2400</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--====== HOME HOTELS ==========-->
     <section>
         <div class="rows tb-space pad-top-o pad-bot-redu">
             <div class="container">
@@ -392,129 +326,6 @@
             </div>
         </div>
     </section>
-    <!--====== EVENTS ==========-->
-    <section>
-        <div class="rows tb-space">
-            <div class="container events events-1" id="inner-page-title">
-                <!-- TITLE & DESCRIPTION -->
-                <div class="spe-title">
-                    <h2>Top <span>Events</span> in this month</h2>
-                    <div class="title-line">
-                        <div class="tl-1"></div>
-                        <div class="tl-2"></div>
-                        <div class="tl-3"></div>
-                    </div>
-                    <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide. Book travel
-                        packages and enjoy your holidays with distinctive experience</p>
-                </div>
-                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Event Name.."
-                    title="Type in a name">
-                <table id="myTable">
-                    <tbody>
-                        <tr>
-                            <th>#</th>
-                            <th>Event Name</th>
-                            <th class="e_h1">Date</th>
-                            <th class="e_h1">Time</th>
-                            <th class="e_h1">Location</th>
-                            <th>Book</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td><img src="images/iplace-1.jpg" alt="" /><a href="hotels-list.html"
-                                    class="events-title">Taj Mahal,Agra, India</a> </td>
-                            <td class="e_h1">16.12.2016</td>
-                            <td class="e_h1">10.00 PM</td>
-                            <td class="e_h1">Australia</td>
-                            <td><a href="booking.html" class="link-btn">Book Now</a> </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><img src="images/iplace-2.jpg" alt="" /><a href="hotels-list.html"
-                                    class="events-title">Salesforce Summer, Dubai</a> </td>
-                            <td class="e_h1">16.12.2016</td>
-                            <td class="e_h1">10.00 PM</td>
-                            <td class="e_h1">Dubai</td>
-                            <td><a href="booking.html" class="link-btn">Book Now</a> </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td><img src="images/iplace-3.jpg" alt="" /><a href="hotels-list.html"
-                                    class="events-title">God Towers, TOKYO, JAPAN</a> </td>
-                            <td class="e_h1">16.12.2016</td>
-                            <td class="e_h1">10.00 PM</td>
-                            <td class="e_h1">JAPAN</td>
-                            <td><a href="booking.html" class="link-btn">Book Now</a> </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td><img src="images/iplace-4.jpg" alt="" /><a href="hotels-list.html"
-                                    class="events-title">TOUR DE ROMANDIE, Switzerland</a> </td>
-                            <td class="e_h1">16.12.2016</td>
-                            <td class="e_h1">10.00 PM</td>
-                            <td class="e_h1">Switzerland</td>
-                            <td><a href="booking.html" class="link-btn">Book Now</a> </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td><img src="images/iplace-5.jpg" alt="" /><a href="hotels-list.html"
-                                    class="events-title">TOUR DE POLOGNE, Poland</a> </td>
-                            <td class="e_h1">16.12.2016</td>
-                            <td class="e_h1">10.00 PM</td>
-                            <td class="e_h1">Poland</td>
-                            <td><a href="booking.html" class="link-btn">Book Now</a> </td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td><img src="images/iplace-6.jpg" alt="" /><a href="hotels-list.html"
-                                    class="events-title">Future of Marketing,Sydney, Australia</a> </td>
-                            <td class="e_h1">16.12.2016</td>
-                            <td class="e_h1">10.00 PM</td>
-                            <td class="e_h1">Australia</td>
-                            <td><a href="booking.html" class="link-btn">Book Now</a> </td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td><img src="images/iplace-7.jpg" alt="" /><a href="hotels-list.html"
-                                    class="events-title">Eiffel Tower, Paris</a> </td>
-                            <td class="e_h1">16.12.2016</td>
-                            <td class="e_h1">10.00 PM</td>
-                            <td class="e_h1">France</td>
-                            <td><a href="booking.html" class="link-btn">Book Now</a> </td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td><img src="images/iplace-8.jpg" alt="" /><a href="hotels-list.html"
-                                    class="events-title">PARIS - ROUBAIX, England</a> </td>
-                            <td class="e_h1">16.12.2016</td>
-                            <td class="e_h1">10.00 PM</td>
-                            <td class="e_h1">England</td>
-                            <td><a href="booking.html" class="link-btn">Book Now</a> </td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td><img src="images/iplace-9.jpg" alt="" /><a href="hotels-list.html"
-                                    class="events-title">Dubai Beach Resort, Dubai</a> </td>
-                            <td class="e_h1">16.12.2016</td>
-                            <td class="e_h1">10.00 PM</td>
-                            <td class="e_h1">Dubai</td>
-                            <td><a href="booking.html" class="link-btn">Book Now</a> </td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td><img src="images/iplace-4.jpg" alt="" /><a href="hotels-list.html"
-                                    class="events-title">TOUR DE POLOGNE, Poland</a> </td>
-                            <td class="e_h1">16.12.2016</td>
-                            <td class="e_h1">10.00 PM</td>
-                            <td class="e_h1">Poland</td>
-                            <td><a href="booking.html" class="link-btn">Book Now</a> </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-    <!--====== POPULAR TOUR PLACES ==========-->
     <section>
         <div class="rows pla pad-bot-redu tb-space">
             <div class="pla1 p-home container">
@@ -780,84 +591,6 @@
             </div>
         </div>
     </section>
-    <!--====== REQUEST A QUOTE ==========-->
-    <section>
-        <div class="foot-mob-sec tb-space">
-            <div class="rows container">
-                <!-- FAMILY IMAGE(YOU CAN USE ANY PNG IMAGE) -->
-                <div class="col-md-6 col-sm-6 col-xs-12 family"> <img src="images/mobile.png" alt="" /> </div>
-                <!-- REQUEST A QUOTE -->
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <!-- THANK YOU MESSAGE -->
-                    <div class="foot-mob-app">
-                        <h2>Have you tried our mobile app?</h2>
-                        <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide. Book travel
-                            packages and enjoy your holidays with distinctive experience</p>
-                        <ul>
-                            <li><i class="fa fa-check" aria-hidden="true"></i> Easy Hotel Booking</li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i> Tour and Travel Packages</li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i> Package Reviews and Ratings</li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i> Manage your Bookings, Enquiry and Reviews
-                            </li>
-                        </ul>
-                        <a href="#"><img src="images/android.png" alt=""> </a>
-                        <a href="#"><img src="images/apple.png" alt=""> </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--====== REQUEST A QUOTE ==========-->
-    <!--<section>
-        <div class="form tb-space">
-            <div class="rows container">
-                <div class="spe-title">
-                    <h2>Book your <span>favourite Package</span> Now!</h2>
-                    <div class="title-line">
-                        <div class="tl-1"></div>
-                        <div class="tl-2"></div>
-                        <div class="tl-3"></div>
-                    </div>
-                    <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide. Book travel packages and enjoy your holidays with distinctive experience</p>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-12 form_1">
-                    <div class="succ_mess">Thank you for contacting us we will get back to you soon.</div>
-                    <form id="home_form" name="home_form" action="mail/send.php">
-                        <ul>
-                            <li>
-                                <input type="text" name="ename" value="" id="ename" placeholder="Name" required>
-                            </li>
-                            <li>
-                                <input type="tel" name="emobile" value="" id="emobile" placeholder="Mobile" required>
-                            </li>
-                            <li>
-                                <input type="email" name="eemail" value="" id="eemail" placeholder="Email id" required>
-                            </li>
-                            <li>
-                                <input type="text" name="esubject" value="" id="esubject" placeholder="Subject" required>
-                            </li>
-                            <li>
-                                <input type="text" name="ecity" value="" id="ecity" placeholder="City" required>
-                            </li>
-                            <li>
-                                <input type="text" name="ecount" value="" id="ecount" placeholder="Country" required>
-                            </li>
-                            <li>
-                                <textarea name="emess" cols="40" rows="3" id="text-comment" placeholder="Enter your message"></textarea>
-                            </li>
-                            <li>
-                                <input type="submit" value="Submit" id="send_button">
-                            </li>
-                        </ul>
-                    </form>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-12 family">
-                    <img src="images/family.png" alt="" />
-                </div>
-            </div>
-        </div>
-    </section>-->
-    <!--====== TIPS BEFORE TRAVEL ==========-->
     <section>
         <div class="rows tips tips-home tb-space home_title">
             <div class="container tips_1">
@@ -975,11 +708,10 @@
                                 </div>
                                 <div class="col-sm-3 foot-spec foot-com">
                                     <h4><span>Address</span> & Contact Info</h4>
-                                    <p>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A. Landmark : Next To
-                                        Airport
+                                    <p>Lazimpat, Kathmandu, Nepal
                                     </p>
                                     <p> <span class="strong">Phone: </span> <span
-                                            class="highlighted">+101-1231-1231</span> </p>
+                                            class="highlighted">+977-01-4444865</span> </p>
                                 </div>
                                 <div class="col-sm-3 col-md-3 foot-spec foot-com">
                                     <h4><span>SUPPORT</span> & HELP</h4>
@@ -1020,7 +752,7 @@
     <section>
         <div class="rows copy">
             <div class="container">
-                <p>Copyrights © 2018 Company Name. All Rights Reserved</p>
+                <p>Copyrights © {{date('Y')}} {{config('app.name')}}. All Rights Reserved</p>
             </div>
         </div>
     </section>

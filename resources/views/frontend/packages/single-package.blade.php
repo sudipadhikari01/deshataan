@@ -7,7 +7,11 @@
 <section>
     <div class="rows inner_banner inner_banner_5">
         <div class="container">
-            <h2><span>{{ ucfirst($pkg->p_name )}} Package -</span> Top {{ ucfirst($pkg->p_name) }} Packages In The World
+            <h2><span>{!!
+                    ucfirst( Str::contains($pkg->p_name, 'Package') == true ?
+                    Str::replaceLast('Package',' <span>Packages</span>',$pkg->p_name) :
+                    "$pkg->p_name <span>Packages</span>" )
+                    !!} -</span> Top {{ ucfirst($pkg->p_name) }} Packages In The World
             </h2>
             <ul>
                 <li><a href="#inner-page-title">Home</a></li>
@@ -28,7 +32,7 @@
                     {!!
                     ucfirst( Str::contains($pkg->p_name, 'Package') == true ?
                     Str::replaceLast('Package','<span>Packages</span>',$pkg->p_name) :
-                    "$pkg->p_name<span>package</span>" )
+                    "$pkg->p_name <span>Packages</span>" )
                     !!}
                 </h2>
                 <div class="title-line">
