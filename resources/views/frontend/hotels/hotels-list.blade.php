@@ -1,4 +1,4 @@
-@extends('frontend.layouts.fronthead')
+@extends('frontend.layouts.pageTemplate')
 <!--====== HOTELS LIST ==========-->
 <section class="hot-page2-alp hot-page2-pa-sp-top all-hot-bg">
     <div class="container">
