@@ -287,30 +287,23 @@
                     <div class="col-md-6">
                         <div class="offer-l"> <span class="ol-1"></span> <span class="ol-2"><i class="fa fa-star"></i><i
                                     class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                    class="fa fa-star"></i></span> <span class="ol-4">Standardized Budget Rooms</span>
-                            <span class="ol-3"></span> <span class="ol-5">$99/-</span>
+                                    class="fa fa-star"></i></span> <span class="ol-4">We Accept Crypto coins</span>
+                            <span class="ol-3"></span> <span class="ol-5"></span>
                             <ul>
                                 <li class="wow fadeInUp" data-wow-duration="0.5s">
                                     <a href="#!" class="waves-effect waves-light btn-large offer-btn"><img
-                                            src="images/icon/dis1.png" alt="">
-                                    </a><span>Free WiFi</span>
+                                            src="images/icon/crupee.png" alt="">
+                                    </a><span>Crupee</span>
                                 </li>
                                 <li class="wow fadeInUp" data-wow-duration="0.7s">
                                     <a href="#!" class="waves-effect waves-light btn-large offer-btn"><img
-                                            src="images/icon/dis2.png" alt=""> </a><span>Breakfast</span>
+                                            src="images/icon/bitcoin.png" alt=""> </a><span>Bitcoin</span>
                                 </li>
                                 <li class="wow fadeInUp" data-wow-duration="0.9s">
                                     <a href="#!" class="waves-effect waves-light btn-large offer-btn"><img
-                                            src="images/icon/dis3.png" alt=""> </a><span>Pool</span>
+                                            src="images/icon/ethereum.png" alt=""> </a><span>Ethereum</span>
                                 </li>
-                                <li class="wow fadeInUp" data-wow-duration="1.1s">
-                                    <a href="#!" class="waves-effect waves-light btn-large offer-btn"><img
-                                            src="images/icon/dis4.png" alt=""> </a><span>Television</span>
-                                </li>
-                                <li class="wow fadeInUp" data-wow-duration="1.3s">
-                                    <a href="#!" class="waves-effect waves-light btn-large offer-btn"><img
-                                            src="images/icon/dis5.png" alt=""> </a><span>GYM</span>
-                                </li>
+
                             </ul>
                         </div>
                     </div>
