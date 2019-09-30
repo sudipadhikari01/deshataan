@@ -55,6 +55,7 @@ class IndividualPackageController extends Controller
         $individualPkg->end_date = $request->input('endDate');
         $individualPkg->ticket_quantity = $request->input('ticketQuantity');
         $individualPkg->price = $request->input('price');
+        $individualPkg->discount = $request->input('discount');
         $individualPkg->package_type = $request->input('packageType');
 
         $individualPkg->save();
@@ -97,6 +98,7 @@ class IndividualPackageController extends Controller
      */
     public function update(Request $request, $p_id)
     {
+        // return $request;
         $individualPkg = IndividualPackage::find($p_id);
 
         $individualPkg->title = $request->input('title');
@@ -107,6 +109,7 @@ class IndividualPackageController extends Controller
         $individualPkg->end_date = $request->input('endDate');
         $individualPkg->ticket_quantity = $request->input('ticketQuantity');
         $individualPkg->price = $request->input('price');
+        $individualPkg->discount = $request->input('discount');
         $individualPkg->package_type = $request->input('packageType');
 
         $individualPkg->save();
@@ -127,5 +130,10 @@ class IndividualPackageController extends Controller
         $individualPkg->delete();
         return redirect()->route('adminn.indipackage.index')->with("status", "Individual Package Deleted successfully");
 
+    }
+
+    public static function count()
+    {
+        return IndividualPackage::count();
     }
 }

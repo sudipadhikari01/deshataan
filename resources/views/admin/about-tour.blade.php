@@ -15,7 +15,7 @@ use App\Http\Controllers\PagesController;
             </div>
             <div class="col p-md-0">
                 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{url("/adminn")}}">Home</a>
+                    <li class="breadcrumb-item"><a href="{{url("/adminn")}}">Home</a>
                     </li>
                     <li class="breadcrumb-item active">
                         <a href="{{url('adminn/aboutTour/create')}}">Add About Tour</a>
@@ -39,9 +39,9 @@ use App\Http\Controllers\PagesController;
         <div class="row">
 
             @if(session()->has('status'))
-                <div class="alert alert-success">
-                    {!! session()->get('status') !!}
-                </div>
+            <div class="alert alert-success">
+                {!! session()->get('status') !!}
+            </div>
             @endif
             <!-- /# column -->
 
@@ -93,13 +93,13 @@ use App\Http\Controllers\PagesController;
 
                                                 <a href="javascript:void();" class="mr-4" data-toggle="tooltip"
                                                     data-placement="top" title="Delete"
-                                                    onclick="event.preventDefault();document.querySelector('#item-delete').submit();">
+                                                    onclick="event.preventDefault();document.querySelector('#item-delete{{$aboutTour->id}}').submit();">
                                                     <i class="fa fa-trash color-danger" aria-hidden="true"
                                                         id="deletePackage">
                                                     </i>
                                                 </a>
 
-                                                <form method='POST' id="item-delete"
+                                                <form method='POST' id="item-delete{{$aboutTour->id}}"
                                                     action='{{url("adminn/aboutTour/$aboutTour->id")}}'>
                                                     @csrf
                                                     <input type="hidden" name="_method" value="DELETE">

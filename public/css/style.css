@@ -648,6 +648,17 @@ section.c3 {
     top: -6px;
 }
 
+.bandText {
+    width: 50px;
+    height: auto;
+    position: absolute;
+    z-index: 10;
+    left: 30px;
+    top: 4px;
+    color:#fff;
+    font-weight: bolder;
+}
+
 .band img:hover {
     -webkit-transform: scale(01.0);
     transform: scale(01.0);

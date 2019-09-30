@@ -1,6 +1,11 @@
 <!--**********************************
             Sidebar start
         ***********************************-->
+@php
+use App\Http\Controllers\Admin\IndividualPackageController as Ipkgs;
+use App\Http\Controllers\Admin\HotelsController as Hotel;
+// use App\Http\Controllers\Admin\PackageTypeController as Pkgs;
+@endphp
 <div class="nk-sidebar">
     <div class="nk-nav-scroll">
         <ul class="metismenu" id="menu">
@@ -13,7 +18,7 @@
             </li>
             <li class="mega-menu mega-menu-sm"><a class="has-arrow" href="javascript:void()" aria-expanded="false">
                     <i class="mdi mdi-page-layout-body"></i><span class="nav-text">Packages</span><span
-                        class="badge badge-success nav-badge">11</span></a>
+                        class="badge badge-success nav-badge">{{Ipkgs::count()}}</span></a>
                 <ul aria-expanded="false">
                     <li><a href="{{url("adminn/packagetype")}}">Add Package Type</a></li>
                     <li><a href="{{url("adminn/indipackage")}}">Add Individual Package</a></li>
@@ -27,7 +32,7 @@
             </li>
             <li class="mega-menu mega-menu-sm"><a class="has-arrow" href="javascript:void()" aria-expanded="false">
                     <i class="mdi mdi-page-layout-body"></i><span class="nav-text">Hotels</span><span
-                        class="badge badge-success nav-badge">11</span></a>
+                        class="badge badge-success nav-badge">{{Hotel::count()}}</span></a>
                 <ul aria-expanded="false">
                     <li><a href="{{url("/adminn/hotels")}}">Add Hotels</a></li>
                     <li><a href="{{url("adminn/hotel-gallery")}}">Add Hotels Photo Gallery</a></li>
@@ -36,7 +41,7 @@
 
                 </ul>
             </li>
-            <li class="nav-label">Apps</li>
+            {{-- <li class="nav-label">Apps</li>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="mdi mdi-email-outline"></i> <span class="nav-text">Email</span><span
                         class="badge bg-lgreen text-white nav-badge">০3</span></a>
@@ -48,8 +53,8 @@
                     <li><a href="email-compose.html">Compose</a>
                     </li>
                 </ul>
-            </li>
-            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+            </li> --}}
+            {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="mdi mdi-application"></i><span class="nav-text">Apps</span> <span
                         class="badge badge-info nav-badge">05</span></a>
                 <ul aria-expanded="false">
@@ -60,8 +65,8 @@
                     <li><a href="app-calender-event.html">Calendar</a>
                     </li>
                 </ul>
-            </li>
-            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-ticket"></i><span
+            </li> --}}
+            {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-ticket"></i><span
                         class="nav-text">Ticket</span> <span class="badge bg-lgreen text-white nav-badge">02</span></a>
                 <ul aria-expanded="false">
                     <li><a href="./support-ticket.html">Support Ticket</a>
@@ -69,8 +74,8 @@
                     <li><a href="./support-tickets-single.html">Single Ticket</a>
                     </li>
                 </ul>
-            </li>
-            <li class="mega-menu mega-menu-lg"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+            </li> --}}
+            {{-- <li class="mega-menu mega-menu-lg"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="mdi mdi-chart-bar"></i> <span class="nav-text">Charts</span> <span
                         class="badge badge-primary nav-badge">19</span></a>
                 <ul aria-expanded="false">
@@ -115,9 +120,9 @@
                     <!-- <li><a href="./chart-gauge.html">Gauge</a>
                                 </li> -->
                 </ul>
-            </li>
-            <li class="nav-label">UI Components</li>
-            <li class="mega-menu mega-menu-md"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+            </li> --}}
+            {{-- <li class="nav-label">UI Components</li> --}}
+            {{-- <li class="mega-menu mega-menu-md"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="mdi mdi-television-guide"></i><span class="nav-text">UI </span> <span
                         class="badge badge-danger nav-badge">19</span></a>
                 <ul aria-expanded="false">
@@ -160,8 +165,8 @@
                     <li><a href="./ui-grid.html">Grid</a>
                     </li>
                 </ul>
-            </li>
-            <li class="mega-menu mega-menu-xl"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+            </li> --}}
+            {{-- <li class="mega-menu mega-menu-xl"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="mdi mdi-collage"></i><span class="nav-text">Components</span> <span
                         class="badge bg-lgreen text-white nav-badge">39</span></a>
                 <ul aria-expanded="false">
@@ -290,8 +295,8 @@
                     <!-- <li><a href="./uc-tipyjs.html">TipyJS</a>
                                 </li> -->
                 </ul>
-            </li>
-            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-widgets"></i><span
+            </li> --}}
+            {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-widgets"></i><span
                         class="nav-text">Widget</span> <span class="badge bg-dpink text-white nav-badge">03</span></a>
                 <ul aria-expanded="false">
                     <li><a href="widget-basic-card.html">Stats Widget</a>
@@ -301,9 +306,9 @@
                     <li><a href="widget-advanced-media.html">Advanced Widget</a>
                     </li>
                 </ul>
-            </li>
-            <li class="nav-label">Forms</li>
-            <li class="mega-menu mega-menu-lg"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+            </li> --}}
+            {{-- <li class="nav-label">Forms</li> --}}
+            {{-- <li class="mega-menu mega-menu-lg"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="mdi mdi-gradient"></i><span class="nav-text">Forms</span> <span
                         class="badge badge-info nav-badge">28</span></a>
                 <ul aria-expanded="false">
@@ -370,9 +375,9 @@
                     <!-- <li><a href="./form-validation-jq-bs.html">JQBS Validation</a>
                                 </li> -->
                 </ul>
-            </li>
-            <li class="nav-label">Table</li>
-            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-table"></i><span
+            </li> --}}
+            {{-- <li class="nav-label">Table</li> --}}
+            {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-table"></i><span
                         class="nav-text">Table</span> <span class="badge badge-primary nav-badge">13</span></a>
                 <ul aria-expanded="false">
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Bootstrap Table</a>
@@ -414,9 +419,9 @@
                         </ul>
                     </li>
                 </ul>
-            </li>
-            <li class="nav-label">Extra</li>
-            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+            </li> --}}
+            {{-- <li class="nav-label">Extra</li> --}}
+            {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="mdi mdi-message-draw"></i><span class="nav-text">Invoice</span><span
                         class="badge badge-success nav-badge">03</span></a>
                 <ul aria-expanded="false">
@@ -427,8 +432,8 @@
                     <li><a href="./invoice-create.html">Create Invoice</a>
                     </li>
                 </ul>
-            </li>
-            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+            </li> --}}
+            {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="mdi mdi-book-open-page-variant"></i><span class="nav-text">Pages</span> <span
                         class="badge badge-info nav-badge">28</span></a>
                 <ul aria-expanded="false">
@@ -513,7 +518,7 @@
                     <li><a href="./page-faq.html">FAQ</a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
 
         </ul>
     </div>

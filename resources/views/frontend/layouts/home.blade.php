@@ -122,7 +122,16 @@
                     <!-- TOUR PLACE {{$loop->iteration}} -->
                     <div class="col-md-4 col-sm-6 col-xs-12 b_packages wow slideInUp" data-wow-duration="0.5s">
                         <!-- OFFER BRAND -->
-                        <div class="band"> <img src="images/band.png" alt="" /> </div>
+                        <?php
+                            if(!empty($ip->discount)) {
+                        ?>
+                        <div class="bandText"> {{$ip->discount}}% OFF </div>
+                        <div class="band"> <img src="images/band-all.png" alt="" /> </div>
+                        <?php
+                            }
+                        ?>
+
+
                         <!-- IMAGE -->
                         <div class="v_place_img">
                             @if( !empty(PageController::getImage($ip->p_id)) )
@@ -130,14 +139,16 @@
                                 src="{{ asset('storage/pkgGall').'/'.PageController::getImage($ip->p_id)->image_name }}"
                                 alt="Tour Booking" title="Tour Booking" />
                             @else
-                            <img src="images/t5.png" alt="Tour Booking" title="Tour Booking" />
+                            <img src="https://via.placeholder.com/350x200" alt="Tour Booking" title="Tour Booking" />
                             @endif
                         </div>
                         <!-- TOUR TITLE & ICONS -->
                         <div class="b_pack rows">
                             <!-- TOUR TITLE -->
                             <div class="col-md-8 col-sm-8">
-                                <h4><a href="tour-details.html">{{$ip->title.', '.$ip->location}}
+                                <h4><a href="{{url('/tour-details')}}/{{$ip->p_id}}">{!!$ip->title.'<span
+                                            class="v_pl_name">
+                                            ('.$ip->location.') </span>'!!}
                                         {{-- <span class="v_pl_name">(Brazil)</span> --}}
                                     </a></h4>
                             </div>

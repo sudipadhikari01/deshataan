@@ -34,12 +34,12 @@
     <div class="container-fluid">
 
         <div class="row">
-    
-        @if(session()->has('status'))
+
+            @if(session()->has('status'))
             <div class="alert alert-success">
                 {!! session()->get('status') !!}
             </div>
-        @endif
+            @endif
             <!-- /# column -->
 
             <!-- /# column -->
@@ -80,20 +80,21 @@
                                         <td>{{$individualPkg->location}} </td>
                                         <td>{{$individualPkg->duration}}</td>
                                         <td>{{$individualPkg->ticket_quantity}} </td>
-                                        <td>{{App\Http\Controllers\PagesController::showPackageType($individualPkg->package_type)}} </td>
+                                        <td>{{App\Http\Controllers\PagesController::showPackageType($individualPkg->package_type)}}
+                                        </td>
                                         <td><span><a href="{{url("adminn/indipackage/$individualPkg->p_id/edit")}}"
                                                     class="mr-4" data-toggle="tooltip" data-placement="top"
                                                     title="Edit"><i class="fas fa-edit"></i></a>
 
                                                 <a href="javascript:void();" class="mr-4" data-toggle="tooltip"
                                                     data-placement="top" title="Delete"
-                                                    onclick="event.preventDefault();document.querySelector('#item-delete').submit();">
+                                                    onclick="event.preventDefault();document.querySelector('#item-delete{{$individualPkg->p_id}}').submit();">
                                                     <i class="fa fa-trash color-danger" aria-hidden="true"
                                                         id="deleteIndividualPackage">
                                                     </i>
                                                 </a>
 
-                                                <form method='POST' id="item-delete"
+                                                <form method='POST' id="item-delete{{$individualPkg->p_id}}"
                                                     action='{{url("adminn/indipackage/$individualPkg->p_id")}}'>
                                                     @csrf
                                                     <input type="hidden" name="_method" value="DELETE">
