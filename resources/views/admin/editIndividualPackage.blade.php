@@ -43,7 +43,7 @@
                                 <div class="col-sm-9">
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="location"
-                                             value="{{$individualPkg->location}}" name="location" required>
+                                            value="{{$individualPkg->location}}" name="location" required>
                                     </div>
                                     <p class="form-text text-danger" id="demo2"></p>
                                 </div>
@@ -52,8 +52,8 @@
                                 <label class="col-sm-3 col-form-label text-label">Duration of Package</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="duration" value="{{$individualPkg->duration}}"
-                                            name="duration" required>
+                                        <input type="text" class="form-control" id="duration"
+                                            value="{{$individualPkg->duration}}" name="duration" required>
                                     </div>
                                     <p class="form-text text-danger" id="demo3"></p>
                                 </div>
@@ -85,8 +85,8 @@
                                 <label class="col-sm-3 col-form-label text-label">Ticket Quantity</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="ticketQuantity" name="ticketQuantity"
-                                            value="{{$individualPkg->ticket_quantity}}" required>
+                                        <input type="text" class="form-control" id="ticketQuantity"
+                                            name="ticketQuantity" value="{{$individualPkg->ticket_quantity}}" required>
                                     </div>
                                     <p class="form-text text-danger" id="demo6"></p>
                                 </div>
@@ -97,27 +97,36 @@
                                 <div class="col-sm-9">
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="price"
-                                             value="{{$individualPkg->price}}"
-                                            name="price" required>
+                                            value="{{$individualPkg->price}}" name="price" required>
+                                    </div>
+                                    <p class="form-text text-danger" id="demo7"></p>
+                                </div>
+                            </div>
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 col-form-label text-label">Discount</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="discount"
+                                            value="{{$individualPkg->discount}}" name="discount">
                                     </div>
                                     <p class="form-text text-danger" id="demo7"></p>
                                 </div>
                             </div>
 
-
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Package Type</label>
                                 <div class="col-sm-9">
-                                    <select name="packageType" class="form-control" id="packageType" required >
-                                        <option value="" >Choose Package Type</option>
+                                    <select name="packageType" class="form-control" id="packageType" required>
+                                        <option value="">Choose Package Type</option>
                                         @foreach ($packages as $package)
-                                            <option value="{{$package->p_id}}" @if($package->p_id == $individualPkg->package_type) {{ 'selected' }} @endif>
-                                                {{$package->p_name}}
-                                            </option>
+                                        <option value="{{$package->p_id}}" @if($package->p_id ==
+                                            $individualPkg->package_type) {{ 'selected' }} @endif>
+                                            {{$package->p_name}}
+                                        </option>
                                         @endforeach
-                                        
 
-                                       
+
+
                                     </select>
                                     <p class="form-text text-danger" id="demo8"></p>
                                 </div>
@@ -126,7 +135,7 @@
 
 
                             <input type="submit" class="btn btn-success " value="Update" name="add"
-                                style="margin:0 auto; width:112px;" onclick="indiPkgValidateForm()"  id="add">
+                                style="margin:0 auto; width:112px;" onclick="indiPkgValidateForm()" id="add">
 
 
                         </div>

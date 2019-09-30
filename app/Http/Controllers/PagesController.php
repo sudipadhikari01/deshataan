@@ -10,8 +10,13 @@ class PagesController extends Controller
 {
     public static function showIndividualPackage($id)
     {
-        return IndividualPackage::find($id)->title;
-        // return $package
+
+        $res = IndividualPackage::find($id);
+        if ($res != null) {
+            return IndividualPackage::find($id)->title;
+        } else {
+            return "Individual package unassociated";
+        }
 
     }
 
@@ -21,7 +26,7 @@ class PagesController extends Controller
         if ($res != null) {
             return PackageType::find($id)->p_name;
         } else {
-            return "No package included";
+            return "Package unassociated";
         }
         return PackageType::find($id)->p_name;
     }

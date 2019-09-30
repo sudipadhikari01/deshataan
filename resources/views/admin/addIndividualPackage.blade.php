@@ -20,9 +20,9 @@
                                 <label class="col-sm-3 col-form-label text-label">Package Title</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control"  placeholder="Enter package title" name="title" 
-                                        id="title" required>
-                                           
+                                        <input type="text" class="form-control" placeholder="Enter package title"
+                                            name="title" id="title" required>
+
                                     </div>
                                     <p class="form-text text-danger" id="demo"></p>
                                 </div>
@@ -31,9 +31,9 @@
                                 <label class="col-sm-3 col-form-label text-label">Package Description</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="description"placeholder="Enter package description"
-                                            name="description" required>
-                                            
+                                        <input type="text" class="form-control" id="description"
+                                            placeholder="Enter package description" name="description" required>
+
                                     </div>
                                     <p class="form-text text-danger" id="demo1"></p>
                                 </div>
@@ -44,7 +44,7 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="location"
                                             placeholder="Enter location" name="location" required>
-                                            
+
                                     </div>
                                     <p class="form-text text-danger" id="demo2"></p>
                                 </div>
@@ -55,7 +55,7 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="duration"
                                             placeholder="Enter duration of package" name="duration" required>
-                                            
+
                                     </div>
                                     <p class="form-text text-danger" id="demo3"></p>
                                 </div>
@@ -65,9 +65,9 @@
                                 <label class="col-sm-3 col-form-label text-label">Start Date</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="date" class="form-control" id="datePicker" placeholder="Enter start date" 
-                                        name="startDate" required>
-                                       
+                                        <input type="date" class="form-control" id="datePicker"
+                                            placeholder="Enter start date" name="startDate" required>
+
                                     </div>
                                     <p class="form-text text-danger" id="demo4"></p>
                                 </div>
@@ -79,7 +79,7 @@
                                     <div class="input-group">
                                         <input type="date" class="form-control" id="datePicker1"
                                             placeholder="Enter end date" name="endDate" required>
-                                            
+
                                     </div>
                                     <p class="form-text text-danger" id="demo5"></p>
                                 </div>
@@ -91,7 +91,7 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="ticketQuantity"
                                             placeholder="Enter ticket quantity" name="ticketQuantity" required>
-                                            
+
                                     </div>
                                     <p class="form-text text-danger" id="demo6"></p>
                                 </div>
@@ -104,27 +104,36 @@
                                         <input type="text" class="form-control" id="price"
                                             placeholder="Enter price of package"
                                             aria-describedby="validationDefaultUsername2" name="price" required>
-                                            
+
+                                    </div>
+                                    <p class="form-text text-danger" id="demo7"></p>
+                                </div>
+                            </div>
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 col-form-label text-label">Discount</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="discount"
+                                            placeholder="Enter discount on package if any" name="discount">
                                     </div>
                                     <p class="form-text text-danger" id="demo7"></p>
                                 </div>
                             </div>
 
-
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Package Type</label>
                                 <div class="col-sm-9">
                                     <select name="packageType" class="form-control" id="packageType" required>
-                                        <option value="" >Choose Package Type</option>
+                                        <option value="">Choose Package Type</option>
                                         @foreach ($packages as $package)
-                                        
+
                                         <option value="{{$package->p_id}}">{{$package->p_name}}</option>
                                         @endforeach
 
-                                       
+
                                     </select>
                                     <p class="form-text text-danger" id="demo8"></p>
-                                    
+
 
                                 </div>
                             </div>

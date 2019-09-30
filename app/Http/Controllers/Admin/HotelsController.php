@@ -112,4 +112,9 @@ class HotelsController extends Controller
         $hotels->delete();
         return redirect()->route('adminn.hotels.index')->with('status', "Hotels Deleted Successfully");
     }
+
+    public static function count()
+    {
+        return Hotel::count();
+    }
 }

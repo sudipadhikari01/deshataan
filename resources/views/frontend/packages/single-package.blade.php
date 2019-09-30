@@ -11,7 +11,7 @@
                     ucfirst( Str::contains($pkg->p_name, 'Package') == true ?
                     Str::replaceLast('Package',' <span>Packages</span>',$pkg->p_name) :
                     "$pkg->p_name <span>Packages</span>" )
-                    !!} -</span> Top {{ ucfirst($pkg->p_name) }} Packages In The World
+                    !!} -</span> Top {{ ucfirst($pkg->p_name) }}
             </h2>
             <ul>
                 <li><a href="#inner-page-title">Home</a></li>
@@ -56,7 +56,7 @@
                     <img src="{{ asset('storage/pkgGall').'/'.PageController::getImage($p->p_id)->image_name }}"
                         alt="" />
                     @else
-                    <img src="{{ asset('storage/pkgGall/placeholder.png') }}" alt="" />
+                    <img src="{{ asset('storage/pkgGall/540x270.png') }}" alt="" />
                     @endif
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 p2">

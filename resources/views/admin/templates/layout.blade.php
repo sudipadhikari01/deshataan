@@ -44,8 +44,9 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <div class="brand-logo"><a href="index.html"><b><img src="{{ asset('assets/images/logo.png') }}" alt="">
-                    </b><span class="brand-title"><img src="{{asset('assets/images/logo-text.png')}}" alt=""></span></a>
+            <div class="brand-logo"><a href="{{route('adminn.index')}}"><img src="{{ asset('assets/images/logo.png') }}"
+                        alt="">
+                    <span class="brand-title"><img src="{{asset('assets/images/logo-text.png')}}" alt=""></span></a>
             </div>
             <div class="nav-control">
                 <div class="hamburger"><span class="line"></span> <span class="line"></span> <span class="line"></span>
@@ -295,9 +296,9 @@
             Right sidebar start
         ***********************************-->
         <div class="sidebar-right">
-            <a class="sidebar-right-trigger" href="javascript:void(0)">
+            {{-- <a class="sidebar-right-trigger" href="javascript:void(0)">
                 <span><i class="mdi mdi-tune"></i></span>
-            </a>
+            </a> --}}
             <div class="sidebar-right-inner">
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item"><a class="nav-link active show" data-toggle="tab" href="#home8"><span><i
@@ -909,7 +910,7 @@
     <script src="{{asset('admin/js/custom.min.js')}}"></script>
     <script src="{{asset('admin/js/settings.js')}}"></script>
     <script src="{{asset('admin/js/gleek.js')}}"></script>
-    <script src="{{asset('admin/js/styleSwitcher.js')}}"></script>
+    {{-- <script src="{{asset('admin/js/styleSwitcher.js')}}"></script> --}}
 
     <script src="{{asset('admin/js/package.js')}}"></script>
     {{-- <script src="{{asset('admin/js/indipackage.js')}}"></script> --}}

@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreatePackagesTable extends Migration
 {
@@ -23,6 +23,7 @@ class CreatePackagesTable extends Migration
             $table->date('start_date');
             $table->date('end_date');
             $table->string('price');
+            $table->string('discount')->nullable();
             $table->string('location');
             $table->integer('package_type');
 

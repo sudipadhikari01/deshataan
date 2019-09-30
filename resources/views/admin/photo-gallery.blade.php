@@ -81,7 +81,7 @@ use App\Http\Controllers\PagesController;
                                         <th>{{ $i }}</th>
                                         <td>{{$photo->image_title}}</td>
                                         <td><img src="{{ asset("/storage/pkgGall/$photo->image_name")}}"
-                                                style="width:200; height:150px" alt="">
+                                                style="width:200px; height:150px" alt="">
                                         </td>
                                         <td>{{PagesController::showPackageType($photo->p_id)}}</td>
                                         <td>{{PagesController::showIndividualPackage($photo->ip_id)}}</td>

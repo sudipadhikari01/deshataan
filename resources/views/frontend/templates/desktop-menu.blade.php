@@ -38,8 +38,8 @@
                                                 @else
                                                 @foreach($pkgs as $pkg)
                                                 <li>
-                                                    <a href="{{url('/package\/')}}{{ $pkg->p_id }}">{{ $pkg->p_name }}
-                                                    </a>
+                                                    <a
+                                                        href="{{url('/package\/')}}{{ $pkg->p_id }}">{{ preg_match('(package|Package|packages|Packages)', $pkg->p_name) == 0 ? $pkg->p_name." Packages" : $pkg->p_name  }}</a>
                                                 </li>
                                                 @endforeach
                                                 @endif

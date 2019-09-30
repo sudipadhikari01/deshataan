@@ -106,4 +106,9 @@ class PackageTypeController extends Controller
         return redirect()->route('adminn.packagetype.index')->with("status", "Package Deleted Successfully");
 
     }
+
+    public static function count()
+    {
+        return PackageType::count();
+    }
 }

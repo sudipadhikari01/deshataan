@@ -51,7 +51,6 @@ Route::prefix('/')
         }
     );
 
-
 Auth::routes();
 
 //admin group routes
@@ -73,7 +72,7 @@ Route::prefix('/adminn')
             Route::get('/home', 'HomeController@index')->name('index');
 
             //using admin auth
-            Route::namespace('Auth')
+            Route::namespace ('Auth')
                 ->group(
                     function () {
                         //Login Routes
@@ -91,7 +90,6 @@ Route::prefix('/adminn')
                 );
         }
     );
-
 
 // booking by email for admin section
 Route::get('adminn/booking-by-email', 'BookingByEmailController@create')->name('adminBookingByEmail');

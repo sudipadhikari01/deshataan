@@ -83,13 +83,13 @@ use App\Http\Controllers\PagesController;
 
                                                 <a href="javascript:void();" class="mr-4" data-toggle="tooltip"
                                                     data-placement="top" title="Delete"
-                                                    onclick="event.preventDefault();document.querySelector('#item-delete').submit();">
+                                                    onclick="event.preventDefault();document.querySelector('#item-delete{{$itinerary->id}}').submit();">
                                                     <i class="fa fa-trash color-danger" aria-hidden="true"
                                                         id="deleteItenerary">
                                                     </i>
                                                 </a>
 
-                                                <form method='POST' id="item-delete"
+                                                <form method='POST' id="item-delete{{$itinerary->id}}"
                                                     action='{{url("adminn/itinerary/$itinerary->id")}}'>
                                                     @csrf
                                                     <input type="hidden" name="_method" value="DELETE">

@@ -12,7 +12,7 @@
             </div>
             <div class="col p-md-0">
                 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{url("/adminn")}}">Home</a>
+                    <li class="breadcrumb-item"><a href="{{url("/adminn")}}">Home</a>
                     </li>
                     <li class="breadcrumb-item active">
                         <a href="{{url('/adminn/packagetype')}}">Add Package Type</a>
@@ -41,7 +41,7 @@
                 {!! session()->get('status') !!}
             </div>
             @endif
-            
+
             <!-- /# column -->
 
             <!-- /# column -->
@@ -85,13 +85,13 @@
 
                                                 <a href="javascript:void();" class="mr-4" data-toggle="tooltip"
                                                     data-placement="top" title="Delete"
-                                                    onclick="event.preventDefault();document.querySelector('#item-delete').submit();">
+                                                    onclick="event.preventDefault();document.querySelector('#item-delete{{$package->p_id}}').submit();">
                                                     <i class="fa fa-trash color-danger" aria-hidden="true"
                                                         id="deletePackage">
                                                     </i>
                                                 </a>
 
-                                                <form method='POST' id="item-delete"
+                                                <form method='POST' id="item-delete{{$package->p_id}}"
                                                     action='{{url("adminn/packagetype/$package->p_id")}}'>
                                                     @csrf
                                                     <input type="hidden" name="_method" value="DELETE">
