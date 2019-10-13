@@ -86,7 +86,9 @@ class PageController extends Controller
     //list hotel
     public function hotels()
     {
-        return view('frontend.hotels.hotels-list');
+        $pkgs = $this->pkgs;
+
+        return view('frontend.hotels.hotels-list', compact($pkgs));
     }
 
     public function contact()

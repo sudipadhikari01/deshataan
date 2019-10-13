@@ -1,4 +1,5 @@
 @extends('frontend.layouts.pageTemplate')
+@section('content');
 <!--====== HOTELS LIST ==========-->
 <section class="hot-page2-alp hot-page2-pa-sp-top all-hot-bg">
     <div class="container">
@@ -968,3 +969,4 @@
     </div>
 </section>
 <!--====== TIPS BEFORE TRAVEL ==========-->
+@endsection
