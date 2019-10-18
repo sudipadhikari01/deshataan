@@ -12,7 +12,6 @@
  */
 
 // frontend routes
-
 Route::prefix('/')
     ->namespace('FrontEnd')
     ->name('frontend.')
@@ -43,6 +42,11 @@ Route::prefix('/')
                 'hotels',
                 'PageController@hotels'
             )->name('hotels');
+
+            Route::get(
+                'hotel/{id}',
+                'PageController@hotel'
+            );
 
             Route::get(
                 'contact',
@@ -117,3 +121,7 @@ Route::post('/search-result', 'SearchController@index');
 
 // rating test
 Route::get('/rating', 'RatingController@index');
+
+Route::get('/search-view', function () {
+    return view('search-result');
+});

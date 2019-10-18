@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\FrontEnd;
 
+use App\Hotel as Hotel;
 use App\Http\Controllers\Controller;
 use App\IndividualPackage as Ipkgs;
 use App\Itinerary as Itin;
@@ -86,7 +87,23 @@ class PageController extends Controller
     //list hotel
     public function hotels()
     {
-        return view('frontend.hotels.hotels-list');
+        $pkgs = $this->pkgs;
+        $hotelList = Hotel::all();
+        $hotelCount = Hotel::count();
+
+        return view(
+            'frontend.hotels.hotels-list',
+            compact('pkgs', 'hotelList', 'hotelCount')
+        );
+    }
+    public function hotel($id)
+    {
+        $pkgs = $this->pkgs;
+        $hotel = Hotel::find($id);
+        return view(
+            'frontend.hotels.hotel-details',
+            compact('pkgs', 'hotel')
+        );
     }
 
     public function contact()
