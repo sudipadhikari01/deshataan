@@ -227,7 +227,7 @@
                                 <ul>
                                     <li>
                                         <div class="checkbox checkbox-info checkbox-circle">
-                                            <input id="chp71" class="styled" type="checkbox" checked="">
+                                            <input id="chp71" class="styled" type="checkbox" checked="0">
                                             <label for="chp71"> Swimming pools </label>
                                         </div>
                                     </li>
