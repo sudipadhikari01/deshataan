@@ -58,7 +58,6 @@ class HotelsPhotoGalleryController extends Controller
             //upload image
 
             $path = $request->file('image')->storeAs('public/photogallery', $fileNameToStore);
-
         } else {
 
             $fileNameToStore1 = "noimage.jpg";
@@ -73,7 +72,6 @@ class HotelsPhotoGalleryController extends Controller
         $hotelPhotos->save();
 
         return redirect()->route('hoetels-photo')->with('status', "Hotel image added succesfully");
-
     }
 
     /**
@@ -83,9 +81,7 @@ class HotelsPhotoGalleryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-
-    }
+    { }
 
     /**
      * Show the form for editing the specified resource.
@@ -128,7 +124,6 @@ class HotelsPhotoGalleryController extends Controller
             //upload image
 
             $path = $request->file('image')->storeAs('public/photogallery', $fileNameToStore);
-
         } else {
 
             $fileNameToStore1 = "noimage.jpg";
@@ -144,7 +139,6 @@ class HotelsPhotoGalleryController extends Controller
         $hotelPhotos->save();
 
         return redirect()->route('hoetels-photo')->with('status', "Hotel image Updated succesfully");
-
     }
 
     /**
