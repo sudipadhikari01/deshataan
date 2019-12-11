@@ -74,7 +74,7 @@ use App\Http\Controllers\PagesController;
                                 <tbody>
                                     <tr>
                                         <th>{{ $loop->iteration }}</th>
-                                        <td>{{Str::limit($itinerary->itinerary, 400)}}</td>
+                                        <td>{{str_limit($itinerary->itinerary, 400)}}</td>
                                         <td>{{PagesController::showPackageType($itinerary->p_id)}}</td>
                                         <td>{{PagesController::showIndividualPackage($itinerary->ip_id)}}</td>
                                         <td><span><a href="{{url("adminn/itinerary/$itinerary->id/edit")}}" class="mr-4"
