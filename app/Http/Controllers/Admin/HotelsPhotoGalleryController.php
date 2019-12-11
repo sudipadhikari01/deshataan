@@ -71,7 +71,7 @@ class HotelsPhotoGalleryController extends Controller
 
         $hotelPhotos->save();
 
-        return redirect()->route('hoetels-photo')->with('status', "Hotel image added succesfully");
+        return redirect()->route('adminn.hotel-gallery.index')->with('status', "Hotel image added succesfully");
     }
 
     /**
@@ -138,7 +138,7 @@ class HotelsPhotoGalleryController extends Controller
 
         $hotelPhotos->save();
 
-        return redirect()->route('hoetels-photo')->with('status', "Hotel image Updated succesfully");
+        return redirect()->route('hotels-photo')->with('status', "Hotel image Updated succesfully");
     }
 
     /**

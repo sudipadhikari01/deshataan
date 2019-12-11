@@ -18,7 +18,7 @@ use App\Http\Controllers\PagesController;
                     <li class="breadcrumb-item"><a href="{{url('/adminn')}}">Home</a>
                     </li>
                     <li class="breadcrumb-item active">
-                        <a href="{{url('/adminn/hotel-gallery')}}">Add Hotels</a>
+                        <a href="{{url('/adminn/hotel-gallery/create')}}">Add Hotels</a>
                     </li>
                 </ol>
             </div>
@@ -56,7 +56,7 @@ use App\Http\Controllers\PagesController;
                         </div>
 
                         <div class="card-upload" style="float:right">
-                            <a href="{{url('/adminn/addHotelsPhoto')}}" class="mr-4" data-toggle="tooltip"
+                            <a href="{{url('/adminn/hotel-gallery/create')}}" class="mr-4" data-toggle="tooltip"
                                 data-placement="top" title="Add Hotels photo"><i class="fas fa-upload"></i></a>
                         </div>
                         <div class="table-responsive">
