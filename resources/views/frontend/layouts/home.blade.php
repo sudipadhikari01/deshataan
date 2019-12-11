@@ -119,7 +119,7 @@
                 <div>
 
                     @foreach($ipkgs as $ip)
-                    <!-- TOUR PLACE {{$loop->iteration}} -->
+                    {{-- <!-- TOUR PLACE {{$loop->iteration}} --> --}}
                     <div class="col-md-4 col-sm-6 col-xs-12 b_packages wow slideInUp" data-wow-duration="0.5s">
                         <!-- OFFER BRAND -->
                         <?php
@@ -194,7 +194,39 @@
                 <!-- HOTEL GRID -->
                 <div class="to-ho-hotel">
                     <!-- HOTEL GRID -->
+                    @foreach ($hotelList as $hotel)
                     <div class="col-md-4">
+                        <div class="to-ho-hotel-con">
+                            <div class="to-ho-hotel-con-1">
+                                <div class="hot-page2-hli-3"> <img src="images/hci1.png" alt=""> </div>
+                                <div class="hom-hot-av-tic"> Available Rooms: {{ $hotel->available_room }} </div> <img src="images/hotels/1.jpg"
+                                    alt="">
+                            </div>
+                            <div class="to-ho-hotel-con-23">
+                                <div class="to-ho-hotel-con-2">
+                                    <a href="{{url('/hotel')}}/{{$hotel->h_id}}">
+                                        <h4>{{ $hotel->title }}</h4>
+                                    </a>
+                                </div>
+                                <div class="to-ho-hotel-con-3">
+                                    <ul>
+                                        <li>Location: {{ $hotel->location }}
+                                            <div class="dir-rat-star ho-hot-rat-star"> Rating: <i class="fa fa-star"
+                                                    aria-hidden="true"></i><i class="fa fa-star"
+                                                    aria-hidden="true"></i><i class="fa fa-star"
+                                                    aria-hidden="true"></i><i class="fa fa-star"
+                                                    aria-hidden="true"></i><i class="fa fa-star-o"
+                                                    aria-hidden="true"></i> </div>
+                                        </li>
+                                        <li><span class="ho-hot-pri-dis">$720</span><span class="ho-hot-pri">{{ $hotel->price }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                        
+                    @endforeach
+                    {{-- <div class="col-md-4">
                         <div class="to-ho-hotel-con">
                             <div class="to-ho-hotel-con-1">
                                 <div class="hot-page2-hli-3"> <img src="images/hci1.png" alt=""> </div>
@@ -285,7 +317,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

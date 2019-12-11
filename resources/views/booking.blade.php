@@ -458,7 +458,7 @@
                                         @endforeach
 									</select>
 								</div>
-							</div>
+                            </div>
 							<div class="row">
 								<div class="input-field col s6">
 									<input type="date" name="arrival" >
@@ -472,24 +472,18 @@
 							<div class="row">
 								<div class="input-field col s6">
 									<select name="noofadults">
-										<option value="" disabled selected>No of adults</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-										<option value="6">6</option>
+                                        <option value="" disabled selected>No of adults</option>
+                                        @for ($i = 1; $i <= 50; $i++)
+										<option value="{{ $i }}">{{ $i }}</option>
+                                        @endfor
 									</select>
 								</div>
 								<div class="input-field col s6">
 									<select name="noofchildrens">
 										<option value="" disabled selected>No of childrens</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-										<option value="6">6</option>											
+                                        @for ($i = 1; $i <= 10; $i++)
+										<option value="{{ $i }}">{{ $i }}</option>
+                                        @endfor											
 									</select>
 								</div>
 							</div>							

@@ -25,7 +25,8 @@ class PageController extends Controller
         $page = "home";
         $pkgs = $this->pkgs;
         $ipkgs = $this->ipkgs;
-        return view('frontend.layouts.home', compact('pkgs', 'page', 'ipkgs'));
+        $hotelList = Hotel::all();
+        return view('frontend.layouts.home', compact('pkgs', 'page', 'ipkgs','hotelList'));
         // return view('frontend.welcome', compact('pkgs', 'page'));
     }
 
@@ -100,6 +101,7 @@ class PageController extends Controller
     {
         $pkgs = $this->pkgs;
         $hotel = Hotel::find($id);
+
         return view(
             'frontend.hotels.hotel-details',
             compact('pkgs', 'hotel')

@@ -295,7 +295,7 @@
                                             class="hot-list-p3-1">Price Per Night</span>
                                         <span class="hot-list-p3-2">{{$list->price}} NPR</span><span
                                             class="hot-list-p3-4">
-                                            <a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                            <a href="{{url('/booking')}}" class="hot-page2-alp-quot-btn">Book Now</a>
                                         </span>
                                     </div>
                                 </div>

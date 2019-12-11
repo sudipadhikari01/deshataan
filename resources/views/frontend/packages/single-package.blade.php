@@ -68,8 +68,8 @@
                     <div class="ticket">
                         <ul>
                             <li>Available Tickets : {{$p->ticket_quantity}}</li>
-                            <li>Start Date : {{$p->start_date}}</li>
-                            <li>End Date : {{$p->end_date}}</li>
+                            <li>Start Date : {{  date('Y | M | d D', strtotime($p->start_date))}}</li>
+                            <li>End Date : {{ date('Y | M |d  D', strtotime($p->end_date))}}</li>
                         </ul>
                     </div>
                     <div class="p2_book">
