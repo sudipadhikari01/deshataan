@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- FAV ICON -->
-    <link rel="shortcut icon" href="images/fav.ico">
+    {{-- <link rel="shortcut icon" href="images/fav.ico"> --}}
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Poppins%7CQuicksand:400,500,700" rel="stylesheet">
     <!-- FONT-AWESOME ICON CSS -->
