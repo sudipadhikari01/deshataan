@@ -575,18 +575,22 @@
                         <div class="hot-page2-hom-pre">
                             <ul>
                                 <!--LISTINGS-->
-                                <li>
-                                    <a href="hotels-list.html">
-                                        <div class="hot-page2-hom-pre-1"> <img src="images/reviewer/1.jpg" alt="">
-                                        </div>
-                                        <div class="hot-page2-hom-pre-2">
-                                            <h5>Christopher</h5> <span>No of Reviews: 620, City: illunois</span>
-                                        </div>
-                                        <div class="hot-page2-hom-pre-3"> <i class="fa fa-hand-o-right"
-                                                aria-hidden="true"></i> </div>
-                                    </a>
-                                </li>
-                                <!--LISTINGS-->
+                                @foreach ($individualPackages as $indPak)
+                                    <li>
+                                        <a href="{{ url('/tour-details') }}/{{ $indPak->p_id }}">
+                                            <div class="hot-page2-hom-pre-1"> <img src="{{ asset('storage/pkgGall').'/'.PageController::getImage($indPak->p_id)->image_name }}"
+                                                alt="Tour Booking" title="Tour Booking">
+                                            </div>
+                                            <div class="hot-page2-hom-pre-2">
+                                                <h5>{{ $indPak->title }}</h5> <span>{{ $indPak->duration }}, City: {{ $indPak->location }}</span>
+                                            </div>
+                                            <div class="hot-page2-hom-pre-3"> <i class="fa fa-hand-o-right"
+                                                    aria-hidden="true"></i> </div>
+                                        </a>
+                                    </li>
+                                @endforeach
+
+                                {{-- <!--LISTINGS-->
                                 <li>
                                     <a href="hotels-list.html">
                                         <div class="hot-page2-hom-pre-1"> <img src="images/reviewer/2.png" alt="">
@@ -633,7 +637,7 @@
                                         <div class="hot-page2-hom-pre-3"> <i class="fa fa-hand-o-right"
                                                 aria-hidden="true"></i> </div>
                                     </a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                     </div>

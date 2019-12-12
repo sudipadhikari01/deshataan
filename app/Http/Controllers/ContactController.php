@@ -64,7 +64,7 @@ class ContactController extends Controller
             } 
             catch (Exception $e) {
 
-                echo $e;
+                // echo $e;
                 //Give response message error if failed to send email
                 $response['message'] = $e->getMessage();
             }
