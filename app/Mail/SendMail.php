@@ -37,7 +37,7 @@ class SendMail extends Mailable
             //subject method for subject of email
             //view method for loaction of template email
             //with method for return value with data
-            return $this->from($this->data['email'])->subject('Feedback')->view('sendMail')->with('data',$this->data);
+            return $this->from($this->data['email'])->subject('Feedback')->view('frontend/contact/sendMail')->with('data',$this->data);
         }
     }
 }

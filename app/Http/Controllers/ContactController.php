@@ -46,7 +46,8 @@ class ContactController extends Controller
                 'request' => 'feedback'
             );
             // Try to send Email
-            var_dump($data);
+            // var_dump($data);
+            
             try {
                 //send email with model of email SendEmail and with variable data
                 Mail::to('sandeep.crupee@gmail.com')->send(new SendMail($data));
@@ -62,7 +63,8 @@ class ContactController extends Controller
                 }
             } 
             catch (Exception $e) {
-                echo "line 66";
+
+                echo $e;
                 //Give response message error if failed to send email
                 $response['message'] = $e->getMessage();
             }

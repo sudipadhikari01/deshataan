@@ -1,4 +1,4 @@
-@include('frontend.layouts.pageTemplate')
+@extends('frontend.layouts.pageTemplate')
 @section('content');
 	<!--====== LOCATON ==========-->
 	<section>
