@@ -445,9 +445,9 @@
                         <div class="hot-page2-hom-pre">
                             <ul>
                                 <!--LISTINGS-->
-                                @foreach ($hotelList as $hotel)
+                                @foreach ($hotelList->slice(0, 5) as $hotel)
                                 <li>
-                                    <a href="hotels-list.html">
+                                    <a href="{{ url('/hotel') }}/{{ $hotel->h_id }}">
                                         <div class="hot-page2-hom-pre-1"> <img src="images/hotels/1.jpg" alt=""> </div>
                                         <div class="hot-page2-hom-pre-2">
                                             <a href="{{url('/hotel')}}/{{$hotel->h_id}}">
@@ -512,7 +512,7 @@
                         <div class="hot-page2-hom-pre">
                             <ul>
                                 <!--LISTINGS-->
-                                @foreach ($packages as $package)
+                                @foreach ($packages->slice(0, 5) as $package)
                                 <li>
                                         <a href="{{url('/package')}}/{{ $package->p_id}}">
                                             <div class="hot-page2-hom-pre-1"> <img src="images/trends/1.jpg" alt=""> </div>
@@ -575,7 +575,7 @@
                         <div class="hot-page2-hom-pre">
                             <ul>
                                 <!--LISTINGS-->
-                                @foreach ($individualPackages as $indPak)
+                                @foreach ($individualPackages->slice(0, 5) as $indPak)
                                     <li>
                                         <a href="{{ url('/tour-details') }}/{{ $indPak->p_id }}">
                                             <div class="hot-page2-hom-pre-1"> <img src="{{ asset('storage/pkgGall').'/'.PageController::getImage($indPak->p_id)->image_name }}"
