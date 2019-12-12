@@ -27,10 +27,12 @@ class PageController extends Controller
         $ipkgs = $this->ipkgs;
         $packages = Pkg::all();
         $individualPackages = Ipkgs::orderBy('visit','desc')->take(5)->get();
-        // dd($individualPackages);
+        $topPackages = Pkg::orderBy('visit_count','desc')->take(5)->get();
+
+        // dd($packages);
         // $packages = Pkg::inRandomOrder()->limit(4)->get();
         $hotelList = Hotel::all();
-        return view('frontend.layouts.home', compact('pkgs', 'page', 'ipkgs','hotelList','packages','individualPackages'));
+        return view('frontend.layouts.home', compact('pkgs', 'page', 'ipkgs','hotelList','packages','individualPackages','topPackages'));
         // return view('frontend.welcome', compact('pkgs', 'page'));
     }
 
@@ -46,6 +48,9 @@ class PageController extends Controller
     {
         $pkgs = $this->pkgs;
         $pkg = Pkg::findOrFail($id);
+        $visit = Pkg::find($id)->value('visit_count');
+        // return $visit;
+        Pkg::where('p_id', $id)->update(array('visit_count' => $visit + 1));
         $ipkgs = $this->pkgs->find($id)->ipackages;
         // return $ipkgs;
         if ($ipkgs->count() > 0 && $pkg->count() > 0) {

@@ -378,7 +378,7 @@
                 </div>
                 <div class="popu-places-home">
                     <!-- POPULAR PLACES 1 -->
-                    @foreach ($packages as $package)
+                    @foreach ($packages->slice(0, 4) as $package)
                     <div class="col-md-6 col-sm-6 col-xs-12 place">
                             <div class="col-md-6 col-sm-12 col-xs-12"> <img src="images/place2.jpg" alt="" /> </div>
                             <div class="col-md-6 col-sm-12 col-xs-12">
@@ -512,7 +512,7 @@
                         <div class="hot-page2-hom-pre">
                             <ul>
                                 <!--LISTINGS-->
-                                @foreach ($packages->slice(0, 5) as $package)
+                                @foreach ($topPackages->slice(0, 5) as $package)
                                 <li>
                                         <a href="{{url('/package')}}/{{ $package->p_id}}">
                                             <div class="hot-page2-hom-pre-1"> <img src="images/trends/1.jpg" alt=""> </div>
