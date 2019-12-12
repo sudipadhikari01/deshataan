@@ -26,10 +26,10 @@ class PageController extends Controller
         $pkgs = $this->pkgs;
         $ipkgs = $this->ipkgs;
         $packages = Pkg::all();
-        $individualPackages = Ipkgs::orderBy('visit','desc')->take(5)->get();
+        $individualPackages = Ipkgs::orderBy('visit','desc')->get();
         $topPackages = Pkg::orderBy('visit_count','desc')->take(5)->get();
 
-        // dd($packages);
+        // dd($individualPackages);
         // $packages = Pkg::inRandomOrder()->limit(4)->get();
         $hotelList = Hotel::all();
         return view('frontend.layouts.home', compact('pkgs', 'page', 'ipkgs','hotelList','packages','individualPackages','topPackages'));
