@@ -25,8 +25,10 @@ class PageController extends Controller
         $page = "home";
         $pkgs = $this->pkgs;
         $ipkgs = $this->ipkgs;
+        $packages = Pkg::all();
         $hotelList = Hotel::all();
-        return view('frontend.layouts.home', compact('pkgs', 'page', 'ipkgs','hotelList'));
+        // dd($packages);
+        return view('frontend.layouts.home', compact('pkgs', 'page', 'ipkgs','hotelList','packages'));
         // return view('frontend.welcome', compact('pkgs', 'page'));
     }
 

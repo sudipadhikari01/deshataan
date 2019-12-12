@@ -378,16 +378,19 @@
                 </div>
                 <div class="popu-places-home">
                     <!-- POPULAR PLACES 1 -->
+                    @foreach ($packages as $package)
                     <div class="col-md-6 col-sm-6 col-xs-12 place">
-                        <div class="col-md-6 col-sm-12 col-xs-12"> <img src="images/place2.jpg" alt="" /> </div>
-                        <div class="col-md-6 col-sm-12 col-xs-12">
-                            <h3><span>Honeymoon Package</span> 7 Days / 6 Nights</h3>
-                            <p>lorem ipsum simplelorem ipsum simplelorem ipsum simplelorem ipsum simple</p> <a
-                                href="tour-details.html" class="link-btn">more info</a>
+                            <div class="col-md-6 col-sm-12 col-xs-12"> <img src="images/place2.jpg" alt="" /> </div>
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                <h3><span>{{ $package->p_name }}</span> 7 Days / 6 Nights</h3>
+                                <p>{{ $package->desc }}</p> <a
+                                    href="{{url('/package')}}/{{ $package->p_id}}" class="link-btn">more info</a>
+                            </div>
                         </div>
-                    </div>
+                    @endforeach
+                    
                     <!-- POPULAR PLACES 2 -->
-                    <div class="col-md-6 col-sm-6 col-xs-12 place">
+                    {{-- <div class="col-md-6 col-sm-6 col-xs-12 place">
                         <div class="col-md-6 col-sm-12 col-xs-12"> <img src="images/place1.jpg" alt="" /> </div>
                         <div class="col-md-6 col-sm-12 col-xs-12">
                             <h3><span>Family package</span> 14 Days / 13 Nights</h3>
@@ -415,7 +418,7 @@
                                 href="tour-details.html" class="link-btn">more info</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
@@ -442,17 +445,25 @@
                         <div class="hot-page2-hom-pre">
                             <ul>
                                 <!--LISTINGS-->
+                                @foreach ($hotelList as $hotel)
                                 <li>
                                     <a href="hotels-list.html">
                                         <div class="hot-page2-hom-pre-1"> <img src="images/hotels/1.jpg" alt=""> </div>
                                         <div class="hot-page2-hom-pre-2">
-                                            <h5>Taaj Club House</h5> <span>City: illunois, United States</span>
+                                            <a href="{{url('/hotel')}}/{{$hotel->h_id}}">
+                                                <h5>{{ $hotel->title }}</h5>
+                                            </a> <span>City: {{ $hotel->location }}</span>
                                         </div>
-                                        <div class="hot-page2-hom-pre-3"> <span>4.5</span> </div>
+                                        <div class="hot-page2-hom-pre-3"> <span>
+                                                                                                        4.5
+                                        </span> 
+                                        </div>
                                     </a>
                                 </li>
+                                @endforeach
+                               
                                 <!--LISTINGS-->
-                                <li>
+                                {{-- <li>
                                     <a href="hotels-list.html">
                                         <div class="hot-page2-hom-pre-1"> <img src="images/hotels/2.jpg" alt=""> </div>
                                         <div class="hot-page2-hom-pre-2">
@@ -490,7 +501,7 @@
                                         </div>
                                         <div class="hot-page2-hom-pre-3"> <span>4.0</span> </div>
                                     </a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                     </div>
@@ -501,17 +512,20 @@
                         <div class="hot-page2-hom-pre">
                             <ul>
                                 <!--LISTINGS-->
+                                @foreach ($packages as $package)
                                 <li>
-                                    <a href="hotels-list.html">
-                                        <div class="hot-page2-hom-pre-1"> <img src="images/trends/1.jpg" alt=""> </div>
-                                        <div class="hot-page2-hom-pre-2">
-                                            <h5>Family Package Luxury</h5> <span>Duration: 7 Days and 6 Nights</span>
-                                        </div>
-                                        <div class="hot-page2-hom-pre-3"> <span>4.1</span> </div>
-                                    </a>
-                                </li>
+                                        <a href="{{url('/package')}}/{{ $package->p_id}}">
+                                            <div class="hot-page2-hom-pre-1"> <img src="images/trends/1.jpg" alt=""> </div>
+                                            <div class="hot-page2-hom-pre-2">
+                                                <h5>{{ $package->p_name }}</h5> <span>Duration: 7 Days and 6 Nights</span>
+                                            </div>
+                                            <div class="hot-page2-hom-pre-3"> <span>4.1</span> </div>
+                                        </a>
+                                    </li>
+                                @endforeach
+                               
                                 <!--LISTINGS-->
-                                <li>
+                                {{-- <li>
                                     <a href="hotels-list.html">
                                         <div class="hot-page2-hom-pre-1"> <img src="images/trends/2.jpg" alt=""> </div>
                                         <div class="hot-page2-hom-pre-2">
@@ -550,7 +564,7 @@
                                         </div>
                                         <div class="hot-page2-hom-pre-3"> <span>5.0</span> </div>
                                     </a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                     </div>
