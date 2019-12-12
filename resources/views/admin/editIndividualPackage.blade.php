@@ -32,8 +32,11 @@
                                 <label class="col-sm-3 col-form-label text-label">Package Description</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="description"
-                                            value="{{$individualPkg->description}}" name="description" required>
+                                        {{-- <input type="text" class="form-control" id="description"
+                                            value="" name="description" required> --}}
+                                            <textarea class="form-control" id="addIndividualPackageDescription"
+                                            placeholder="Enter Package description" name="description"
+                                            required>{{$individualPkg->description}}</textarea>
                                     </div>
                                     <p class="form-text text-danger" id="demo1"></p>
                                 </div>
@@ -149,5 +152,18 @@
     </div>
 </div>
 
+<script src="{{ asset('assets/plugins/ckeditor/ckeditor.js') }}"></script>
+<script>
+    CKEDITOR.replace( 'addIndividualPackageDescription',{
+        width:"100%"
+    } );
+    // CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
+    // $('#itineraryDesc').ckeditor({
+    // toolbar: 'Full',
+    // enterMode : CKEDITOR.ENTER_BR,
+    // shiftEnterMode: CKEDITOR.ENTER_P
+
+    // });
+</script>
 
 @endsection
