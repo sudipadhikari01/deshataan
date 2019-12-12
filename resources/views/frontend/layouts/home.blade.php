@@ -570,7 +570,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="hot-page2-hom-pre-head">
-                            <h4>Top Branding <span>Reviewers</span></h4>
+                            <h4>Top Individual <span>Packages</span></h4>
                         </div>
                         <div class="hot-page2-hom-pre">
                             <ul>

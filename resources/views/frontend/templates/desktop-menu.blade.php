@@ -53,7 +53,7 @@
 
                         <li><a href="{{route('frontend.hotels')}}">Hotels</a></li>
 
-                        <li><a href="{{route('frontend.contact')}}">Contact us</a>
+                        <li><a href="{{route('contact')}}">Contact us</a>
                         </li>
                     </ul>
                 </div>

@@ -48,10 +48,10 @@ Route::prefix('/')
                 'PageController@hotel'
             );
 
-            Route::get(
-                'contact',
-                'PageController@contact'
-            )->name('contact');
+            // Route::get(
+            //     'contact',
+            //     'PageController@contact'
+            // )->name('contact');
         }
     );
 
@@ -125,3 +125,8 @@ Route::get('/rating', 'RatingController@index');
 Route::get('/search-view', function () {
     return view('search-result');
 });
+
+
+//contact page route
+Route::get('/contact', 'ContactController@index')->name('contact');
+Route::post('/sendEmail','ContactController@sendEmail')->name('sendEmail');
