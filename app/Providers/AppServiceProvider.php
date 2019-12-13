@@ -38,6 +38,8 @@ class AppServiceProvider extends ServiceProvider
         // $hotelList = Hotel::all();
         View::share('individualPackages', $individualPackages);
         View::share('topPackages', $topPackages);
+        View::share('allPackages', $packages);
+        // dd($packages);
         // View::share('hotelList', $hotelList);
 
 

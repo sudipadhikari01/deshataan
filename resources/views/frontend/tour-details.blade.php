@@ -10,10 +10,10 @@
         <div class="container">
             <h2><span>{{$sipkg->title}} -</span> {{$spkg->p_name}}</h2>
             <ul>
-                <li><a href="#inner-page-title">Home</a>
+                <li><a href="{{ url('/') }}">Home</a>
                 </li>
                 <li><i class="fa fa-angle-right" aria-hidden="true"></i> </li>
-                <li><a href="#inner-page-title" class="bread-acti">{{$sipkg->title}}</a>
+                <li><a href="javascript:void()" class="bread-acti">{{$sipkg->title}}</a>
                 </li>
             </ul>
             <p>Book travel packages and enjoy your holidays with distinctive experience</p>

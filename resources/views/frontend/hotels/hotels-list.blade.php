@@ -28,7 +28,7 @@
                             <!--LISTINGS-->
                             @foreach($hotelList as $list)
                             <li>
-                                <a href="#">
+                                <a href="{{url("hotel/$list->h_id")}}">
                                     <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> <img
                                             src="images/hotels/2.jpg" alt=""> </div>
                                     <div class="hot-page2-hom-pre-2 hot-page2-alp-cl-1-2">

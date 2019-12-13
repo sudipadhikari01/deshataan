@@ -256,36 +256,6 @@
                         </div>
                     @endforeach
                     
-                    <!-- POPULAR PLACES 2 -->
-                    {{-- <div class="col-md-6 col-sm-6 col-xs-12 place">
-                        <div class="col-md-6 col-sm-12 col-xs-12"> <img src="images/place1.jpg" alt="" /> </div>
-                        <div class="col-md-6 col-sm-12 col-xs-12">
-                            <h3><span>Family package</span> 14 Days / 13 Nights</h3>
-                            <p>lorem ipsum simplelorem ipsum simplelorem ipsum simplelorem ipsum simple</p> <a
-                                href="tour-details.html" class="link-btn">more info</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="popu-places-home">
-                    <!-- POPULAR PLACES 3 -->
-                    <div class="col-md-6 col-sm-6 col-xs-12 place">
-                        <div class="col-md-6 col-sm-12 col-xs-12"> <img src="images/place3.jpg" alt="" /> </div>
-                        <div class="col-md-6 col-sm-12 col-xs-12">
-                            <h3><span>Weekend Package </span> 3 Days / 2 Nights</h3>
-                            <p>lorem ipsum simplelorem ipsum simplelorem ipsum simplelorem ipsum simple</p> <a
-                                href="tour-details.html" class="link-btn">more info</a>
-                        </div>
-                    </div>
-                    <!-- POPULAR PLACES 4 -->
-                    <div class="col-md-6 col-sm-6 col-xs-12 place">
-                        <div class="col-md-6 col-sm-12 col-xs-12"> <img src="images/place4.jpg" alt="" /> </div>
-                        <div class="col-md-6 col-sm-12 col-xs-12">
-                            <h3><span>Group Package</span> 10 Days / 9 Nights</h3>
-                            <p>lorem ipsum simplelorem ipsum simplelorem ipsum simplelorem ipsum simple</p> <a
-                                href="tour-details.html" class="link-btn">more info</a>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
         </div>
     </section>
@@ -328,47 +298,7 @@
                                     </a>
                                 </li>
                                 @endforeach
-                               
-                                <!--LISTINGS-->
-                                {{-- <li>
-                                    <a href="hotels-list.html">
-                                        <div class="hot-page2-hom-pre-1"> <img src="images/hotels/2.jpg" alt=""> </div>
-                                        <div class="hot-page2-hom-pre-2">
-                                            <h5>Universal luxury Grand Hotel</h5> <span>City: Rio,Brazil</span>
-                                        </div>
-                                        <div class="hot-page2-hom-pre-3"> <span>4.2</span> </div>
-                                    </a>
-                                </li>
-                                <!--LISTINGS-->
-                                <li>
-                                    <a href="hotels-list.html">
-                                        <div class="hot-page2-hom-pre-1"> <img src="images/hotels/3.jpg" alt=""> </div>
-                                        <div class="hot-page2-hom-pre-2">
-                                            <h5>Barcelona Grand Pales</h5> <span>City: Chennai,India</span>
-                                        </div>
-                                        <div class="hot-page2-hom-pre-3"> <span>5.0</span> </div>
-                                    </a>
-                                </li>
-                                <!--LISTINGS-->
-                                <li>
-                                    <a href="hotels-list.html">
-                                        <div class="hot-page2-hom-pre-1"> <img src="images/hotels/4.jpg" alt=""> </div>
-                                        <div class="hot-page2-hom-pre-2">
-                                            <h5>Lake Palace view Hotel</h5> <span>City: Beijing,China</span>
-                                        </div>
-                                        <div class="hot-page2-hom-pre-3"> <span>2.5</span> </div>
-                                    </a>
-                                </li>
-                                <!--LISTINGS-->
-                                <li>
-                                    <a href="hotels-list.html">
-                                        <div class="hot-page2-hom-pre-1"> <img src="images/hotels/8.jpg" alt=""> </div>
-                                        <div class="hot-page2-hom-pre-2">
-                                            <h5>First Class Grandd Hotel</h5> <span>City: Berlin,Germany</span>
-                                        </div>
-                                        <div class="hot-page2-hom-pre-3"> <span>4.0</span> </div>
-                                    </a>
-                                </li> --}}
+                             
                             </ul>
                         </div>
                     </div>
@@ -382,7 +312,13 @@
                                 @foreach ($topPackages->slice(0, 5) as $package)
                                 <li>
                                         <a href="{{url('/package')}}/{{ $package->p_id}}">
-                                            <div class="hot-page2-hom-pre-1"> <img src="images/trends/1.jpg" alt=""> </div>
+                                            <div class="hot-page2-hom-pre-1"> 
+                                                @if(!empty(PageController::getImage($package->p_id)))
+                                                    <img src="{{ asset('storage/pkgGall').'/'.PageController::getImage($package->p_id)->image_name }}" alt="Package Image" />
+                                                @else
+                                                <img src="https://via.placeholder.com/350x200" alt="No Image found" />
+                                                @endif 
+                                            </div>
                                             <div class="hot-page2-hom-pre-2">
                                                 <h5>{{ $package->p_name }}</h5> <span>Duration: 7 Days and 6 Nights</span>
                                             </div>
@@ -390,48 +326,6 @@
                                         </a>
                                     </li>
                                 @endforeach
-                               
-                                <!--LISTINGS-->
-                                {{-- <li>
-                                    <a href="hotels-list.html">
-                                        <div class="hot-page2-hom-pre-1"> <img src="images/trends/2.jpg" alt=""> </div>
-                                        <div class="hot-page2-hom-pre-2">
-                                            <h5>Honeymoon Package Luxury</h5> <span>Duration: 14 Days and 13
-                                                Nights</span>
-                                        </div>
-                                        <div class="hot-page2-hom-pre-3"> <span>4.4</span> </div>
-                                    </a>
-                                </li>
-                                <!--LISTINGS-->
-                                <li>
-                                    <a href="hotels-list.html">
-                                        <div class="hot-page2-hom-pre-1"> <img src="images/trends/3.jpg" alt=""> </div>
-                                        <div class="hot-page2-hom-pre-2">
-                                            <h5>Group Package Luxury</h5> <span>Duration: 28 Days and 29 Nights</span>
-                                        </div>
-                                        <div class="hot-page2-hom-pre-3"> <span>3.0</span> </div>
-                                    </a>
-                                </li>
-                                <!--LISTINGS-->
-                                <li>
-                                    <a href="hotels-list.html">
-                                        <div class="hot-page2-hom-pre-1"> <img src="images/trends/4.jpg" alt=""> </div>
-                                        <div class="hot-page2-hom-pre-2">
-                                            <h5>Regular Package Luxury</h5> <span>Duration: 12 Days and 11 Nights</span>
-                                        </div>
-                                        <div class="hot-page2-hom-pre-3"> <span>3.5</span> </div>
-                                    </a>
-                                </li>
-                                <!--LISTINGS-->
-                                <li>
-                                    <a href="hotels-list.html">
-                                        <div class="hot-page2-hom-pre-1"> <img src="images/trends/1.jpg" alt=""> </div>
-                                        <div class="hot-page2-hom-pre-2">
-                                            <h5>Custom Package Luxury</h5> <span>Duration: 10 Days and 10 Nights</span>
-                                        </div>
-                                        <div class="hot-page2-hom-pre-3"> <span>5.0</span> </div>
-                                    </a>
-                                </li> --}}
                             </ul>
                         </div>
                     </div>
@@ -457,54 +351,7 @@
                                     </li>
                                 @endforeach
 
-                                {{-- <!--LISTINGS-->
-                                <li>
-                                    <a href="hotels-list.html">
-                                        <div class="hot-page2-hom-pre-1"> <img src="images/reviewer/2.png" alt="">
-                                        </div>
-                                        <div class="hot-page2-hom-pre-2">
-                                            <h5>Matthew</h5> <span>No of Reviews: 48, City: Rio</span>
-                                        </div>
-                                        <div class="hot-page2-hom-pre-3"> <i class="fa fa-hand-o-right"
-                                                aria-hidden="true"></i> </div>
-                                    </a>
-                                </li>
-                                <!--LISTINGS-->
-                                <li>
-                                    <a href="hotels-list.html">
-                                        <div class="hot-page2-hom-pre-1"> <img src="images/reviewer/3.jpg" alt="">
-                                        </div>
-                                        <div class="hot-page2-hom-pre-2">
-                                            <h5>Stephanie</h5> <span>No of Reviews: 560, City: Chennai</span>
-                                        </div>
-                                        <div class="hot-page2-hom-pre-3"> <i class="fa fa-hand-o-right"
-                                                aria-hidden="true"></i> </div>
-                                    </a>
-                                </li>
-                                <!--LISTINGS-->
-                                <li>
-                                    <a href="hotels-list.html">
-                                        <div class="hot-page2-hom-pre-1"> <img src="images/reviewer/4.jpg" alt="">
-                                        </div>
-                                        <div class="hot-page2-hom-pre-2">
-                                            <h5>Robert</h5> <span>No of Reviews: 920, City: Beijing</span>
-                                        </div>
-                                        <div class="hot-page2-hom-pre-3"> <i class="fa fa-hand-o-right"
-                                                aria-hidden="true"></i> </div>
-                                    </a>
-                                </li>
-                                <!--LISTINGS-->
-                                <li>
-                                    <a href="hotels-list.html">
-                                        <div class="hot-page2-hom-pre-1"> <img src="images/reviewer/5.jpg" alt="">
-                                        </div>
-                                        <div class="hot-page2-hom-pre-2">
-                                            <h5>Danielle</h5> <span>No of Reviews: 768, City: Berlin</span>
-                                        </div>
-                                        <div class="hot-page2-hom-pre-3"> <i class="fa fa-hand-o-right"
-                                                aria-hidden="true"></i> </div>
-                                    </a>
-                                </li> --}}
+                             
                             </ul>
                         </div>
                     </div>

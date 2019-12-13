@@ -18,25 +18,22 @@
                                     <div class="m-menu-inn">
                                         <div class="mm1-com mm1-s1">
                                             <div class="ed-course-in">
-                                                <a class="course-overlay menu-about" href="all-package.html">
+                                                <a class="course-overlay menu-about" href="{{ url('/packages') }}">
                                                     <img src="{{ asset('images/sight/5.jpg') }}" alt="">
-                                                    <span>Popular Package</span>
+                                                    <span>View All Packages</span>
                                                 </a>
                                             </div>
                                         </div>
                                         <div class="mm1-com mm1-s2">
-                                            <p>Want to change the world? At Berkeley we’re doing just that.
-                                                When you join the Golden Bear community, you’re part of an
-                                                institution that shifts the global conversation every single
-                                                day.</p>
-                                            <a href="all-package.html" class="mm-r-m-btn">Read more</a>
+                                            <p>Choose from the multiple packages that suits you most with your lifestyle</p>
+                                            <a href="{{ url('/packages') }}" class="mm-r-m-btn">Read more</a>
                                         </div>
                                         <div class="mm1-com mm1-s3">
                                             <ul>
-                                                @if(empty($pkgs))
+                                                @if(empty($allPackages))
                                                 No pkgs
                                                 @else
-                                                @foreach($pkgs as $pkg)
+                                                @foreach($topPackages->slice(0,5) as $pkg)
                                                 <li>
                                                     <a
                                                         href="{{url('/package\/')}}{{ $pkg->p_id }}">{{ preg_match('(package|Package|packages|Packages)', $pkg->p_name) == 0 ? $pkg->p_name." Packages" : $pkg->p_name  }}</a>
