@@ -44,7 +44,7 @@
                     and enjoy your holidays with distinctive experience</p>
             </div>
 
-            @if ($ipkgs->count() > 0)
+            @if (isset($ipkgs) && $ipkgs->count() > 0)
             @foreach($ipkgs as $p) {{-- loop indi pkgs --}}
             <!--===== PLACES ======-->
             <div class="rows p2_2">

@@ -15,7 +15,7 @@
                         <h1>Plan Your Travel Now!</h1>
                         <p>Experience the various exciting tour and travel packages and Make hotel reservations, find
                             vacation packages, search cheap hotels and events</p>
-                        <form class="tourz-search-form">
+                        {{-- <form class="tourz-search-form">
                             <div class="input-field">
                                 <input type="text" id="select-city" class="autocomplete">
                                 <label for="select-city">Enter city</label>
@@ -29,7 +29,7 @@
                             <div class="input-field">
                                 <input type="submit" value="search" class="waves-effect waves-light tourz-sear-btn">
                             </div>
-                        </form>
+                        </form> --}}
                         <div class="tourz-hom-ser">
                             <ul>
                                 <li>

@@ -49,16 +49,24 @@ class PageController extends Controller
         // $visit = Pkg::find($id)->value('visit_count');
         // return $visit;
         // Pkg::where('p_id', $id)->update(array('visit_count' => $visit + 1));
-        $ipkgs = $this->pkgs->find($id)->ipackages;
+        try {
+            $ipkgs = $this->pkgs->find($id)->ipackages;
+            return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs'));
+            //code...
+        } catch (\Throwable $th) {
+            // $ipkgs = "No Associated Packages";
+            // dd($th);
+            return view('frontend.packages.single-package', compact( 'pkg', 'pkgs'));
+        }
         // dd($ipkgs);
         // return $ipkgs;
-        if ($ipkgs->count() > 0 && $pkg->count() > 0) {
-            // return $ipkgs->count();
-            return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs'));
-        } else {
-            // return "No iPkgs";
-            return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs'));
-        }
+        // if ($ipkgs->count() > 0 && $pkg->count() > 0) {
+        //     // return $ipkgs->count();
+        //     return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs'));
+        // } else {
+        //     // return "No iPkgs";
+        //     return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs'));
+        // }
     }
 
     public function tour_details($id) // single pkg detail

@@ -71,7 +71,6 @@
             <!--===== PLACES END ======-->
             @endforeach
             <div class="center">
-
                 {{ $pkgs->links() }}
             </div>
 

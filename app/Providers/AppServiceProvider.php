@@ -35,10 +35,14 @@ class AppServiceProvider extends ServiceProvider
         $packages = Pkg::all();
         $individualPackages = Ipkgs::orderBy('visit','desc')->get();
         $topPackages = Pkg::orderBy('visit_count','desc')->take(5)->get();
+        // $facebook_url = '';
+        // $twitter_url = '';
+        // $linkedin_url = '';
+        // $youtube_url = '';
         // $hotelList = Hotel::all();
-        View::share('individualPackages', $individualPackages);
-        View::share('topPackages', $topPackages);
-        View::share('allPackages', $packages);
+        View::share(['individualPackages' => $individualPackages, 'topPackages' => $topPackages,'allPackages'=>$packages  ]);
+        // View::share('topPackages', $topPackages);
+        // View::share('allPackages', $packages);
         // dd($packages);
         // View::share('hotelList', $hotelList);
 

@@ -153,16 +153,16 @@
                                 <div class="col-sm-3 col-md-3 foot-spec foot-com">
                                     <h4><span>SUPPORT</span> & HELP</h4>
                                     <ul class="two-columns">
-                                        <li> <a href="#">About Us</a> </li>
-                                        <li> <a href="#">FAQ</a> </li>
-                                        <li> <a href="#">Feedbacks</a> </li>
-                                        <li> <a href="#">Blog </a> </li>
-                                        <li> <a href="#">Use Cases</a> </li>
-                                        <li> <a href="#">Advertise us</a> </li>
-                                        <li> <a href="#">Discount</a> </li>
-                                        <li> <a href="#">Vacations</a> </li>
-                                        <li> <a href="#">Branding Offers </a> </li>
-                                        <li> <a href="#">Contact Us</a> </li>
+                                        <li> <a href="javascript:void()">About Us</a> </li>
+                                        <li> <a href="javascript:void()">FAQ</a> </li>
+                                        <li> <a href="javascript:void()">Feedbacks</a> </li>
+                                        <li> <a href="javascript:void()">Blog </a> </li>
+                                        <li> <a href="javascript:void()">Use Cases</a> </li>
+                                        <li> <a href="javascript:void()">Advertise us</a> </li>
+                                        <li> <a href="javascript:void()">Discount</a> </li>
+                                        <li> <a href="javascript:void()">Vacations</a> </li>
+                                        <li> <a href="javascript:void()">Branding Offers </a> </li>
+                                        <li> <a href="javascript:void()">Contact Us</a> </li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-3 foot-social foot-spec foot-com">
@@ -171,11 +171,11 @@
                                         available
                                     </p>
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> </li>
-                                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a> </li>
-                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
-                                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </li>
-                                        <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a> </li>
+                                        <li><a href="javascript:void()"><i class="fa fa-facebook" aria-hidden="true"></i></a> </li>
+                                        <li><a href="javascript:void()"><i class="fa fa-google-plus" aria-hidden="true"></i></a> </li>
+                                        <li><a href="javascript:void()"><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
+                                        <li><a href="javascript:void()"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </li>
+                                        <li><a href="javascript:void()"><i class="fa fa-youtube" aria-hidden="true"></i></a> </li>
                                     </ul>
                                 </div>
                             </div>
