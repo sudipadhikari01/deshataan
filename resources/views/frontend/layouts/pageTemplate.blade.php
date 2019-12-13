@@ -75,7 +75,7 @@
                         <address>Illinois, United States of America</address>
                     </div>
                     <!-- ARRANGEMENTS & HELPS -->
-                    <h3>Arrangement & Helps</h3>
+                    {{-- <h3>Arrangement & Helps</h3>
                     <div class="arrange">
                         <ul>
                             <!-- LOCATION MANAGER -->
@@ -95,13 +95,13 @@
                                 <a href="#"><img src="images/Events-Activities.png" alt=""> </a>
                             </li>
                         </ul>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
     </section>
     <!--====== FOOTER 1 ==========-->
-    <section>
+    {{-- <section>
         <div class="rows">
             <div class="footer1 home_title tb-space">
                 <div class="pla1 container">
@@ -115,14 +115,7 @@
                         </div>
                     </div>
                     @endforeach
-                    <!-- FOOTER OFFER 2 -->
-                    {{-- <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="disco1 disco">
-                            <h3>42%<span>OFF</span></h3>
-                            <h4>Colosseum,Burj Al Arab</h4>
-                            <p>valid only for 18th Nov</p> <a href="booking.html">Book Now</a>
-                        </div>
-                    </div> --}}
+                    
                     <!-- FOOTER MOST POPULAR VACATIONS -->
                     <div class="col-md-6 col-sm-12 col-xs-12 foot-spec footer_places">
                         <h4><span>Most Popular</span> Vacations</h4>
@@ -130,27 +123,13 @@
                             @foreach ($individualPackages as $item)
                             <li><a href="{{ url('/tour-details') }}/{{ $item->p_id }}">{{ $item->title }}</a> </li>
                             @endforeach
-                            {{-- <li><a href="tour-details.html">Buckingham Palace</a> </li>
-                            <li><a href="tour-details.html">High Line</a> </li>
-                            <li><a href="tour-details.html">Sagrada Família</a> </li>
-                            <li><a href="tour-details.html">Statue of Liberty </a> </li>
-                            <li><a href="tour-details.html">Notre Dame de Paris</a> </li>
-                            <li><a href="tour-details.html">Taj Mahal</a> </li>
-                            <li><a href="tour-details.html">The Louvre</a> </li>
-                            <li><a href="tour-details.html">Tate Modern, London</a> </li>
-                            <li><a href="tour-details.html">Gothic Quarter</a> </li>
-                            <li><a href="tour-details.html">Table Mountain</a> </li>
-                            <li><a href="tour-details.html">Bayon</a> </li>
-                            <li><a href="tour-details.html">Great Wall of China</a> </li>
-                            <li><a href="tour-details.html">Hermitage Museum</a> </li>
-                            <li><a href="tour-details.html">Yellowstone</a> </li>
-                            <li><a href="tour-details.html">Musée d'Orsay</a> </li> --}}
+                            
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--====== FOOTER 2 ==========-->
     <section>
         <div class="rows">

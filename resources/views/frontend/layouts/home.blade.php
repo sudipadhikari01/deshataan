@@ -80,14 +80,11 @@
                     {{-- <!-- TOUR PLACE {{$loop->iteration}} --> --}}
                     <div class="col-md-4 col-sm-6 col-xs-12 b_packages wow slideInUp" data-wow-duration="0.5s">
                         <!-- OFFER BRAND -->
-                        <?php
-                            if(!empty($ip->discount)) {
-                        ?>
-                        <div class="bandText"> {{$ip->discount}}% OFF </div>
-                        <div class="band"> <img src="images/band-all.png" alt="" /> </div>
-                        <?php
-                            }
-                        ?>
+                       
+                        @if(!empty($ip->discount)) 
+                            <div class="bandText"> {{$ip->discount}}% OFF </div>
+                            <div class="band"> <img src="{{ asset('images/band-all.png') }}" alt="" /> </div>
+                        @endif
 
 
                         <!-- IMAGE -->
@@ -291,10 +288,10 @@
                                                 <h5>{{ $hotel->title }}</h5>
                                             </a> <span>City: {{ $hotel->location }}</span>
                                         </div>
-                                        <div class="hot-page2-hom-pre-3"> <span>
-                                                                                                        4.5
+                                        {{-- <div class="hot-page2-hom-pre-3"> <span>
+                                            4.5
                                         </span> 
-                                        </div>
+                                        </div> --}}
                                     </a>
                                 </li>
                                 @endforeach
@@ -320,9 +317,10 @@
                                                 @endif 
                                             </div>
                                             <div class="hot-page2-hom-pre-2">
-                                                <h5>{{ $package->p_name }}</h5> <span>Duration: 7 Days and 6 Nights</span>
+                                                <h5>{{ $package->p_name }}</h5> 
+                                                {{-- <span>Duration: 7 Days and 6 Nights</span> --}}
                                             </div>
-                                            <div class="hot-page2-hom-pre-3"> <span>4.1</span> </div>
+                                            {{-- <div class="hot-page2-hom-pre-3"> <span>4.1</span> </div> --}}
                                         </a>
                                     </li>
                                 @endforeach

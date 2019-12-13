@@ -50,6 +50,7 @@ class PageController extends Controller
         // return $visit;
         Pkg::where('p_id', $id)->update(array('visit_count' => $visit + 1));
         $ipkgs = $this->pkgs->find($id)->ipackages;
+        // dd($ipkgs);
         // return $ipkgs;
         if ($ipkgs->count() > 0 && $pkg->count() > 0) {
             // return $ipkgs->count();

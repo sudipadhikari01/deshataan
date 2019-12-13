@@ -41,6 +41,7 @@ class PackageTypeController extends Controller
 
         $packageType->p_name = $request->input("packageType");
         $packageType->p_desc = $request->input("packageDesc");
+        $packageType->visit_count = 0;
 
         $packageType->save();
 

@@ -25,8 +25,11 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label text-label">Package Description *</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" placeholder="package description"
-                                        name="packageDesc"  id="packageDesc" value="{{ $singlePackage->p_desc}}" max="300" required>
+                                    {{-- <input type="text" class="form-control" placeholder="package description" --}}
+                                        {{-- name="packageDesc"  id="packageDescedit" value="{{ $singlePackage->p_desc}}" max="300" required> --}}
+                                        <textarea class="form-control" id="packageDescedit"
+                                        placeholder="Enter Package description" name="packageDesc"
+                                        required>{{$singlePackage->p_desc}}</textarea>
                                         <p class="form-text text-danger" id="demo1"></p>
                                 </div>
                             </div>
@@ -45,5 +48,17 @@
     </div>
 </div>
 
+<script src="{{ asset('assets/plugins/ckeditor/ckeditor.js') }}"></script>
+<script>
+    CKEDITOR.replace( 'packageDescedit',{
+        width:"100%"
+    } );
+    // CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
+    // $('#itineraryDesc').ckeditor({
+    // toolbar: 'Full',
+    // enterMode : CKEDITOR.ENTER_BR,
+    // shiftEnterMode: CKEDITOR.ENTER_P
 
+    // });
+</script>
 @endsection

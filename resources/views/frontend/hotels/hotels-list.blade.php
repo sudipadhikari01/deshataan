@@ -34,7 +34,9 @@
                                     <div class="hot-page2-hom-pre-2 hot-page2-alp-cl-1-2">
                                         <h5>{{$list->title}}</h5> <span>City: {{$list->location}}</span>
                                     </div>
-                                    <div class="hot-page2-hom-pre-3 hot-page2-alp-cl-1-3"> <span>4.4</span> </div>
+                                    <div class="hot-page2-hom-pre-3 hot-page2-alp-cl-1-3"> 
+                                        {{-- <span>4.4</span>  --}}
+                                    </div>
                                 </a>
                             </li>
                             @endforeach
@@ -291,9 +293,10 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="hot-page2-alp-ri-p3">
-                                        <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span
+                                        {{-- <div class="hot-page2-alp-r-hot-page-rat">25%Off</div>  --}}
+                                        <span
                                             class="hot-list-p3-1">Price Per Night</span>
-                                        <span class="hot-list-p3-2">{{$list->price}} NPR</span><span
+                                        <span class="hot-list-p3-2">{{$list->price}}</span><span
                                             class="hot-list-p3-4">
                                             <a href="{{url('/booking')}}" class="hot-page2-alp-quot-btn">Book Now</a>
                                         </span>
