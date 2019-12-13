@@ -16,7 +16,7 @@ class PageController extends Controller
 
     public function __construct()
     {
-        $this->pkgs = Pkg::paginate(); // all package category list with paginate
+        $this->pkgs = Pkg::paginate(3); // all package category list with paginate
         $this->ipkgs = Ipkgs::paginate(); //all indi pkgs list with paginate
     }
 
@@ -46,9 +46,9 @@ class PageController extends Controller
     {
         $pkgs = $this->pkgs;
         $pkg = Pkg::findOrFail($id);
-        $visit = Pkg::find($id)->value('visit_count');
+        // $visit = Pkg::find($id)->value('visit_count');
         // return $visit;
-        Pkg::where('p_id', $id)->update(array('visit_count' => $visit + 1));
+        // Pkg::where('p_id', $id)->update(array('visit_count' => $visit + 1));
         $ipkgs = $this->pkgs->find($id)->ipackages;
         // dd($ipkgs);
         // return $ipkgs;

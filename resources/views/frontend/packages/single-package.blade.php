@@ -68,7 +68,7 @@
                                 aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
                                 class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half-o"
                                 aria-hidden="true"></i></span></h3>
-                    <p>{{$p->description}}</p>
+                    <p>{!! $p->description !!}</p>
                     <div class="ticket">
                         <ul>
                             <li>Available Tickets : {{$p->ticket_quantity}}</li>

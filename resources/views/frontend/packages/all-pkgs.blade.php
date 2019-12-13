@@ -31,7 +31,7 @@
                     {{-- <img src="images/iplace-2.jpg" alt="" /> --}}
                     @if(!empty(PageController::getImage($p->p_id)))
                     <img src="{{ asset('storage/pkgGall').'/'.PageController::getImage($p->p_id)->image_name }}"
-                        alt="" />
+                        alt="package image" style="width:80%;" class="img-responsive"/>
                     @else
                     <img src="{{ asset('storage/pkgGall/540x270.png') }}" alt="" />
                     @endif
@@ -41,7 +41,7 @@
                                 aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
                                 class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half-o"
                                 aria-hidden="true"></i></span></h3>
-                    <p>{{ $p->p_desc }}</p>
+                    <p>{!! $p->p_desc !!}</p>
                     {{-- <div class="ticket">
                         <ul>
                             <li>Available Tickets : 48</li>
@@ -70,6 +70,11 @@
             </div>
             <!--===== PLACES END ======-->
             @endforeach
+            <div class="center">
+
+                {{ $pkgs->links() }}
+            </div>
+
         </div>
     </div>
 </section>

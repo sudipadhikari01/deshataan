@@ -10,7 +10,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="ed-com-t1-right">
+                {{-- <div class="ed-com-t1-right">
                     <ul>
                         @guest
 
@@ -41,7 +41,7 @@
                         </li>
                         @endif
                     </ul>
-                </div>
+                </div> --}}
                 <div class="ed-com-t1-social">
                     <ul>
                         <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
