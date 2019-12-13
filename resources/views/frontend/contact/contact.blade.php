@@ -1,5 +1,7 @@
 @extends('frontend.layouts.pageTemplate')
+
 @section('content');
+
 	<!--====== LOCATON ==========-->
 	<section>
 		<div class="rows contact-map map-container">

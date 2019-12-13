@@ -80,98 +80,77 @@
                         <ul>
                             <!-- LOCATION MANAGER -->
                             <li>
-                                <a href="#"><img src="{{asset('images/Location-Manager.png') }}" alt="">
-                                </a>
+                                <a href="#"><img src="images/Location-Manager.png" alt=""> </a>
                             </li>
                             <!-- PRIVATE GUIDE -->
                             <li>
-                                <a href="#"><img src="{{asset('images/Private-Guide.png') }}" alt="">
-                                </a>
+                                <a href="#"><img src="images/Private-Guide.png" alt=""> </a>
                             </li>
                             <!-- ARRANGEMENTS -->
                             <li>
-                                <a href="#"><img src="{{ asset('images/Arrangements.png') }}" alt="">
-                                </a>
+                                <a href="#"><img src="images/Arrangements.png" alt=""> </a>
                             </li>
                             <!-- EVENT ACTIVITIES -->
                             <li>
-                                <a href="#"><img src="{{ asset('images/Events-Activities.png') }}" alt="">
-                                </a>
+                                <a href="#"><img src="images/Events-Activities.png" alt=""> </a>
                             </li>
                         </ul>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
-
     <!--====== FOOTER 1 ==========-->
     <section>
         <div class="rows">
             <div class="footer1 home_title tb-space">
                 <div class="pla1 container">
                     <!-- FOOTER OFFER 1 -->
+                    @foreach ($individualPackages->slice(0,2) as $item)
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="disco">
-                            <h3>30%<span>OFF</span></h3>
-                            <h4>Eiffel Tower,Rome</h4>
-                            <p>valid only for 24th Dec</p>
-                            <a href="booking.html">Book Now</a>
+                            <h3>{{ $item->discount }}%<span>OFF</span></h3>
+                            <h4>{{ $item->location }}</h4>
+                            <p>valid only {{ date('Y | M |d  D', strtotime($item->end_date))}}</p> <a href="{{ url('/tour-details') }}/{{ $item->p_id }}">Book Now</a>
                         </div>
                     </div>
+                    @endforeach
                     <!-- FOOTER OFFER 2 -->
-                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    {{-- <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="disco1 disco">
                             <h3>42%<span>OFF</span></h3>
                             <h4>Colosseum,Burj Al Arab</h4>
-                            <p>valid only for 18th Nov</p>
-                            <a href="booking.html">Book Now</a>
+                            <p>valid only for 18th Nov</p> <a href="booking.html">Book Now</a>
                         </div>
-                    </div>
+                    </div> --}}
                     <!-- FOOTER MOST POPULAR VACATIONS -->
                     <div class="col-md-6 col-sm-12 col-xs-12 foot-spec footer_places">
                         <h4><span>Most Popular</span> Vacations</h4>
                         <ul>
-                            <li><a href="tour-details.html">Angkor Wat</a>
-                            </li>
-                            <li><a href="tour-details.html">Buckingham Palace</a>
-                            </li>
-                            <li><a href="tour-details.html">High Line</a>
-                            </li>
-                            <li><a href="tour-details.html">Sagrada Família</a>
-                            </li>
-                            <li><a href="tour-details.html">Statue of Liberty </a>
-                            </li>
-                            <li><a href="tour-details.html">Notre Dame de Paris</a>
-                            </li>
-                            <li><a href="tour-details.html">Taj Mahal</a>
-                            </li>
-                            <li><a href="tour-details.html">The Louvre</a>
-                            </li>
-                            <li><a href="tour-details.html">Tate Modern, London</a>
-                            </li>
-                            <li><a href="tour-details.html">Gothic Quarter</a>
-                            </li>
-                            <li><a href="tour-details.html">Table Mountain</a>
-                            </li>
-                            <li><a href="tour-details.html">Bayon</a>
-                            </li>
-                            <li><a href="tour-details.html">Great Wall of China</a>
-                            </li>
-                            <li><a href="tour-details.html">Hermitage Museum</a>
-                            </li>
-                            <li><a href="tour-details.html">Yellowstone</a>
-                            </li>
-                            <li><a href="tour-details.html">Musée d'Orsay</a>
-                            </li>
+                            @foreach ($individualPackages as $item)
+                            <li><a href="{{ url('/tour-details') }}/{{ $item->p_id }}">{{ $item->title }}</a> </li>
+                            @endforeach
+                            {{-- <li><a href="tour-details.html">Buckingham Palace</a> </li>
+                            <li><a href="tour-details.html">High Line</a> </li>
+                            <li><a href="tour-details.html">Sagrada Família</a> </li>
+                            <li><a href="tour-details.html">Statue of Liberty </a> </li>
+                            <li><a href="tour-details.html">Notre Dame de Paris</a> </li>
+                            <li><a href="tour-details.html">Taj Mahal</a> </li>
+                            <li><a href="tour-details.html">The Louvre</a> </li>
+                            <li><a href="tour-details.html">Tate Modern, London</a> </li>
+                            <li><a href="tour-details.html">Gothic Quarter</a> </li>
+                            <li><a href="tour-details.html">Table Mountain</a> </li>
+                            <li><a href="tour-details.html">Bayon</a> </li>
+                            <li><a href="tour-details.html">Great Wall of China</a> </li>
+                            <li><a href="tour-details.html">Hermitage Museum</a> </li>
+                            <li><a href="tour-details.html">Yellowstone</a> </li>
+                            <li><a href="tour-details.html">Musée d'Orsay</a> </li> --}}
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <!--====== FOOTER 2 ==========-->
     <section>
         <div class="rows">
@@ -187,63 +166,37 @@
                                 </div>
                                 <div class="col-sm-3 foot-spec foot-com">
                                     <h4><span>Address</span> & Contact Info</h4>
-                                    <p>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A. Landmark : Next To
-                                        Airport</p>
-                                    <p>
-                                        <span class="strong">Phone: </span>
-                                        <span class="highlighted">+101-1231-1231</span>
+                                    <p>Lazimpat, Kathmandu, Nepal
                                     </p>
+                                    <p> <span class="strong">Phone: </span> <span
+                                            class="highlighted">+977-01-4444865</span> </p>
                                 </div>
                                 <div class="col-sm-3 col-md-3 foot-spec foot-com">
                                     <h4><span>SUPPORT</span> & HELP</h4>
                                     <ul class="two-columns">
-                                        <li>
-                                            <a href="#">About Us</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">FAQ</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Feedbacks</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Blog </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Use Cases</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Advertise us</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Discount</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Vacations</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Branding Offers </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Contact Us</a>
-                                        </li>
+                                        <li> <a href="#">About Us</a> </li>
+                                        <li> <a href="#">FAQ</a> </li>
+                                        <li> <a href="#">Feedbacks</a> </li>
+                                        <li> <a href="#">Blog </a> </li>
+                                        <li> <a href="#">Use Cases</a> </li>
+                                        <li> <a href="#">Advertise us</a> </li>
+                                        <li> <a href="#">Discount</a> </li>
+                                        <li> <a href="#">Vacations</a> </li>
+                                        <li> <a href="#">Branding Offers </a> </li>
+                                        <li> <a href="#">Contact Us</a> </li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-3 foot-social foot-spec foot-com">
                                     <h4><span>Follow</span> with us</h4>
                                     <p>Join the thousands of other There are many variations of passages of Lorem Ipsum
-                                        available</p>
+                                        available
+                                    </p>
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-                                        </li>
+                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> </li>
+                                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a> </li>
+                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
+                                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </li>
+                                        <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a> </li>
                                     </ul>
                                 </div>
                             </div>
@@ -253,34 +206,12 @@
             </div>
         </div>
     </section>
-
     <!--====== FOOTER - COPYRIGHT ==========-->
     <section>
         <div class="rows copy">
             <div class="container">
-                <p>Copyrights © {{date('Y')}} {{ config('app.name') }}. All Rights Reserved</p>
+                <p>Copyrights © {{date('Y')}} {{config('app.name')}}. All Rights Reserved</p>
             </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="icon-float">
-            <ul>
-                <li><a href="#" class="sh">1k <br> Share</a>
-                </li>
-                <li><a href="#" class="fb1"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                </li>
-                <li><a href="#" class="gp1"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                </li>
-                <li><a href="#" class="tw1"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                </li>
-                <li><a href="#" class="li1"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                </li>
-                <li><a href="#" class="wa1"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-                </li>
-                <li><a href="#" class="sh1"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-                </li>
-            </ul>
         </div>
     </section>
 

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\FrontEnd;
 
-use App\Hotel as Hotel;
 use App\Http\Controllers\Controller;
+use App\Hotel as Hotel;
 use App\IndividualPackage as Ipkgs;
 use App\Itinerary as Itin;
 use App\PackageType as Pkg;
@@ -28,8 +28,6 @@ class PageController extends Controller
         $packages = Pkg::all();
         $individualPackages = Ipkgs::orderBy('visit','desc')->get();
         $topPackages = Pkg::orderBy('visit_count','desc')->take(5)->get();
-
-        // dd($individualPackages);
         // $packages = Pkg::inRandomOrder()->limit(4)->get();
         $hotelList = Hotel::all();
         return view('frontend.layouts.home', compact('pkgs', 'page', 'ipkgs','hotelList','packages','individualPackages','topPackages'));
