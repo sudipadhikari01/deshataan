@@ -68,7 +68,7 @@
                 <div class="col-md-8 col-sm-6 col-xs-12 testi-2">
                     <!-- TESTIMONIAL TITLE -->
                     <h3>Customer Testimonials</h3>
-                    @foreach ($testimonials as $testimonial)
+                    {{-- @foreach ($testimonials as $testimonial)
                         <div class="testi">
                             <h4>{{ $testimonial->name }}</h4>
                             <p>{!! str_limit($testimonial->testimonial, $limit = 200, $end = '...')  !!}</p>
@@ -76,7 +76,55 @@
                         </div>
                         
                     @endforeach
-                    <a href="#" class="link-btn pull-right">more info</a>
+                    <a href="#" class="link-btn pull-right">more info</a> --}}
+
+                    <div class="container content">
+                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators --> 
+                            
+                                <div class="carousel-inner"> 
+                                    @foreach ($testimonials as $key=>$testimonial)
+                                    @php
+                                        if ($key == 0)
+                                        {
+                                            $active ='active';  
+                                        }
+                                        else
+                                        {
+                                            $active = ''; 
+                                        }
+                                        
+                                    @endphp
+                                    <div class="item {{ $active }}">
+                                        <div class="row"> 
+                                            <div class="col-xs-12"> 
+                                                <div class="thumbnail adjust1">
+                                                    <div class="col-md-2 col-sm-2 col-xs-12"> 
+                                                        {{-- <img src="{{ asset('storage/photogallery').'/'.$testimonial->image }}" alt="{{ $testimonial->name }}'s Image"> --}}
+                                                        <img class="media-object img-rounded img-responsive" src="{{ asset('storage/photogallery').'/'.$testimonial->image }}"> 
+                                                    </div> 
+                                                    <div class="col-md-10 col-sm-10 col-xs-12"> 
+                                                        <div class="caption"> 
+                                                            {{-- <p class="text-info lead adjust2">Testimonials</p>  --}}
+                                                                {!! str_limit($testimonial->testimonial, $limit = 200, $end = '...')  !!}</p> 
+                                                                <blockquote class="adjust2"> 
+                                                                    <p>{{ $testimonial->name }}</p> 
+                                                                    <small>
+                                                                        <cite title="Source Title">{{ $testimonial->address }}</cite>
+                                                                    </small> 
+                                                                </blockquote> 
+                                                            </div> 
+                                                        </div> 
+                                                    </div> 
+                                                </div> 
+                                            </div> 
+                                        </div>
+                                    @endforeach
+                                    
+                                    </div> <!-- Controls --> 
+                                       
+                                    </div> 
+                                </div>
 
                     <!-- ARRANGEMENTS & HELPS -->
                     {{-- <h3>Arrangement & Helps</h3>

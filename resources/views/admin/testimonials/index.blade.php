@@ -84,7 +84,9 @@ use App\Http\Controllers\PagesController;
                                         <td>{{$testimonial->address}}</td>
                                         <td>{{$testimonial->testimonial}}</td>
                                         <td>
-                                            <img src="{{ asset('storage/photogallery').'/'.$testimonial->image }}" alt="{{ $testimonial->name }}'s Image">
+                                            {{-- <img src="{{ asset('storage/photogallery').'/'.$testimonial->image }}" alt="{{ $testimonial->name }}'s Image"> --}}
+                                            <img src="{{ imagescale( asset('storage/photogallery').'/'.$testimonial->image),500 ,400 }}" alt="{{ $testimonial->name }}'s Image">
+
                                         </td>
                                         <td><span><a href="{{url("adminn/testimonials/$testimonial->id/edit")}}"
                                                     class="mr-4" data-toggle="tooltip" data-placement="top"
