@@ -28,12 +28,12 @@ class PageController extends Controller
         $pkgs = $this->pkgs;
         $ipkgs = $this->ipkgs;
         $packages = Pkg::all();
-        $individualPackages = Ipkgs::orderBy('visit','desc')->get();
-        $topPackages = Pkg::orderBy('visit_count','desc')->take(5)->get();
+        $individualPackages = Ipkgs::orderBy('visit', 'desc')->get();
+        $topPackages = Pkg::orderBy('visit_count', 'desc')->take(5)->get();
         // dd($testimonials);
         // $packages = Pkg::inRandomOrder()->limit(4)->get();
         $hotelList = Hotel::all();
-        return view('frontend.layouts.home', compact('pkgs', 'page', 'ipkgs','hotelList','packages','individualPackages','topPackages'));
+        return view('frontend.layouts.home', compact('pkgs', 'page', 'ipkgs', 'hotelList', 'packages', 'individualPackages', 'topPackages'));
         // return view('frontend.welcome', compact('pkgs', 'page'));
     }
 
@@ -59,7 +59,7 @@ class PageController extends Controller
         } catch (\Throwable $th) {
             // $ipkgs = "No Associated Packages";
             // dd($th);
-            return view('frontend.packages.single-package', compact( 'pkg', 'pkgs'));
+            return view('frontend.packages.single-package', compact('pkg', 'pkgs'));
         }
         // dd($ipkgs);
         // return $ipkgs;
@@ -107,7 +107,7 @@ class PageController extends Controller
 
     public static function getHotelImage($h_id)
     {
-        $hotelImage = Hpg::select('name')->where('hotel_title_id',$h_id)->first();
+        $hotelImage = Hpg::select('name')->where('hotel_title_id', $h_id)->first();
         return $hotelImage;
     }
 
@@ -125,7 +125,7 @@ class PageController extends Controller
         $hotelList = Hotel::all();
         $hotelCount = Hotel::count();
 
-       
+
 
         return view(
             'frontend.hotels.hotels-list',
