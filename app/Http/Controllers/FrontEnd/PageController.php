@@ -33,7 +33,7 @@ class PageController extends Controller
         // dd($testimonials);
         // $packages = Pkg::inRandomOrder()->limit(4)->get();
         $hotelList = Hotel::all();
-        return view('frontend.layouts.home', compact('pkgs', 'page', 'ipkgs','hotelList','packages','individualPackages','topPackages','testimonials'));
+        return view('frontend.layouts.home', compact('pkgs', 'page', 'ipkgs','hotelList','packages','individualPackages','topPackages'));
         // return view('frontend.welcome', compact('pkgs', 'page'));
     }
 
