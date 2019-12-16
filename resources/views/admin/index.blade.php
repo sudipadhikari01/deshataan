@@ -10,14 +10,14 @@
     <div class="container-fluid">
         <div class="row page-titles">
             <div class="col p-md-0">
-                <h4>Restaurant</h4>
+                <h4>Dashboard</h4>
             </div>
             <div class="col p-md-0">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a>
                     </li>
                     <li class="breadcrumb-item active">
-                        <a href="">Restaurant</a>
+                        <a href="">Dashboard</a>
                     </li>
                 </ol>
             </div>
@@ -29,9 +29,9 @@
                         <div class="stat-widget-two">
                             <div class="media">
                                 <div class="media-body">
-                                    <h2 class="mt-0 mb-1 text-info">2,02,150</h2><span class="">Total Orders</span>
+                                    <h2 class="mt-0 mb-1 text-info">{{ count($packages) }}</h2><span class="">Total Packages</span>
                                 </div>
-                                <img class="ml-3" src="../../assets/images/icons/1.png" alt="">
+                                <img class="ml-3 img-responsive" src="{{ asset('images/iplace-1.jpg') }}" alt="Packages">
                             </div>
                         </div>
                     </div>
@@ -43,9 +43,9 @@
                         <div class="stat-widget-two">
                             <div class="media">
                                 <div class="media-body">
-                                    <h2 class="mt-0 mb-1 text-danger">2,02,150</h2><span class="">Total Orders</span>
+                                    <h2 class="mt-0 mb-1 text-danger">{{ count($hotelList) }}</h2><span class="">Total Hotels</span>
                                 </div>
-                                <img class="ml-3" src="../../assets/images/icons/2.png" alt="">
+                                <img class="ml-3" src="{{ asset('images/iplace-2.jpg') }}" alt="Hotel List">
                             </div>
                         </div>
                     </div>
@@ -57,9 +57,9 @@
                         <div class="stat-widget-two">
                             <div class="media">
                                 <div class="media-body">
-                                    <h2 class="mt-0 mb-1 text-warning">2,02,150</h2><span class="">Total Orders</span>
+                                    <h2 class="mt-0 mb-1 text-warning">{{ count($individualPackages) }}</h2><span class="">Total Individual Packages</span>
                                 </div>
-                                <img class="ml-3" src="../../assets/images/icons/3.png" alt="">
+                                <img class="ml-3" src="{{ asset('images/iplace-3.jpg') }}" alt="Individual Packages">
                             </div>
                         </div>
                     </div>

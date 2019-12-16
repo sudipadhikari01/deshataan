@@ -68,12 +68,16 @@
                 <div class="col-md-8 col-sm-6 col-xs-12 testi-2">
                     <!-- TESTIMONIAL TITLE -->
                     <h3>Customer Testimonials</h3>
-                    <div class="testi">
-                        <h4>John William</h4>
-                        <p>Ut sed sem quis magna ultricies lacinia et sed tortor. Ut non tincidunt nisi, non elementum
-                            lorem. Aliquam gravida sodales</p>
-                        <address>Illinois, United States of America</address>
-                    </div>
+                    @foreach ($testimonials as $testimonial)
+                        <div class="testi">
+                            <h4>{{ $testimonial->name }}</h4>
+                            <p>{!! str_limit($testimonial->testimonial, $limit = 200, $end = '...')  !!}</p>
+                            <address>{{ $testimonial->address }}</address>
+                        </div>
+                        
+                    @endforeach
+                    <a href="#" class="link-btn pull-right">more info</a>
+
                     <!-- ARRANGEMENTS & HELPS -->
                     {{-- <h3>Arrangement & Helps</h3>
                     <div class="arrange">

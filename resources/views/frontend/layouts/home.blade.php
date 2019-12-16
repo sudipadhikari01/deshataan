@@ -257,8 +257,8 @@
                             </div>
                             <div class="col-md-6 col-sm-12 col-xs-12">
                                 <h3><span>{{ $package->p_name }}</span> 7 Days / 6 Nights</h3>
-                                <p>{{ $package->desc }}</p> <a
-                                    href="{{url('/package')}}/{{ $package->p_id}}" class="link-btn">more info</a>
+                                <p>{{ $package->desc }}</p> 
+                                <a href="{{url('/package')}}/{{ $package->p_id}}" class="link-btn">more info</a>
                             </div>
                         </div>
                     @endforeach

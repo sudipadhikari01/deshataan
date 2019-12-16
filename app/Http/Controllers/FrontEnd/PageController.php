@@ -10,6 +10,7 @@ use App\PackageType as Pkg;
 use App\PhotoGallery as Pg;
 use App\HotelPhotoGallery as Hpg;
 
+
 class PageController extends Controller
 {
     private $pkgs; // pkg type {categories}
@@ -29,9 +30,10 @@ class PageController extends Controller
         $packages = Pkg::all();
         $individualPackages = Ipkgs::orderBy('visit','desc')->get();
         $topPackages = Pkg::orderBy('visit_count','desc')->take(5)->get();
+        // dd($testimonials);
         // $packages = Pkg::inRandomOrder()->limit(4)->get();
         $hotelList = Hotel::all();
-        return view('frontend.layouts.home', compact('pkgs', 'page', 'ipkgs','hotelList','packages','individualPackages','topPackages'));
+        return view('frontend.layouts.home', compact('pkgs', 'page', 'ipkgs','hotelList','packages','individualPackages','topPackages','testimonials'));
         // return view('frontend.welcome', compact('pkgs', 'page'));
     }
 

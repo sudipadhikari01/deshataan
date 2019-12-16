@@ -4,6 +4,7 @@
 @php
 use App\Http\Controllers\Admin\IndividualPackageController as Ipkgs;
 use App\Http\Controllers\Admin\HotelsController as Hotel;
+use App\Http\Controllers\Admin\TestimonialController as Testimonial;
 // use App\Http\Controllers\Admin\PackageTypeController as Pkgs;
 @endphp
 <div class="nk-sidebar">
@@ -41,6 +42,17 @@ use App\Http\Controllers\Admin\HotelsController as Hotel;
 
                 </ul>
             </li>
+            <li class="mega-menu mega-menu-sm"><a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                <i class="mdi mdi-page-layout-body"></i><span class="nav-text">Testimonial</span><span
+                    class="badge badge-success nav-badge">{{Testimonial::count()}}</span></a>
+            <ul aria-expanded="false">
+                {{-- <li><a href="{{url("/adminn/hotels")}}">Add Testimonial</a></li>
+                <li><a href="{{url("adminn/hotel-gallery")}}">Add Hotels Photo Gallery</a></li>
+                <li><a href="{{url("/adminn/hotel-features")}}">Add Features</a></li>
+                <li><a href="{{url("adminn/roomavailabilities")}}">Add Room & Availabilities</a></li> --}}
+
+            </ul>
+        </li>
             {{-- <li class="nav-label">Apps</li>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="mdi mdi-email-outline"></i> <span class="nav-text">Email</span><span
