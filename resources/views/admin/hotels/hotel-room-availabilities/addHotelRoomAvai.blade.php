@@ -116,5 +116,17 @@
     </div>
 </div>
 
+<script src="{{ asset('assets/plugins/ckeditor/ckeditor.js') }}"></script>
+<script>
+    CKEDITOR.replace( 'includes',{
+        width:"100%"
+    } );
+    // CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
+    // $('#itineraryDesc').ckeditor({
+    // toolbar: 'Full',
+    // enterMode : CKEDITOR.ENTER_BR,
+    // shiftEnterMode: CKEDITOR.ENTER_P
 
+    // });
+</script>
 @endsection

@@ -34,9 +34,9 @@ use App\Http\Controllers\PagesController;
                                 <label class="col-sm-3 col-form-label text-label">Inclusions</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="inclusions"
-                                             name="inclusions" required
-                                            value="{{$iaboutTour->inclusions}}">
+                                        <textarea class="form-control" id="tourinclusions"
+                                                placeholder="Enter inclusions" name="tourinclusionsedit"
+                                                required>{{$iaboutTour->inclusions}}</textarea>
                                     </div>
                                     <p class="form-text text-danger" id="demo2"></p>
                                 </div>
@@ -46,9 +46,9 @@ use App\Http\Controllers\PagesController;
                                 <label class="col-sm-3 col-form-label text-label">Exclusions</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="exclusions"
+                                            <textarea class="form-control" id="tourexclusionsedit"
                                             placeholder="Enter exclusions" name="exclusions"
-                                            value="{{$iaboutTour->exclusions}}" required>
+                                            required>{{$iaboutTour->exclusions}}</textarea>
                                     </div>
                                     <p class="form-text text-danger" id="demo3"></p>
                                 </div>
@@ -126,5 +126,20 @@ use App\Http\Controllers\PagesController;
     </div>
 </div>
 
+<script src="{{ asset('assets/plugins/ckeditor/ckeditor.js') }}"></script>
+<script>
+    CKEDITOR.replace( 'tourexclusionsedit',{
+        width:"100%"
+    } );
+    CKEDITOR.replace( 'tourinclusionsedit',{
+        width:"100%"
+    } );
+    // CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
+    // $('#itineraryDesc').ckeditor({
+    // toolbar: 'Full',
+    // enterMode : CKEDITOR.ENTER_BR,
+    // shiftEnterMode: CKEDITOR.ENTER_P
 
+    // });
+</script>
 @endsection

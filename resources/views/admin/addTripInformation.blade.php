@@ -41,8 +41,10 @@
                                 <label class="col-sm-3 col-form-label text-label">Inclusions</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="inclusions"
-                                            placeholder="Enter inclusions" name="inclusions" required>
+                                            <textarea class="form-control" id="inclusions"
+                                            placeholder="Enter inclusions" name="inclusions"
+                                            required></textarea>
+                                            <p class="form-text text-danger" id="demo1"></p>
                                     </div>
                                     <p class="form-text text-danger" id="demo3"></p>
                                 </div>
@@ -96,5 +98,17 @@
     </div>
 </div>
 
+<script src="{{ asset('assets/plugins/ckeditor/ckeditor.js') }}"></script>
+<script>
+    CKEDITOR.replace( 'inclusions',{
+        width:"100%"
+    } );
+    // CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
+    // $('#itineraryDesc').ckeditor({
+    // toolbar: 'Full',
+    // enterMode : CKEDITOR.ENTER_BR,
+    // shiftEnterMode: CKEDITOR.ENTER_P
 
+    // });
+</script>
 @endsection

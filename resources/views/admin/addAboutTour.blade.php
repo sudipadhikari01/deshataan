@@ -30,8 +30,9 @@
                                 <label class="col-sm-3 col-form-label text-label">Inclusions</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="inclusions"
-                                            placeholder="Enter inclusions"  name="inclusions" required>
+                                            <textarea class="form-control" id="tourinclusions"
+                                            placeholder="Enter inclusions" name="inclusions"
+                                            required></textarea>
                                     </div>
                                     <p class="form-text text-danger" id="demo2"></p>
                                 </div>
@@ -41,9 +42,9 @@
                                 <label class="col-sm-3 col-form-label text-label">Exclusions</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="exclusions"
-                                            placeholder="Enter exclusions" aria-describedby="validationDefaultUsername2"
-                                            name="exclusions" required>
+                                            <textarea class="form-control" id="tourexclusions"
+                                            placeholder="Enter exclusions" name="exclusions"
+                                            required></textarea>
                                     </div>
                                     <p class="form-text text-danger" id="demo3"></p>
                                 </div>
@@ -118,6 +119,21 @@
 
     </div>
 </div>
+<script src="{{ asset('assets/plugins/ckeditor/ckeditor.js') }}"></script>
+<script>
+    CKEDITOR.replace( 'tourexclusions',{
+        width:"100%"
+    } );
+    CKEDITOR.replace( 'tourinclusions',{
+        width:"100%"
+    } );
+    // CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
+    // $('#itineraryDesc').ckeditor({
+    // toolbar: 'Full',
+    // enterMode : CKEDITOR.ENTER_BR,
+    // shiftEnterMode: CKEDITOR.ENTER_P
 
+    // });
+</script>
 
 @endsection

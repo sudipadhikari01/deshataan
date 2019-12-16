@@ -33,8 +33,11 @@
                                 <label class="col-sm-3 col-form-label text-label">Inclusions</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="inclusions"
-                                            name="inclusions" value="{{$hotelSpecialFeatures->inclusions}}" required>
+                                        {{-- <input type="text" class="form-control" id="inclusions"
+                                            name="inclusions" value="{{$hotelSpecialFeatures->inclusions}}" required> --}}
+                                            <textarea class="form-control" id="inclusions"
+                                            placeholder="Edit inclusions" name="inclusions"
+                                            required>{{$hotelSpecialFeatures->inclusions}}</textarea>
                                     </div>
                                     <p class="form-text text-danger" id="demo2"></p>
                                 </div>
@@ -44,8 +47,11 @@
                                 <label class="col-sm-3 col-form-label text-label">Exclusions</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="exclusions"
-                                            name="exclusions" value="{{$hotelSpecialFeatures->exclusions}}" required>
+                                        {{-- <input type="text" class="form-control" id="exclusions"
+                                            name="exclusions" value="{{$hotelSpecialFeatures->exclusions}}" required> --}}
+                                            <textarea class="form-control" id="exclusions"
+                                            placeholder="Edit exclusions" name="exclusions"
+                                            required>{{$hotelSpecialFeatures->exclusions}}</textarea>
                                     </div>
                                     <p class="form-text text-danger" id="demo3"></p>
                                 </div>
@@ -105,6 +111,21 @@
 
     </div>
 </div>
+<script src="{{ asset('assets/plugins/ckeditor/ckeditor.js') }}"></script>
+<script>
+    CKEDITOR.replace( 'inclusions',{
+        width:"100%"
+    } );
+    CKEDITOR.replace( 'exclusions',{
+        width:"100%"
+    } );
+    // CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
+    // $('#itineraryDesc').ckeditor({
+    // toolbar: 'Full',
+    // enterMode : CKEDITOR.ENTER_BR,
+    // shiftEnterMode: CKEDITOR.ENTER_P
 
+    // });
+</script>
 
 @endsection
