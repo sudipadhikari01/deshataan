@@ -46,8 +46,8 @@ use App\Http\Controllers\Admin\TestimonialController as Testimonial;
                 <i class="mdi mdi-page-layout-body"></i><span class="nav-text">Testimonial</span><span
                     class="badge badge-success nav-badge">{{Testimonial::count()}}</span></a>
             <ul aria-expanded="false">
-                {{-- <li><a href="{{url("/adminn/hotels")}}">Add Testimonial</a></li>
-                <li><a href="{{url("adminn/hotel-gallery")}}">Add Hotels Photo Gallery</a></li>
+                <li><a href="{{url("/adminn/testimonials")}}">Add Testimonial</a></li>
+                {{-- <li><a href="{{url("adminn/hotel-gallery")}}">Add Hotels Photo Gallery</a></li>
                 <li><a href="{{url("/adminn/hotel-features")}}">Add Features</a></li>
                 <li><a href="{{url("adminn/roomavailabilities")}}">Add Room & Availabilities</a></li> --}}
 
