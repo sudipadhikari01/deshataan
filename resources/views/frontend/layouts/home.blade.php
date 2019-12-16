@@ -154,8 +154,12 @@
                         <div class="to-ho-hotel-con">
                             <div class="to-ho-hotel-con-1">
                                 <div class="hot-page2-hli-3"> <img src="images/hci1.png" alt=""> </div>
-                                <div class="hom-hot-av-tic"> Available Rooms: {{ $hotel->available_room }} </div> <img src="images/hotels/1.jpg"
-                                    alt="">
+                                <div class="hom-hot-av-tic"> Available Rooms: {{ $hotel->available_room }} </div> 
+                                @if(!empty(PageController::getHotelImage($hotel->h_id)))
+                                    <img src="{{ asset('storage/photogallery').'/'.PageController::getHotelImage($hotel->h_id)->name }}" alt="{{ $hotel->title }}" class="img-responsive"/>
+                                @else
+                                    <img src="https://via.placeholder.com/350x200" alt="No Image found" />
+                                 @endif 
                             </div>
                             <div class="to-ho-hotel-con-23">
                                 <div class="to-ho-hotel-con-2">
@@ -244,7 +248,13 @@
                     <!-- POPULAR PLACES 1 -->
                     @foreach ($packages->slice(0, 4) as $package)
                     <div class="col-md-6 col-sm-6 col-xs-12 place">
-                            <div class="col-md-6 col-sm-12 col-xs-12"> <img src="images/place2.jpg" alt="" /> </div>
+                            <div class="col-md-6 col-sm-12 col-xs-12"> 
+                                @if(!empty(PageController::getPackageImage($package->p_id)))
+                                    <img src="{{ asset('storage/pkgGall').'/'.PageController::getPackageImage($package->p_id)->image_name }}" alt="{{ $package->image_name }}" class="img-responsive"/>
+                                @else
+                                    <img src="https://via.placeholder.com/350x200" alt="No Image found" />
+                                 @endif
+                            </div>
                             <div class="col-md-6 col-sm-12 col-xs-12">
                                 <h3><span>{{ $package->p_name }}</span> 7 Days / 6 Nights</h3>
                                 <p>{{ $package->desc }}</p> <a
@@ -282,7 +292,13 @@
                                 @foreach ($hotelList->slice(0, 5) as $hotel)
                                 <li>
                                     <a href="{{ url('/hotel') }}/{{ $hotel->h_id }}">
-                                        <div class="hot-page2-hom-pre-1"> <img src="images/hotels/1.jpg" alt=""> </div>
+                                        <div class="hot-page2-hom-pre-1"> 
+                                            @if(!empty(PageController::getHotelImage($hotel->h_id)))
+                                                <img src="{{ asset('storage/photogallery').'/'.PageController::getHotelImage($hotel->h_id)->name }}" alt="{{ $hotel->title }}" class="img-responsive"/>
+                                            @else
+                                                 <img src="https://via.placeholder.com/350x200" alt="No Image found" />
+                                            @endif  
+                                        </div>
                                         <div class="hot-page2-hom-pre-2">
                                             <a href="{{url('/hotel')}}/{{$hotel->h_id}}">
                                                 <h5>{{ $hotel->title }}</h5>

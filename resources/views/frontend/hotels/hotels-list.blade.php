@@ -1,5 +1,7 @@
 @extends('frontend.layouts.pageTemplate')
 @section('content');
+@php use App\Http\Controllers\FrontEnd\PageController; @endphp
+
 <!--====== HOTELS LIST ==========-->
 <section class="hot-page2-alp hot-page2-pa-sp-top all-hot-bg">
     <div class="container">
@@ -29,8 +31,13 @@
                             @foreach($hotelList as $list)
                             <li>
                                 <a href="{{url("hotel/$list->h_id")}}">
-                                    <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> <img
-                                            src="images/hotels/2.jpg" alt=""> </div>
+                                    <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> 
+                                        @if(!empty(PageController::getHotelImage($list->h_id)))
+                                        <img src="{{ asset('storage/photogallery').'/'.PageController::getHotelImage($list->h_id)->name }}" alt="{{ $list->title }}" class="img-responsive"/>
+                                    @else
+                                         <img src="https://via.placeholder.com/350x200" alt="No Image found" />
+                                    @endif       
+                                    </div>
                                     <div class="hot-page2-hom-pre-2 hot-page2-alp-cl-1-2">
                                         <h5>{{$list->title}}</h5> <span>City: {{$list->location}}</span>
                                     </div>
@@ -275,7 +282,13 @@
                                 <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                     <a href="javascript:void(0);">
                                         <div class="hotel-list-score">4.5</div>
-                                        <div class="hot-page2-hli-1"> <img src="images/hotels/l1.jpg" alt=""> </div>
+                                        <div class="hot-page2-hli-1"> 
+                                            @if(!empty(PageController::getHotelImage($list->h_id)))
+                                        <img src="{{ asset('storage/photogallery').'/'.PageController::getHotelImage($list->h_id)->name }}" alt="{{ $list->title }}" class="img-responsive"/>
+                                    @else
+                                         <img src="https://via.placeholder.com/350x200" alt="No Image found" />
+                                    @endif  
+                                        </div>
                                         <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms:
                                             {{$list->available_room}} </div>
                                     </a>

@@ -8,6 +8,7 @@ use App\IndividualPackage as Ipkgs;
 use App\Itinerary as Itin;
 use App\PackageType as Pkg;
 use App\PhotoGallery as Pg;
+use App\HotelPhotoGallery as Hpg;
 
 class PageController extends Controller
 {
@@ -101,12 +102,28 @@ class PageController extends Controller
         return $pg;
     }
 
+
+    public static function getHotelImage($h_id)
+    {
+        $hotelImage = Hpg::select('name')->where('hotel_title_id',$h_id)->first();
+        return $hotelImage;
+    }
+
+
+    public static function getPackageImage($p_id)
+    {
+        $package_image =  Pg::select('image_name')->where('p_id', $p_id)->first();
+        // dd($package_image);
+        return $package_image;
+    }
     //list hotel
     public function hotels()
     {
         $pkgs = $this->pkgs;
         $hotelList = Hotel::all();
         $hotelCount = Hotel::count();
+
+       
 
         return view(
             'frontend.hotels.hotels-list',
@@ -117,7 +134,6 @@ class PageController extends Controller
     {
         $pkgs = $this->pkgs;
         $hotel = Hotel::find($id);
-
         return view(
             'frontend.hotels.hotel-details',
             compact('pkgs', 'hotel')
