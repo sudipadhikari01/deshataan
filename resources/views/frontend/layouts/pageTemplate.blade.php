@@ -97,7 +97,7 @@
                                     @endphp
                                     <div class="item {{ $active }}">
                                         <div class="row"> 
-                                            <div class="col-xs-12"> 
+                                            <div class="col-xs-9"> 
                                                 <div class="thumbnail adjust1">
                                                     <div class="col-md-2 col-sm-2 col-xs-12"> 
                                                         {{-- <img src="{{ asset('storage/photogallery').'/'.$testimonial->image }}" alt="{{ $testimonial->name }}'s Image"> --}}
@@ -108,7 +108,7 @@
                                                             {{-- <p class="text-info lead adjust2">Testimonials</p>  --}}
                                                                 {!! str_limit($testimonial->testimonial, $limit = 200, $end = '...')  !!}</p> 
                                                                 <blockquote class="adjust2"> 
-                                                                    <p>{{ $testimonial->name }}</p> 
+                                                                    <strong>{{ $testimonial->name }}</strong> 
                                                                     <small>
                                                                         <cite title="Source Title">{{ $testimonial->address }}</cite>
                                                                     </small> 

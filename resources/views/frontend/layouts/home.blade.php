@@ -76,7 +76,7 @@
             </div>
             <div>
 
-                @foreach($ipkgs as $ip)
+                @foreach($individualPackages->slice(0, 6) as $ip)
                 {{-- <!-- TOUR PLACE {{$loop->iteration}} --> --}}
                 <div class="col-md-4 col-sm-6 col-xs-12 b_packages wow slideInUp" data-wow-duration="0.5s">
                     <!-- OFFER BRAND -->
@@ -194,8 +194,9 @@
 <section>
     <div class="offer">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
+            <div class="row ">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 ">
                     <div class="offer-l"> <span class="ol-1"></span> <span class="ol-2"><i class="fa fa-star"></i><i
                                 class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
                                 class="fa fa-star"></i></span> <span class="ol-4">We Accept Crypto coins</span>
@@ -218,14 +219,14 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-6">
+                {{-- <div class="col-md-6">
                     <div class="offer-r">
                         <div class="or-1"> <span class="or-11">go</span> <span class="or-12">Stays</span> </div>
                         <div class="or-2"> <span class="or-21">Get</span> <span class="or-22">70%</span> <span
                                 class="or-23">Off</span> <span class="or-24">use code: RG5481WERQ</span> <span
                                 class="or-25"></span> </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

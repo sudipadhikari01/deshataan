@@ -52,7 +52,7 @@
                 <!--====== TOUR DESCRIPTION ==========-->
                 <div class="tour_head1">
                     <h3>Description</h3>
-                    {{$sipkg->description}}
+                    {!! $sipkg->description !!}
                 </div>
                 <!--====== ROOMS: HOTEL BOOKING ==========-->
                 <div class="tour_head1 hotel-book-room">
