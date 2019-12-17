@@ -115,11 +115,25 @@
                                     <p class="form-text text-danger" id="demo7"></p>
                                 </div>
                             </div>
-
+                                @php
+                                    $checkedPackages = json_decode($individualPkg->package_type);
+                                @endphp
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Package Type</label>
                                 <div class="col-sm-9">
-                                    <select name="packageType" class="form-control" id="packageType" required>
+                                    <div class="checkbox form-group">
+                                        @foreach ($packages as $package)
+                                            <label class="checkbox-inline"> 
+                                                <input type="checkbox" name="packageType[]" value="{{$package->p_id}}" id="packageType" 
+                                                @if(in_array($package->p_id,$checkedPackages)) 
+                                                checked=checked @endif
+                                                >
+                                                 &nbsp; {{$package->p_name}}  &nbsp;
+                                            </label>
+                                            {{-- <option value="{{$package->p_id}}">{{$package->p_name}}</option> --}}
+                                            @endforeach
+                                        </div>
+                                    {{-- <select name="packageType" class="form-control" id="packageType" required>
                                         <option value="">Choose Package Type</option>
                                         @foreach ($packages as $package)
                                         <option value="{{$package->p_id}}" @if($package->p_id ==
@@ -130,7 +144,7 @@
 
 
 
-                                    </select>
+                                    </select> --}}
                                     <p class="form-text text-danger" id="demo8"></p>
                                 </div>
                             </div>

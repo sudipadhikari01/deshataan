@@ -16,7 +16,7 @@ class CreatePackagesTable extends Migration
         Schema::create('packages', function (Blueprint $table) {
             $table->bigIncrements('p_id');
             $table->string('title');
-            $table->string('description');
+            $table->text('description');
             // $table->integer('rating');
             $table->integer('ticket_quantity');
             $table->string('duration');
@@ -25,7 +25,7 @@ class CreatePackagesTable extends Migration
             $table->string('price');
             $table->string('discount')->nullable();
             $table->string('location');
-            $table->integer('package_type');
+            $table->string('package_type');
 
             $table->timestamps();
         });

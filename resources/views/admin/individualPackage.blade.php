@@ -1,3 +1,4 @@
+<?php use App\Http\Controllers\Admin\IndividualPackageController; ?>
 @extends('admin.templates.layout')
 @section('content')
 
@@ -24,7 +25,6 @@
 
 
 </div>
-
 <!--**********************************
                 Content body end
             ***********************************-->
@@ -67,21 +67,23 @@
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                <?php
-                           $i = 1;
-                        ?>
-                                @foreach ($individualPkgs as $individualPkg)
+                                @foreach ($individualPkgs as $key=>$individualPkg)
 
 
                                 <tbody>
                                     <tr>
-                                        <th>{{ $i }}</th>
+                                        <th>{{ $loop->index + 1 }}</th>
                                         <td>{{$individualPkg->title}}</td>
                                         <td>{{$individualPkg->location}} </td>
                                         <td>{{$individualPkg->duration}}</td>
                                         <td>{{$individualPkg->ticket_quantity}} </td>
-                                        <td>{{App\Http\Controllers\PagesController::showPackageType($individualPkg->package_type)}}
-                                        </td>
+                                        <td>
+                                            @foreach(IndividualPackageController::getPkgTypeObject($individualPkg->package_type) as $pkgType)
+                                            {!! $pkgType['p_name'].'<br>' !!}
+                                            @endforeach
+                                         </td>
+                                        {{-- <td>{{App\Http\Controllers\PagesController::showPackageType($individualPkg->package_type)}} --}}
+                                        {{-- </td> --}}
                                         <td><span><a href="{{url("adminn/indipackage/$individualPkg->p_id/edit")}}"
                                                     class="mr-4" data-toggle="tooltip" data-placement="top"
                                                     title="Edit"><i class="fas fa-edit"></i></a>
@@ -105,9 +107,6 @@
                                     </tr>
 
                                 </tbody>
-                                <?php
-                            $i++;
-                        ?>
 
                                 @endforeach
                             </table>
