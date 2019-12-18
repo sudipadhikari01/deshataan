@@ -60,6 +60,7 @@ class PageController extends Controller
         // return $visit;
         // Pkg::where('p_id', $id)->update(array('visit_count' => $visit + 1));
         try {
+            // SELECT * FROM `packages` pk WHERE json_search(pk.package_type,'one',"3") is not null
             $ipkgs = $this->pkgs->find($id)->ipackages;
             return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs'));
             //code...
