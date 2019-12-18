@@ -84,6 +84,7 @@ class PageController extends Controller
         $spkg = Pkg::find($sipkg->package_type);
         $pg = Pg::where('ip_id', $id)->get();
         $it = Itin::where('ip_id', $id)->first();
+        // dd($sipkg);
         // return $it->itinerary;
         return view('frontend.tour-details', compact('pkgs', 'sipkg', 'spkg', 'pg', 'it'));
     }
