@@ -28,9 +28,16 @@ class PageController extends Controller
         $pkgs = $this->pkgs;
         $ipkgs = $this->ipkgs;
         $packages = Pkg::all();
-        $individualPackages = Ipkgs::orderBy('visit', 'desc')->get();
-        $topPackages = Pkg::orderBy('visit_count', 'desc')->take(5)->get();
-        // dd($testimonials);
+        try {
+            $topPackages = Pkg::orderBy('visit_count', 'desc')->take(5)->get();
+        } catch (\Throwable $th) {
+            $topPackages = $packages;
+        }
+        try {
+            $individualPackages = Ipkgs::orderBy('visit', 'desc')->get();
+        } catch (\Throwable $th) {
+            $individualPackages = $ipkgs;
+        }
         // $packages = Pkg::inRandomOrder()->limit(4)->get();
         $hotelList = Hotel::all();
         return view('frontend.layouts.home', compact('pkgs', 'page', 'ipkgs', 'hotelList', 'packages', 'individualPackages', 'topPackages'));
@@ -84,9 +91,10 @@ class PageController extends Controller
         $spkg = Pkg::find($sipkg->package_type);
         $pg = Pg::where('ip_id', $id)->get();
         $it = Itin::where('ip_id', $id)->first();
+        $individualPackages = Ipkgs::orderBy('visit', 'desc')->get();
         // dd($sipkg);
         // return $it->itinerary;
-        return view('frontend.tour-details', compact('pkgs', 'sipkg', 'spkg', 'pg', 'it'));
+        return view('frontend.tour-details', compact('pkgs', 'sipkg', 'spkg', 'pg', 'it','individualPackages'));
     }
 
     public static function showHotelName($id)

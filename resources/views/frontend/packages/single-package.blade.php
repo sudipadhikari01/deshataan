@@ -40,10 +40,10 @@
                     <div class="tl-2"></div>
                     <div class="tl-3"></div>
                 </div>
-                <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide. Book travel packages
-                    and enjoy your holidays with distinctive experience</p>
+                    {!! $pkg->p_desc !!}
+                    
             </div>
-
+            
             @if (isset($ipkgs) && $ipkgs->count() > 0)
             @foreach($ipkgs as $p) {{-- loop indi pkgs --}}
             <!--===== PLACES ======-->

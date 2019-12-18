@@ -1,5 +1,7 @@
 @extends('frontend.layouts.pageTemplate')
 @section('content')
+@php use App\Http\Controllers\FrontEnd\PageController; @endphp
+
 <!--====== BANNER ==========-->
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous"
@@ -124,7 +126,7 @@
     
                 </div>
                 <div>
-                    <div class="fb-comments" data-href="https://www.facebook.com/deshataan" data-width="100%"
+                    <div class="fb-comments" data-href=" {{  URL::current() }}" data-width="100%"
                         data-numposts="5"></div>
                 </div>
             </div>
@@ -133,12 +135,12 @@
             <div class="col-md-3 tour_r">
                 <!--====== SPECIAL OFFERS ==========-->
                 <div class="tour_right tour_offer">
-                    <div class="band1"><img src="{{asset('images/offer.png')}}" alt="" /> </div>
-                    <p>Special Offer</p>
-                    <h4>$500<span class="n-td">
-                            <span class="n-td-1">$800</span>
+                    {{-- <div class="band1"><img src="{{asset('images/offer.png')}}" alt="" /> </div> --}}
+                    {{-- <p>Special Offer</p> --}}
+                    <h4>{{$sipkg->price}}<span class="n-td">
+                            <span class="n-td-1"></span>
                         </span>
-                    </h4> <a href="booking.html" class="link-btn">Book Now</a>
+                    </h4> <a href="{{url('/booking')}}" class="link-btn">Book Now</a>
                 </div>
                 <!--====== TRIP INFORMATION ==========-->
                 <div class="tour_right tour_incl tour-ri-com">
@@ -166,18 +168,25 @@
                     <h3>Help & Support</h3>
                     <div class="tour_help_1">
                         <h4 class="tour_help_1_call">Call Us Now</h4>
-                        <h4><i class="fa fa-phone" aria-hidden="true"></i> 10-800-123-000</h4>
+                        <h4><i class="fa fa-phone" aria-hidden="true"></i> +977-014444865</h4>
                     </div>
                 </div>
                 <!--====== PUPULAR TOUR PACKAGES ==========-->
                 <div class="tour_right tour_rela tour-ri-com">
                     <h3>Popular Packages</h3>
-                    <div class="tour_rela_1"> <img src="{{ asset('images/related1.png') }}" alt="" />
-                        <h4>Dubai 7Days / 6Nights</h4>
-                        <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their
-                            default model text</p> <a href="#" class="link-btn">View this Package</a>
+                    @foreach ($individualPackages->slice(0, 5) as $indPak)
+                    <div class="tour_rela_1"> 
+                        @if( !empty(PageController::getImage($indPak->p_id)) )
+                        <img src="{{ asset('storage/pkgGall').'/'.PageController::getImage($indPak->p_id)->image_name }}"
+                            alt="Tour Booking" title="Tour Booking">
+                        @else
+                        <img src="https://via.placeholder.com/350x200" alt="No Image found" />
+                        @endif
+                        <h4>{{ $indPak->title }} | {{ $indPak->duration }}</h4>
+                        <p>{!! str_limit($indPak->description, $limit = 100, $end = '...')  !!}</p> <a href="{{ url('/tour-details') }}/{{ $indPak->p_id }}" class="link-btn">View this Package</a>
                     </div>
-                    <div class="tour_rela_1"> <img src="{{ asset('images/related2.png') }}" alt="" />
+                    @endforeach
+                    {{-- <div class="tour_rela_1"> <img src="{{ asset('images/related2.png') }}" alt="" />
                         <h4>Mauritius 4Days / 3Nights</h4>
                         <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their
                             default model text</p> <a href="#" class="link-btn">View this Package</a>
@@ -186,7 +195,7 @@
                         <h4>India 14Days / 13Nights</h4>
                         <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their
                             default model text</p> <a href="#" class="link-btn">View this Package</a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

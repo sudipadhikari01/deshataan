@@ -34,10 +34,26 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Schema::defaultStringLength(191);
-        $packages = Pkg::all();
-        $individualPackages = Ipkgs::orderBy('visit','desc')->get();
-        $topPackages = Pkg::orderBy('visit_count','desc')->take(5)->get();
-        $testimonials = Testimonial::take(5)->get();
+        try {
+            $packages = Pkg::all();
+        } catch (\Throwable $th) {
+            $packages = array();
+        }
+        try {
+            $testimonials = Testimonial::take(5)->get();
+        } catch (\Throwable $th) {
+            $testimonials = array();
+        }
+        try {
+            $topPackages = Pkg::orderBy('visit_count','desc')->take(5)->get();
+        } catch (\Throwable $th) {
+            $topPackages = $packages;
+        }
+        try {
+            $individualPackages = Ipkgs::orderBy('visit','desc')->get();
+        } catch (\Throwable $th) {
+            $individualPackages = array();
+        } 
         
         // $facebook_url = '';
         // $twitter_url = '';
