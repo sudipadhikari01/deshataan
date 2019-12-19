@@ -14,6 +14,11 @@ class HotelRoomAvailabilitiesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        return $this->middleware('auth:admin');
+    }
+    
     public function index()
     {
         $hotel_room_availabilities = HotelRoomAvailabilities::all();
