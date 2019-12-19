@@ -40,6 +40,7 @@ class HotelRoomAvailabilitiesController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $hotelRoomAvai = new HotelRoomAvailabilities();
 
         $hotelRoomAvai->title = $request->input('title');

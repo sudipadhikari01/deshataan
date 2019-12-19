@@ -9,6 +9,7 @@ use App\Itinerary as Itin;
 use App\PackageType as Pkg;
 use App\PhotoGallery as Pg;
 use App\HotelPhotoGallery as Hpg;
+use Illuminate\Support\Facades\DB;
 
 
 class PageController extends Controller
@@ -56,38 +57,32 @@ class PageController extends Controller
     {
         $pkgs = $this->pkgs;
         $pkg = Pkg::findOrFail($id);
-        // $visit = Pkg::find($id)->value('visit_count');
-        // return $visit;
-        // Pkg::where('p_id', $id)->update(array('visit_count' => $visit + 1));
         try {
-            // SELECT * FROM `packages` pk WHERE json_search(pk.package_type,'one',"3") is not null
-            $ipkgs = $this->pkgs->find($id)->ipackages;
-            return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs'));
-            //code...
+            $visit = Pkg::find($id)->value('visit_count');
+            Pkg::where('p_id', $id)->update(array('visit_count' => $visit + 1));
         } catch (\Throwable $th) {
-            // $ipkgs = "No Associated Packages";
-            // dd($th);
+            echo $th;
+        }
+        
+        try {
+            $ipkgs = DB::select('SELECT * FROM `packages` pk WHERE json_search(pk.package_type,"one","'.$id.'") is not null');
+            return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs'));
+        } catch (\Throwable $th) {
             return view('frontend.packages.single-package', compact('pkg', 'pkgs'));
         }
-        // dd($ipkgs);
-        // return $ipkgs;
-        // if ($ipkgs->count() > 0 && $pkg->count() > 0) {
-        //     // return $ipkgs->count();
-        //     return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs'));
-        // } else {
-        //     // return "No iPkgs";
-        //     return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs'));
-        // }
+       
     }
 
     public function tour_details($id) // single pkg detail
 
     {
         $pkgs = $this->pkgs;
-        // return $pkgs;
-        $visit = Ipkgs::find($id)->value('visit');
-        // return $visit;
-        Ipkgs::where('p_id', $id)->update(array('visit' => $visit + 1));
+        try {
+            $visit = Ipkgs::find($id)->value('visit');
+            Ipkgs::where('p_id', $id)->update(array('visit' => $visit + 1));
+        } catch (\Throwable $th) {
+               echo $th;             
+        }
         $sipkg = Ipkgs::find($id);
         $spkg = Pkg::find($sipkg->package_type);
         $pg = Pg::where('ip_id', $id)->get();
@@ -152,10 +147,6 @@ class PageController extends Controller
         );
     }
 
-    public function contact()
-    {
-        return "Contact";
-    }
 
     public function singlePkg($id)
     {

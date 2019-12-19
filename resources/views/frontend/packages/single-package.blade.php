@@ -44,7 +44,7 @@
                     
             </div>
             
-            @if (isset($ipkgs) && $ipkgs->count() > 0)
+            @if (isset($ipkgs))
             @foreach($ipkgs as $p) {{-- loop indi pkgs --}}
             <!--===== PLACES ======-->
             <div class="rows p2_2">
@@ -86,6 +86,7 @@
                     </div>
                 </div>
             </div>
+            <hr>
             <!--===== PLACES END ======-->
             @endforeach
             @else

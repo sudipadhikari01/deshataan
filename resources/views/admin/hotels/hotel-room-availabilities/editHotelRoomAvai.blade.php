@@ -44,8 +44,11 @@
                                 <label class="col-sm-3 col-form-label text-label">Includes</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="includes"
-                                            name="includes" value="{{$hotelRoomAvai->includes}}" required>
+                                        {{-- <input type="text" class="form-control" id="includes"
+                                            name="includes" value="{{$hotelRoomAvai->includes}}" required> --}}
+                                            <textarea class="form-control" id="includes"
+                                            placeholder="Enter what are includes" name="includes"
+                                            required>{{$hotelRoomAvai->includes}}</textarea>
                                     </div>
                                     <div class="text-form text-danger" id="demo3"></div>
                                 </div>
@@ -115,5 +118,18 @@
     </div>
 </div>
 
+<script src="{{ asset('assets/plugins/ckeditor/ckeditor.js') }}"></script>
+<script>
+    CKEDITOR.replace( 'includes',{
+        width:"100%"
+    } );
+    // CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
+    // $('#itineraryDesc').ckeditor({
+    // toolbar: 'Full',
+    // enterMode : CKEDITOR.ENTER_BR,
+    // shiftEnterMode: CKEDITOR.ENTER_P
+
+    // });
+</script>
 
 @endsection

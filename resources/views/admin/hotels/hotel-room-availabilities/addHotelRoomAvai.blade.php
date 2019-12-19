@@ -44,9 +44,12 @@
                                 <label class="col-sm-3 col-form-label text-label">Includes</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="includes"
+                                        {{-- <input type="text" class="form-control" id="includes"
                                             placeholder="Enter what are includes"
-                                            aria-describedby="validationDefaultUsername1" name="includes" required>
+                                            aria-describedby="validationDefaultUsername1" name="includes" required> --}}
+                                            <textarea class="form-control" id="includes"
+                                            placeholder="Enter what are includes" name="includes"
+                                            required></textarea>
                                     </div>
                                     <div class="form-text text-danger" id="demo3"></div>
                                 </div>

@@ -11,7 +11,7 @@
                 <ul>
                     <li><a href="{{route('frontend.home')}}">Home</a> </li>
                     <li><i class="fa fa-angle-right" aria-hidden="true"></i> </li>
-                    <li><a href="#inner-page-title" class="bread-acti">Hotels & Restaurants</a> </li>
+                    <li><a href="javascript:void()" class="bread-acti">Hotels & Restaurants</a> </li>
                 </ul>
                 <p>{{$hotelCount > 1 ? $hotelCount.' Hotels' : $hotelCount.' Hotel'}} available </p>
             </div>
