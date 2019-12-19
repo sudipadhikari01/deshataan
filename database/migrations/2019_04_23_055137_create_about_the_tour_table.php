@@ -15,9 +15,9 @@ class CreateAboutTheTourTable extends Migration
     {
         Schema::create('about_the_tour', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('places_covered');
-            $table->string('inclusions');
-            $table->string('exclusions');
+            $table->text('places_covered');
+            $table->text('inclusions');
+            $table->text('exclusions');
             $table->date('event_date');
             $table->integer('p_id');
             $table->integer('ip_id');

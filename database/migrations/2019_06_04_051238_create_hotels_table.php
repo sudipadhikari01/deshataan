@@ -20,8 +20,8 @@ class CreateHotelsTable extends Migration
             $table->string('contact');
             $table->string('price');
             $table->integer('available_room');
-            $table->string('description');
-            $table->string('amenities');
+            $table->text('description');
+            $table->text('amenities');
             $table->timestamps();
         });
     }
