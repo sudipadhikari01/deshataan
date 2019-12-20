@@ -52,7 +52,7 @@
                     {{-- <div class="band"><img src="{{ asset('images/band.png') }}" alt="" />
                     </div> --}}
                     @if(!empty($p->discount)) 
-                            <div class="bandText"> {{$p->discount}}% OFF </div>
+                            <div class="bandText"> {{$p->discount}}% <br> OFF </div>
                             <div class="band"> <img src="{{ asset('images/band-all.png') }}" alt="" /> </div>
                         @endif
 
@@ -68,7 +68,7 @@
                                 aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
                                 class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half-o"
                                 aria-hidden="true"></i></span></h3>
-                    <p>{!! $p->description !!}</p>
+                    {{-- <p>{!! $p->description !!}</p> --}}
                     <div class="ticket">
                         <ul>
                             <li>Available Tickets : {{$p->ticket_quantity}}</li>

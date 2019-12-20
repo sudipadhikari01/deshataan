@@ -15,9 +15,9 @@ class CreateHotelsSpecialFeaturesTable extends Migration
     {
         Schema::create('hotels_special_features', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('places_covered');
-            $table->text('inclusions');
-            $table->text('exclusions');
+            $table->longText('places_covered');
+            $table->longText('inclusions');
+            $table->longText('exclusions');
             $table->date('event_date');
             $table->integer('hotel_title_id');
             $table->timestamps();

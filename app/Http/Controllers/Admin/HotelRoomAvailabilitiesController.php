@@ -46,6 +46,13 @@ class HotelRoomAvailabilitiesController extends Controller
     public function store(Request $request)
     {
         // dd($request);
+        $request->validate([
+            'title' => 'required',
+            'amenities' => 'required',
+            'includes' => 'required',
+            'price' => 'required',
+            'hotelName' => 'required',
+        ]);
         $hotelRoomAvai = new HotelRoomAvailabilities();
 
         $hotelRoomAvai->title = $request->input('title');
@@ -94,6 +101,13 @@ class HotelRoomAvailabilitiesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'title' => 'required',
+            'amenities' => 'required',
+            'includes' => 'required',
+            'price' => 'required',
+            'hotelName' => 'required',
+        ]);
         $hotelRoomAvai = HotelRoomAvailabilities::find($id);
 
         $hotelRoomAvai->title = $request->input('title');

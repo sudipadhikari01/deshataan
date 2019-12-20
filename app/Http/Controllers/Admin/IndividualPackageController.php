@@ -64,6 +64,13 @@ class IndividualPackageController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'location' => 'required',
+            'duration' => 'required',
+            'price' => 'required',
+        ]);
         // dd($request->packageType);
         if($request->input('packageType'))
         {
@@ -128,6 +135,13 @@ class IndividualPackageController extends Controller
      */
     public function update(Request $request, $p_id)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'location' => 'required',
+            'duration' => 'required',
+            'price' => 'required',
+        ]);
         // return $request;
         $individualPkg = IndividualPackage::find($p_id);
 

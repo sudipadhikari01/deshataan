@@ -71,33 +71,39 @@ use App\Http\Controllers\PagesController;
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                <?php
-                           $i = 1;
-                        ?>
+                              
                                 @foreach ($hotelPhotos as $hotelPhoto)
 
                                 <tbody>
                                     <tr>
-                                        <th>{{ $i }}</th>
+                                        <th>{{ $loop->iteration }}</th>
                                         <td>{{$hotelPhoto->title}}</td>
                                         <td>{{$hotelPhoto->description}}</td>
-                                        <td>{{$hotelPhoto->name}}</td>
+                                        <td><img src="{{ asset('storage/photogallery').'/'.$hotelPhoto->name }}" alt="{{ $hotelPhoto->name}}'s Image" class="img-responsive" style="height:auto;width:50%"</td>
                                         <td>{{PagesController::showHotelName($hotelPhoto->hotel_title_id)}}</td>
                                         <td><span><a href="{{url("/adminn/editHotelsPhoto/$hotelPhoto->id")}}"
                                                     class="mr-4" data-toggle="tooltip" data-placement="top"
                                                     title="Edit"><i class="fas fa-edit"></i></a>
-                                                <a href="{{url("/adminn/deleteHotelsPhoto/$hotelPhoto->id")}}"
-                                                    class="mr-4" data-toggle="tooltip" data-placement="top"
-                                                    title="Delete" onclick="del()"><i class="fa fa-trash color-danger"
-                                                        aria-hidden="true" id="deletePackage"></i></a>
+                                                
+                                                     <a href="javascript:void();" class="mr-4" data-toggle="tooltip"
+                                                    data-placement="top" title="Delete"
+                                                    onclick="event.preventDefault();document.querySelector('#item-delete{{$hotelPhoto->id}}').submit();">
+                                                    <i class="fa fa-trash color-danger" aria-hidden="true"
+                                                        id="deleteHotelPhoto">
+                                                    </i>
+                                                </a>
+
+                                                <form method='POST' id="item-delete{{$hotelPhoto->id}}"
+                                                    action='{{url("adminn/hotel-gallery/$hotelPhoto->id")}}'>
+                                                    @csrf
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                </form>
+                                                        
                                             </span>
                                         </td>
                                     </tr>
 
                                 </tbody>
-                                <?php
-                             $i++;
-                        ?>
                                 @endforeach
                             </table>
                         </div>

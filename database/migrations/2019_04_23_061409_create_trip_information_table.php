@@ -17,7 +17,7 @@ class CreateTripInformationTable extends Migration
             $table->bigIncrements('id');
             $table->date('arrival_date');
             $table->date('departure_date');
-            $table->text('inclusions');
+            $table->longText('inclusions');
             $table->integer('p_id');
             $table->integer('ip_id');
             $table->timestamps();

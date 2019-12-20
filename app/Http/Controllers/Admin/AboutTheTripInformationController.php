@@ -47,6 +47,7 @@ class AboutTheTripInformationController extends Controller
      */
     public function store(Request $request)
     {
+        
         $tripInformation = new TripInformation();
         $tripInformation->arrival_date = $request->input('arrivalDate');
         $tripInformation->departure_date = $request->input('departureDate');

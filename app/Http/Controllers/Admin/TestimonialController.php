@@ -46,31 +46,29 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
-
-        // dd($request->image);
-        // dd($request->hasFile('image'));
+        $request->validate([
+            'name' => 'required',
+            'address' => 'required',
+            // 'email' => 'sometimes|required|email',
+            'email' => 'required|email',
+            'testimonial' => 'required',
+            
+        ]);
         if ($request->hasFile('image')) {
-
             //get the file name with the extension
             $filenameWithExt = $request->file('image')->getClientOriginalName();
-
             //get just file name
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-
             //get just extension
             $extension = $request->file('image')->getClientOriginalExtension();
-
             //file name to store
             $fileNameToStore = $filename . '_' . time() . '.' . $extension;
-
             //upload image
-
             $path = $request->file('image')->storeAs('public/photogallery', $fileNameToStore);
         }
-        //  else {
-
-        //     $fileNameToStore = "noimage.jpg";
-        // }
+         else {
+            $fileNameToStore = "noimage.jpg";
+        }
             $testimonial = new Testimonial();
             $testimonial->name = $request->input('name');
             $testimonial->address = $request->input('address');
@@ -115,6 +113,14 @@ class TestimonialController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required',
+            'address' => 'required',
+            // 'email' => 'sometimes|required|email',
+            'email' => 'required|email',
+            'testimonial' => 'required',
+            
+        ]);
         $testimonial = Testimonial::find($id);
         
         if ($request->hasFile('image')) {

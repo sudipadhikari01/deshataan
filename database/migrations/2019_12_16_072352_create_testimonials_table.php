@@ -19,7 +19,7 @@ class CreateTestimonialsTable extends Migration
             $table->string('email')->nullable();
             $table->string('address');
             $table->string('image')->nullable();
-            $table->text('testimonial');
+            $table->longText('testimonial');
             $table->timestamps();
         });
     }

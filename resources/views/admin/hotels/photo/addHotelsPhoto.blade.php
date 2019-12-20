@@ -41,8 +41,8 @@
                                 <label class="col-sm-3 col-form-label text-label">Upload Hotel Image</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="file" class="form-control" id=""
-                                            aria-describedby="inputGroupPrepend2" name="image">
+                                        <input type="file" class="form-control" id="image"
+                                            aria-describedby="inputGroupPrepend2" name="image[]" multiple>
                                     </div>
                                 </div>
                             </div>

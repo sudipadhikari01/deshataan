@@ -46,35 +46,41 @@ class HotelsPhotoGalleryController extends Controller
     public function store(Request $request)
     {
 
+        
         if ($request->hasFile('image')) {
-
+            $files = $request->file('image');
+            foreach ($files as $file) {
             //get the file name with the extension
-            $filenameWithExt = $request->file('image')->getClientOriginalName();
-
+            $filenameWithExt = $file->getClientOriginalName();
             //get just file name
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-
             //get just extension
-            $extension = $request->file('image')->getClientOriginalExtension();
-
+            $extension = $file->getClientOriginalExtension();
             //file name to store
             $fileNameToStore = $filename . '_' . time() . '.' . $extension;
-
             //upload image
+            $path = $file->storeAs('public/photogallery', $fileNameToStore);
+            // $path = $file->storeAs('public/pkgGall', $fileNameToStore);
 
-            $path = $request->file('image')->storeAs('public/photogallery', $fileNameToStore);
-        } else {
-
-            $fileNameToStore1 = "noimage.jpg";
+            $hotelPhotos = new HotelPhotoGallery();
+            $hotelPhotos->name = $fileNameToStore;
+            $hotelPhotos->title = $request->input('imageTitle');
+            $hotelPhotos->description = $request->input('imageDesc');
+            $hotelPhotos->hotel_title_id = $request->input('hotelName');
+            $hotelPhotos->save();
+            } 
+        } 
+        else {
+            $fileNameToStore = "noimage.jpg";
+            $hotelPhotos = new HotelPhotoGallery();
+            $hotelPhotos->title = $request->input('imageTitle');
+            $hotelPhotos->description = $request->input('imageDesc');
+            $hotelPhotos->hotel_title_id = $request->input('hotelName');
+            $hotelPhotos->name = $fileNameToStore;
+            $hotelPhotos->save();
         }
 
-        $hotelPhotos = new HotelPhotoGallery();
-        $hotelPhotos->title = $request->input('imageTitle');
-        $hotelPhotos->description = $request->input('imageDesc');
-        $hotelPhotos->name = $fileNameToStore;
-        $hotelPhotos->hotel_title_id = $request->input('hotelName');
 
-        $hotelPhotos->save();
 
         return redirect()->route('adminn.hotel-gallery.index')->with('status', "Hotel image added succesfully");
     }
@@ -112,6 +118,10 @@ class HotelsPhotoGalleryController extends Controller
     public function update(Request $request, $id)
     {
 
+        $hotelPhotos = HotelPhotoGallery::find($id);
+        $hotelPhotos->title = $request->input('imageTitle');
+        $hotelPhotos->description = $request->input('imageDesc');
+        $hotelPhotos->hotel_title_id = $request->input('hotelName');
         if ($request->hasFile('image')) {
 
             //get the file name with the extension
@@ -134,16 +144,13 @@ class HotelsPhotoGalleryController extends Controller
             $fileNameToStore1 = "noimage.jpg";
         }
 
-        $hotelPhotos = HotelPhotoGallery::find($id);
-
-        $hotelPhotos->title = $request->input('imageTitle');
-        $hotelPhotos->description = $request->input('imageDesc');
+        
         $hotelPhotos->name = $fileNameToStore;
-        $hotelPhotos->hotel_title_id = $request->input('hotelName');
+        
 
         $hotelPhotos->save();
 
-        return redirect()->route('hotels-photo')->with('status', "Hotel image Updated succesfully");
+        return redirect()->route('adminn.hotel-gallery.index')->with('status', "Hotel image Updated succesfully");
     }
 
     /**
@@ -156,7 +163,6 @@ class HotelsPhotoGalleryController extends Controller
     {
         $hotelPhotos = HotelPhotoGallery::find($id);
         $hotelPhotos->delete();
-
-        return redirect()->route('hoetels-photo')->with('status', "Hotel image Deleted succesfully");
+        return redirect()->route('adminn.hotel-gallery.index')->with('status', "Hotel image Deleted succesfully");
     }
 }

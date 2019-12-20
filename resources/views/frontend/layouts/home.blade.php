@@ -82,7 +82,7 @@
                     <!-- OFFER BRAND -->
 
                     @if(!empty($ip->discount))
-                    <div class="bandText"> {{$ip->discount}}% OFF </div>
+                    <div class="bandText"> {{$ip->discount}}% <br> OFF </div>
                     <div class="band"> <img src="{{ asset('images/band-all.png') }}" alt="" /> </div>
                     @endif
 

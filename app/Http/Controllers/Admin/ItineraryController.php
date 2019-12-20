@@ -46,6 +46,12 @@ class ItineraryController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'itineraryDesc' => 'required',
+            'packageType' => 'required',
+            'individualPackage' => 'required',
+            
+        ]);
         // return $request;
         $itinerarys = new Itinerary();
         $itinerarys->itinerary = $request->input('itineraryDesc');
@@ -89,6 +95,12 @@ class ItineraryController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'itineraryDesc' => 'required',
+            'packageType' => 'required',
+            'individualPackage' => 'required',
+            
+        ]);
         $itinerarys = Itinerary::find($id);
 
         $itinerarys->itinerary = $request->input('itineraryDesc');

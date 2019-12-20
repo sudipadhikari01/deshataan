@@ -42,6 +42,11 @@ class PackageTypeController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'packageType' => 'required',
+            'packageDesc' => 'required',
+            
+        ]);
         $packageType = new PackageType();
 
         $packageType->p_name = $request->input("packageType");
@@ -89,6 +94,11 @@ class PackageTypeController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'packageType' => 'required',
+            'packageDesc' => 'required',
+            
+        ]);
         $singlePackage = \App\PackageType::find($id);
         $singlePackage->p_name = $request->input("packageType");
         $singlePackage->p_desc = $request->input("packageDesc");

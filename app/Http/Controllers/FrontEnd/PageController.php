@@ -141,9 +141,11 @@ class PageController extends Controller
     {
         $pkgs = $this->pkgs;
         $hotel = Hotel::find($id);
+        $hotelPhotoGallery = Hpg::where('hotel_title_id', $id)->get();
+        // dd($hotelPhotoGallery);
         return view(
             'frontend.hotels.hotel-details',
-            compact('pkgs', 'hotel')
+            compact('pkgs', 'hotel','hotelPhotoGallery')
         );
     }
 

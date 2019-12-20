@@ -49,6 +49,13 @@ class AboutTourController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'placesCovered' => 'required',
+            'inclusions' => 'required',
+            'exclusions' => 'required',
+            'packageType' => 'required',
+            'individualPackage' => 'required',
+        ]);
         $aboutTour = new AboutTour();
         $aboutTour->places_covered = $request->input('placesCovered');
         $aboutTour->inclusions = $request->input('inclusions');
@@ -98,6 +105,13 @@ class AboutTourController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'placesCovered' => 'required',
+            'inclusions' => 'required',
+            'exclusions' => 'required',
+            'packageType' => 'required',
+            'individualPackage' => 'required',
+        ]);
         $aboutTour = AboutTour::find($id);
         $aboutTour->places_covered = $request->input('placesCovered');
         $aboutTour->inclusions = $request->input('inclusions');
