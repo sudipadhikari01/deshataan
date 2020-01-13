@@ -41,9 +41,9 @@
                     <div class="tl-3"></div>
                 </div>
                     {!! $pkg->p_desc !!}
-                    
+
             </div>
-            
+
             @if (isset($ipkgs))
             @foreach($ipkgs as $p) {{-- loop indi pkgs --}}
             <!--===== PLACES ======-->
@@ -51,7 +51,7 @@
                 <div class="col-md-6 col-sm-6 col-xs-12 p2_1">
                     {{-- <div class="band"><img src="{{ asset('images/band.png') }}" alt="" />
                     </div> --}}
-                    @if(!empty($p->discount)) 
+                    @if(!empty($p->discount))
                             <div class="bandText"> {{$p->discount}}% <br> OFF </div>
                             <div class="band"> <img src="{{ asset('images/band-all.png') }}" alt="" /> </div>
                         @endif
