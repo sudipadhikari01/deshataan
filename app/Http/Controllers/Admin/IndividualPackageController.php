@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\IndividualPackage as IndividualPackage ;
+use App\IndividualPackage as IndividualPackage;
 use App\PackageType;
 use Illuminate\Http\Request;
 
@@ -18,11 +18,11 @@ class IndividualPackageController extends Controller
     {
         return $this->middleware('auth:admin');
     }
-    
+
     public function index()
     {
         $individualPkgs = IndividualPackage::all();
-        // if (!empty($individualPkgs)) 
+        // if (!empty($individualPkgs))
         // {
         //     // foreach($individualPkgs as $pkg)
         //     // {
@@ -31,9 +31,9 @@ class IndividualPackageController extends Controller
         //     // }
         // }
         // else{
-            
+
         // }
-        
+
         // return $individualPkgs;
         return view('admin.individualPackage')->with('individualPkgs', $individualPkgs);
     }
@@ -72,11 +72,9 @@ class IndividualPackageController extends Controller
             'price' => 'required',
         ]);
         // dd($request->packageType);
-        if($request->input('packageType'))
-        {
+        if ($request->input('packageType')) {
             $packagesType = json_encode($request->input('packageType'));
-        }
-        else{
+        } else {
             $packagesType = array();
         }
         // print_r($packages);
@@ -93,12 +91,12 @@ class IndividualPackageController extends Controller
         $individualPkg->ticket_quantity = $request->input('ticketQuantity');
         $individualPkg->price = $request->input('price');
         $individualPkg->discount = $request->input('discount');
+        $individualPkg->map = $request->input('packageLocationMap');
         $individualPkg->package_type = $packagesType;
         // $individualPkg->package_type = $request->input('packageType');
         $individualPkg->save();
 
         return redirect()->route('adminn.indipackage.index')->with("status", "Individual Package added successfully");
-
     }
 
     /**
@@ -154,11 +152,10 @@ class IndividualPackageController extends Controller
         $individualPkg->ticket_quantity = $request->input('ticketQuantity');
         $individualPkg->price = $request->input('price');
         $individualPkg->discount = $request->input('discount');
-        if($request->input('packageType'))
-        {
+        $individualPkg->map = $request->input('packageLocationMap');
+        if ($request->input('packageType')) {
             $packagesType = json_encode($request->input('packageType'));
-        }
-        else{
+        } else {
             $packagesType = array();
         }
         $individualPkg->package_type = $packagesType;
@@ -166,7 +163,6 @@ class IndividualPackageController extends Controller
         $individualPkg->save();
 
         return redirect()->route('adminn.indipackage.index')->with("status", "Individual Package Updated successfully");
-
     }
 
     /**
@@ -180,7 +176,6 @@ class IndividualPackageController extends Controller
         $individualPkg = IndividualPackage::find($p_id);
         $individualPkg->delete();
         return redirect()->route('adminn.indipackage.index')->with("status", "Individual Package Deleted successfully");
-
     }
 
     public static function count()
@@ -193,8 +188,7 @@ class IndividualPackageController extends Controller
         // return $pkgTypeId;
         // // print_r($pkg);
         $packages = json_decode($pkgTypeId);
-        foreach($packages as $pkg)
-        {
+        foreach ($packages as $pkg) {
             $new[] = PackageType::find($pkg);
         };
         return $new;

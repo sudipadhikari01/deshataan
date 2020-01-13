@@ -4,7 +4,8 @@
 
 <!--====== BANNER ==========-->
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0&appId=387699278601802&autoLogAppEvents=1">
+<script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0&appId=387699278601802&autoLogAppEvents=1">
 </script>
 <section>
     <div class="rows inner_banner inner_banner_4">
@@ -46,7 +47,11 @@
 
                 <!--====== TOUR TITLE ==========-->
                 <div class="tour_head">
-                    <h2>{{$sipkg->title}} <span class="tour_star"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half-o" aria-hidden="true"></i></span><span class="tour_rat">4.5</span></h2>
+                    <h2>{{$sipkg->title}} <span class="tour_star"><i class="fa fa-star" aria-hidden="true"></i><i
+                                class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
+                                aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
+                                class="fa fa-star-half-o" aria-hidden="true"></i></span><span
+                            class="tour_rat">4.5</span></h2>
                 </div>
                 <!--====== TOUR DESCRIPTION ==========-->
 
@@ -67,7 +72,8 @@
                             @foreach($pg as $g)
 
                             <li data-target="#myCarousel1" data-slide-to="{{$loop->index}}">
-                                <img src='{{asset("storage/pkgGall/$g->image_name")}}' alt="" style="width:80px; height:50px">
+                                <img src='{{asset("storage/pkgGall/$g->image_name")}}' alt=""
+                                    style="width:80px; height:50px">
                             </li>
                             @endforeach
                         </ol>
@@ -77,7 +83,8 @@
 
                             @foreach($pg as $g)
                             <div class="item {{ $loop->index == 0 ? 'active' : '' }}">
-                                <img src='{{asset("storage/pkgGall/$g->image_name")}}' alt="Chania" style="width:850px; height:450px" height="345">
+                                <img src='{{asset("storage/pkgGall/$g->image_name")}}' alt="Chania"
+                                    style="width:850px; height:450px" height="345">
                             </div>
                             @endforeach
 
@@ -87,7 +94,8 @@
                         <a class="left carousel-control" href="#myCarousel1" role="button" data-slide="prev">
                             <span><i class="fa fa-angle-left hotel-gal-arr" aria-hidden="true"></i></span> </a>
                         <a class="right carousel-control" href="#myCarousel1" role="button" data-slide="next">
-                            <span><i class="fa fa-angle-right hotel-gal-arr hotel-gal-arr1" aria-hidden="true"></i></span> </a>
+                            <span><i class="fa fa-angle-right hotel-gal-arr hotel-gal-arr1"
+                                    aria-hidden="true"></i></span> </a>
                     </div>
                     @else
                     <h2 class="text-info">No Images To Show</h2>
@@ -97,7 +105,10 @@
                 <!--======TOUR LOCATION==========-->
                 <div class="tour_head1 tout-map map-container">
                     <h3>Location</h3>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.744468026517!2d85.32060941542433!3d27.72517493131423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1919b80b60ad%3A0xd0d150a470c839!2sLaxmi+Heights!5e0!3m2!1sen!2sin!4v1565063847449!5m2!1sen!2sin" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    {{-- <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.744468026517!2d85.32060941542433!3d27.72517493131423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1919b80b60ad%3A0xd0d150a470c839!2sLaxmi+Heights!5e0!3m2!1sen!2sin!4v1565063847449!5m2!1sen!2sin"
+                        frameborder="0" style="border:0" allowfullscreen></iframe> --}}
+                    {!! $sipkg->map !!}
                 </div>
 
                 <!--====== DURATION ==========-->
@@ -117,7 +128,8 @@
 
                 </div>
                 <div>
-                    <div class="fb-comments" data-href=" {{  URL::current() }}" data-width="100%" data-numposts="5"></div>
+                    <div class="fb-comments" data-href=" {{  URL::current() }}" data-width="100%" data-numposts="5">
+                    </div>
                 </div>
             </div>
 
@@ -139,7 +151,7 @@
                     <li>Location : {{ucfirst($sipkg->location)}}</li>
                     <li>Arrival Date: {{ date('M d, Y',strtotime($sipkg->start_date)) }}</li>
                     <li>Departure Date: {{ date('M d, Y',strtotime($sipkg->end_date)) }}</li>
-                    <li>Free Sightseeing & Hotel</li>
+                    {{-- <li>Free Sightseeing & Hotel</li> --}}
                 </ul>
             </div>
             <!--====== PACKAGE SHARE ==========-->
@@ -167,12 +179,14 @@
                 @foreach ($individualPackages->slice(0, 5) as $indPak)
                 <div class="tour_rela_1">
                     @if( !empty(PageController::getImage($indPak->p_id)) )
-                    <img src="{{ asset('storage/pkgGall').'/'.PageController::getImage($indPak->p_id)->image_name }}" alt="Tour Booking" title="Tour Booking">
+                    <img src="{{ asset('storage/pkgGall').'/'.PageController::getImage($indPak->p_id)->image_name }}"
+                        alt="Tour Booking" title="Tour Booking">
                     @else
                     <img src="https://via.placeholder.com/350x200" alt="No Image found" />
                     @endif
                     <h4>{{ $indPak->title }} | {{ $indPak->duration }}</h4>
-                    <p>{!! str_limit($indPak->description, $limit = 100, $end = '...') !!}</p> <a href="{{ url('/tour-details') }}/{{ $indPak->p_id }}" class="link-btn">View this Package</a>
+                    <p>{!! str_limit($indPak->description, $limit = 100, $end = '...') !!}</p> <a
+                        href="{{ url('/tour-details') }}/{{ $indPak->p_id }}" class="link-btn">View this Package</a>
                 </div>
                 @endforeach
                 {{-- <div class="tour_rela_1"> <img src="{{ asset('images/related2.png') }}" alt="" />

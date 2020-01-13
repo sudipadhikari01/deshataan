@@ -19,7 +19,7 @@ class AboutTourController extends Controller
     {
         return $this->middleware('auth:admin');
     }
-    
+
     public function index()
     {
         $packages = PackageType::all();
@@ -63,11 +63,11 @@ class AboutTourController extends Controller
         $aboutTour->event_date = $request->input('eventDate');
         $aboutTour->p_id = $request->input('packageType');
         $aboutTour->ip_id = $request->input('individualPackage');
+        $aboutTour->map = $request->input('tourLocationMap');
 
         $aboutTour->save();
 
         return redirect()->route('adminn.aboutTour.index')->with("status", "About Tour added successfully");
-
     }
 
     /**
@@ -93,7 +93,6 @@ class AboutTourController extends Controller
         $individualPkgs = IndividualPackage::all();
         $iaboutTour = AboutTour::find($id);
         return view('admin.editAboutTour')->with(['packages' => $packages, 'individualPkgs' => $individualPkgs, 'iaboutTour' => $iaboutTour]);
-
     }
 
     /**
@@ -119,6 +118,7 @@ class AboutTourController extends Controller
         $aboutTour->event_date = $request->input('eventDate');
         $aboutTour->p_id = $request->input('packageType');
         $aboutTour->ip_id = $request->input('individualPackage');
+        $aboutTour->map = $request->input('tourLocationMap');
 
         $aboutTour->save();
 
@@ -137,6 +137,5 @@ class AboutTourController extends Controller
         $iaboutTour->delete();
 
         return redirect()->route('adminn.aboutTour.index')->with("status", "About Tour deleted successfully");
-
     }
 }

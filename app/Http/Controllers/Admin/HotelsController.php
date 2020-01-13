@@ -18,7 +18,7 @@ class HotelsController extends Controller
     {
         return $this->middleware('auth:admin');
     }
-    
+
     public function index()
     {
         $hotels = Hotel::all();
@@ -50,12 +50,12 @@ class HotelsController extends Controller
         $hotels->price = $request->input('hotelPrice');
         $hotels->available_room = $request->input('availableRoom');
         $hotels->description = $request->input('hotelDesc');
+        $hotels->map = $request->input('hotelLocationMap');
         $hotels->amenities = $request->input('hotelAmenities');
 
         $hotels->save();
 
         return redirect()->route('adminn.hotels.index')->with('status', "Hotels Added Successfully");
-
     }
 
     /**
@@ -99,6 +99,7 @@ class HotelsController extends Controller
         $hotels->available_room = $request->input('availableRoom');
         $hotels->description = $request->input('hotelDesc');
         $hotels->amenities = $request->input('hotelAmenities');
+        $hotels->map = $request->input('hotelLocationMap');
 
         $hotels->save();
 

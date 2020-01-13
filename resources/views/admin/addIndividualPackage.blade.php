@@ -33,7 +33,7 @@
                                     <div class="input-group">
                                         {{-- <input type="text" class="form-control" id="description"
                                             placeholder="Enter package description" name="description" required> --}}
-                                            <textarea class="form-control" id="addIndividualPackageDescription"
+                                        <textarea class="form-control" id="addIndividualPackageDescription"
                                             placeholder="Enter Package description" name="description"
                                             required></textarea>
 
@@ -124,21 +124,33 @@
                             </div>
 
                             <div class="form-group row align-items-center">
+                                <label class="col-sm-3 col-form-label text-label">Package Location Map</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <textarea name="packageLocationMap" class="form-control" id="PackageLocationMap"
+                                            cols="30" rows="10" placeholder="Enter Package Location Map"></textarea>
+                                    </div>
+                                    <p class="form-text text-danger" id="demo7"></p>
+                                </div>
+                            </div>
+
+                            <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Package Type</label>
                                 <div class="col-sm-9">
                                     {{-- <select name="packageType" class="form-control" id="packageType" required> --}}
-                                        {{-- <option value="">Choose Package Type</option> --}}
-                                        Choose Package Type
-                                        <div class="checkbox form-group">
+                                    {{-- <option value="">Choose Package Type</option> --}}
+                                    Choose Package Type
+                                    <div class="checkbox form-group">
                                         @foreach ($packages as $package)
-                                            <label class="checkbox-inline"> 
-                                                <input type="checkbox" name="packageType[]" value="{{$package->p_id}}" id="packageType" > &nbsp; {{$package->p_name}}  &nbsp;
-                                            </label>
-                                            {{-- <option value="{{$package->p_id}}">{{$package->p_name}}</option> --}}
-                                            @endforeach
-                                        </div>
-                                        <p class="form-text text-danger" id="demo8"></p>
-                                        {{-- </select> --}}
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="packageType[]" value="{{$package->p_id}}"
+                                                id="packageType"> &nbsp; {{$package->p_name}} &nbsp;
+                                        </label>
+                                        {{-- <option value="{{$package->p_id}}">{{$package->p_name}}</option> --}}
+                                        @endforeach
+                                    </div>
+                                    <p class="form-text text-danger" id="demo8"></p>
+                                    {{-- </select> --}}
 
 
 

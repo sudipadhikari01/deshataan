@@ -23,9 +23,8 @@ use App\Http\Controllers\PagesController;
                                 <label class="col-sm-3 col-form-label text-label">Places Covered</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="placesCovered"
-                                             name="placesCovered" required
-                                            value="{{$iaboutTour->places_covered}}">
+                                        <input type="text" class="form-control" id="placesCovered" name="placesCovered"
+                                            required value="{{$iaboutTour->places_covered}}">
                                     </div>
                                     <p class="form-text text-danger" id="demo1"></p>
                                 </div>
@@ -35,8 +34,8 @@ use App\Http\Controllers\PagesController;
                                 <div class="col-sm-9">
                                     <div class="input-group">
                                         <textarea class="form-control" id="tourinclusions"
-                                                placeholder="Enter inclusions" name="tourinclusionsedit"
-                                                required>{{$iaboutTour->inclusions}}</textarea>
+                                            placeholder="Enter inclusions" name="tourinclusionsedit"
+                                            required>{{$iaboutTour->inclusions}}</textarea>
                                     </div>
                                     <p class="form-text text-danger" id="demo2"></p>
                                 </div>
@@ -46,7 +45,7 @@ use App\Http\Controllers\PagesController;
                                 <label class="col-sm-3 col-form-label text-label">Exclusions</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                            <textarea class="form-control" id="tourexclusionsedit"
+                                        <textarea class="form-control" id="tourexclusionsedit"
                                             placeholder="Enter exclusions" name="exclusions"
                                             required>{{$iaboutTour->exclusions}}</textarea>
                                     </div>
@@ -62,9 +61,20 @@ use App\Http\Controllers\PagesController;
                                 <label class="col-sm-3 col-form-label text-label">Event Date</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="date" class="form-control" id="datePicker1"
-                                            name="eventDate" required
-                                            value="{{$iaboutTour->event_date}}">
+                                        <input type="date" class="form-control" id="datePicker1" name="eventDate"
+                                            required value="{{$iaboutTour->event_date}}">
+                                    </div>
+                                    <p class="form-text text-danger" id="demo4"></p>
+                                </div>
+                            </div>
+
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 col-form-label text-label">Event Date</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <textarea name="tourLocationMap" class="form-control" id="tourLocationMap"
+                                            cols="30" rows="10"
+                                            placeholder="Enter tour Location Map">{{$iaboutTour->map}}</textarea>
                                     </div>
                                     <p class="form-text text-danger" id="demo4"></p>
                                 </div>
@@ -79,9 +89,10 @@ use App\Http\Controllers\PagesController;
                                 <div class="col-sm-9">
                                     <select name="packageType" class="form-control" id="packageType" required>
                                         <option value="">Choose Package Type</option>
-                                            @foreach ($packages as $package)
-                                                <option value="{{$package->p_id}}" @if($package->p_id == $iaboutTour->p_id) {{'selected'}} @endif>{{$package->p_name}}</option>
-                                            @endforeach
+                                        @foreach ($packages as $package)
+                                        <option value="{{$package->p_id}}" @if($package->p_id == $iaboutTour->p_id)
+                                            {{'selected'}} @endif>{{$package->p_name}}</option>
+                                        @endforeach
 
 
                                     </select>
@@ -93,12 +104,14 @@ use App\Http\Controllers\PagesController;
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Individual Package</label>
                                 <div class="col-sm-9">
-                                    <select name="individualPackage" class="form-control" id="individualPackage" required>
+                                    <select name="individualPackage" class="form-control" id="individualPackage"
+                                        required>
                                         <option value="">Choose Individual Package Type</option>
-                                            @foreach ($individualPkgs as $individualPkg)
-                                                <option value="{{$individualPkg->p_id}}" @if($individualPkg->p_id == $iaboutTour->ip_id ) {{'selected'}} @endif>
-                                                    {{$individualPkg->title}}</option>
-                                            @endforeach
+                                        @foreach ($individualPkgs as $individualPkg)
+                                        <option value="{{$individualPkg->p_id}}" @if($individualPkg->p_id ==
+                                            $iaboutTour->ip_id ) {{'selected'}} @endif>
+                                            {{$individualPkg->title}}</option>
+                                        @endforeach
 
 
                                     </select>

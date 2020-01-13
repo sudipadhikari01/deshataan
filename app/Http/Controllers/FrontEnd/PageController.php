@@ -9,6 +9,8 @@ use App\Itinerary as Itin;
 use App\PackageType as Pkg;
 use App\PhotoGallery as Pg;
 use App\HotelPhotoGallery as Hpg;
+use App\HotelSpecialFeatures as HSF;
+use App\HotelRoomAvailabilities as HRA;
 use Illuminate\Support\Facades\DB;
 
 
@@ -63,14 +65,13 @@ class PageController extends Controller
         } catch (\Throwable $th) {
             echo $th;
         }
-        
+
         try {
-            $ipkgs = DB::select('SELECT * FROM `packages` pk WHERE json_search(pk.package_type,"one","'.$id.'") is not null');
+            $ipkgs = DB::select('SELECT * FROM `packages` pk WHERE json_search(pk.package_type,"one","' . $id . '") is not null');
             return view('frontend.packages.single-package', compact('ipkgs', 'pkg', 'pkgs'));
         } catch (\Throwable $th) {
             return view('frontend.packages.single-package', compact('pkg', 'pkgs'));
         }
-       
     }
 
     public function tour_details($id) // single pkg detail
@@ -81,7 +82,7 @@ class PageController extends Controller
             $visit = Ipkgs::find($id)->value('visit');
             Ipkgs::where('p_id', $id)->update(array('visit' => $visit + 1));
         } catch (\Throwable $th) {
-               echo $th;             
+            echo $th;
         }
         $sipkg = Ipkgs::find($id);
         $spkg = Pkg::find($sipkg->package_type);
@@ -90,7 +91,7 @@ class PageController extends Controller
         $individualPackages = Ipkgs::orderBy('visit', 'desc')->get();
         // dd($sipkg);
         // return $it->itinerary;
-        return view('frontend.tour-details', compact('pkgs', 'sipkg', 'spkg', 'pg', 'it','individualPackages'));
+        return view('frontend.tour-details', compact('pkgs', 'sipkg', 'spkg', 'pg', 'it', 'individualPackages'));
     }
 
     public static function showHotelName($id)
@@ -142,10 +143,14 @@ class PageController extends Controller
         $pkgs = $this->pkgs;
         $hotel = Hotel::find($id);
         $hotelPhotoGallery = Hpg::where('hotel_title_id', $id)->get();
-        // dd($hotelPhotoGallery);
+        $hotelFeatures = HSF::where('hotel_title_id', $id)->get();
+        $hotelRoomAvail = HRA::where('hotel_type_id', $id)->get();
+        // echo "<pre>";
+        // print_r($hotelRoomAvail);
+        // die;
         return view(
             'frontend.hotels.hotel-details',
-            compact('pkgs', 'hotel','hotelPhotoGallery')
+            compact('pkgs', 'hotel', 'hotelPhotoGallery', 'hotelFeatures', 'hotelRoomAvail')
         );
     }
 

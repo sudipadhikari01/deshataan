@@ -18,26 +18,26 @@
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" placeholder="Package Type"
                                         name="packageType" id="packageType" max="100" required>
-                                    
+
                                     <p class="form-text text-danger" id="demo"></p>
                                 </div>
-                                
+
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label text-label">Package Description *</label>
                                 <div class="col-sm-9">
                                     {{-- <input type="text" class="form-control" placeholder="package description"
                                         name="packageDesc" id="packageDesc" max="300" required> --}}
-                                        <textarea class="form-control" id="packageDesc"
-                                            placeholder="Enter Package description" name="packageDesc"
-                                            required></textarea>
-                                        <p class="form-text text-danger" id="demo1"></p>
-                                </div> 
+                                    <textarea class="form-control" id="packageDesc"
+                                        placeholder="Enter Package description" name="packageDesc" required></textarea>
+                                    <p class="form-text text-danger" id="demo1"></p>
+                                </div>
                             </div>
 
                             <div class="form-group row">
                                 <div class="col-sm-12 text-right">
-                                    <button type="submit" class="btn btn-primary btn-form" value="Add" id="add" onclick="pkgValidateForm()">Add</button> 
+                                    <button type="submit" class="btn btn-primary btn-form" value="Add" id="add"
+                                        onclick="pkgValidateForm()">Add</button>
                                 </div>
                             </div>
                         </form>

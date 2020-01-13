@@ -94,6 +94,17 @@
                                 </div>
                             </div>
 
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 col-form-label text-label">Hotel Location Map</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <textarea name="hotelLocationMap" class="form-control" id="hotelLocationMap"
+                                            cols="30" rows="10" placeholder="Enter hotel Location Map"></textarea>
+                                    </div>
+                                    <p class="form-text text-danger" id="demo7"></p>
+                                </div>
+                            </div>
+
 
 
                             <input type="submit" class="btn btn-success " value="Add" name="add"

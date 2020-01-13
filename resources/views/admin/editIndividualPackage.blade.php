@@ -34,7 +34,7 @@
                                     <div class="input-group">
                                         {{-- <input type="text" class="form-control" id="description"
                                             value="" name="description" required> --}}
-                                            <textarea class="form-control" id="addIndividualPackageDescription"
+                                        <textarea class="form-control" id="addIndividualPackageDescription"
                                             placeholder="Enter Package description" name="description"
                                             required>{{$individualPkg->description}}</textarea>
                                     </div>
@@ -115,32 +115,43 @@
                                     <p class="form-text text-danger" id="demo7"></p>
                                 </div>
                             </div>
-                                @php
-                                    $checkedPackages = json_decode($individualPkg->package_type);
-                                @endphp
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 col-form-label text-label">Package Location Map</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <textarea name="packageLocationMap" class="form-control" id="packageLocationMap"
+                                            cols="30" rows="10"
+                                            placeholder="Enter Package Location Map">{{$individualPkg->map}}</textarea>
+                                    </div>
+                                    <p class="form-text text-danger" id="demo7"></p>
+                                </div>
+                            </div>
+                            @php
+                            $checkedPackages = json_decode($individualPkg->package_type);
+                            @endphp
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Package Type</label>
                                 <div class="col-sm-9">
                                     <div class="checkbox form-group">
                                         @foreach ($packages as $package)
-                                            <label class="checkbox-inline"> 
-                                                <input type="checkbox" name="packageType[]" value="{{$package->p_id}}" id="packageType" 
-                                                @if(in_array($package->p_id,$checkedPackages)) 
-                                                checked=checked @endif
-                                                >
-                                                 &nbsp; {{$package->p_name}}  &nbsp;
-                                            </label>
-                                            {{-- <option value="{{$package->p_id}}">{{$package->p_name}}</option> --}}
-                                            @endforeach
-                                        </div>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="packageType[]" value="{{$package->p_id}}"
+                                                id="packageType" @if(in_array($package->p_id,$checkedPackages))
+                                            checked=checked @endif
+                                            >
+                                            &nbsp; {{$package->p_name}} &nbsp;
+                                        </label>
+                                        {{-- <option value="{{$package->p_id}}">{{$package->p_name}}</option> --}}
+                                        @endforeach
+                                    </div>
                                     {{-- <select name="packageType" class="form-control" id="packageType" required>
                                         <option value="">Choose Package Type</option>
                                         @foreach ($packages as $package)
                                         <option value="{{$package->p_id}}" @if($package->p_id ==
-                                            $individualPkg->package_type) {{ 'selected' }} @endif>
-                                            {{$package->p_name}}
-                                        </option>
-                                        @endforeach
+                                    $individualPkg->package_type) {{ 'selected' }} @endif>
+                                    {{$package->p_name}}
+                                    </option>
+                                    @endforeach
 
 
 
