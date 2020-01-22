@@ -74,10 +74,13 @@ Route::prefix('/adminn')
             Route::resource('hotel-gallery', 'HotelsPhotoGalleryController');
             Route::resource('roomavailabilities', 'HotelRoomAvailabilitiesController');
             Route::resource('testimonials', 'TestimonialController');
+            Route::resource('pageInfo', 'PageInfoController');
+            Route::resource('tourtips', 'TourTipController');
+            Route::resource('webInfo', 'WebsiteInfoController');
             Route::get('/home', 'HomeController@index')->name('index');
 
             //using admin auth
-            Route::namespace ('Auth')
+            Route::namespace('Auth')
                 ->group(
                     function () {
                         //Login Routes
@@ -130,4 +133,4 @@ Route::get('/search-view', function () {
 
 //contact page route
 Route::get('/contact', 'ContactController@index')->name('contact');
-Route::post('/sendEmail','ContactController@sendEmail')->name('sendEmail');
+Route::post('/sendEmail', 'ContactController@sendEmail')->name('sendEmail');
