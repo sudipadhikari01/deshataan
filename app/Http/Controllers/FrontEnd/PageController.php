@@ -31,6 +31,8 @@ class PageController extends Controller
         $pkgs = $this->pkgs;
         $ipkgs = $this->ipkgs;
         $packages = Pkg::all();
+
+
         try {
             $topPackages = Pkg::orderBy('visit_count', 'desc')->take(5)->get();
         } catch (\Throwable $th) {

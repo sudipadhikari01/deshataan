@@ -64,10 +64,10 @@ use App\Http\Controllers\PagesController;
                                 <thead>
                                     <tr>
                                         <th>SN</th>
-                                        <th>Name/Title</th>
-                                        <th>Slug</th>
+                                        <th>Page Name</th>
+                                        <th>Page Slug</th>
                                         <th>Description</th>
-                                        <th>Image</th>
+                                        <th>Page Banner Image</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>

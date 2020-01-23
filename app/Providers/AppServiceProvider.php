@@ -11,6 +11,9 @@ use App\Itinerary as Itin;
 use App\PackageType as Pkg;
 use App\PhotoGallery as Pg;
 use App\Testimonial as Testimonial;
+use App\TourTip as TIP;
+use App\WebsiteInfo as WebInfo;
+use App\PageInfo as PageInfo;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -45,22 +48,36 @@ class AppServiceProvider extends ServiceProvider
             $testimonials = array();
         }
         try {
-            $topPackages = Pkg::orderBy('visit_count','desc')->take(5)->get();
+            $topPackages = Pkg::orderBy('visit_count', 'desc')->take(5)->get();
         } catch (\Throwable $th) {
             $topPackages = $packages;
         }
         try {
-            $individualPackages = Ipkgs::orderBy('visit','desc')->get();
+            $individualPackages = Ipkgs::orderBy('visit', 'desc')->get();
         } catch (\Throwable $th) {
             $individualPackages = array();
-        } 
-        
-        // $facebook_url = '';
-        // $twitter_url = '';
-        // $linkedin_url = '';
-        // $youtube_url = '';
-        // $hotelList = Hotel::all();
-        View::share(['individualPackages' => $individualPackages, 'topPackages' => $topPackages,'allPackages'=>$packages,'testimonials'=> $testimonials  ]);
+        }
+
+        try {
+            $tips = TIP::all();
+        } catch (\Throwable $th) {
+            $tips = array();
+        }
+
+        try {
+            $pageInfo = PageInfo::all();
+        } catch (\Throwable $th) {
+            $pageInfo = array();
+        }
+
+        try {
+            $webInfo = WebInfo::first();
+        } catch (\Throwable $th) {
+            $webInfo = array();
+        }
+        // dump($webInfo);
+        // die;
+        View::share(['individualPackages' => $individualPackages, 'topPackages' => $topPackages, 'allPackages' => $packages, 'testimonials' => $testimonials, 'tips' => $tips, 'pageInfo' => $pageInfo, 'webInfo' => $webInfo]);
         // View::share('topPackages', $topPackages);
         // View::share('allPackages', $packages);
         // dd($packages);

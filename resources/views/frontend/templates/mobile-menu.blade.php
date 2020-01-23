@@ -2,7 +2,13 @@
     <div class="ed-mob-menu-con">
         <div class="ed-mm-left">
             <div class="wed-logo">
-                <a href="{{route('frontend.home')}}"><img src="{{asset('images/logo.png') }}" alt="" />
+                <a href="{{route('frontend.home')}}">
+                    @if($webInfo->website_logo)
+                    <img src="{{ asset('storage/websiteInfo').'/'.$webInfo->website_logo}}"
+                        alt="{{$webInfo->website_title}}" />
+                    @else
+                    <img src="{{asset('images/logo.png') }}" alt="Deshataan" />
+                    @endif
                 </a>
             </div>
         </div>

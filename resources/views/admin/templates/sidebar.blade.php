@@ -43,17 +43,31 @@ use App\Http\Controllers\Admin\TestimonialController as Testimonial;
                 </ul>
             </li>
             <li class="mega-menu mega-menu-sm"><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                <i class="mdi mdi-page-layout-body"></i><span class="nav-text">Testimonial</span><span
-                    class="badge badge-success nav-badge">{{Testimonial::count()}}</span></a>
-            <ul aria-expanded="false">
-                <li><a href="{{url("/adminn/testimonials")}}">Add Testimonial</a></li>
-                {{-- <li><a href="{{url("adminn/hotel-gallery")}}">Add Hotels Photo Gallery</a></li>
-                <li><a href="{{url("/adminn/hotel-features")}}">Add Features</a></li>
-                <li><a href="{{url("adminn/roomavailabilities")}}">Add Room & Availabilities</a></li> --}}
+                    <i class="mdi mdi-page-layout-body"></i><span class="nav-text">Testimonial</span><span
+                        class="badge badge-success nav-badge">{{Testimonial::count()}}</span></a>
+                <ul aria-expanded="false">
+                    <li><a href="{{url("/adminn/testimonials")}}">Add Testimonial</a></li>
+                    {{-- <li><a href="{{url("adminn/hotel-gallery")}}">Add Hotels Photo Gallery</a>
+            </li>
+            <li><a href="{{url("/adminn/hotel-features")}}">Add Features</a></li>
+            <li><a href="{{url("adminn/roomavailabilities")}}">Add Room & Availabilities</a></li> --}}
 
-            </ul>
+        </ul>
         </li>
-            {{-- <li class="nav-label">Apps</li>
+        <li class="mega-menu mega-menu-sm"><a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                <i class="mdi mdi-page-layout-body"></i><span class="nav-text">Miscelleneous</span><span
+                    class="badge badge-success nav-badge"></span></a>
+            <ul aria-expanded="false">
+                <li><a href="{{url("/adminn/pageInfo")}}">Add Page Info</a></li>
+                <li><a href="{{url("adminn/tourtips")}}">Add Tour Tips Info</a>
+                </li>
+                <li><a href="{{url("/adminn/webInfo")}}">Add Website Info</a></li>
+                {{-- <li><a href="{{url("adminn/roomavailabilities")}}">Add Room & Availabilities</a>
+        </li> --}}
+
+        </ul>
+        </li>
+        {{-- <li class="nav-label">Apps</li>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="mdi mdi-email-outline"></i> <span class="nav-text">Email</span><span
                         class="badge bg-lgreen text-white nav-badge">০3</span></a>
@@ -66,7 +80,7 @@ use App\Http\Controllers\Admin\TestimonialController as Testimonial;
                     </li>
                 </ul>
             </li> --}}
-            {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+        {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="mdi mdi-application"></i><span class="nav-text">Apps</span> <span
                         class="badge badge-info nav-badge">05</span></a>
                 <ul aria-expanded="false">
@@ -78,7 +92,7 @@ use App\Http\Controllers\Admin\TestimonialController as Testimonial;
                     </li>
                 </ul>
             </li> --}}
-            {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-ticket"></i><span
+        {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-ticket"></i><span
                         class="nav-text">Ticket</span> <span class="badge bg-lgreen text-white nav-badge">02</span></a>
                 <ul aria-expanded="false">
                     <li><a href="./support-ticket.html">Support Ticket</a>
@@ -87,7 +101,7 @@ use App\Http\Controllers\Admin\TestimonialController as Testimonial;
                     </li>
                 </ul>
             </li> --}}
-            {{-- <li class="mega-menu mega-menu-lg"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+        {{-- <li class="mega-menu mega-menu-lg"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="mdi mdi-chart-bar"></i> <span class="nav-text">Charts</span> <span
                         class="badge badge-primary nav-badge">19</span></a>
                 <ul aria-expanded="false">
@@ -133,8 +147,8 @@ use App\Http\Controllers\Admin\TestimonialController as Testimonial;
                                 </li> -->
                 </ul>
             </li> --}}
-            {{-- <li class="nav-label">UI Components</li> --}}
-            {{-- <li class="mega-menu mega-menu-md"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+        {{-- <li class="nav-label">UI Components</li> --}}
+        {{-- <li class="mega-menu mega-menu-md"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="mdi mdi-television-guide"></i><span class="nav-text">UI </span> <span
                         class="badge badge-danger nav-badge">19</span></a>
                 <ul aria-expanded="false">
@@ -178,7 +192,7 @@ use App\Http\Controllers\Admin\TestimonialController as Testimonial;
                     </li>
                 </ul>
             </li> --}}
-            {{-- <li class="mega-menu mega-menu-xl"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+        {{-- <li class="mega-menu mega-menu-xl"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="mdi mdi-collage"></i><span class="nav-text">Components</span> <span
                         class="badge bg-lgreen text-white nav-badge">39</span></a>
                 <ul aria-expanded="false">
@@ -308,7 +322,7 @@ use App\Http\Controllers\Admin\TestimonialController as Testimonial;
                                 </li> -->
                 </ul>
             </li> --}}
-            {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-widgets"></i><span
+        {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-widgets"></i><span
                         class="nav-text">Widget</span> <span class="badge bg-dpink text-white nav-badge">03</span></a>
                 <ul aria-expanded="false">
                     <li><a href="widget-basic-card.html">Stats Widget</a>
@@ -319,8 +333,8 @@ use App\Http\Controllers\Admin\TestimonialController as Testimonial;
                     </li>
                 </ul>
             </li> --}}
-            {{-- <li class="nav-label">Forms</li> --}}
-            {{-- <li class="mega-menu mega-menu-lg"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+        {{-- <li class="nav-label">Forms</li> --}}
+        {{-- <li class="mega-menu mega-menu-lg"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="mdi mdi-gradient"></i><span class="nav-text">Forms</span> <span
                         class="badge badge-info nav-badge">28</span></a>
                 <ul aria-expanded="false">
@@ -388,8 +402,8 @@ use App\Http\Controllers\Admin\TestimonialController as Testimonial;
                                 </li> -->
                 </ul>
             </li> --}}
-            {{-- <li class="nav-label">Table</li> --}}
-            {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-table"></i><span
+        {{-- <li class="nav-label">Table</li> --}}
+        {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-table"></i><span
                         class="nav-text">Table</span> <span class="badge badge-primary nav-badge">13</span></a>
                 <ul aria-expanded="false">
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Bootstrap Table</a>
@@ -432,8 +446,8 @@ use App\Http\Controllers\Admin\TestimonialController as Testimonial;
                     </li>
                 </ul>
             </li> --}}
-            {{-- <li class="nav-label">Extra</li> --}}
-            {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+        {{-- <li class="nav-label">Extra</li> --}}
+        {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="mdi mdi-message-draw"></i><span class="nav-text">Invoice</span><span
                         class="badge badge-success nav-badge">03</span></a>
                 <ul aria-expanded="false">
@@ -445,7 +459,7 @@ use App\Http\Controllers\Admin\TestimonialController as Testimonial;
                     </li>
                 </ul>
             </li> --}}
-            {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+        {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="mdi mdi-book-open-page-variant"></i><span class="nav-text">Pages</span> <span
                         class="badge badge-info nav-badge">28</span></a>
                 <ul aria-expanded="false">

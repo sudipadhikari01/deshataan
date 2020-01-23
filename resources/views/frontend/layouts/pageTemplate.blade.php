@@ -51,18 +51,20 @@
                 <!-- TIPS BEFORE TRAVEL -->
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <h3>Tips Before Travel</h3>
-                    <div class="tips_left tips_left_1">
-                        <h5>Bring copies of your passport</h5>
-                        <p>Aliquam pretium id justo eget tristique. Aenean feugiat vestibulum blandit.</p>
+                    @foreach ($tips->slice(0, 3) as $tip)
+                    <div class="tips_left tips_left_{{$loop->index+1}}">
+                        <h5>{{$tip->tip_title}}</h5>
+                        <p>{{$tip->tip_description}}</p>
                     </div>
-                    <div class="tips_left tips_left_2">
+                    @endforeach
+                    {{-- <div class="tips_left tips_left_2">
                         <h5>Register with your embassy</h5>
                         <p>Mauris efficitur, ante sit amet rhoncus malesuada, orci justo sollicitudin.</p>
                     </div>
                     <div class="tips_left tips_left_3">
                         <h5>Always have local cash</h5>
                         <p>Donec et placerat ante. Etiam et velit in massa. </p>
-                    </div>
+                    </div> --}}
                 </div>
                 <!-- CUSTOMER TESTIMONIALS -->
                 <div class="col-md-8 col-sm-6 col-xs-12 testi-2">
@@ -71,63 +73,67 @@
                     {{-- @foreach ($testimonials as $testimonial)
                         <div class="testi">
                             <h4>{{ $testimonial->name }}</h4>
-                            <p>{!! str_limit($testimonial->testimonial, $limit = 200, $end = '...')  !!}</p>
-                            <address>{{ $testimonial->address }}</address>
-                        </div>
-                        
-                    @endforeach
-                    <a href="#" class="link-btn pull-right">more info</a> --}}
+                    <p>{!! str_limit($testimonial->testimonial, $limit = 200, $end = '...') !!}</p>
+                    <address>{{ $testimonial->address }}</address>
+                </div>
 
-                    <div class="container content">
-                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                            <!-- Indicators --> 
-                            
-                                <div class="carousel-inner"> 
-                                    @foreach ($testimonials as $key=>$testimonial)
-                                    @php
-                                        if ($key == 0)
-                                        {
-                                            $active ='active';  
-                                        }
-                                        else
-                                        {
-                                            $active = ''; 
-                                        }
-                                        
-                                    @endphp
-                                    <div class="item {{ $active }}">
-                                        <div class="row"> 
-                                            <div class="col-xs-9"> 
-                                                <div class="thumbnail adjust1">
-                                                    <div class="col-md-2 col-sm-2 col-xs-12"> 
-                                                        {{-- <img src="{{ asset('storage/photogallery').'/'.$testimonial->image }}" alt="{{ $testimonial->name }}'s Image"> --}}
-                                                        <img class="media-object img-rounded img-responsive" src="{{ asset('storage/photogallery').'/'.$testimonial->image }}"> 
-                                                    </div> 
-                                                    <div class="col-md-10 col-sm-10 col-xs-12"> 
-                                                        <div class="caption"> 
-                                                            {{-- <p class="text-info lead adjust2">Testimonials</p>  --}}
-                                                                {!! str_limit($testimonial->testimonial, $limit = 200, $end = '...')  !!}</p> 
-                                                                <blockquote class="adjust2"> 
-                                                                    <strong>{{ $testimonial->name }}</strong> 
-                                                                    <small>
-                                                                        <cite title="Source Title">{{ $testimonial->address }}</cite>
-                                                                    </small> 
-                                                                </blockquote> 
-                                                            </div> 
-                                                        </div> 
-                                                    </div> 
-                                                </div> 
-                                            </div> 
+                @endforeach
+                <a href="#" class="link-btn pull-right">more info</a> --}}
+
+                <div class="container content">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+
+                        <div class="carousel-inner">
+                            @foreach ($testimonials as $key=>$testimonial)
+                            @php
+                            if ($key == 0)
+                            {
+                            $active ='active';
+                            }
+                            else
+                            {
+                            $active = '';
+                            }
+
+                            @endphp
+                            <div class="item {{ $active }}">
+                                <div class="row">
+                                    <div class="col-xs-9">
+                                        <div class="thumbnail adjust1">
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                {{-- <img src="{{ asset('storage/photogallery').'/'.$testimonial->image }}"
+                                                alt="{{ $testimonial->name }}'s Image"> --}}
+                                                <img class="media-object img-rounded img-responsive"
+                                                    src="{{ asset('storage/photogallery').'/'.$testimonial->image }}">
+                                            </div>
+                                            <div class="col-md-10 col-sm-10 col-xs-12">
+                                                <div class="caption">
+                                                    {{-- <p class="text-info lead adjust2">Testimonials</p>  --}}
+                                                    {!! str_limit($testimonial->testimonial, $limit = 200, $end = '...')
+                                                    !!}</p>
+                                                    <blockquote class="adjust2">
+                                                        <strong>{{ $testimonial->name }}</strong>
+                                                        <small>
+                                                            <cite
+                                                                title="Source Title">{{ $testimonial->address }}</cite>
+                                                        </small>
+                                                    </blockquote>
+                                                </div>
+                                            </div>
                                         </div>
-                                    @endforeach
-                                    
-                                    </div> <!-- Controls --> 
-                                       
-                                    </div> 
+                                    </div>
                                 </div>
+                            </div>
+                            @endforeach
 
-                    <!-- ARRANGEMENTS & HELPS -->
-                    {{-- <h3>Arrangement & Helps</h3>
+                        </div> <!-- Controls -->
+
+                    </div>
+                </div>
+
+                <!-- ARRANGEMENTS & HELPS -->
+                {{-- <h3>Arrangement & Helps</h3>
                     <div class="arrange">
                         <ul>
                             <!-- LOCATION MANAGER -->
@@ -148,8 +154,8 @@
                             </li>
                         </ul>
                     </div> --}}
-                </div>
             </div>
+        </div>
         </div>
     </section>
     <!--====== FOOTER 1 ==========-->
@@ -162,25 +168,26 @@
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="disco">
                             <h3>{{ $item->discount }}%<span>OFF</span></h3>
-                            <h4>{{ $item->location }}</h4>
-                            <p>valid only {{ date('Y | M |d  D', strtotime($item->end_date))}}</p> <a href="{{ url('/tour-details') }}/{{ $item->p_id }}">Book Now</a>
-                        </div>
-                    </div>
-                    @endforeach
-                    
-                    <!-- FOOTER MOST POPULAR VACATIONS -->
-                    <div class="col-md-6 col-sm-12 col-xs-12 foot-spec footer_places">
-                        <h4><span>Most Popular</span> Vacations</h4>
-                        <ul>
-                            @foreach ($individualPackages as $item)
-                            <li><a href="{{ url('/tour-details') }}/{{ $item->p_id }}">{{ $item->title }}</a> </li>
-                            @endforeach
-                            
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <h4>{{ $item->location }}</h4>
+    <p>valid only {{ date('Y | M |d  D', strtotime($item->end_date))}}</p> <a
+        href="{{ url('/tour-details') }}/{{ $item->p_id }}">Book Now</a>
+    </div>
+    </div>
+    @endforeach
+
+    <!-- FOOTER MOST POPULAR VACATIONS -->
+    <div class="col-md-6 col-sm-12 col-xs-12 foot-spec footer_places">
+        <h4><span>Most Popular</span> Vacations</h4>
+        <ul>
+            @foreach ($individualPackages as $item)
+            <li><a href="{{ url('/tour-details') }}/{{ $item->p_id }}">{{ $item->title }}</a> </li>
+            @endforeach
+
+        </ul>
+    </div>
+    </div>
+    </div>
+    </div>
     </section> --}}
     <!--====== FOOTER 2 ==========-->
     <section>
@@ -192,15 +199,15 @@
                             <div class="row">
                                 <div class="col-sm-3 foot-spec foot-com">
                                     <h4><span>Holiday</span> Tour & Travels</h4>
-                                    <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide.
+                                    <p>{{$webInfo->website_description}}
                                     </p>
                                 </div>
                                 <div class="col-sm-3 foot-spec foot-com">
                                     <h4><span>Address</span> & Contact Info</h4>
-                                    <p>Lazimpat, Kathmandu, Nepal
+                                    <p>{{$webInfo->address}}
                                     </p>
                                     <p> <span class="strong">Phone: </span> <span
-                                            class="highlighted">+977-01-4444865</span> </p>
+                                            class="highlighted">{{$webInfo->contact_number}}</span> </p>
                                 </div>
                                 <div class="col-sm-3 col-md-3 foot-spec foot-com">
                                     <h4><span>SUPPORT</span> & HELP</h4>
@@ -219,15 +226,19 @@
                                 </div>
                                 <div class="col-sm-3 foot-social foot-spec foot-com">
                                     <h4><span>Follow</span> with us</h4>
-                                    <p>Join the thousands of other There are many variations of passages of Lorem Ipsum
-                                        available
+                                    <p>{{$webInfo->follow_us_information}}
                                     </p>
                                     <ul>
-                                        <li><a href="javascript:void()"><i class="fa fa-facebook" aria-hidden="true"></i></a> </li>
-                                        <li><a href="javascript:void()"><i class="fa fa-google-plus" aria-hidden="true"></i></a> </li>
-                                        <li><a href="javascript:void()"><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
-                                        <li><a href="javascript:void()"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </li>
-                                        <li><a href="javascript:void()"><i class="fa fa-youtube" aria-hidden="true"></i></a> </li>
+                                        <li><a href="{{$webInfo->facebook_url}}"><i class="fa fa-facebook"
+                                                    aria-hidden="true"></i></a> </li>
+                                        <li><a href="{{$webInfo->google_url}}"><i class="fa fa-google-plus"
+                                                    aria-hidden="true"></i></a> </li>
+                                        <li><a href="{{$webInfo->twitter_url}}"><i class="fa fa-twitter"
+                                                    aria-hidden="true"></i></a> </li>
+                                        <li><a href="{{$webInfo->instagram_url}}"><i class="fa fa-linkedin"
+                                                    aria-hidden="true"></i></a> </li>
+                                        <li><a href="{{$webInfo->youtube_url}}"><i class="fa fa-youtube"
+                                                    aria-hidden="true"></i></a> </li>
                                     </ul>
                                 </div>
                             </div>
@@ -252,6 +263,12 @@
     <script src="{{asset('js/wow.min.js') }}"></script>
     <script src="{{asset('js/materialize.min.js') }}"></script>
     <script src="{{asset('js/custom.js') }}"></script>
+
+    {{-- <script>
+        $(document).ready(function(){
+    $(".tips_left_1").css("background-image", "url({{ asset('storage/tourTips').'/'.$tips->image }})");
+    });
+    </script> --}}
 </body>
 
 </html>

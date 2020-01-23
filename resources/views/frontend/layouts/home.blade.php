@@ -11,7 +11,7 @@
     <div class="tourz-search">
         <div class="container">
             <div class="row">
-                <div class="tourz-search-1">
+                <div class="tourz-search-1" data-homepage="home">
                     <h1>Plan Your Travel Now!</h1>
                     <p>Experience the various exciting tour and travel packages and Make hotel reservations, find
                         vacation packages, search cheap hotels and events</p>
@@ -33,22 +33,22 @@
                     <div class="tourz-hom-ser">
                         <ul>
                             <li>
-                                <a href="booking-tour-package.html"
+                                <a href="Javascript:void(0);"
                                     class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp"
                                     data-wow-duration="0.5s"><img src="images/icon/2.png" alt=""> Tour</a>
                             </li>
                             <li>
-                                <a href="booking-flight.html"
+                                <a href="Javascript:void(0);"
                                     class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp"
                                     data-wow-duration="1s"><img src="images/icon/31.png" alt=""> Flight</a>
                             </li>
                             <li>
-                                <a href="booking-car-rentals.html"
+                                <a href="Javascript:void(0);"
                                     class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp"
                                     data-wow-duration="1.5s"><img src="images/icon/30.png" alt=""> Car Rentals</a>
                             </li>
                             <li>
-                                <a href="booking-hotel.html"
+                                <a href="Javascript:void(0);"
                                     class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp"
                                     data-wow-duration="2s"><img src="images/icon/1.png" alt=""> Hotel</a>
                             </li>
@@ -309,7 +309,7 @@
                                     </div>
                                     {{-- <div class="hot-page2-hom-pre-3"> <span>
                                             4.5
-                                        </span> 
+                                        </span>
                                         </div> --}}
                                 </a>
                             </li>
@@ -384,7 +384,6 @@
         </div>
     </div>
 </section>
-
 @endsection
 
 <!--========= Scripts ===========-->
@@ -393,6 +392,7 @@
 <script src="js/wow.min.js"></script>
 <script src="js/materialize.min.js"></script>
 <script src="js/custom.js"></script>
+
 </body>
 
 </html>

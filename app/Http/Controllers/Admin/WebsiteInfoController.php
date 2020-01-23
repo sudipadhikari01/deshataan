@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\PageInfo;
+use App\WebsiteInfo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,8 +15,8 @@ class WebsiteInfoController extends Controller
 
     public function index()
     {
-        $pages = PageInfo::all();
-        return view('admin.pageInfo.index')->with('pages', $pages);
+        $infos = WebsiteInfo::all();
+        return view('admin.websiteInfo.index')->with('infos', $infos);
     }
 
     /**
@@ -26,7 +26,7 @@ class WebsiteInfoController extends Controller
      */
     public function create()
     {
-        return view('admin.pageInfo.create');
+        return view('admin.websiteInfo.create');
     }
 
     /**
@@ -37,19 +37,57 @@ class WebsiteInfoController extends Controller
      */
     public function store(Request $request)
     {
-        // $hotels = new PageInfo();
-        // $hotels->title = $request->input('hotelTitle');
-        // $hotels->location = $request->input('hotelLocation');
-        // $hotels->contact = $request->input('hotelContact');
-        // $hotels->price = $request->input('hotelPrice');
-        // $hotels->available_room = $request->input('availableRoom');
-        // $hotels->description = $request->input('hotelDesc');
-        // $hotels->map = $request->input('hotelLocationMap');
-        // $hotels->amenities = $request->input('hotelAmenities');
+        $request->validate([
+            'website_name' => 'required',
+        ]);
+        // Logo Store
+        if ($request->hasFile('website_logo')) {
+            $filenameWithExt = $request->file('website_logo')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('website_logo')->getClientOriginalExtension();
+            $fileNameToStore_logo = $filename . '_' . time() . '.' . $extension;
+            $path = $request->file('website_logo')->storeAs('public/websiteInfo', $fileNameToStore_logo);
+        } else {
+            $fileNameToStore_logo = "noimage.jpg";
+        }
+        // FavIcon Store
+        if ($request->hasFile('website_favIcon')) {
+            $filenameWithExt = $request->file('website_favIcon')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('website_favIcon')->getClientOriginalExtension();
+            $fileNameToStore_favIcon = $filename . '_' . time() . '.' . $extension;
+            $path = $request->file('website_favIcon')->storeAs('public/websiteInfo', $fileNameToStore_favIcon);
+        } else {
+            $fileNameToStore_favIcon = "noimage.jpg";
+        }
+        // Default Website Image Store
+        if ($request->hasFile('website_default_image')) {
+            $filenameWithExt = $request->file('website_default_image')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('website_default_image')->getClientOriginalExtension();
+            $fileNameToStore_default_image = $filename . '_' . time() . '.' . $extension;
+            $path = $request->file('website_default_image')->storeAs('public/websiteInfo', $fileNameToStore_default_image);
+        } else {
+            $fileNameToStore_default_image = "noimage.jpg";
+        }
 
-        // $hotels->save();
-
-        // return redirect()->route('adminn.hotels.index')->with('status', "Hotels Added Successfully");
+        $websiteInfo = new WebsiteInfo();
+        $websiteInfo->website_name = $request->input('website_name');
+        $websiteInfo->website_description = $request->input('website_description');
+        $websiteInfo->website_logo = $fileNameToStore_logo;
+        $websiteInfo->website_favIcon = $fileNameToStore_favIcon;
+        $websiteInfo->website_default_image = $fileNameToStore_default_image;
+        $websiteInfo->address = $request->input('address');
+        $websiteInfo->contact_number = $request->input('contact_number');
+        $websiteInfo->contact_map = $request->input('contact_map');
+        $websiteInfo->facebook_url = $request->input('facebook_url');
+        $websiteInfo->google_url = $request->input('google_url');
+        $websiteInfo->twitter_url = $request->input('twitter_url');
+        $websiteInfo->instagram_url = $request->input('instagram_url');
+        $websiteInfo->youtube_url = $request->input('youtube_url');
+        $websiteInfo->follow_us_information = $request->input('follow_us_information');
+        $websiteInfo->save();
+        return redirect()->route('adminn.webInfo.index')->with('status', "Hotels Added Successfully");
     }
 
     /**
@@ -58,7 +96,7 @@ class WebsiteInfoController extends Controller
      * @param  \App\PageInfo  $pageInfo
      * @return \Illuminate\Http\Response
      */
-    public function show(PageInfo $pageInfo)
+    public function show($id)
     {
         //
     }
@@ -69,10 +107,10 @@ class WebsiteInfoController extends Controller
      * @param  \App\PageInfo  $pageInfo
      * @return \Illuminate\Http\Response
      */
-    public function edit(PageInfo $pageInfo)
+    public function edit($id)
     {
-        $editPageInfo = PageInfo::find($id);
-        return view('admin.pageInfo.editHotels')->compact('editPageInfo');
+        $websiteInfo = WebsiteInfo::find($id);
+        return view('admin.websiteInfo.edit')->with('websiteInfo', $websiteInfo);
     }
 
     /**
@@ -82,22 +120,56 @@ class WebsiteInfoController extends Controller
      * @param  \App\PageInfo  $pageInfo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PageInfo $pageInfo)
+    public function update(Request $request, $id)
     {
-        // $hotels = Hotel::find($id);
+        // echo "<pre>";
+        // print_r($request);
+        // die('inside update function');
+        $websiteInfo = WebsiteInfo::find($id);
+        $request->validate([
+            'website_name' => 'required',
+        ]);
+        // Logo Store
+        if ($request->hasFile('website_logo')) {
+            $filenameWithExt = $request->file('website_logo')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('website_logo')->getClientOriginalExtension();
+            $fileNameToStore_logo = $filename . '_' . time() . '.' . $extension;
+            $path = $request->file('website_logo')->storeAs('public/websiteInfo', $fileNameToStore_logo);
+            $websiteInfo->website_logo = $fileNameToStore_logo;
+        }
+        // FavIcon Store
+        if ($request->hasFile('website_favIcon')) {
+            $filenameWithExt = $request->file('website_favIcon')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('website_favIcon')->getClientOriginalExtension();
+            $fileNameToStore_favIcon = $filename . '_' . time() . '.' . $extension;
+            $path = $request->file('website_favIcon')->storeAs('public/websiteInfo', $fileNameToStore_favIcon);
+            $websiteInfo->website_favIcon = $fileNameToStore_favIcon;
+        }
+        // Default Website Image Store
+        if ($request->hasFile('website_default_image')) {
+            $filenameWithExt = $request->file('website_default_image')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('website_default_image')->getClientOriginalExtension();
+            $fileNameToStore_default_image = $filename . '_' . time() . '.' . $extension;
+            $path = $request->file('website_default_image')->storeAs('public/websiteInfo', $fileNameToStore_default_image);
+            $websiteInfo->website_default_image = $fileNameToStore_default_image;
+        }
 
-        // $hotels->title = $request->input('hotelTitle');
-        // $hotels->location = $request->input('hotelLocation');
-        // $hotels->contact = $request->input('hotelContact');
-        // $hotels->price = $request->input('hotelPrice');
-        // $hotels->available_room = $request->input('availableRoom');
-        // $hotels->description = $request->input('hotelDesc');
-        // $hotels->amenities = $request->input('hotelAmenities');
-        // $hotels->map = $request->input('hotelLocationMap');
-
-        // $hotels->save();
-
-        // return redirect()->route('adminn.hotels.index')->with('status', "Hotels Updated Successfully");
+        $websiteInfo->website_name = $request->input('website_name');
+        $websiteInfo->website_description = $request->input('website_description');
+        $websiteInfo->address = $request->input('address');
+        $websiteInfo->contact_number = $request->input('contact_number');
+        $websiteInfo->contact_map = $request->input('contact_map');
+        $websiteInfo->facebook_url = $request->input('facebook_url');
+        $websiteInfo->google_url = $request->input('google_url');
+        $websiteInfo->twitter_url = $request->input('twitter_url');
+        $websiteInfo->instagram_url = $request->input('instagram_url');
+        $websiteInfo->youtube_url = $request->input('youtube_url');
+        $websiteInfo->follow_us_information = $request->input('follow_us_information');
+        $websiteInfo->save();
+        return redirect()->route('adminn.webInfo.index')->with('status', "Details Updated Successfully");
     }
 
     /**
@@ -106,11 +178,11 @@ class WebsiteInfoController extends Controller
      * @param  \App\PageInfo  $pageInfo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PageInfo $pageInfo)
+    public function destroy($id)
     {
-        // $hotels = Hotel::find($id);
+        $websiteInfo = WebsiteInfo::find($id);
 
-        // $hotels->delete();
-        // return redirect()->route('adminn.hotels.index')->with('status', "Hotels Deleted Successfully");
+        $websiteInfo->delete();
+        return redirect()->route('adminn.webInfo.index')->with('status', "Website Information Deleted Successfully");
     }
 }

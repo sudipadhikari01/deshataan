@@ -3,7 +3,12 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="wed-logo">
-                    <a href="{{route('frontend.home')}}"><img src="{{ asset('images/logo.png') }}" alt="" />
+                    <a href="{{route('frontend.home')}}">
+                        @if($webInfo->website_logo)
+                        <img src="{{ asset('storage/websiteInfo').'/'.$webInfo->website_logo}}" alt="" />
+                        @else
+                        <img src="{{asset('images/logo.png') }}" alt="" />
+                        @endif
                     </a>
                 </div>
                 <div class="main-menu">
@@ -25,7 +30,8 @@
                                             </div>
                                         </div>
                                         <div class="mm1-com mm1-s2">
-                                            <p>Choose from the multiple packages that suits you most with your lifestyle</p>
+                                            <p>Choose from the multiple packages that suits you most with your lifestyle
+                                            </p>
                                             <a href="{{ url('/packages') }}" class="mm-r-m-btn">Read more</a>
                                         </div>
                                         <div class="mm1-com mm1-s3">
