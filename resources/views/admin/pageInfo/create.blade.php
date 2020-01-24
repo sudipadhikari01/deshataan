@@ -13,6 +13,8 @@
                 <div class="card forms-card">
                     <div class="card-body">
                         <h4 class="card-title mb-4">Add Page</h4>
+                        <h5>Use Slug <kbd> home
+                            </kbd><kbd>package</kbd><kbd>hotels</kbd><kbd>sightSeeing</kbd><kbd>branding</kbd></h5>
                         <div class="basic-form">
 
                             <div class="form-group row align-items-center">

@@ -11,7 +11,7 @@
     <div class="tourz-search">
         <div class="container">
             <div class="row">
-                <div class="tourz-search-1" data-homepage="home">
+                <div class="tourz-search-1">
                     <h1>Plan Your Travel Now!</h1>
                     <p>Experience the various exciting tour and travel packages and Make hotel reservations, find
                         vacation packages, search cheap hotels and events</p>
@@ -65,7 +65,7 @@
     <div class="rows pad-bot-redu tb-space">
         <div class="container">
             <!-- TITLE & DESCRIPTION -->
-            <div class="spe-title">
+            <div class="spe-title packages">
                 <h2>Top <span>Tour Packages</span></h2>
                 <div class="title-line">
                     <div class="tl-1"></div>
@@ -135,8 +135,8 @@
     <div class="rows tb-space pad-top-o pad-bot-redu">
         <div class="container">
             <!-- TITLE & DESCRIPTION -->
-            <div class="spe-title">
-                <h2>Hotels <span>booking open now! </span> </h2>
+            <div class="spe-title hotels">
+                <h2>Top <span> Hotels booking open now! </span> </h2>
                 <div class="title-line">
                     <div class="tl-1"></div>
                     <div class="tl-2"></div>
@@ -273,7 +273,7 @@
     <div class="ho-popu tb-space pad-bot-redu">
         <div class="rows container">
             <!-- TITLE & DESCRIPTION -->
-            <div class="spe-title">
+            <div class="spe-title branding">
                 <h2>Top <span>Branding</span> for this month</h2>
                 <div class="title-line">
                     <div class="tl-1"></div>
@@ -393,6 +393,42 @@
 <script src="js/materialize.min.js"></script>
 <script src="js/custom.js"></script>
 
+
+<script>
+    $(document).ready(function () {
+        pageInfos = <?php echo ($pageInfo); ?>;
+        console.log(pageInfos);
+        console.log(pageInfos[0].id)
+        // $('.tourz-search-1')
+        pageInfos.forEach(pageDetails);
+
+
+        function pageDetails(item){
+            if(item.page_slug == 'home'){
+                $('.tourz-search-1 > h1').html(item.page_name);
+                $('.tourz-search-1 > p').html(item.page_description);
+            }
+            if(item.page_slug == 'package'){
+                $('.packages > h2>span').html(item.page_name);
+                $('.packages > p').html(item.page_description);
+            }
+            if(item.page_slug == 'hotels'){
+                $('.hotels > h2>span').html(item.page_name);
+                $('.hotels > p').html(item.page_description);
+            }
+            if(item.page_slug == 'sightSeeing'){
+            $('.sightSeeing > h2>span').html(item.page_name);
+            $('.sightSeeing > p').html(item.page_description);
+            }
+            if(item.page_slug == 'branding'){
+            $('.branding > h2>span').html(item.page_name);
+            $('.branding > p').html(item.page_description);
+            }
+
+
+        }
+    });
+</script>
 </body>
 
 </html>

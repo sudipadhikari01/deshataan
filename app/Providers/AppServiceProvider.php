@@ -66,6 +66,8 @@ class AppServiceProvider extends ServiceProvider
 
         try {
             $pageInfo = PageInfo::all();
+            // echo "<pre>";
+            // var_dump($pageInfo);
         } catch (\Throwable $th) {
             $pageInfo = array();
         }
