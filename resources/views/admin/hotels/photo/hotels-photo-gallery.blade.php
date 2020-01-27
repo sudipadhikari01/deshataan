@@ -71,7 +71,7 @@ use App\Http\Controllers\PagesController;
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                              
+
                                 @foreach ($hotelPhotos as $hotelPhoto)
 
                                 <tbody>
@@ -79,13 +79,15 @@ use App\Http\Controllers\PagesController;
                                         <th>{{ $loop->iteration }}</th>
                                         <td>{{$hotelPhoto->title}}</td>
                                         <td>{{$hotelPhoto->description}}</td>
-                                        <td><img src="{{ asset('storage/photogallery').'/'.$hotelPhoto->name }}" alt="{{ $hotelPhoto->name}}'s Image" class="img-responsive" style="height:auto;width:50%"</td>
-                                        <td>{{PagesController::showHotelName($hotelPhoto->hotel_title_id)}}</td>
-                                        <td><span><a href="{{url("/adminn/editHotelsPhoto/$hotelPhoto->id")}}"
+                                        <td><img src="{{ asset('storage/photogallery').'/'.$hotelPhoto->name }}"
+                                                alt="{{ $hotelPhoto->name}}'s Image" class="img-responsive"
+                                                style="height:auto;width:50%" </td>
+                                                <td>{{PagesController::showHotelName($hotelPhoto->hotel_title_id)}}</td>
+                                        <td><span><a href="{{url("/adminn/hotel-gallery/$hotelPhoto->id/edit")}}"
                                                     class="mr-4" data-toggle="tooltip" data-placement="top"
                                                     title="Edit"><i class="fas fa-edit"></i></a>
-                                                
-                                                     <a href="javascript:void();" class="mr-4" data-toggle="tooltip"
+
+                                                <a href="javascript:void();" class="mr-4" data-toggle="tooltip"
                                                     data-placement="top" title="Delete"
                                                     onclick="event.preventDefault();document.querySelector('#item-delete{{$hotelPhoto->id}}').submit();">
                                                     <i class="fa fa-trash color-danger" aria-hidden="true"
@@ -98,7 +100,7 @@ use App\Http\Controllers\PagesController;
                                                     @csrf
                                                     <input type="hidden" name="_method" value="DELETE">
                                                 </form>
-                                                        
+
                                             </span>
                                         </td>
                                     </tr>
