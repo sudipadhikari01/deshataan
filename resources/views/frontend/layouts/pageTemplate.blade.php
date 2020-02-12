@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('css/mob.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
 </head>
 
 <body>
@@ -269,6 +270,11 @@
     $(".tips_left_1").css("background-image", "url({{ asset('storage/tourTips').'/'.$tips->image }})");
     });
     </script> --}}
+    <script type="text/javascript">
+        $("img").lazyload({
+    	    effect : "fadeIn"
+    	});
+    </script>
 </body>
 
 </html>

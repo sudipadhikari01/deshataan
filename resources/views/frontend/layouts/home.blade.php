@@ -91,7 +91,7 @@
                     <div class="v_place_img">
                         @if( !empty(PageController::getImage($ip->p_id)) )
                         <img style="width:700px; height:200px"
-                            src="{{ asset('storage/pkgGall').'/'.PageController::getImage($ip->p_id)->image_name }}"
+                            data-original="{{ asset('storage/pkgGall').'/'.PageController::getImage($ip->p_id)->image_name }}"
                             alt="Tour Booking" title="Tour Booking" class="img-responsive" />
                         @else
                         <img src="https://via.placeholder.com/350x200" alt="Tour Booking" title="Tour Booking" />
