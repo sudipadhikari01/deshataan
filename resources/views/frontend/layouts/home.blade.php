@@ -92,7 +92,7 @@
                         @if( !empty(PageController::getImage($ip->p_id)) )
                         <img style="width:700px; height:200px"
                             data-original="{{ asset('storage/pkgGall').'/'.PageController::getImage($ip->p_id)->image_name }}"
-                            alt="Tour Booking" title="Tour Booking" class="img-responsive" />
+                            alt="Tour Booking" title="Tour Booking" class="img-responsive lazyload" />
                         @else
                         <img src="https://via.placeholder.com/350x200" alt="Tour Booking" title="Tour Booking" />
                         @endif
@@ -386,48 +386,6 @@
 </section>
 
 <!--========= Scripts ===========-->
-<script src="js/jquery-latest.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/materialize.min.js"></script>
-<script src="js/custom.js"></script>
 
 
-<script>
-    $(document).ready(function () {
-        pageInfos = {{$pageInfo}};
-        // $('.tourz-search-1')
-        pageInfos.forEach(pageDetails);
-
-
-        function pageDetails(item){
-            if(item.page_slug == 'home'){
-                $('.tourz-search-1 > h1').html(item.page_name);
-                $('.tourz-search-1 > p').html(item.page_description);
-            }
-            if(item.page_slug == 'package'){
-                $('.packages > h2>span').html(item.page_name);
-                $('.packages > p').html(item.page_description);
-            }
-            if(item.page_slug == 'hotels'){
-                $('.hotels > h2>span').html(item.page_name);
-                $('.hotels > p').html(item.page_description);
-            }
-            if(item.page_slug == 'sightSeeing'){
-            $('.sightSeeing > h2>span').html(item.page_name);
-            $('.sightSeeing > p').html(item.page_description);
-            }
-            if(item.page_slug == 'branding'){
-            $('.branding > h2>span').html(item.page_name);
-            $('.branding > p').html(item.page_description);
-            }
-
-
-        }
-    });
-</script>
 @endsection
-
-</body>
-
-</html>
