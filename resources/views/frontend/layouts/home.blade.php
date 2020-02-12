@@ -331,7 +331,7 @@
                                     <div class="hot-page2-hom-pre-1">
                                         @if(!empty(PageController::getImage($package->p_id)))
                                         <img src="{{asset('assets/image/img-loading.gif') }}"
-                                            data-original="{{ asset('storage/pkgGall').'/'.PageController::getImage($package->p_id)->image_name }}"
+                                            data-src="{{ asset('storage/pkgGall').'/'.PageController::getImage($package->p_id)->image_name }}"
                                             alt="Package Image" />
                                         @else
                                         <img src="https://via.placeholder.com/350x200" alt="No Image found" />
@@ -361,7 +361,7 @@
                                     <div class="hot-page2-hom-pre-1">
                                         @if( !empty(PageController::getImage($indPak->p_id)) )
                                         <img src="{{asset('assets/image/img-loading.gif') }}"
-                                            data-original="{{ asset('storage/pkgGall').'/'.PageController::getImage($indPak->p_id)->image_name }}"
+                                            data-src="{{ asset('storage/pkgGall').'/'.PageController::getImage($indPak->p_id)->image_name }}"
                                             alt="Tour Booking" title="Tour Booking">
                                         @else
                                         <img src="https://via.placeholder.com/350x200" alt="No Image found" />
