@@ -384,7 +384,6 @@
         </div>
     </div>
 </section>
-@endsection
 
 <!--========= Scripts ===========-->
 <script src="js/jquery-latest.min.js"></script>
@@ -396,9 +395,7 @@
 
 <script>
     $(document).ready(function () {
-        pageInfos = <?php echo ($pageInfo); ?>;
-        console.log(pageInfos);
-        console.log(pageInfos[0].id)
+        pageInfos = {{$pageInfo}};
         // $('.tourz-search-1')
         pageInfos.forEach(pageDetails);
 
@@ -429,6 +426,8 @@
         }
     });
 </script>
+@endsection
+
 </body>
 
 </html>
