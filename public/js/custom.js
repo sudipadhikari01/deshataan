@@ -213,9 +213,6 @@ $(function() {
         }
     }
 });
-$(document).ready(function() {
-    $("img.lazyload").lazyload({
-        effect: "fadeIn"
-    });
-
+$("img.lazyload").lazyload({
+    effect: "fadeIn"
 });
