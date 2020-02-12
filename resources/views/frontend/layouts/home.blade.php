@@ -157,9 +157,10 @@
                             <div class="hom-hot-av-tic"> Available Rooms: {{ $hotel->available_room }} </div>
                             @if(!empty(PageController::getHotelImage($hotel->h_id)))
                             <img data-original="{{ asset('storage/photogallery').'/'.PageController::getHotelImage($hotel->h_id)->name }}"
-                                alt="{{ $hotel->title }}" class="img-responsive" />
+                                alt="{{ $hotel->title }}" class="img-responsive lazyload" />
                             @else
-                            <img data-original="https://via.placeholder.com/350x200" alt="No Image found" />
+                            <img data-original="https://via.placeholder.com/350x200" alt="No Image found"
+                                class="lazyload" />
                             @endif
                         </div>
                         <div class="to-ho-hotel-con-23">
@@ -253,9 +254,10 @@
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         @if(!empty(PageController::getPackageImage($package->p_id)))
                         <img data-original="{{ asset('storage/pkgGall').'/'.PageController::getPackageImage($package->p_id)->image_name }}"
-                            alt="{{ $package->image_name }}" class="img-responsive" />
+                            alt="{{ $package->image_name }}" class="img-responsive lazyload" />
                         @else
-                        <img data-original="https://via.placeholder.com/350x200" alt="No Image found" />
+                        <img data-original="https://via.placeholder.com/350x200" alt="No Image found"
+                            class="lazyload" />
                         @endif
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12">
@@ -298,9 +300,10 @@
                                     <div class="hot-page2-hom-pre-1">
                                         @if(!empty(PageController::getHotelImage($hotel->h_id)))
                                         <img data-original="{{ asset('storage/photogallery').'/'.PageController::getHotelImage($hotel->h_id)->name }}"
-                                            alt="{{ $hotel->title }}" class="img-responsive" />
+                                            alt="{{ $hotel->title }}" class="img-responsive lazyload" />
                                         @else
-                                        <img data-original="https://via.placeholder.com/350x200" alt="No Image found" />
+                                        <img data-original="https://via.placeholder.com/350x200" alt="No Image found"
+                                            class="lazyload" />
                                         @endif
                                     </div>
                                     <div class="hot-page2-hom-pre-2">
@@ -333,9 +336,10 @@
                                         @if(!empty(PageController::getImage($package->p_id)))
                                         <img src="{{asset('assets/image/img-loading.gif') }}"
                                             data-original="{{ asset('storage/pkgGall').'/'.PageController::getImage($package->p_id)->image_name }}"
-                                            alt="Package Image" />
+                                            alt="Package Image" class="lazyload" />
                                         @else
-                                        <img data-original="https://via.placeholder.com/350x200" alt="No Image found" />
+                                        <img data-original="https://via.placeholder.com/350x200" alt="No Image found"
+                                            class="lazyload" />
                                         @endif
                                     </div>
                                     <div class="hot-page2-hom-pre-2">
@@ -363,9 +367,10 @@
                                         @if( !empty(PageController::getImage($indPak->p_id)) )
                                         <img src="{{asset('assets/image/img-loading.gif') }}"
                                             data-original="{{ asset('storage/pkgGall').'/'.PageController::getImage($indPak->p_id)->image_name }}"
-                                            alt="Tour Booking" title="Tour Booking">
+                                            alt="Tour Booking" title="Tour Booking" class="lazyload">
                                         @else
-                                        <img data-original="https://via.placeholder.com/350x200" alt="No Image found" />
+                                        <img data-original="https://via.placeholder.com/350x200" class="lazyload"
+                                            alt="No Image found" />
 
                                         @endif
                                     </div>
