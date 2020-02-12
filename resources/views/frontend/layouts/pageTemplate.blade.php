@@ -266,8 +266,7 @@
     <script src="{{asset('js/bootstrap.js') }}"></script>
     <script src="{{asset('js/wow.min.js') }}"></script>
     <script src="{{asset('js/materialize.min.js') }}"></script>
-    <script type="text/javascript"
-        src="http://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.lazyload.min.js') }}"></script>
     <script src="{{asset('js/custom.js') }}"></script>
     <script>
         $(document).ready(function() {
