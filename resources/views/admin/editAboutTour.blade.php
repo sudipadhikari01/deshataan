@@ -10,15 +10,13 @@ use App\Http\Controllers\PagesController;
     <div class="container-fluid">
         {{-- --}}
         <div class="col-xl-12">
-            <form method="POST" action="{{ url("adminn/aboutTour/$iaboutTour->id") }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ url("adminn/aboutTour/$iaboutTour->id") }}">
                 {{ csrf_field() }}
                 <input type="hidden" name="_method" value="PUT">
                 <div class="card forms-card">
                     <div class="card-body">
                         <h4 class="card-title mb-4">Edit About Tour</h4>
                         <div class="basic-form">
-
-
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Places Covered</label>
                                 <div class="col-sm-9">
@@ -40,7 +38,6 @@ use App\Http\Controllers\PagesController;
                                     <p class="form-text text-danger" id="demo2"></p>
                                 </div>
                             </div>
-
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Exclusions</label>
                                 <div class="col-sm-9">
@@ -52,11 +49,6 @@ use App\Http\Controllers\PagesController;
                                     <p class="form-text text-danger" id="demo3"></p>
                                 </div>
                             </div>
-
-
-
-
-
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Event Date</label>
                                 <div class="col-sm-9">
@@ -67,9 +59,8 @@ use App\Http\Controllers\PagesController;
                                     <p class="form-text text-danger" id="demo4"></p>
                                 </div>
                             </div>
-
                             <div class="form-group row align-items-center">
-                                <label class="col-sm-3 col-form-label text-label">Event Date</label>
+                                <label class="col-sm-3 col-form-label text-label">Tour Map Location</label>
                                 <div class="col-sm-9">
                                     <div class="input-group">
                                         <textarea name="tourLocationMap" class="form-control" id="tourLocationMap"
@@ -79,11 +70,6 @@ use App\Http\Controllers\PagesController;
                                     <p class="form-text text-danger" id="demo4"></p>
                                 </div>
                             </div>
-
-
-
-
-
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Package Type</label>
                                 <div class="col-sm-9">
@@ -99,8 +85,6 @@ use App\Http\Controllers\PagesController;
                                     <p class="form-text text-danger" id="demo5"></p>
                                 </div>
                             </div>
-
-
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Individual Package</label>
                                 <div class="col-sm-9">
@@ -118,16 +102,8 @@ use App\Http\Controllers\PagesController;
                                     <p class="form-text text-danger" id="demo6"></p>
                                 </div>
                             </div>
-
-
-
-                            <input type="submit" class="btn btn-success " value="Update" name="Edit"
+                            <input type="submit" class="btn btn-success" value="Update" name="Edit"
                                 style="margin:0 auto; width:112px;" onclick="aboutTourValidateForm()">
-
-
-
-
-
                         </div>
                     </div>
                 </div>

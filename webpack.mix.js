@@ -16,6 +16,6 @@ mix.js("resources/js/app.js", "public/js").sass(
     "public/css"
 );
 
-// mix.browserSync({
-//     proxy: "http://localhost/deshataan/public"
-// });
+mix.browserSync({
+    proxy: "http://localhost/deshataan/public"
+});

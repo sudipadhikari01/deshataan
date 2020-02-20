@@ -106,14 +106,16 @@ class AboutTourController extends Controller
     {
         $request->validate([
             'placesCovered' => 'required',
-            'inclusions' => 'required',
+            'tourinclusionsedit' => 'required',
             'exclusions' => 'required',
             'packageType' => 'required',
             'individualPackage' => 'required',
         ]);
+
         $aboutTour = AboutTour::find($id);
+        // dd($aboutTour);
         $aboutTour->places_covered = $request->input('placesCovered');
-        $aboutTour->inclusions = $request->input('inclusions');
+        $aboutTour->inclusions = $request->input('tourinclusionsedit');
         $aboutTour->exclusions = $request->input('exclusions');
         $aboutTour->event_date = $request->input('eventDate');
         $aboutTour->p_id = $request->input('packageType');
