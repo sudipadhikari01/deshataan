@@ -54,7 +54,7 @@ use App\Http\Controllers\PagesController;
                                 <div class="col-sm-9">
                                     <div class="input-group">
                                         <input type="date" class="form-control" id="datePicker1" name="eventDate"
-                                            required value="{{$iaboutTour->event_date}}">
+                                            value="{{$iaboutTour->event_date}}">
                                     </div>
                                     <p class="form-text text-danger" id="demo4"></p>
                                 </div>

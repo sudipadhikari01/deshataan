@@ -57,7 +57,7 @@
                                 <div class="col-sm-9">
                                     <div class="input-group">
                                         <input type="date" class="form-control" id="datePicker1"
-                                            placeholder="Enter event date" name="eventDate" required>
+                                            placeholder="Enter event date" name="eventDate">
                                     </div>
                                     <p class="form-text text-danger" id="demo4"></p>
                                 </div>
