@@ -15,6 +15,19 @@
                     <div class="card-body">
                         <h4 class="card-title mb-4">Edit Itinerary</h4>
                         <div class="basic-form">
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 col-form-label text-label">Itinerary Title</label>
+                                <div class="col-sm-9" id="itinerary">
+
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control" id="itinerarytitle"
+                                            placeholder="Enter Itinerary Title" name="itineraryTitle"
+                                            value="{{$itinerary->title}}" required>
+                                    </div>
+                                    <p class="form-text text-danger" id="demo2"></p>
+
+                                </div>
+                            </div>
 
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Itinerary Description</label>

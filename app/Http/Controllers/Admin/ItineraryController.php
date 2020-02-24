@@ -19,7 +19,7 @@ class ItineraryController extends Controller
     {
         return $this->middleware('auth:admin');
     }
-    
+
     public function index()
     {
         $itinerarys = Itinerary::all();
@@ -47,13 +47,15 @@ class ItineraryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'itineraryTitle' => 'required',
             'itineraryDesc' => 'required',
             'packageType' => 'required',
             'individualPackage' => 'required',
-            
+
         ]);
         // return $request;
         $itinerarys = new Itinerary();
+        $itinerarys->title = $request->input('itineraryTitle');
         $itinerarys->itinerary = $request->input('itineraryDesc');
         $itinerarys->p_id = $request->input('packageType');
         $itinerarys->ip_id = $request->input('individualPackage');
@@ -69,7 +71,8 @@ class ItineraryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    { }
+    {
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -96,13 +99,15 @@ class ItineraryController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+            'itineraryTitle' => 'required',
             'itineraryDesc' => 'required',
             'packageType' => 'required',
             'individualPackage' => 'required',
-            
+
         ]);
         $itinerarys = Itinerary::find($id);
 
+        $itinerarys->title = $request->input('itineraryTitle');
         $itinerarys->itinerary = $request->input('itineraryDesc');
         $itinerarys->p_id = $request->input('packageType');
         $itinerarys->ip_id = $request->input('individualPackage');

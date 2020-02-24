@@ -62,6 +62,7 @@ use App\Http\Controllers\PagesController;
                                 <thead>
                                     <tr>
                                         <th>#</th>
+                                        <th>Title</th>
                                         <th>Itinerary</th>
                                         <th style="width:10%">Package Type</th>
                                         <th style="width:15%">Individual Package</th>
@@ -74,6 +75,7 @@ use App\Http\Controllers\PagesController;
                                 <tbody>
                                     <tr>
                                         <th>{{ $loop->iteration }}</th>
+                                        <td>{{$itinerary->title}}</td>
                                         <td>{{str_limit($itinerary->itinerary, 400)}}</td>
                                         <td>{{PagesController::showPackageType($itinerary->p_id)}}</td>
                                         <td>{{PagesController::showIndividualPackage($itinerary->ip_id)}}</td>
