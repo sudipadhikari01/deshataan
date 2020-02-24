@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('css/mob.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+
 </head>
 
 <body>
@@ -258,17 +259,52 @@
     </section>
 
     <!--========= Scripts ===========-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    {{-- <script src="{{asset('js/jquery-latest.min.js') }}"></script> --}}
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="{{asset('js/bootstrap.js') }}"></script>
     <script src="{{asset('js/wow.min.js') }}"></script>
     <script src="{{asset('js/materialize.min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.lazyload.min.js') }}"></script>
     <script src="{{asset('js/custom.js') }}"></script>
-
+    <script>
+        $(document).ready(function() {
+        pageInfos = {{ $pageInfo }};
+        // $('.tourz-search-1')
+        pageInfos.forEach(pageDetails);
+        
+        
+        function pageDetails(item) {
+        if (item.page_slug == 'home') {
+        $('.tourz-search-1 > h1').html(item.page_name);
+        $('.tourz-search-1 > p').html(item.page_description);
+        }
+        if (item.page_slug == 'package') {
+        $('.packages > h2>span').html(item.page_name);
+        $('.packages > p').html(item.page_description);
+        }
+        if (item.page_slug == 'hotels') {
+        $('.hotels > h2>span').html(item.page_name);
+        $('.hotels > p').html(item.page_description);
+        }
+        if (item.page_slug == 'sightSeeing') {
+        $('.sightSeeing > h2>span').html(item.page_name);
+        $('.sightSeeing > p').html(item.page_description);
+        }
+        if (item.page_slug == 'branding') {
+        $('.branding > h2>span').html(item.page_name);
+        $('.branding > p').html(item.page_description);
+        }
+        }
+        });
+    </script>
     {{-- <script>
         $(document).ready(function(){
     $(".tips_left_1").css("background-image", "url({{ asset('storage/tourTips').'/'.$tips->image }})");
     });
     </script> --}}
+
 </body>
 
 </html>

@@ -175,6 +175,10 @@ function myFunction() {
     }
 }
 
+
+
+
+
 //DATE PICKER
 $(function() {
     if ($("#from,#from-1,#from-2,#from-3,#from-4,#from-5").length > 0) {
@@ -208,4 +212,7 @@ $(function() {
             return date;
         }
     }
+});
+$("img.lazyload").lazyload({
+    effect: "fadeIn"
 });
