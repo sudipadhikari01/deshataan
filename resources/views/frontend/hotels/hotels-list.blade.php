@@ -31,17 +31,18 @@
                             @foreach($hotelList as $list)
                             <li>
                                 <a href="{{url("hotel/$list->h_id")}}">
-                                    <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> 
+                                    <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1">
                                         @if(!empty(PageController::getHotelImage($list->h_id)))
-                                        <img src="{{ asset('storage/photogallery').'/'.PageController::getHotelImage($list->h_id)->name }}" alt="{{ $list->title }}" class="img-responsive"/>
-                                    @else
-                                         <img src="https://via.placeholder.com/350x200" alt="No Image found" />
-                                    @endif       
+                                        <img src="{{ asset('storage/photogallery').'/'.PageController::getHotelImage($list->h_id)->name }}"
+                                            alt="{{ $list->title }}" class="img-responsive" />
+                                        @else
+                                        <img src="https://via.placeholder.com/350x200" alt="No Image found" />
+                                        @endif
                                     </div>
                                     <div class="hot-page2-hom-pre-2 hot-page2-alp-cl-1-2">
                                         <h5>{{$list->title}}</h5> <span>City: {{$list->location}}</span>
                                     </div>
-                                    <div class="hot-page2-hom-pre-3 hot-page2-alp-cl-1-3"> 
+                                    <div class="hot-page2-hom-pre-3 hot-page2-alp-cl-1-3">
                                         {{-- <span>4.4</span>  --}}
                                     </div>
                                 </a>
@@ -234,13 +235,16 @@
                         <div class="hot-page2-alp-l-com1 hot-page2-alp-p5">
                             <form>
                                 <ul>
+                                    @foreach ($hotelAmenities as $key => $item)
+
                                     <li>
                                         <div class="checkbox checkbox-info checkbox-circle">
-                                            <input id="chp71" class="styled" type="checkbox" checked="0">
-                                            <label for="chp71"> Swimming pools </label>
+                                            <input id="chp{{$key}}" class="styled" type="checkbox">
+                                            <label for="chp{{$key}}"> {{$item->title}} </label>
                                         </div>
                                     </li>
-                                    <li>
+                                    @endforeach
+                                    {{-- <li>
                                         <div class="checkbox checkbox-info checkbox-circle">
                                             <input id="chp72" class="styled" type="checkbox">
                                             <label for="chp72"> Wi-Fi & Computer </label>
@@ -263,7 +267,7 @@
                                             <input id="chp75" class="styled" type="checkbox">
                                             <label for="chp75"> Dining </label>
                                         </div>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </form> <a href="javascript:void(0);" class="hot-page2-alp-p5-btn-s">view more</a>
                         </div>
@@ -282,12 +286,13 @@
                                 <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                     <a href="javascript:void(0);">
                                         <div class="hotel-list-score">4.5</div>
-                                        <div class="hot-page2-hli-1"> 
+                                        <div class="hot-page2-hli-1">
                                             @if(!empty(PageController::getHotelImage($list->h_id)))
-                                        <img src="{{ asset('storage/photogallery').'/'.PageController::getHotelImage($list->h_id)->name }}" alt="{{ $list->title }}" class="img-responsive"/>
-                                    @else
-                                         <img src="https://via.placeholder.com/350x200" alt="No Image found" />
-                                    @endif  
+                                            <img src="{{ asset('storage/photogallery').'/'.PageController::getHotelImage($list->h_id)->name }}"
+                                                alt="{{ $list->title }}" class="img-responsive" />
+                                            @else
+                                            <img src="https://via.placeholder.com/350x200" alt="No Image found" />
+                                            @endif
                                         </div>
                                         <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms:
                                             {{$list->available_room}} </div>
@@ -307,10 +312,8 @@
                                 <div class="col-md-3">
                                     <div class="hot-page2-alp-ri-p3">
                                         {{-- <div class="hot-page2-alp-r-hot-page-rat">25%Off</div>  --}}
-                                        <span
-                                            class="hot-list-p3-1">Price Per Night</span>
-                                        <span class="hot-list-p3-2">{{$list->price}}</span><span
-                                            class="hot-list-p3-4">
+                                        <span class="hot-list-p3-1">Price Per Night</span>
+                                        <span class="hot-list-p3-2">{{$list->price}}</span><span class="hot-list-p3-4">
                                             <a href="{{url('/booking')}}" class="hot-page2-alp-quot-btn">Book Now</a>
                                         </span>
                                     </div>

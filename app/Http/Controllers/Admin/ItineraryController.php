@@ -22,7 +22,8 @@ class ItineraryController extends Controller
 
     public function index()
     {
-        $itinerarys = Itinerary::all();
+        // $itinerarys = Itinerary::all();
+        $itinerarys = Itinerary::paginate(10);
         return view('admin.itinerary')->with(['itinerarys' => $itinerarys]);
     }
 

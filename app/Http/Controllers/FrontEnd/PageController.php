@@ -11,6 +11,8 @@ use App\IndividualPackage as Ipkgs;
 use App\Itinerary as Itin;
 use App\PackageType as Pkg;
 use App\PhotoGallery as Pg;
+use App\HotelAmenities as Ham;
+
 use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
@@ -127,11 +129,14 @@ class PageController extends Controller
     {
         $pkgs = $this->pkgs;
         $hotelList = Hotel::all();
+        $hotelAmenities = Ham::all();
+
+        // dd($hotelAmenities);
         $hotelCount = Hotel::count();
 
         return view(
             'frontend.hotels.hotels-list',
-            compact('pkgs', 'hotelList', 'hotelCount')
+            compact('pkgs', 'hotelList', 'hotelCount', 'hotelAmenities')
         );
     }
     public function hotel($id)

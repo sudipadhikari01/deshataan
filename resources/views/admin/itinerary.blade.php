@@ -69,12 +69,11 @@ use App\Http\Controllers\PagesController;
                                         <th style="width:10%">Actions</th>
                                     </tr>
                                 </thead>
-                                @foreach ($itinerarys as $itinerary)
-
-
+                                @foreach ($itinerarys as $key => $itinerary)
                                 <tbody>
                                     <tr>
-                                        <th>{{ $loop->iteration }}</th>
+                                        {{-- <th>{{ $loop->iteration }}</th> --}}
+                                        <th>{{$key + 1}}</th>
                                         <td>{{$itinerary->title}}</td>
                                         <td>{{str_limit($itinerary->itinerary, 400)}}</td>
                                         <td>{{PagesController::showPackageType($itinerary->p_id)}}</td>
@@ -100,10 +99,11 @@ use App\Http\Controllers\PagesController;
                                             </span>
                                         </td>
                                     </tr>
-
                                 </tbody>
+
                                 @endforeach
                             </table>
+                            {{ $itinerarys->links() }}
                         </div>
                     </div>
                 </div>
