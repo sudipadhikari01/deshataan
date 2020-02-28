@@ -82,17 +82,23 @@
                                 </div>
                             </div>
 
-
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Hotel Amenities</label>
                                 <div class="col-sm-9">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="hotelAmenities"
-                                            placeholder="Enter hotel amenities" name="hotelAmenities" required>
+                                    Choose Hotel Amenities
+                                    <div class="checkbox form-group">
+                                        @foreach ($hotelAmenities as $hotelAmenity)
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="hotelAmenities[]" value="{{$hotelAmenity->id}}"
+                                                id="hotelAmenity"> &nbsp;
+                                            {{$hotelAmenity->title}} &nbsp;
+                                        </label>
+                                        @endforeach
                                     </div>
-                                    <p class="form-text text-danger" id="demo7"></p>
+                                    <p class="form-text text-danger" id="demo8"></p>
                                 </div>
                             </div>
+
 
                             <div class="form-group row align-items-center">
                                 <label class="col-sm-3 col-form-label text-label">Hotel Location Map</label>

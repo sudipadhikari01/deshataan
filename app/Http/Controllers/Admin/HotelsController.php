@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Hotel;
+use App\HotelAmenities;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,8 @@ class HotelsController extends Controller
      */
     public function create()
     {
-        return view('admin.hotels.addHotels');
+        $hotelAmenities = HotelAmenities::all();
+        return view('admin.hotels.addHotels')->with('hotelAmenities', $hotelAmenities);
     }
 
     /**
@@ -43,6 +45,11 @@ class HotelsController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->input('hotelAmenities')) {
+            $hotelAmenities = json_encode($request->input('hotelAmenities'));
+        } else {
+            $hotelAmenities = array();
+        }
         $hotels = new Hotel();
         $hotels->title = $request->input('hotelTitle');
         $hotels->location = $request->input('hotelLocation');
@@ -51,7 +58,7 @@ class HotelsController extends Controller
         $hotels->available_room = $request->input('availableRoom');
         $hotels->description = $request->input('hotelDesc');
         $hotels->map = $request->input('hotelLocationMap');
-        $hotels->amenities = $request->input('hotelAmenities');
+        $hotels->amenities = $hotelAmenities;
 
         $hotels->save();
 
@@ -78,7 +85,10 @@ class HotelsController extends Controller
     public function edit($id)
     {
         $hotel = Hotel::find($id);
-        return view('admin.hotels.editHotels')->with('hotel', $hotel);
+        $hotelAmenities = HotelAmenities::all();
+        // dd($hotelAmenities);
+        // dd($hotel);
+        return view('admin.hotels.editHotels')->with(['hotel' => $hotel, 'hotelAmenities' => $hotelAmenities]);
     }
 
     /**
@@ -90,6 +100,7 @@ class HotelsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $hotelAmenities = json_encode($request->input('hotelAmenities'));
         $hotels = Hotel::find($id);
 
         $hotels->title = $request->input('hotelTitle');
@@ -98,7 +109,7 @@ class HotelsController extends Controller
         $hotels->price = $request->input('hotelPrice');
         $hotels->available_room = $request->input('availableRoom');
         $hotels->description = $request->input('hotelDesc');
-        $hotels->amenities = $request->input('hotelAmenities');
+        $hotels->amenities = $hotelAmenities;
         $hotels->map = $request->input('hotelLocationMap');
 
         $hotels->save();
@@ -123,5 +134,13 @@ class HotelsController extends Controller
     public static function count()
     {
         return Hotel::count();
+    }
+
+
+    public static function getAmenitiesList($id)
+    {
+        $new = HotelAmenities::find($id);
+        return $new;
+        // print_r($package);
     }
 }

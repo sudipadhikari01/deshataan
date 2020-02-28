@@ -15,45 +15,44 @@
                     <h1>Plan Your Travel Now!</h1>
                     <p>Experience the various exciting tour and travel packages and Make hotel reservations, find
                         vacation packages, search cheap hotels and events</p>
-                    {{-- <form class="tourz-search-form">
-                            <div class="input-field">
-                                <input type="text" id="select-city" class="autocomplete">
-                                <label for="select-city">Enter city</label>
-                            </div>
-                            <div class="input-field">
-                                <input type="text" id="select-search" class="autocomplete">
-                                <label for="select-search" class="search-hotel-type">
-                                    Search over a million tour and travels, sight seeings, hotels and more
-                                </label>
-                            </div>
-                            <div class="input-field">
-                                <input type="submit" value="search" class="waves-effect waves-light tourz-sear-btn">
-                            </div>
-                        </form> --}}
+                    <form class="tourz-search-form">
+                        <div class="input-field">
+                            <input type="text" id="select-city" class="autocomplete" placeholder="Enter city">
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="select-search" class="autocomplete"
+                                placeholder="Search over a million tour and travels, sight seeings, hotels and more">
+                        </div>
+                        <div class="input-field">
+                            <input type="submit" value="search" class="waves-effect waves-light tourz-sear-btn">
+                        </div>
+                    </form>
                     <div class="tourz-hom-ser">
                         <ul>
                             <li>
                                 <a href="Javascript:void(0);"
                                     class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp"
-                                    data-wow-duration="0.5s"><img src="images/icon/2.png" alt=""> Tour</a>
+                                    data-wow-duration="0.5s"><img src="images/icon/2.png" alt=""> Package</a>
                             </li>
                             <li>
                                 <a href="Javascript:void(0);"
                                     class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp"
-                                    data-wow-duration="1s"><img src="images/icon/31.png" alt=""> Flight</a>
+                                    data-wow-duration="1s"><img src="images/icon/31.png" alt=""> Individual Package</a>
                             </li>
                             <li>
                                 <a href="Javascript:void(0);"
                                     class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp"
-                                    data-wow-duration="1.5s"><img src="images/icon/30.png" alt=""> Car Rentals</a>
+                                    data-wow-duration="1.5s"><img src="images/icon/30.png" alt=""> Hotel</a>
                             </li>
                             <li>
                                 <a href="Javascript:void(0);"
                                     class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp"
-                                    data-wow-duration="2s"><img src="images/icon/1.png" alt=""> Hotel</a>
+                                    data-wow-duration="2s"><img src="images/icon/1.png" alt=""> Itenary</a>
                             </li>
                         </ul>
+
                     </div>
+
                 </div>
             </div>
         </div>

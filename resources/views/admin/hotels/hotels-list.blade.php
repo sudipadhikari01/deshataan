@@ -1,5 +1,6 @@
 @php
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\Admin\HotelsController;
 @endphp
 @extends('admin.templates.layout')
 @section('content')
@@ -67,6 +68,7 @@ use App\Http\Controllers\PagesController;
                                         <th>Name/Title</th>
                                         <th>Location</th>
                                         <th>Contact</th>
+                                        <th>Amenities</th>
                                         <th>Price</th>
                                         <th>Available Room</th>
                                         <th>Actions</th>
@@ -83,6 +85,27 @@ use App\Http\Controllers\PagesController;
                                         <td>{{$hotel->title}}</td>
                                         <td>{{$hotel->location}}</td>
                                         <td>{{$hotel->contact}}</td>
+                                        <td>
+                                            @php
+                                            $temps = array();
+                                            $temps = json_decode( $hotel->amenities );
+                                            if(!empty($temps)){
+                                            $lastKey = array_key_last($temps);
+                                            foreach ($temps as $k => $temp)
+                                            {
+                                            $test = HotelsController::getAmenitiesList($temp);
+                                            echo $test->title;
+                                            if ($k !== $lastKey) {
+                                            echo ", ";
+                                            }
+                                            }
+                                            }
+                                            else{
+                                            echo $hotel->amenities;
+                                            }
+                                            @endphp
+                                            {{-- {!! $pkgType['title'].'<br>' !!} --}}
+                                        </td>
                                         <td>{{$hotel->price}}</td>
                                         <td>{{$hotel->available_room}}</td>
                                         <td><span><a href="{{url("/adminn/hotels/$hotel->h_id/edit")}}" class="mr-4"

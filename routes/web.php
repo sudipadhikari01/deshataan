@@ -72,6 +72,7 @@ Route::prefix('/adminn')
             Route::resource('hotels', 'HotelsController');
             Route::resource('hotel-features', 'HotelSpecialFeaturesController');
             Route::resource('hotel-gallery', 'HotelsPhotoGalleryController');
+            Route::resource('hotel-amenities', 'HotelAmenitiesController');
             Route::resource('roomavailabilities', 'HotelRoomAvailabilitiesController');
             Route::resource('testimonials', 'TestimonialController');
             Route::resource('pageInfo', 'PageInfoController');
